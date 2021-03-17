@@ -66,12 +66,12 @@ Click play and you'll hear a sine wave at 220hz that lasts for 1 second before f
 
 #### Try changing the number in the Fm operation. Reminder: The number has to be >= 0. You can also change the values in the `origin` and see how it changes the sound.
 
-<WereSoCool language={
+<WereSoCool language={`
 -- lines that start with dashes are comments and will not be run
--- As songs get longer, you might want to 
--- stop them with cmd + enter (ctl + enter on linux/windows).
--- [SECRET] pressing Shift-Enter will play the main block
-`{ f: 220, l: 1, g: 1, p: 0 }\n
+-- [SECRET] Pressing Shift-Enter will also play
+-- [SECRET] As songs get longer, you might want to 
+-- [SECRET] stop them with cmd + enter (ctl + enter on linux/windows).
+{ f: 220, l: 1, g: 1, p: 0 }\n
 main = {
   Fm 1
 }`
