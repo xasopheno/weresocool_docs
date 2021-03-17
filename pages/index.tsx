@@ -1,6 +1,6 @@
 import React from "react";
 import { useWasm, WASM_READY_STATE } from "../utils/useWasm";
-import { WereSoCool } from "../components/WereSoCool";
+import { WSCWithRatioChart } from "../components/WSC_with_RatioChart";
 const language = `{ f: 440, l: 1, g: 1/10, p: 0 }\n
 overtones = {
   O[
@@ -16,7 +16,7 @@ main = {
 }`;
 
 const Stuff = (): React.ReactElement => {
-  return <WereSoCool language={language} />;
+  return <WSCWithRatioChart />;
 };
 
 const App = () => {

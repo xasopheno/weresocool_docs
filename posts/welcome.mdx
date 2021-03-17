@@ -4,14 +4,16 @@ title: Welcome to WereSoCool
 
 ### WereSoCool is a language for composing microtonal music. You might find this language useful if you want to make cool sounds and impress your friends/pets/plants. 
 
-If you want to make sound in WereSoCool, you'll need a `.socool` file. At the top of your `.socool` file, you'll need a `starting point`:
+## `Origin` 
+
+If you want to make sound in WereSoCool, you'll need a `.socool` file. At the top of your `.socool` file, you'll need an `origin`:
 <WereSoCool
   readOnly
   hideGutter
   language={`{ f: 220, l: 1, g: 1, p: 0 }`}
 />
 
-This expession defines the starting point for our program. Every `.socool` file is essentially a series of operations on a point. 
+This expession defines the origin for our program. Every `.socool` file is essentially a series of operations on a point. 
 
 ##### f is your starting frequency. in this case, 220 which happens to be an "A".
 ##### l is your starting length in seconds. in this case, 1 second.
@@ -32,7 +34,7 @@ Every `.socool` program also needs a `main` block.
 
 ---
 
-### `Operation: Fm (Frequency Multiply)` 
+## `Operation: Fm (Frequency Multiply)` 
 We also need an operation in order to do anything cool. The first operation we'll use is `Fm`. This operation multiplies the frequency of it's input by the multiplier provided. Numbers in WereSoCool and be whole, decimal, or rational numbers. 
 
 <WereSoCool
@@ -56,20 +58,23 @@ Fm 0`
 
 ---
 
-### Putting It All Together
+## Putting It All Together
 
-Now, let's make our first cool sound. Since there haven't any other operations in our program, this operation will be applied directly to our `starting point`.
+Now, let's make our first cool sound. Since there haven't any other operations in our program, this operation will be applied directly to our `origin`.
 
-Click play and you'll hear a sine wave at 220hz that lasts for 1 second before fading out. The gain is one and the
-sound is panned to the center. 
+Click play and you'll hear a sine wave at 220hz that lasts for 1 second before fading out. The gain is 1 and the sound is panned to 0 which is the center. 
 
-#### Try changing the number in the Fm operation. Reminder: The number has to be >= 0. You can also change the values in the `starting point and see how it changes the sound`.
+#### Try changing the number in the Fm operation. Reminder: The number has to be >= 0. You can also change the values in the `origin` and see how it changes the sound.
 
 <WereSoCool language={
+-- lines that start with dashes are comments and will not be run
+-- As songs get longer, you might want to 
+-- stop them with cmd + enter (ctl + enter on linux/windows).
+-- [SECRET] pressing Shift-Enter will play the main block
 `{ f: 220, l: 1, g: 1, p: 0 }\n
 main = {
   Fm 1
 }`
 }/>
 
-[Next Tutorial - A Major Scale](/posts/major_scale)
+[Next Tutorial ~> Overtones](/posts/overtones)

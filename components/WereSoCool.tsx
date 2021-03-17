@@ -15,6 +15,7 @@ export const WereSoCool = (
   const { manager, readyState } = useLoadedWasm();
 
   if (manager && readyState === 1) {
+    manager.update_volume(0.7);
     const render = (language: string) => {
       manager.push(language);
     };

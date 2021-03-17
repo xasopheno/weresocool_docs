@@ -26,6 +26,7 @@ export type EditorProps = {
   readOnly?: boolean;
   hideGutter?: boolean;
   fontSize?: number;
+  height?: number;
 };
 
 export const Editor = (props: EditorProps): React.ReactElement => {
@@ -102,7 +103,13 @@ export const Editor = (props: EditorProps): React.ReactElement => {
   };
 
   return (
-    <Container numLines={language.split("\n").length}>
+    <Container
+      numLines={
+        props.height
+          ? parseInt(`${props.height}px`)
+          : language.split("\n").length
+      }
+    >
       {!props.readOnly && (
         <div>
           <Button onClick={() => setRender(true)}>Play</Button>
@@ -128,6 +135,8 @@ export const Editor = (props: EditorProps): React.ReactElement => {
         mode="elixir"
         theme="github"
         setOptions={{
+          hScrollBarAlwaysVisible: true,
+          vScrollBarAlwaysVisible: true,
           enableBasicAutocompletion: true,
           showLineNumbers: true,
           tabSize: 2,
@@ -153,6 +162,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
         ]}
         style={{
           width: "100%",
+          height: "100%",
         }}
       />
       <ErrorContainer>{error}</ErrorContainer>

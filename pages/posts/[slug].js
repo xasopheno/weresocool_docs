@@ -10,6 +10,7 @@ import CustomLink from "../../components/CustomLink";
 import Layout from "../../components/Layout";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 import { WereSoCool } from "../../components/WereSoCool";
+import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart";
 import { useWasm, WASM_READY_STATE } from "../../utils/useWasm";
 
 // Custom components/renderers to pass to MDX.
@@ -22,6 +23,7 @@ const components = {
   // useful for conditionally loading components for certain routes.
   // See the notes in README.md for more details.
   WereSoCool,
+  WSCWithRatioChart,
   Head,
 };
 
@@ -33,7 +35,7 @@ export default function PostPage({ source, frontMatter }) {
       <header>
         <nav>
           <Link href="/">
-            <a>👈 Go back home</a>
+            <a>👈 Playground</a>
           </Link>
         </nav>
       </header>

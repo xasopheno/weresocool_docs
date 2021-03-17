@@ -1,14 +1,8 @@
 ---
-title: WereSoCool Documentation 
+title: Point Operations
 ---
 
-#### This language is a few years old now. It has changed a lot so far and I imagine it will contine to change...hopefully for the better. This doc will describe the current state of the language. 
-
-## Numbers
-- Numbers in WereSoCool may be any Integer, Decimal, or Rational number. 1, 1.314, and 2/3 are meaningful numbers in the language. 
-- Under the hood, all calculations are done with Rational numbers until just before rendering in order to preserve accuracy. 
-
-# Point Operations
+Let's take a moment to look at all of the `Point Operations` These operations are the basis of all other operations.
 
 ## `Fm <number> - Frequency Multiply`
 
@@ -88,74 +82,5 @@ main = {
 }`
 }/>
 
-# Group Operations
 
-## `Seq [operations] - Sequence`
-
-- Operations will performed in series. 
-
-<WereSoCool language={
-`{ f: 261.6, l: 1, g: 1, p: 0 }\n
-main = {
-  Seq [
-    Fm 1, Fm 9/8, Fm 5/4, Fm 4/3, 
-    Fm 3/2, Fm 5/3, Fm 15/8, Fm 2
-  ]
-}`
-}/>
-
-## `Overlay [operations]`
-
-- Operations will performed at the same time. 
-
-<WereSoCool language={
-`{ f: 261.6, l: 5, g: 1/3, p: 0 }\n
-main = {
-  Overlay [
-    Fm 7/2,
-    Fm 9/4,
-    Fm 3/2,
-    Fa 5,
-    Fm 1,
-    Fm 1/2
-  ]
-}`
-}/>
-
-# Form Operations
-
-## `Repeat <number>`
-Repeat is super cool if you want to something to happen again. 
-
-<WereSoCool language={
-`{ f: 261.6, l: 1/4, g: 1, p: 0 }\n
-melody = {
-  Seq [ Fm 5/4, Fm 9/8, Fm 5/4, Fm 1]
-}\n
-main = {
-  Seq [
-    melody | Repeat 3
-  ]
-}`
-}/>
-
-## `Reverse`
-Reverse takes an input and plays it backwards. 
-
-<WereSoCool language={
-`{ f: 261.6, l: 1, g: 1, p: 0 }\n
-pentatonic_scale = {
-  Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2, Fm 5/3]
-}\n
-main = {
-  Seq [
-    pentatonic_scale, 
-    pentatonic_scale | Reverse
-  ]
-}`
-}/>
-
-
-
-
-
+[Next Tutorial ~> Pipe Operation](/posts/pipe)

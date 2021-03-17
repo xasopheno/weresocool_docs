@@ -1,0 +1,77 @@
+---
+title: Cool Thing
+description: Neat stuff
+---
+
+So far, we've only explored intervals melodically. Now, we'll add a new Operation - Overlay - which will allow us to explore intervals harmonically.
+
+
+## `Operation: Overlay` 
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`Overlay [operations]`}
+/>
+
+Overlay takes an array of operations and peforms them at the same time. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 3, g: 1, p: 0 }\n
+main = {
+  -- C Major Triad. Oooh, Aaaah.
+  Overlay [
+    Fm 3/2,
+    Fm 5/4,
+    Fm 1, 
+  ]
+}`
+}/>
+
+How about a Sequence of Overlays? Chords written above each Overlay.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Seq [
+    -- I - C
+    Overlay [
+      Fm 3/2,
+      Fm 5/4,
+      Fm 1, 
+    ],
+    -- IV - F
+    Overlay [
+      Fm 5/3,
+      Fm 4/3,
+      Fm 1, 
+    ],
+    -- I - C
+    Overlay [
+      Fm 3/2,
+      Fm 5/4,
+      Fm 1, 
+    ],
+    -- V - G
+    Overlay [
+      Fm 3/2,
+      Fm 9/8,
+      Fm 15/16, 
+    ],
+    -- I - C
+    Overlay [
+      Fm 3/2,
+      Fm 5/4,
+      Fm 1, 
+    ],
+  ]
+}`
+}/>
+
+# More Overtone Exploration
+
+You'll see a BeautifulChart(tm) on the right of the WereSoCool Editor below. You can use this chart to get your bearings in the rich landscape of ratio-based harmony. Ratios in surrounded by Gold Boxes are the ratios that describe the major scale. Ratios of similar dissonace are the same color. There are a lot of new intervals to explore that you might have never heard of. Sub-minor third? Yes, please. Super Major Third? Heck Yeah.
+
+<WSCWithRatioChart />
+
+
+[Next Tutorial ~> Point Operations](/posts/point_operations)

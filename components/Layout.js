@@ -112,6 +112,3 @@ export default function Layout({ children }) {
     </ThemeProvider>
   );
 }
-
-//  <>
-//  <div className="wrapper">{children}</div>
