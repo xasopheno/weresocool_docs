@@ -103,7 +103,7 @@ export default function Layout({ children }) {
       <style jsx>
         {`
           .wrapper {
-            max-width: 90rem;
+            max-width: 80%;
             margin: 0 auto;
             padding: 1.5rem;
           }

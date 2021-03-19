@@ -155,6 +155,48 @@ main = {
 }`
 }/>
 
+## `FitLength`
+Here, operation2 is something new you've written. 
+operation1 is something you wrote earlier in the piece.
+FitLength is going to stretch or squish operation2
+to make it the same length as operation1. 
+
+<WereSoCool
+  language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+pentatonic_scale = {
+  Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2, Fm 5/3]
+}\n
+bass = {
+  Seq [Fm 1, Fm 7/8, Fm 5/6, Fm 2/3]
+}\n
+main = {
+  Overlay [
+    pentatonic_scale, 
+    bass | FitLength pentatonic_scale
+  ]
+}`
+}/>
+
+## `Invert`
+
+In this example, you'll also see `Invert` being used.
+Invert is an operation on Frequency which inverts the ratio of the current
+current frequency over the f at the top of the file. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+pentatonic_scale = {
+  Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2, Fm 5/3]
+}\n
+main = {
+  Overlay [
+    pentatonic_scale, 
+    pentatonic_scale | Invert
+  ]
+}`
+}/>
+
 
 
 

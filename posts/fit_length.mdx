@@ -1,0 +1,53 @@
+---
+title: FitLength
+---
+
+Once you've started writing songs with Overlays, you'll likely notice
+that lining up the ends of phrases can be tedious. 
+Luckily, the "FitLength" operations makes it super easy to align
+the ends of operations. 
+
+## `Operation: FitLength`
+Here, operation2 is something new you've written. 
+operation1 is something you wrote earlier in the piece.
+FitLength is going to stretch or squish operation2
+to make it the same length as operation1. 
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`operation2 | FitLength operation1`}
+/>
+
+---
+
+## `Operation: Invert`
+
+In this example, you'll also see `Invert` being used.
+Invert is an operation on Frequency which inverts the ratio of the current
+current frequency over the f at the top of the file. 
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`operation | Invert`
+}
+/>
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`Seq [operations]`}
+/>
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Seq [
+    Fm 1, 
+  ]
+}`
+}/>
+
+[Next Tutorial](/posts/welcome)
