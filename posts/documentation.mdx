@@ -10,6 +10,8 @@ title: WereSoCool Documentation
 
 # Point Operations
 
+
+
 ## `Fm <number> - Frequency Multiply`
 
 - Multiplies the input frequency by the number provided. 
@@ -124,6 +126,18 @@ main = {
 
 # Form Operations
 
+## `AsIs - Identity`
+
+- This operation is a no-op. Useful for describing form.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Seq [ Fm 1, Fm 9/8 ]  
+  | Seq [AsIs, Fm 3/2]
+}`
+}/>
+
 ## `Repeat <number>`
 Repeat is super cool if you want to something to happen again. 
 
@@ -143,7 +157,7 @@ main = {
 Reverse takes an input and plays it backwards. 
 
 <WereSoCool language={
-`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+`{ f: 261.6, l: 1/3, g: 1, p: 0 }\n
 pentatonic_scale = {
   Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2, Fm 5/3]
 }\n
@@ -168,19 +182,36 @@ pentatonic_scale = {
   Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2, Fm 5/3]
 }\n
 bass = {
+  Fm 1/2 |
   Seq [Fm 1, Fm 7/8, Fm 5/6, Fm 2/3]
-}\n
+}\
 main = {
   Overlay [
     pentatonic_scale, 
-    bass | FitLength pentatonic_scale
+    bass | Seq [Fm 9/8, Fm 1] | FitLength pentatonic_scale
   ]
 }`
 }/>
 
-## `Invert`
+## `Operation: ModBy` 
+ModulateBy lets you use an operation to modulate another operation. 
 
-In this example, you'll also see `Invert` being used.
+<WereSoCool language={
+`{ f: 261.6, l: 1/3, g: 1, p: 0 }\n
+melody = {
+  Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2]
+}\n
+main = {
+  Seq [
+    melody,
+    melody
+    | ModBy [Fm 1, Fm 1/2]
+  ]
+}`
+}/>
+
+
+## `Invert`
 Invert is an operation on Frequency which inverts the ratio of the current
 current frequency over the f at the top of the file. 
 
@@ -196,8 +227,4 @@ main = {
   ]
 }`
 }/>
-
-
-
-
 
