@@ -1,7 +1,6 @@
-import dynamic from "next/dynamic";
 import React from "react";
 import { createContext, useState, useContext, useEffect } from "react";
-import { Manager } from "weresocool-wasm";
+import { Manager } from "../../wasm/pkg/weresocool_wasm";
 
 type Result = {
   manager: Manager | null;
@@ -27,7 +26,7 @@ export const useWasm = (): [React.Provider<Result>, Result] => {
   useEffect(() => {
     const loadWasm = async () => {
       try {
-        const wasm = await import("weresocool-wasm");
+        const wasm = await import("../../wasm/pkg/weresocool_wasm.js");
         setWasmObject({
           manager: wasm.beep(),
           readyState: WASM_READY_STATE.READY,

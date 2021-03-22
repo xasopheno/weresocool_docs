@@ -228,3 +228,56 @@ main = {
 }`
 }/>
 
+---
+
+## `Functions` 
+Any block except for the "main" block can be extended to 
+take arguments. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/3, g: 1, p: 0 }\n
+melody(a) = {
+  a | Repeat 3
+}\n
+main = {
+  melody(
+    Seq [
+      Fm 5/4, Fm 9/8, Fm 1
+    ]
+  )
+}`
+}/>
+
+--
+
+# Lists
+
+## `List Syntax` 
+Lists are denoted by an `&`. You can index into the list with an `@` followed by `[operations]`
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`&[operations] @ [indices]`}
+/>
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+-- List indicies start at 0
+main = {
+  &[Fm 1, Fm 9/8] @ [0, 1, 0]
+}`
+}/>
+
+
+
+## `ET - Equal Temperament` 
+The ET operation creates an equal tempered scaled divided n times.
+The result is a list and can be indexed into as needed. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/4, g: 1, p: 0 }\n
+main = {
+  ET(17) 
+}`
+}/>
