@@ -1,11 +1,117 @@
 ---
-title: Generators
+title: Intro Generators
 ---
+
+Generators make it possible to describe an infinite lists in WereSoCool.
+
+A generator is a collection of
+Axis Expressions. Generators start with at `*`.
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`*(Axis Expressions...) Take n`
+}/>
+
+### Axis Expressions
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`axis: start|subdivision [coefficients]`
+}/>
+
+An axis expression has 4 parts 
+- axis, start, subdivision, coefficients
+
+### Axis
+There are four axis in WereSoCool: 
+Frequency, Length, Gain and Pan. 
+f, l, g, and p in the context of a generator.
+
+### Subdivision
+A slightly trickly part. This depends on the axis. For 
+Length, Gain, and Pan, we are dividing 1 in into that many 
+subdivions. For frequency, we are dividing and octave into that
+many parts. We're create a generator in ET(n) space. 
+
+### Start
+We're going slightly out of order since you need to know what 
+the subdivision is doing before you can understand what the start 
+means. Start says, "Calculate the starting value for this axis
+on this generator by taking the input value on that axis and 
+adding start * subdivision". There are some examples below that 
+will hopefully make this clearer. 
+
+### Coefficients
+The coefficients describe the change in the axis at each step. 
+The coefficients are looped infinitely. 
+
+## Chromatic Scale Generator
+
+The following is an Axis Expression for a 
+chromatic scale generator. I read it as:
+On the frequency axis, start at the input 
+frequency * (0 * subdivision). Each step, add 
+1 * subdivision to the last frequency. 
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`f: 0|12 [1]`
+}/>
+
+### Take
+
+The last part of the Generator is Take. Since generators
+are infinite, you should be explicit how many steps 
+you'd like to take. Generators actually have some defaults
+in place and will make sounds without a take, but it is 
+always best to use a Take. 
+
+Here we will use our Chromatic Scale Axis Expression 
+inside a Generator and then Take 12. 
 
 <WereSoCool language={
 `{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
 main = {
   *(
+    f: 0|12 [1]
+  ) Take 12
+}`
+}/>
+
+## More Axis Expressions
+
+In order to make it clear what the generators are doing, 
+we are going to add a little attack at the beginning of each note. 
+
+<WereSoCool language={
+`{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
+main = {
+  -- I usually describe the attack of a note as an Overlay 
+  -- of Fm 1 and then a sequence that describes the attack.
+  Overlay [
+    Fm 1,
+    -- Fm 2 is the frequency of the attack, the first 
+    -- Fm 0 is the decay of that attack, and the second
+    -- Fm 0 is the silence after the decay.
+    Seq [Fm 2, Fm 0, Fm 0] | Lm 1/8,
+  ]
+  | Repeat 4
+}`
+}/>
+
+<WereSoCool language={
+`{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
+main = {
+  Overlay [
+    Fm 1,
+    Seq [Fm 2, Fm 0, Fm 0] | Lm 1/8,
+  ]
+  | *(
     f: 0|12 [1]
   ) Take 12
 }`
@@ -26,7 +132,7 @@ main = {
 }/>
 
 <WereSoCool language={
-`{ f: 311.127, l: 1/3, g: 1, p: 0 }\n
+`{ f: 311.127, l: 1/2, g: 1, p: 0 }\n
 main = {
   Overlay [
     Fm 1,
@@ -54,11 +160,12 @@ main = {
 }/>
 
 <WereSoCool language={
-`{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
+`{ f: 311.127, l: 1/3, g: 1, p: 0 }\n
 main = {
   Overlay [
+    Seq [Fm 2, Fm 0 | Lm 8] | Lm 1/10,
     Fm 1,
-    Seq [Fm 2, Fm 0, Fm 0] | Lm 1/8,
+    Fm 1/2,
   ]
   | *(
     f: 0|12 [1],
