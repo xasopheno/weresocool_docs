@@ -31,6 +31,56 @@ main = {
 }`
 }/>
 
-### Slonimsky
+# Time Feels
+Oh, musicians love to talk about time feel. One of the 
+biggest compliments you can give someone. 
+"Man...she has the best time feel..." 
+For a programming language, I think WereSoCool
+has a pretty good time feel. Generators are 
+a really nice place to explore the relationship
+between melody, tempo, and time feel. 
 
-[Next Tutorial](/posts/welcome)
+<WereSoCool language={
+`{ f: 261.6, l: 1/6, g: 1, p: 0 }\n
+-- Three different time feels from generators. 
+main = {
+  Overlay [Fm 1/2, Fm 1, Fm 2]
+  | Seq [
+    *(
+        f: 0|12 [7, -3, -4, -2, 1],
+        l: 13|13 [-3, 3],
+        g: 10|10 [-3, 3]
+    ) Take 31,
+    Fm 0,
+    *(
+        f: 0|12 [7, -3, -4, -2, 1],
+        l: 15|13 [-5, 5],
+        g: 10|10 [-3, 3]
+    ) Take 31,
+    Fm 0,
+    *(
+        f: 0|12 [7, -3, -4, -2, 1],
+        l: 17|13 [-7, 7],
+        g: 10|10 [-3, 3]
+    ) Take 31
+  ]
+}`
+}/>
+
+# Dynamics
+Any easy way to add dynamics to something you have already
+written is to ModBy [generator].
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/6, g: 1, p: 0 }\n
+-- Three different time feels from generators. 
+main = {
+  Overlay [Fm 1/2, Fm 1, Fm 2]
+  | ET(12) @ [Random(35)]
+  | ModBy [
+    *(g: 10|10 [-1]) Take 10
+  ]
+}`
+}/>
+
+[Next Tutorial ~> Cool Coefficients](/posts/cool_coefficients)
