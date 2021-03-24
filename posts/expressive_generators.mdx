@@ -1,0 +1,36 @@
+---
+title: More Expressive Generators
+---
+
+Generators are super cool. Let's keep going with them. 
+
+### Infinte Melodies
+
+We are going to stay in ET(12) for now. Using generators, we
+can make some beautiful, long and winding melodic structures. 
+Mark Turner, eat your heart out.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/8, g: 1, p: 0 }\n
+-- Three Melodies from generators. 
+main = {
+  Overlay [Fm 1/2, Fm 1, Fm 2]
+  | Seq [
+    *(
+      f: 0|12 [7, -3, -4, -2, 1]
+    ) Take 30,
+    Fm 0,
+    *(
+      f: 0|12 [-3, 4, 3, 2, -4, 2, 1, -2]
+    ) Take 25,
+    Fm 0,
+    *(
+      f: 0|12 [2, -3, 2, -5, 10, -1, -1, -1, -1]
+    ) Take 28,
+  ]
+}`
+}/>
+
+### Slonimsky
+
+[Next Tutorial](/posts/welcome)
