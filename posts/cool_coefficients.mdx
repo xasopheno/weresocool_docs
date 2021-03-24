@@ -3,21 +3,25 @@ title: Cool Thing
 description: Neat stuff
 ---
 
-## `Operation: Cool` 
-Cool is Cool
+### Multiples
 
-<WereSoCool
-  readOnly
-  hideGutter
-  language={`Seq [operations]`}
-/>
+-1, -1, -1, -1, -1, -1, -1. 
+
+That is a strange thing to write. WereSoCool
+has a shorthand for multiple coefficients in a row in 
+a generator. You can use `*` to say how many of a coefficient
+should happen in a row,
 
 <WereSoCool language={
-`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+`{ f: 261.6, l: 1/10, g: 1, p: 0 }\n
 main = {
-  Seq [
-    Fm 1, 
-  ]
+  *(
+    -- essentially, go up 4 half steps 3 times
+    -- then go down 5 half steps 3 times
+    -- keep doing that until you get to 40
+    f: 0|12 [4*3, -5*3]
+  ) Take 40
+  | Repeat 3
 }`
 }/>
 
