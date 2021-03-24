@@ -41,30 +41,35 @@ a really nice place to explore the relationship
 between melody, tempo, and time feel. 
 
 <WereSoCool language={
-`{ f: 261.6, l: 1/6, g: 1, p: 0 }\n
+`{ f: 261.6, l: 1/5, g: 1, p: 0 }\n
 -- Three different time feels from generators. 
 main = {
   Overlay [Fm 1/2, Fm 1, Fm 2]
   | Seq [
+    -- Swinging, but relatively straight
     *(
         f: 0|12 [7, -3, -4, -2, 1],
         l: 13|13 [-3, 3],
+        -- These gain generators accent the upbeats
         g: 10|10 [-3, 3]
     ) Take 31,
     Fm 0,
+    -- Pretty swinging
     *(
         f: 0|12 [7, -3, -4, -2, 1],
-        l: 15|13 [-5, 5],
+        l: 15|13 [-7, 7],
         g: 10|10 [-3, 3]
     ) Take 31,
     Fm 0,
+    -- Probably too swung.
     *(
         f: 0|12 [7, -3, -4, -2, 1],
-        l: 17|13 [-7, 7],
+        l: 17|13 [-11, 11],
         g: 10|10 [-3, 3]
     ) Take 31
   ]
-}`
+}
+`
 }/>
 
 # Dynamics
