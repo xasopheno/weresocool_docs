@@ -1,5 +1,4 @@
 import React from "react";
-import { bool } from "prop-types";
 import { StyledMenu } from "./Menu.styled";
 
 const Menu = ({ open, ...props }) => {
@@ -7,7 +6,7 @@ const Menu = ({ open, ...props }) => {
   const tabIndex = isHidden ? 0 : -1;
 
   return (
-    <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
+    <StyledMenu open={open} {...props}>
       <a href="/play/arcs" tabIndex={tabIndex}>
         What?
       </a>
@@ -19,10 +18,6 @@ const Menu = ({ open, ...props }) => {
       </a>
     </StyledMenu>
   );
-};
-
-Menu.propTypes = {
-  open: bool.isRequired,
 };
 
 export default Menu;

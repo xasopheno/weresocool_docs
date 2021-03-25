@@ -2,9 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import hydrate from "next-mdx-remote/hydrate";
 import renderToString from "next-mdx-remote/render-to-string";
-import dynamic from "next/dynamic";
 import Head from "next/head";
-import Link from "next/link";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
 import Layout from "../../components/Layout";
@@ -12,6 +10,8 @@ import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 import { WereSoCool } from "../../components/WereSoCool";
 import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart";
 import { useWasm, WASM_READY_STATE } from "../../utils/useWasm";
+import { MdxRemote } from "next-mdx-remote/types";
+import { GetStaticPropsResult, GetStaticPropsContext } from "next";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -27,18 +27,17 @@ const components = {
   Head,
 };
 
-export default function PostPage({ source, frontMatter }) {
+type FrontMatter = {
+  [key: string]: any;
+};
+
+type PostProps = { source: MdxRemote.Source; frontMatter: FrontMatter };
+
+export default function PostPage({ source, frontMatter }: PostProps) {
   const content = hydrate(source, { components });
   const [WasmProvider, wasmObject] = useWasm();
   return (
     <Layout>
-      <header>
-        <nav>
-          <Link href="/">
-            <a>👈 Playground</a>
-          </Link>
-        </nav>
-      </header>
       <div className="post-header">
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && (
@@ -65,8 +64,17 @@ export default function PostPage({ source, frontMatter }) {
   );
 }
 
-export const getStaticProps = async ({ params }) => {
-  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
+interface StaticPropsType {
+  source: MdxRemote.Source;
+  frontMatter: FrontMatter;
+  slug: string | string[];
+}
+
+export async function getStaticProps(
+  context: GetStaticPropsContext
+): Promise<GetStaticPropsResult<StaticPropsType>> {
+  const slug = context.params!.slug;
+  const postFilePath = path.join(POSTS_PATH, `${slug}.mdx`);
   const source = fs.readFileSync(postFilePath);
 
   const { content, data } = matter(source);
@@ -85,9 +93,10 @@ export const getStaticProps = async ({ params }) => {
     props: {
       source: mdxSource,
       frontMatter: data,
+      slug: slug!,
     },
   };
-};
+}
 
 export const getStaticPaths = async () => {
   const paths = postFilePaths

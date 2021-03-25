@@ -26,7 +26,7 @@ export const StyledBurger = styled.button`
     transition: all 0.1s linear;
     position: relative;
     transform-origin: 1px;
-    background-color: #edd;
+    background-color: goldenrod;
 
     :first-child {
       transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
