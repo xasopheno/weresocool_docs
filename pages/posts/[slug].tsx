@@ -31,11 +31,25 @@ type FrontMatter = {
   [key: string]: any;
 };
 
+const capitalize = (s: string): string => {
+  return s
+    .split("_")
+    .map((word, i) => {
+      if (i > 0 && ["and", "or", "of"].includes(word)) {
+        return word;
+      } else {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      }
+    })
+    .join(" ");
+};
+
 type PostProps = { source: MdxRemote.Source; frontMatter: FrontMatter };
 
 export default function PostPage({ source, frontMatter }: PostProps) {
   const content = hydrate(source, { components });
   const [WasmProvider, wasmObject] = useWasm();
+
   return (
     <Layout>
       <div className="post-header">
@@ -45,7 +59,19 @@ export default function PostPage({ source, frontMatter }: PostProps) {
         )}
       </div>
       <WasmProvider value={wasmObject}>
-        {wasmObject.readyState === WASM_READY_STATE.READY && content}
+        {wasmObject.readyState === WASM_READY_STATE.READY && (
+          <>
+            {content}
+            {frontMatter.next && (
+              <CustomLink
+                href={`/posts/${frontMatter.next}`}
+                as={`/posts/${frontMatter.next}`}
+              >
+                {`Next Tutorial ~> ${capitalize(frontMatter.next)}`}
+              </CustomLink>
+            )}
+          </>
+        )}
       </WasmProvider>
 
       <style jsx>{`
