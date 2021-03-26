@@ -12,12 +12,14 @@ import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart";
 import { useWasm, WASM_READY_STATE } from "../../utils/useWasm";
 import { MdxRemote } from "next-mdx-remote/types";
 import { GetStaticPropsResult, GetStaticPropsContext } from "next";
-import { capitalize } from "../../utils/misc";
+import { capitalize, sleep } from "../../utils/misc";
+import { useRouter } from "next/router";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
 // to handle import statements. Instead, you must include components in scope
 // here.
+
 const components = {
   a: CustomLink,
   // It also works with dynamically-imported components, which is especially
@@ -38,6 +40,7 @@ const stop_lang = `{ f: 220, l: 1, g: 1, p: 0 }\nmain = {Fm 0}`;
 export default function PostPage({ source, frontMatter }: PostProps) {
   const content = hydrate(source, { components });
   const [WasmProvider, wasmObject] = useWasm();
+  const router = useRouter();
 
   return (
     <Layout>
@@ -52,13 +55,16 @@ export default function PostPage({ source, frontMatter }: PostProps) {
           <div>
             {content}
             {frontMatter.next && (
-              <CustomLink
-                onClick={() => wasmObject.manager!.push(stop_lang)}
-                href={`/posts/${frontMatter.next}`}
-                as={`/posts/${frontMatter.next}`}
+              <div
+                onClick={async () => {
+                  wasmObject.manager!.push(stop_lang);
+                  await sleep(200);
+                  router.push(`/posts/${frontMatter.next}`);
+                }}
+                // as={`/posts/${frontMatter.next}`}
               >
                 {`Next Tutorial ~ ${capitalize(frontMatter.next)}`}
-              </CustomLink>
+              </div>
             )}
           </div>
         )}

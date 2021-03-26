@@ -15,3 +15,7 @@ export const stop_lang = `{ f: 220, l: 1, g: 1, p: 0 }\nmain = {Fm 0}`;
 
 export const isMobile = () =>
   window.matchMedia("only screen and (max-width: 760px)").matches;
+
+export function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
