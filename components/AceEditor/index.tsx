@@ -16,7 +16,7 @@ import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/keybinding-vim";
 import "ace-builds/src-noconflict/keybinding-emacs";
 import "ace-builds/src-noconflict/ext-language_tools";
-import { stop_lang } from "../../utils/misc";
+import { stop_lang, isMobile } from "../../utils/misc";
 
 const customMode = new WSCMode();
 
@@ -37,9 +37,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
   const [markers, setMarkers] = useState<IMarker[]>([]);
   const [error, setError] = useState<string>("");
 
-  const isMobile = window.matchMedia("only screen and (max-width: 760px)")
-    .matches;
-  const fontSize = isMobile ? 14 : 20;
+  const fontSize = isMobile() ? 14 : 20;
 
   useEffect(() => {
     if (renderSpace) {
