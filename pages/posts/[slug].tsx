@@ -49,7 +49,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
       </div>
       <WasmProvider value={wasmObject}>
         {wasmObject.readyState === WASM_READY_STATE.READY && (
-          <>
+          <div>
             {content}
             {frontMatter.next && (
               <CustomLink
@@ -57,25 +57,12 @@ export default function PostPage({ source, frontMatter }: PostProps) {
                 href={`/posts/${frontMatter.next}`}
                 as={`/posts/${frontMatter.next}`}
               >
-                {`Next Tutorial ~> ${capitalize(frontMatter.next)}`}
+                {`Next Tutorial ~ ${capitalize(frontMatter.next)}`}
               </CustomLink>
             )}
-          </>
+          </div>
         )}
       </WasmProvider>
-
-      <style jsx>{`
-        .post-header h1 {
-          margin-bottom: 0;
-        }
-
-        .post-header {
-          margin-bottom: 2rem;
-        }
-        .description {
-          opacity: 0.6;
-        }
-      `}</style>
     </Layout>
   );
 }
@@ -97,7 +84,6 @@ export async function getStaticProps(
 
   const mdxSource = await renderToString(content, {
     components,
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
       rehypePlugins: [],

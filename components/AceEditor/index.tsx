@@ -70,6 +70,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
     if (el) {
       setRenderSpace(el);
       if (props.readOnly) {
+        // @ts-ignore
         el.editor.renderer.$cursorLayer.element.style.opacity = 0;
       }
     }

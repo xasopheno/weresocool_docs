@@ -1,6 +1,7 @@
 import React from "react";
 import { StyledMenu } from "./Menu.styled";
 import { capitalize } from "../../../utils/misc";
+import { useRouter } from "next/router";
 
 const Menu = ({ open, ...props }) => {
   const isHidden = open ? true : false;
@@ -25,19 +26,22 @@ const Menu = ({ open, ...props }) => {
     "expressive_generators",
     "cool_coefficients",
   ];
+  const router = useRouter();
+
+  const post = router.asPath.split("/").slice(-1)[0];
 
   return (
     <div>
       <StyledMenu open={open} {...props}>
         <h1>Documentation</h1>
         <a href="/posts/documentation" tabIndex={tabIndex}>
-          WereSoCool Docs
+          {`${post === "documentation" ? ">" : ""} WereSoCool Docs`}
         </a>
         <h1>Tutorials</h1>
         {tutorials.map((tutorial, idx) => {
           return (
             <a key={idx} href={`/posts/${tutorial}`} tabIndex={tabIndex}>
-              {capitalize(tutorial)}
+              {`${post === tutorial ? ">" : ""} ${capitalize(tutorial)}`}
             </a>
           );
         })}

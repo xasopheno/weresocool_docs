@@ -2,8 +2,9 @@
 import { Burger, Menu } from "../components/menu";
 import FocusLock from "react-focus-lock";
 import { useState } from "react";
+import { AppProps } from "next/app";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   const [open, setOpen] = useState(false);
   return (
     <>
