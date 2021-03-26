@@ -22,26 +22,25 @@ export const StyledMenu = styled.nav`
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
   }
+`;
+export const MenuItem = styled.div`
+  font-size: 1.5rem;
+  //  text-transform: uppercase;
+  padding: 0.5rem 0;
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+  //color: ${({ theme }) => theme.primaryDark};
+  color: #edd;
+  text-decoration: none;
+  transition: color 0.3s linear;
 
-  a {
+  @media (max-width: ${({ theme }) => theme.mobile}) {
     font-size: 1.5rem;
-    //  text-transform: uppercase;
-    padding: 0.5rem 0;
-    font-weight: bold;
-    letter-spacing: 0.2rem;
-    //color: ${({ theme }) => theme.primaryDark};
-    color: #edd;
-    text-decoration: none;
-    transition: color 0.3s linear;
+    text-align: center;
+  }
 
-    @media (max-width: ${({ theme }) => theme.mobile}) {
-      font-size: 1.5rem;
-      text-align: center;
-    }
-
-    &:hover {
-      //color: ${({ theme }) => theme.primaryHover};
-      color: #beb;
-    }
+  &:hover {
+    //color: ${({ theme }) => theme.primaryHover};
+    color: #beb;
   }
 `;

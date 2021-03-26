@@ -14,6 +14,12 @@ import { MdxRemote } from "next-mdx-remote/types";
 import { GetStaticPropsResult, GetStaticPropsContext } from "next";
 import { capitalize, sleep } from "../../utils/misc";
 import { useRouter } from "next/router";
+import styled from "styled-components";
+
+const GoldLink = styled.div`
+  color: goldenrod;
+  font-size: 1.25em;
+`;
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -55,16 +61,15 @@ export default function PostPage({ source, frontMatter }: PostProps) {
           <div>
             {content}
             {frontMatter.next && (
-              <div
+              <GoldLink
                 onClick={async () => {
                   wasmObject.manager!.push(stop_lang);
                   await sleep(200);
                   router.push(`/posts/${frontMatter.next}`);
                 }}
-                // as={`/posts/${frontMatter.next}`}
               >
-                {`Next Tutorial ~ ${capitalize(frontMatter.next)}`}
-              </div>
+                {`Next Tutorial ~> ${capitalize(frontMatter.next)}`}
+              </GoldLink>
             )}
           </div>
         )}

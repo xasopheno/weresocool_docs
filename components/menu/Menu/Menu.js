@@ -1,6 +1,6 @@
 import React from "react";
-import { StyledMenu } from "./Menu.styled";
-import { capitalize } from "../../../utils/misc";
+import { MenuItem, StyledMenu } from "./Menu.styled";
+import { capitalize, useStopAndWait } from "../../../utils/misc";
 import { useRouter } from "next/router";
 
 const Menu = ({ open, ...props }) => {
@@ -29,20 +29,36 @@ const Menu = ({ open, ...props }) => {
   const router = useRouter();
 
   const post = router.asPath.split("/").slice(-1)[0];
+  const stopAndWait = useStopAndWait();
 
   return (
     <div>
       <StyledMenu open={open} {...props}>
         <h1>Documentation</h1>
-        <a href="/posts/documentation" tabIndex={tabIndex}>
+        <MenuItem
+          onClick={async () => {
+            await stopAndWait();
+            router.push(`/posts/documentation`);
+            props.setOpen(false);
+          }}
+          tabIndex={tabIndex}
+        >
           {`${post === "documentation" ? ">" : ""} WereSoCool Docs`}
-        </a>
+        </MenuItem>
         <h1>Tutorials</h1>
         {tutorials.map((tutorial, idx) => {
           return (
-            <a key={idx} href={`/posts/${tutorial}`} tabIndex={tabIndex}>
+            <MenuItem
+              key={idx}
+              onClick={async () => {
+                await stopAndWait();
+                router.push(`/posts/${tutorial}`);
+                props.setOpen(false);
+              }}
+              tabIndex={tabIndex}
+            >
               {`${post === tutorial ? ">" : ""} ${capitalize(tutorial)}`}
-            </a>
+            </MenuItem>
           );
         })}
       </StyledMenu>

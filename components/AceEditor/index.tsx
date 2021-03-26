@@ -16,7 +16,7 @@ import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/keybinding-vim";
 import "ace-builds/src-noconflict/keybinding-emacs";
 import "ace-builds/src-noconflict/ext-language_tools";
-import { stop_lang, isMobile } from "../../utils/misc";
+import { stopLang, isMobile } from "../../utils/misc";
 
 const customMode = new WSCMode();
 
@@ -116,7 +116,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
       {!props.readOnly && (
         <div>
           <Button onClick={() => setRender(true)}>Play</Button>
-          <Button onClick={() => props.onRender(stop_lang)}>Stop</Button>
+          <Button onClick={() => props.onRender(stopLang)}>Stop</Button>
         </div>
       )}
       <AceEditor
@@ -159,7 +159,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
             name: "stop",
             bindKey: { win: "Ctrl-Enter", mac: "Command-Enter" },
             exec: async () => {
-              props.onRender(stop_lang);
+              props.onRender(stopLang);
             },
           },
         ]}
