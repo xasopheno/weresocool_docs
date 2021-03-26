@@ -1,6 +1,5 @@
 // import App from "next/app";
 import { Burger, Menu } from "../components/menu";
-import FocusLock from "react-focus-lock";
 import { useState } from "react";
 import { AppProps } from "next/app";
 
@@ -8,10 +7,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <FocusLock disabled={!open}>
-        <Burger open={open} setOpen={setOpen} />
-        <Menu open={open} setOpen={setOpen} />
-      </FocusLock>
+      <Burger open={open} setOpen={setOpen} />
+      <Menu open={open} setOpen={setOpen} />
       <Component {...pageProps} />
     </>
   );
