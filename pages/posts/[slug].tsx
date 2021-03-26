@@ -12,6 +12,7 @@ import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart";
 import { useWasm, WASM_READY_STATE } from "../../utils/useWasm";
 import { MdxRemote } from "next-mdx-remote/types";
 import { GetStaticPropsResult, GetStaticPropsContext } from "next";
+import { capitalize } from "../../utils/misc";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -31,21 +32,9 @@ type FrontMatter = {
   [key: string]: any;
 };
 
-const capitalize = (s: string): string => {
-  return s
-    .split("_")
-    .map((word, i) => {
-      if (i > 0 && ["and", "or", "of"].includes(word)) {
-        return word;
-      } else {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-      }
-    })
-    .join(" ");
-};
-
 type PostProps = { source: MdxRemote.Source; frontMatter: FrontMatter };
 
+const stop_lang = `{ f: 220, l: 1, g: 1, p: 0 }\nmain = {Fm 0}`;
 export default function PostPage({ source, frontMatter }: PostProps) {
   const content = hydrate(source, { components });
   const [WasmProvider, wasmObject] = useWasm();
@@ -64,6 +53,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
             {content}
             {frontMatter.next && (
               <CustomLink
+                onClick={() => wasmObject.manager!.push(stop_lang)}
                 href={`/posts/${frontMatter.next}`}
                 as={`/posts/${frontMatter.next}`}
               >

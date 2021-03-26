@@ -8,7 +8,9 @@ export const StyledMenu = styled.nav`
 
   background-color: #202020;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-  height: 100vh;
+  border-width: 1em;
+  border-color: goldenrod;
+  border: solid;
   text-align: left;
   padding: 2rem;
   position: absolute;
@@ -18,17 +20,17 @@ export const StyledMenu = styled.nav`
   z-index: 5;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
-      width: 100%;
-    }
+    width: 100%;
+  }
 
   a {
-    font-size: 2rem;
-    text-transform: uppercase;
-    padding: 2rem 0;
+    font-size: 1.5rem;
+    //  text-transform: uppercase;
+    padding: 0.5rem 0;
     font-weight: bold;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.2rem;
     //color: ${({ theme }) => theme.primaryDark};
-      color: #edd;
+    color: #edd;
     text-decoration: none;
     transition: color 0.3s linear;
 
@@ -39,7 +41,7 @@ export const StyledMenu = styled.nav`
 
     &:hover {
       //color: ${({ theme }) => theme.primaryHover};
-    color: #beb;
+      color: #beb;
     }
   }
 `;

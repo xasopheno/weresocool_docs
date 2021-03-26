@@ -16,6 +16,7 @@ import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/keybinding-vim";
 import "ace-builds/src-noconflict/keybinding-emacs";
 import "ace-builds/src-noconflict/ext-language_tools";
+import { stop_lang } from "../../utils/misc";
 
 const customMode = new WSCMode();
 
@@ -35,6 +36,10 @@ export const Editor = (props: EditorProps): React.ReactElement => {
   const [language, onUpdateLanguage] = useState<string>(props.language);
   const [markers, setMarkers] = useState<IMarker[]>([]);
   const [error, setError] = useState<string>("");
+
+  const isMobile = window.matchMedia("only screen and (max-width: 760px)")
+    .matches;
+  const fontSize = isMobile ? 14 : 20;
 
   useEffect(() => {
     if (renderSpace) {
@@ -71,7 +76,6 @@ export const Editor = (props: EditorProps): React.ReactElement => {
       }
     }
   };
-  const stop_lang = `{ f: 220, l: 1, g: 1, p: 0 }\nmain = {Fm 0}`;
 
   const handleError = (response: ResponseType, language: string) => {
     const responseType = Object.keys(response)[0];
@@ -125,7 +129,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
         readOnly={props.readOnly ? true : false}
         keyboardHandler={props.keyboard ? props.keyboard : "vim"}
         showGutter={props.hideGutter ? false : true}
-        fontSize={props.fontSize ? props.fontSize : 20}
+        fontSize={props.fontSize ? props.fontSize : fontSize}
         markers={markers}
         value={language}
         onChange={(l) => onUpdateLanguage(l)}
