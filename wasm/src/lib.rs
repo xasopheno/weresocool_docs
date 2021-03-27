@@ -13,7 +13,7 @@ use weresocool::{
     manager::RenderManager,
 };
 
-const BUFFER_SIZE: usize = 1024 * 4;
+const BUFFER_SIZE: usize = 1024 * 8;
 const SAMPLE_RATE: usize = 44100;
 
 #[allow(dead_code)]
