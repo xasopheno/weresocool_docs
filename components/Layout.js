@@ -103,14 +103,18 @@ export default function Layout({ children }) {
       <Grid
         style={{
           //  maxWidth: "90%",
-          marginLeft: "10%",
+          marginLeft: "8%",
           //  padding: "1.5rem",
         }}
         columns={[2, "3fr 1fr"]}
       >
-        <Box className={"wrapper"}>{children}</Box>
+        <Box style={{ overflow: "auto", height: "100%" }}>{children}</Box>
         <Box>
-          <Menu open={true} setOpen={() => {}} />
+          <Menu
+            style={{ position: "fixed", maxHeight: "100%", overflow: "scroll" }}
+            open={true}
+            setOpen={() => {}}
+          />
         </Box>
       </Grid>
     </ThemeProvider>
