@@ -9,10 +9,9 @@ import Layout from "../../components/Layout";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 import { WereSoCool } from "../../components/WereSoCool";
 import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart";
-import { useWasm, WASM_READY_STATE } from "../../utils/useWasm";
 import { MdxRemote } from "next-mdx-remote/types";
 import { GetStaticPropsResult, GetStaticPropsContext } from "next";
-import { capitalize, sleep, useStopAndWait } from "../../utils/misc";
+import { capitalize, useStopAndWait } from "../../utils/misc";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
@@ -42,10 +41,8 @@ type FrontMatter = {
 
 type PostProps = { source: MdxRemote.Source; frontMatter: FrontMatter };
 
-const stop_lang = `{ f: 220, l: 1, g: 1, p: 0 }\nmain = {Fm 0}`;
 export default function PostPage({ source, frontMatter }: PostProps) {
   const content = hydrate(source, { components });
-  const [WasmProvider, wasmObject] = useWasm();
   const router = useRouter();
   const stopAndWait = useStopAndWait();
 
