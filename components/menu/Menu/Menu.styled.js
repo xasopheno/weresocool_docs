@@ -13,9 +13,9 @@ export const StyledMenu = styled.nav`
   border: solid;
   text-align: left;
   padding: 2rem;
-  position: absolute;
-  top: 0;
-  left: 0;
+  //  position: absolute;
+  //  top: 0;
+  //  left: 0;
   //  transition: transform 0.1s ease-in-out;
   z-index: 5;
 

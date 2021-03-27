@@ -3,17 +3,29 @@ import { Burger, Menu } from "../components/menu";
 import { useState } from "react";
 import { AppProps } from "next/app";
 import { useWasm } from "../utils/useWasm";
+import Image from "next/image";
+import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [open, setOpen] = useState(false);
   const [WasmProvider, wasmObject] = useWasm();
 
   return (
-    <WasmProvider value={wasmObject}>
-      <Burger open={open} setOpen={setOpen} />
-      <Menu open={open} setOpen={setOpen} />
-      <Component {...pageProps} />
-    </WasmProvider>
+    <Layout>
+      <div>
+        <WasmProvider value={wasmObject}>
+          <Image
+            src="/magic.png"
+            alt="WereSoCool.logo"
+            width="64"
+            height="64"
+          />
+          {/* <Burger open={open} setOpen={setOpen} /> */}
+          {/* <Menu open={open} setOpen={setOpen} /> */}
+          <Component {...pageProps} />
+        </WasmProvider>
+      </div>
+    </Layout>
   );
 }
 

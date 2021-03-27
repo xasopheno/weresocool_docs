@@ -5,7 +5,6 @@ import renderToString from "next-mdx-remote/render-to-string";
 import Head from "next/head";
 import path from "path";
 import CustomLink from "../../components/CustomLink";
-import Layout from "../../components/Layout";
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils";
 import { WereSoCool } from "../../components/WereSoCool";
 import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart";
@@ -47,7 +46,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
   const stopAndWait = useStopAndWait();
 
   return (
-    <Layout>
+    <div>
       <div className="post-header">
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && (
@@ -68,7 +67,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
           </GoldLink>
         )}
       </div>
-    </Layout>
+    </div>
   );
 }
 

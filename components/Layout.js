@@ -1,9 +1,10 @@
-import { ThemeProvider } from "theme-ui";
+import { Box, Grid, ThemeProvider } from "theme-ui";
 // example theme with Typography.js
 import { toTheme } from "@theme-ui/typography";
 import twinPeaksTheme from "typography-theme-twin-peaks";
 
 import { merge } from "lodash";
+import { Menu } from "./menu";
 const typography = toTheme(twinPeaksTheme);
 
 const theme = {
@@ -26,8 +27,8 @@ const theme = {
   //  heading: 1.125,
   //  },
   colors: {
-    text: "#000",
-    background: "#fff",
+    text: "#EFFFFA",
+    background: "#262523",
     primary: "#07c",
     secondary: "#30c",
     muted: "#f6f6f6",
@@ -99,16 +100,19 @@ const theme = {
 export default function Layout({ children }) {
   return (
     <ThemeProvider theme={merge(typography, theme)}>
-      <div className={"wrapper"}>{children}</div>
-      <style jsx>
-        {`
-          .wrapper {
-            max-width: 80%;
-            margin: 0 auto;
-            padding: 1.5rem;
-          }
-        `}
-      </style>
+      <Grid
+        style={{
+          //  maxWidth: "90%",
+          marginLeft: "10%",
+          //  padding: "1.5rem",
+        }}
+        columns={[2, "3fr 1fr"]}
+      >
+        <Box className={"wrapper"}>{children}</Box>
+        <Box>
+          <Menu open={true} setOpen={() => {}} />
+        </Box>
+      </Grid>
     </ThemeProvider>
   );
 }
