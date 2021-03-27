@@ -1,4 +1,4 @@
-import { useWasm } from "./useWasm";
+import { useLoadedWasm } from "./useWasm";
 
 export const capitalize = (s: string): string => {
   return s
@@ -22,11 +22,13 @@ export function sleep(ms: number) {
 
 export const stopLang = `{ f: 220, l: 1, g: 1, p: 0 }\nmain = {Fm 0}`;
 
-export const useStopAndWait = () => {
-  const [_, WasmObject] = useWasm();
+export function useStopAndWait() {
+  const { manager, readyState } = useLoadedWasm();
   const stopAndWait = async () => {
-    WasmObject.manager!.push(stopLang);
-    await sleep(150);
+    if (manager && readyState === 1) {
+      manager.push(stopLang);
+      await sleep(150);
+    }
   };
   return stopAndWait;
-};
+}

@@ -12,7 +12,7 @@ import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart";
 import { useWasm, WASM_READY_STATE } from "../../utils/useWasm";
 import { MdxRemote } from "next-mdx-remote/types";
 import { GetStaticPropsResult, GetStaticPropsContext } from "next";
-import { capitalize, sleep } from "../../utils/misc";
+import { capitalize, sleep, useStopAndWait } from "../../utils/misc";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
@@ -47,6 +47,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
   const content = hydrate(source, { components });
   const [WasmProvider, wasmObject] = useWasm();
   const router = useRouter();
+  const stopAndWait = useStopAndWait();
 
   return (
     <Layout>
@@ -56,24 +57,20 @@ export default function PostPage({ source, frontMatter }: PostProps) {
           <p className="description">{frontMatter.description}</p>
         )}
       </div>
-      <WasmProvider value={wasmObject}>
-        {wasmObject.readyState === WASM_READY_STATE.READY && (
-          <div>
-            {content}
-            {frontMatter.next && (
-              <GoldLink
-                onClick={async () => {
-                  wasmObject.manager!.push(stop_lang);
-                  await sleep(200);
-                  router.push(`/posts/${frontMatter.next}`);
-                }}
-              >
-                {`Next Tutorial ~> ${capitalize(frontMatter.next)}`}
-              </GoldLink>
-            )}
-          </div>
+      <div>
+        {content}
+        {frontMatter.next && (
+          <GoldLink
+            onClick={async () => {
+              // wasmObject.manager!.push(stop_lang);
+              await stopAndWait();
+              router.push(`/posts/${frontMatter.next}`);
+            }}
+          >
+            {`Next Tutorial ~> ${capitalize(frontMatter.next)}`}
+          </GoldLink>
         )}
-      </WasmProvider>
+      </div>
     </Layout>
   );
 }

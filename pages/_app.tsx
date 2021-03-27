@@ -2,15 +2,18 @@
 import { Burger, Menu } from "../components/menu";
 import { useState } from "react";
 import { AppProps } from "next/app";
+import { useWasm } from "../utils/useWasm";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [open, setOpen] = useState(false);
+  const [WasmProvider, wasmObject] = useWasm();
+
   return (
-    <>
+    <WasmProvider value={wasmObject}>
       <Burger open={open} setOpen={setOpen} />
       <Menu open={open} setOpen={setOpen} />
       <Component {...pageProps} />
-    </>
+    </WasmProvider>
   );
 }
 
