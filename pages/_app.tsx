@@ -8,19 +8,16 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [WasmProvider, wasmObject] = useWasm();
 
   return (
-    <Layout>
-      <div>
+    <div>
+      <div style={{ position: "absolute", top: 0, left: 0 }}>
+        <Image src="/magic.png" alt="WereSoCool.logo" width="64" height="64" />
+      </div>
+      <Layout>
         <WasmProvider value={wasmObject}>
-          <Image
-            src="/magic.png"
-            alt="WereSoCool.logo"
-            width="64"
-            height="64"
-          />
           <Component {...pageProps} />
         </WasmProvider>
-      </div>
-    </Layout>
+      </Layout>
+    </div>
   );
 }
 
