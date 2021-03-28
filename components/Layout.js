@@ -1,5 +1,6 @@
 import { Box, Grid, ThemeProvider } from "theme-ui";
-// example theme with Typography.js
+import { useState, useEffect } from "react";
+import { useWindowSize } from "../utils/useWindowSize";
 import { toTheme } from "@theme-ui/typography";
 import twinPeaksTheme from "typography-theme-twin-peaks";
 
@@ -98,25 +99,55 @@ const theme = {
 };
 
 export default function Layout({ children }) {
+  const windowSize = useWindowSize();
+
   return (
     <ThemeProvider theme={merge(typography, theme)}>
-      <Grid
-        style={{
-          //  maxWidth: "90%",
-          marginLeft: "8%",
-          //  padding: "1.5rem",
-        }}
-        columns={[2, "3fr 1fr"]}
-      >
-        <Box style={{ overflow: "auto", height: "100%" }}>{children}</Box>
-        <Box>
-          <Menu
-            style={{ position: "fixed", maxHeight: "100%", overflow: "scroll" }}
-            open={true}
-            setOpen={() => {}}
-          />
-        </Box>
-      </Grid>
+      {windowSize.width < 1000 ? (
+        <Grid
+          style={{
+            marginLeft: "4%",
+            marginRight: "4%",
+          }}
+          columns={[1]}
+        >
+          <Box style={{ overflow: "auto", height: "100%" }}>{children}</Box>
+          <Box>
+            <Menu
+              style={{
+                position: "fixed",
+                maxHeight: "100%",
+                height: "100%",
+                overflow: "scroll",
+              }}
+              open={true}
+              setOpen={() => {}}
+            />
+          </Box>
+        </Grid>
+      ) : (
+        <Grid
+          style={{
+            //  maxWidth: "90%",
+            marginLeft: "8%",
+            //  padding: "1.5rem",
+          }}
+          columns={[2, "3fr 1fr"]}
+        >
+          <Box style={{ overflow: "auto", height: "100%" }}>{children}</Box>
+          <Box>
+            <Menu
+              style={{
+                position: "fixed",
+                maxHeight: "100%",
+                overflow: "scroll",
+              }}
+              open={true}
+              setOpen={() => {}}
+            />
+          </Box>
+        </Grid>
+      )}
     </ThemeProvider>
   );
 }

@@ -1,23 +1,23 @@
 import styled from "styled-components";
 
-export const StyledMenu = styled.nav`
-  //  display: flex;
+export const MobileStyledMenu = styled.nav<{ open: boolean }>`
+  // display: flex;
   flex-direction: column;
   justify-content: center;
   //background: ${({ theme }) => theme.primaryLight};
 
   background-color: #202020;
-  //  transform: ${({ open }) =>
-    open ? "translateX(0)" : "translateX(-100%)"};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   border-width: 1em;
   border-color: goldenrod;
   border: solid;
   text-align: left;
   padding: 2rem;
-  //  position: absolute;
-  //  top: 0;
-  //  left: 0;
-  //  transition: transform 0.1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  transition: transform 0.1s ease-in-out;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;

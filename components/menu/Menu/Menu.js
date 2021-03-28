@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Burger } from "../../menu";
 import { MenuItem, StyledMenu } from "./Menu.styled";
 import { capitalize, useStopAndWait } from "../../../utils/misc";
 import { useRouter } from "next/router";
+import { MobileStyledMenu } from "./MobileMenu.styled";
+import { useWindowSize } from "../../../utils/useWindowSize";
 
-const Menu = ({ open, ...props }) => {
+const Menu = ({ props }) => {
+  const [open, setOpen] = useState(false);
   const isHidden = open ? true : false;
   const tabIndex = isHidden ? 0 : -1;
 
@@ -27,19 +31,22 @@ const Menu = ({ open, ...props }) => {
     "cool_coefficients",
   ];
   const router = useRouter();
-
   const post = router.asPath.split("/").slice(-1)[0];
   const stopAndWait = useStopAndWait();
 
+  const windowSize = useWindowSize();
+  const SizedMenu = windowSize.width < 1000 ? MobileStyledMenu : StyledMenu;
+
   return (
     <div>
-      <StyledMenu open={open} {...props}>
+      {windowSize.width < 1000 && <Burger open={open} setOpen={setOpen} />}
+      <SizedMenu open={open} {...props}>
         <h1>Documentation</h1>
         <MenuItem
           onClick={async () => {
             await stopAndWait();
             router.push(`/posts/documentation`);
-            props.setOpen(false);
+            setOpen(false);
           }}
           tabIndex={tabIndex}
         >
@@ -53,7 +60,7 @@ const Menu = ({ open, ...props }) => {
               onClick={async () => {
                 await stopAndWait();
                 router.push(`/posts/${tutorial}`);
-                props.setOpen(false);
+                setOpen(false);
               }}
               tabIndex={tabIndex}
             >
@@ -61,7 +68,7 @@ const Menu = ({ open, ...props }) => {
             </MenuItem>
           );
         })}
-      </StyledMenu>
+      </SizedMenu>
     </div>
   );
 };
