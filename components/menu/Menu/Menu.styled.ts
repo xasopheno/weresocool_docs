@@ -6,9 +6,7 @@ export const StyledMenu = styled.nav`
   //background: ${({ theme }) => theme.primaryLight};
 
   background-color: #212121;
-  // border-width: 1em;
-  // border-color: goldenrod;
-  // border: solid;
+  border-left: 1px solid #383838;
   text-align: left;
   padding: 2rem;
   height: 100%;
