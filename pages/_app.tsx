@@ -18,18 +18,18 @@ const StyledNav = styled.div`
   width: 100%;
   z-index: 10;
   height: 60px;
+  text-align: center;
   padding-left: 5%;
 `
 
-const NavItem = styled.h3`
+const NavItem = styled.p`
+  line-height: 60px;
+  align-self: center;
+  font-weight: 400;
   font-size: 1.4em;
   cursor: pointer;
-  height: 60px;
   margin-right: 10px;
   margin-left: 10px;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0px;
   :active {
     background-color: #313131;
   }

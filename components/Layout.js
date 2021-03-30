@@ -1,33 +1,28 @@
 import { Box, Grid, ThemeProvider } from "theme-ui"
 import { useState, useEffect } from "react"
 import { useWindowSize } from "../utils/useWindowSize"
-import { toTheme } from "@theme-ui/typography"
-import twinPeaksTheme from "typography-theme-twin-peaks"
-
-import { merge } from "lodash"
 import { Menu } from "./menu"
 import styled from "styled-components"
-const typography = toTheme(twinPeaksTheme)
 
 const theme = {
   breakpoints: ["40em", "52em", "64em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  //  fonts: {
-  //  body:
-  //  'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-  //  heading: "inherit",
-  //  monospace: "Menlo, monospace",
-  //  },
-  //  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
-  //  fontWeights: {
-  //  body: 400,
-  //  heading: 700,
-  //  bold: 700,
-  //  },
-  //  lineHeights: {
-  //  body: 1.5,
-  //  heading: 1.125,
-  //  },
+  fonts: {
+    body:
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    heading: "inherit",
+    monospace: "Menlo, monospace",
+  },
+  fontSizes: [12, 14, 17, 20, 24, 32, 48, 64, 96],
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
   colors: {
     text: "#EFFFFA",
     background: "#212121",
@@ -79,6 +74,7 @@ const theme = {
         color: "inherit",
       },
     },
+    p: { variant: "text.p", fontSize: 2 },
     code: {
       fontFamily: "monospace",
       fontSize: "inherit",
@@ -103,7 +99,7 @@ export default function Layout({ children }) {
   const windowSize = useWindowSize()
 
   return (
-    <ThemeProvider theme={merge(typography, theme)}>
+    <ThemeProvider theme={theme}>
       {windowSize.width < 1000 ? (
         <Grid
           style={{
