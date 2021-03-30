@@ -1,20 +1,21 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const StyledMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
-  background-color: #212121;
+  background-color: #262523;
   border-left: 1px solid #272727;
   text-align: left;
   padding: 2rem;
-  height: 100%;
+  height: 95%;
   width: 100%;
   overflow-y: scroll;
   position: fixed;
-`;
+  padding-bottom: 10%;
+`
 
 export const MenuItem = styled.div`
-  font-size: 1.25rem;
+  font-size: 1.35em;
   //  text-transform: uppercase;
   padding: 0.25em 0 0 1em;
   font-weight: bold;
@@ -28,4 +29,4 @@ export const MenuItem = styled.div`
     //color: ${({ theme }) => theme.primaryHover};
     color: #beb;
   }
-`;
+`

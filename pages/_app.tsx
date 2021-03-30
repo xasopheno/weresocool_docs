@@ -1,24 +1,82 @@
 // import App from "next/app";
-import { AppProps } from "next/app";
-import { useWasm } from "../utils/useWasm";
-import Image from "next/image";
-import Layout from "../components/Layout";
+import { AppProps } from "next/app"
+import { useWasm } from "../utils/useWasm"
+import Image from "next/image"
+import Link from "next/link"
+import Layout from "../components/Layout"
+import { useRouter } from "next/router"
+import styled from "styled-components"
+
+const StyledNav = styled.div`
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-around;
+  background-color: #262523;
+  border-bottom: 1px solid #272727;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 60px;
+  padding-left: 5%;
+`
+
+const NavItem = styled.h3`
+  font-size: 1.4em;
+  cursor: pointer;
+  height: 60px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0px;
+  :active {
+    background-color: #313131;
+  }
+`
+
+const NavBar = () => {
+  const router = useRouter()
+  return (
+    <StyledNav>
+      <div
+        style={{ paddingTop: "10px", paddingBottom: "10px" }}
+        onClick={() => router.push("/")}
+      >
+        <Image src="/magic.png" alt="WereSoCool.logo" width="40" height="40" />
+      </div>
+      <Link href="/">
+        <NavItem>WereSoCool</NavItem>
+      </Link>
+      <Link href="/posts/welcome">
+        <NavItem>Tutorial</NavItem>
+      </Link>
+      <Link href="/interviews/brad_goode_1">
+        <NavItem>Interviews</NavItem>
+      </Link>
+      <Link href="/">
+        <NavItem>Concerts</NavItem>
+      </Link>
+      <Link href="/">
+        <NavItem>Danny</NavItem>
+      </Link>
+    </StyledNav>
+  )
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [WasmProvider, wasmObject] = useWasm();
+  const [WasmProvider, wasmObject] = useWasm()
 
   return (
     <div>
-      <div style={{ position: "absolute", top: 0, left: 0 }}>
-        <Image src="/magic.png" alt="WereSoCool.logo" width="64" height="64" />
-      </div>
+      <NavBar />
       <Layout>
         <WasmProvider value={wasmObject}>
           <Component {...pageProps} />
         </WasmProvider>
       </Layout>
     </div>
-  );
+  )
 }
 
 // Only uncomment this method if you have blocking data requirements for
@@ -33,4 +91,4 @@ function MyApp({ Component, pageProps }: AppProps) {
 //   return { ...appProps }
 // }
 
-export default MyApp;
+export default MyApp

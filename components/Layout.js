@@ -1,12 +1,13 @@
-import { Box, Grid, ThemeProvider } from "theme-ui";
-import { useState, useEffect } from "react";
-import { useWindowSize } from "../utils/useWindowSize";
-import { toTheme } from "@theme-ui/typography";
-import twinPeaksTheme from "typography-theme-twin-peaks";
+import { Box, Grid, ThemeProvider } from "theme-ui"
+import { useState, useEffect } from "react"
+import { useWindowSize } from "../utils/useWindowSize"
+import { toTheme } from "@theme-ui/typography"
+import twinPeaksTheme from "typography-theme-twin-peaks"
 
-import { merge } from "lodash";
-import { Menu } from "./menu";
-const typography = toTheme(twinPeaksTheme);
+import { merge } from "lodash"
+import { Menu } from "./menu"
+import styled from "styled-components"
+const typography = toTheme(twinPeaksTheme)
 
 const theme = {
   breakpoints: ["40em", "52em", "64em"],
@@ -29,7 +30,7 @@ const theme = {
   //  },
   colors: {
     text: "#EFFFFA",
-    background: "#262523",
+    background: "#212121",
     primary: "#07c",
     secondary: "#30c",
     muted: "#f6f6f6",
@@ -96,10 +97,10 @@ const theme = {
       borderBottomStyle: "solid",
     },
   },
-};
+}
 
 export default function Layout({ children }) {
-  const windowSize = useWindowSize();
+  const windowSize = useWindowSize()
 
   return (
     <ThemeProvider theme={merge(typography, theme)}>
@@ -134,13 +135,16 @@ export default function Layout({ children }) {
           }}
           columns={[2, "3fr 1fr"]}
         >
-          <Box style={{ overflow: "auto", height: "100%" }}>{children}</Box>
+          <Box style={{ overflow: "auto", height: "95%", marginTop: "5%" }}>
+            {children}
+          </Box>
+
           <Box>
             <Menu
               style={{
-                position: "fixed",
-                maxHeight: "100%",
+                maxHeight: "95%",
                 overflow: "scroll",
+                paddingBottom: "2em",
               }}
               open={true}
               setOpen={() => {}}
@@ -149,5 +153,5 @@ export default function Layout({ children }) {
         </Grid>
       )}
     </ThemeProvider>
-  );
+  )
 }
