@@ -50,7 +50,7 @@ const Menu = ({ props }) => {
           }}
           tabIndex={tabIndex}
         >
-          {`${post === "documentation" ? ">" : ""} WereSoCool Docs`}
+          {`${post === "documentation" ? ">" : " "} WereSoCool Docs`}
         </MenuItem>
         <h1>Tutorials</h1>
         {tutorials.map((tutorial, idx) => {
@@ -64,7 +64,7 @@ const Menu = ({ props }) => {
               }}
               tabIndex={tabIndex}
             >
-              {`${post === tutorial ? ">" : ""} ${capitalize(tutorial)}`}
+              {`${post === tutorial ? ">" : " "} ${capitalize(tutorial)}`}
             </MenuItem>
           )
         })}

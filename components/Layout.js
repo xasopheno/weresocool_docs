@@ -24,7 +24,7 @@ const theme = {
     heading: 1.125,
   },
   colors: {
-    text: "#EFFFFA",
+    text: "rgb(236, 224, 204)",
     background: "#212121",
     primary: "#07c",
     secondary: "#30c",
@@ -125,9 +125,7 @@ export default function Layout({ children }) {
       ) : (
         <Grid
           style={{
-            //  maxWidth: "90%",
             marginLeft: "8%",
-            //  padding: "1.5rem",
           }}
           columns={[2, "3fr 1fr"]}
         >
@@ -138,7 +136,6 @@ export default function Layout({ children }) {
           <Box>
             <Menu
               style={{
-                maxHeight: "95%",
                 overflow: "scroll",
                 paddingBottom: "2em",
               }}

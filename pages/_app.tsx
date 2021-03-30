@@ -23,13 +23,13 @@ const StyledNav = styled.div`
 `
 
 const NavItem = styled.p`
+  padding: 0 20px 0 20px;
   line-height: 60px;
   align-self: center;
-  font-weight: 400;
-  font-size: 1.4em;
+  font-weight: 300;
+  font-size: 1.3em;
   cursor: pointer;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin: 0 10px 0 10px;
   :active {
     background-color: #313131;
   }
@@ -51,11 +51,11 @@ const NavBar = () => {
       <Link href="/posts/welcome">
         <NavItem>Tutorial</NavItem>
       </Link>
+      <Link href="/">
+        <NavItem>Concert Series</NavItem>
+      </Link>
       <Link href="/interviews/brad_goode_1">
         <NavItem>Interviews</NavItem>
-      </Link>
-      <Link href="/">
-        <NavItem>Concerts</NavItem>
       </Link>
       <Link href="/">
         <NavItem>Danny</NavItem>

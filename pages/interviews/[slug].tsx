@@ -43,7 +43,12 @@ export default function InterviewPage({ source, frontMatter }: PostProps) {
   const router = useRouter()
 
   return (
-    <div>
+    <div
+      style={{
+        maxWidth: "50em",
+        margin: "auto",
+      }}
+    >
       <div className="post-header">
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && (
