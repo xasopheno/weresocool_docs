@@ -1,10 +1,4 @@
-import { Box, Grid, ThemeProvider } from "theme-ui"
-import { useState, useEffect } from "react"
-import { useWindowSize } from "../utils/useWindowSize"
-import { Menu } from "./menu"
-import styled from "styled-components"
-
-const theme = {
+export const theme = {
   breakpoints: ["40em", "52em", "64em"],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
@@ -93,58 +87,4 @@ const theme = {
       borderBottomStyle: "solid",
     },
   },
-}
-
-export default function Layout({ children }) {
-  const windowSize = useWindowSize()
-
-  return (
-    <ThemeProvider theme={theme}>
-      {windowSize.width < 1000 ? (
-        <Grid
-          style={{
-            marginLeft: "4%",
-            marginRight: "4%",
-          }}
-          columns={[1]}
-        >
-          <Box style={{ overflow: "auto", height: "100%" }}>{children}</Box>
-          <Box>
-            <Menu
-              style={{
-                position: "fixed",
-                maxHeight: "100%",
-                height: "100%",
-                overflow: "scroll",
-              }}
-              open={true}
-              setOpen={() => {}}
-            />
-          </Box>
-        </Grid>
-      ) : (
-        <Grid
-          style={{
-            marginLeft: "8%",
-          }}
-          columns={[2, "3fr 1fr"]}
-        >
-          <Box style={{ overflow: "auto", height: "95%", marginTop: "5%" }}>
-            {children}
-          </Box>
-
-          <Box>
-            <Menu
-              style={{
-                overflow: "scroll",
-                paddingBottom: "2em",
-              }}
-              open={true}
-              setOpen={() => {}}
-            />
-          </Box>
-        </Grid>
-      )}
-    </ThemeProvider>
-  )
 }

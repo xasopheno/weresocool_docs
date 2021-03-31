@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { Burger } from "../../menu"
 import { MenuItem, StyledMenu } from "./Menu.styled"
 import { capitalize, useStopAndWait } from "../../../utils/misc"
@@ -6,7 +6,7 @@ import { useRouter } from "next/router"
 import { MobileStyledMenu } from "./MobileMenu.styled"
 import { useWindowSize } from "../../../utils/useWindowSize"
 
-const Menu = ({ props }) => {
+const Menu = ({ children, ...props }: React.HTMLAttributes<Element>) => {
   const [open, setOpen] = useState(false)
   const isHidden = open ? true : false
   const tabIndex = isHidden ? 0 : -1
@@ -35,12 +35,12 @@ const Menu = ({ props }) => {
   const stopAndWait = useStopAndWait()
 
   const windowSize = useWindowSize()
-  const SizedMenu = windowSize.width < 1000 ? MobileStyledMenu : StyledMenu
+  const SizedMenu = windowSize.width! < 1000 ? MobileStyledMenu : StyledMenu
 
   return (
     <div>
-      {windowSize.width < 1000 && <Burger open={open} setOpen={setOpen} />}
-      <SizedMenu open={open} {...props}>
+      {windowSize.width! < 1000 && <Burger open={open} setOpen={setOpen} />}
+      <SizedMenu {...props}>
         <h1 style={{ marginTop: "5rem" }}>Documentation</h1>
         <MenuItem
           onClick={async () => {

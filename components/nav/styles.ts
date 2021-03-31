@@ -1,0 +1,49 @@
+import styled from "styled-components"
+
+export const StyledNav = styled.div`
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-around;
+  background-color: #282825;
+  border-bottom: 1px solid #272727;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 60px;
+  text-align: center;
+  padding-left: 5%;
+`
+
+export const NavItem = styled.p`
+  padding: 0 20px 0 20px;
+  line-height: 60px;
+  align-self: center;
+  font-weight: 300;
+  font-size: 1.3em;
+  cursor: pointer;
+  margin: 0 10px 0 10px;
+  :active {
+    background-color: #313131;
+  }
+`
+
+export const LogoText = styled.p`
+  padding: 0 20px 0 20px;
+  line-height: 60px;
+  align-self: center;
+  font-weight: 300;
+  font-size: 1.3em;
+  cursor: pointer;
+  margin: 0 10px 0 0;
+  :active {
+    background-color: #313131;
+  }
+`
+
+export const LogoBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  padding-bottom: 10px;
+`

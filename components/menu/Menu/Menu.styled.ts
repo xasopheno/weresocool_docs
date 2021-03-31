@@ -7,7 +7,7 @@ export const StyledMenu = styled.nav`
   border-left: 1px solid #272727;
   text-align: left;
   padding: 2rem;
-  // height: 95%;
+  height: 100%;
   width: 100%;
   overflow-y: scroll;
   position: fixed;

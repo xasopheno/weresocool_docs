@@ -46,7 +46,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
   return (
     <div
       style={{
-        maxWidth: "50em",
+        maxWidth: "60em",
         margin: "auto",
       }}
     >
@@ -61,7 +61,6 @@ export default function PostPage({ source, frontMatter }: PostProps) {
         {frontMatter.next && (
           <GoldLink
             onClick={async () => {
-              // wasmObject.manager!.push(stop_lang);
               await stopAndWait()
               router.push(`/posts/${frontMatter.next}`)
             }}
