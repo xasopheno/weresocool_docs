@@ -4,7 +4,7 @@ import { useWasm } from "../utils/useWasm"
 import Layout from "../components/layout"
 import { NavBar } from "../components/nav"
 
-function MyApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   const [WasmProvider, wasmObject] = useWasm()
   return (
     <div>
@@ -30,4 +30,4 @@ function MyApp({ Component, pageProps }: AppProps) {
 //   return { ...appProps }
 // }
 
-export default MyApp
+export default App

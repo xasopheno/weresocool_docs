@@ -26,6 +26,7 @@ export const MenuItem = styled.div`
 
   &:hover {
     //color: ${({ theme }) => theme.primaryHover};
-    color: #beb;
+    // color: #beb;
+    color: goldenrod;
   }
 `

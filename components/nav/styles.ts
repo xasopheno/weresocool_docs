@@ -32,13 +32,11 @@ export const LogoText = styled.p`
   padding: 0 20px 0 20px;
   line-height: 60px;
   align-self: center;
-  font-weight: 300;
+  font-weight: 700;
   font-size: 1.3em;
   cursor: pointer;
   margin: 0 10px 0 0;
-  :active {
-    background-color: #313131;
-  }
+  color: goldenrod;
 `
 
 export const LogoBox = styled.div`

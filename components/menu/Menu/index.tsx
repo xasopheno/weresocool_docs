@@ -6,7 +6,12 @@ import { useRouter } from "next/router"
 import { MobileStyledMenu } from "./MobileMenu.styled"
 import { useWindowSize } from "../../../utils/useWindowSize"
 
-const Menu = ({ children, ...props }: React.HTMLAttributes<Element>) => {
+interface MenuProps extends React.HTMLAttributes<Element> {
+  open: boolean
+  setOpen: (open: boolean) => void
+}
+
+const Menu = ({ children, ...props }: MenuProps) => {
   const [open, setOpen] = useState(false)
   const isHidden = open ? true : false
   const tabIndex = isHidden ? 0 : -1

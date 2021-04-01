@@ -7,36 +7,22 @@ import path from "path"
 import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils"
 import { WereSoCool } from "../../components/WereSoCool"
 import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart"
-import { MdxRemote } from "next-mdx-remote/types"
 import { GetStaticPropsResult, GetStaticPropsContext } from "next"
 import { capitalize, useStopAndWait } from "../../utils/misc"
 import { useRouter } from "next/router"
-import styled from "styled-components"
-
-const GoldLink = styled.div`
-  color: goldenrod;
-  font-size: 1.25em;
-`
-
-// Custom components/renderers to pass to MDX.
-// Since the MDX files aren't loaded by webpack, they have no knowledge of how
-// to handle import statements. Instead, you must include components in scope
-// here.
+import React from "react"
+import {
+  GoldLink,
+  PostContainer,
+  PostStaticProps,
+  PostProps,
+} from "../../components/postComponents"
 
 const components = {
-  // It also works with dynamically-imported components, which is especially
-  // useful for conditionally loading components for certain routes.
-  // See the notes in README.md for more details.
   WereSoCool,
   WSCWithRatioChart,
   Head,
 }
-
-type FrontMatter = {
-  [key: string]: any
-}
-
-type PostProps = { source: MdxRemote.Source; frontMatter: FrontMatter }
 
 export default function PostPage({ source, frontMatter }: PostProps) {
   const content = hydrate(source, { components })
@@ -44,13 +30,8 @@ export default function PostPage({ source, frontMatter }: PostProps) {
   const stopAndWait = useStopAndWait()
 
   return (
-    <div
-      style={{
-        maxWidth: "60em",
-        margin: "auto",
-      }}
-    >
-      <div className="post-header">
+    <PostContainer>
+      <div>
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && (
           <p className="description">{frontMatter.description}</p>
@@ -69,19 +50,13 @@ export default function PostPage({ source, frontMatter }: PostProps) {
           </GoldLink>
         )}
       </div>
-    </div>
+    </PostContainer>
   )
-}
-
-interface StaticPropsType {
-  source: MdxRemote.Source
-  frontMatter: FrontMatter
-  slug: string | string[]
 }
 
 export async function getStaticProps(
   context: GetStaticPropsContext
-): Promise<GetStaticPropsResult<StaticPropsType>> {
+): Promise<GetStaticPropsResult<PostStaticProps>> {
   const slug = context.params!.slug
   const postFilePath = path.join(POSTS_PATH, `${slug}.mdx`)
   const source = fs.readFileSync(postFilePath)
@@ -108,9 +83,7 @@ export async function getStaticProps(
 
 export const getStaticPaths = async () => {
   const paths = postFilePaths
-    // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ""))
-    // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }))
 
   return {

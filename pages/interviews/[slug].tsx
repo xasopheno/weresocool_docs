@@ -4,52 +4,32 @@ import hydrate from "next-mdx-remote/hydrate"
 import renderToString from "next-mdx-remote/render-to-string"
 import Head from "next/head"
 import path from "path"
-import CustomLink from "../../components/CustomLink"
 import { interviewFilePaths, INTERVIEWS_PATH } from "../../utils/mdxUtils"
 import { MdxRemote } from "next-mdx-remote/types"
 import { GetStaticPropsResult, GetStaticPropsContext } from "next"
 import { capitalize } from "../../utils/misc"
 import { useRouter } from "next/router"
-import styled from "styled-components"
 import Image from "next/image"
-
-const GoldLink = styled.div`
-  color: goldenrod;
-  font-size: 1.25em;
-`
-
-// Custom components/renderers to pass to MDX.
-// Since the MDX files aren't loaded by webpack, they have no knowledge of how
-// to handle import statements. Instead, you must include components in scope
-// here.
+import React from "react"
+import {
+  GoldLink,
+  PostContainer,
+  PostProps,
+  PostStaticPropsType as PostStaticProps,
+} from "../../components/postComponents"
 
 const components = {
-  a: CustomLink,
-  Image: Image,
-  // It also works with dynamically-imported components, which is especially
-  // useful for conditionally loading components for certain routes.
-  // See the notes in README.md for more details.
+  Image,
   Head,
 }
-
-type FrontMatter = {
-  [key: string]: any
-}
-
-type PostProps = { source: MdxRemote.Source; frontMatter: FrontMatter }
 
 export default function InterviewPage({ source, frontMatter }: PostProps) {
   const content = hydrate(source, { components })
   const router = useRouter()
 
   return (
-    <div
-      style={{
-        maxWidth: "50em",
-        margin: "auto",
-      }}
-    >
-      <div className="post-header">
+    <PostContainer>
+      <div>
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && (
           <p className="description">{frontMatter.description}</p>
@@ -63,26 +43,19 @@ export default function InterviewPage({ source, frontMatter }: PostProps) {
               router.push(`/interviews/${frontMatter.next}`)
             }}
           >
-            {`Next Tutorial ~> ${capitalize(frontMatter.next)}`}
+            {`Next Interview ~> ${capitalize(frontMatter.next)}`}
           </GoldLink>
         )}
       </div>
-    </div>
+    </PostContainer>
   )
-}
-
-interface StaticPropsType {
-  source: MdxRemote.Source
-  frontMatter: FrontMatter
-  slug: string | string[]
 }
 
 export async function getStaticProps(
   context: GetStaticPropsContext
-): Promise<GetStaticPropsResult<StaticPropsType>> {
+): Promise<GetStaticPropsResult<PostStaticProps>> {
   const slug = context.params!.slug
   const interviewFilePath = path.join(INTERVIEWS_PATH, `${slug}.mdx`)
-  console.log(interviewFilePath)
   const source = fs.readFileSync(interviewFilePath)
 
   const { content, data } = matter(source)
@@ -107,9 +80,7 @@ export async function getStaticProps(
 
 export const getStaticPaths = async () => {
   const paths = interviewFilePaths
-    // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ""))
-    // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }))
 
   return {
