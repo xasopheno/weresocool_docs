@@ -30,8 +30,6 @@ export default function Layout({
                 height: "100%",
                 overflow: "scroll",
               }}
-              open={true}
-              setOpen={() => {}}
             />
           </Box>
         </Grid>
@@ -52,8 +50,6 @@ export default function Layout({
                 overflow: "scroll",
                 paddingBottom: "2em",
               }}
-              open={true}
-              setOpen={() => {}}
             />
           </Box>
         </Grid>

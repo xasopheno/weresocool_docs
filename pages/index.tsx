@@ -23,6 +23,7 @@ const HeaderTitle = styled.h1`
   margin: 0px;
   font-size: 45px;
   letter-spacing: 0.01em;
+  font-weight: 800;
 `
 
 const HeaderDescription = styled.p`

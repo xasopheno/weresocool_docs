@@ -1,13 +1,14 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const MobileStyledMenu = styled.nav<{ open: boolean }>`
   // display: flex;
   flex-direction: column;
   justify-content: center;
   //background: ${({ theme }) => theme.primaryLight};
+  width: 90%;
 
   background-color: #202020;
-  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-110%)")};
   border-width: 1em;
   border-color: goldenrod;
   border: solid;
@@ -22,7 +23,7 @@ export const MobileStyledMenu = styled.nav<{ open: boolean }>`
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
   }
-`;
+`
 export const MenuItem = styled.div`
   font-size: 1.5rem;
   //  text-transform: uppercase;
@@ -43,4 +44,4 @@ export const MenuItem = styled.div`
     //color: ${({ theme }) => theme.primaryHover};
     color: #beb;
   }
-`;
+`
