@@ -5,40 +5,7 @@ import { capitalize, useStopAndWait } from "../../../utils/misc"
 import { useRouter } from "next/router"
 import { MobileStyledMenu } from "./MobileMenu.styled"
 import { useWindowSize } from "../../../utils/useWindowSize"
-
-type MenuDatum = {
-  title: string
-  items: (string | { name: string; link: string })[]
-}
-
-const data: MenuDatum[] = [
-  {
-    title: "Documentation",
-    items: [{ name: "WereSoCool Docs", link: "documentation" }],
-  },
-  {
-    title: "Tutorials",
-    items: [
-      "welcome",
-      "overtones",
-      "overlay",
-      "point_operations",
-      "pipe_operations",
-      "pipe_and_sequence",
-      "small_differences",
-      "o_operation",
-      "fit_length",
-      "modulate_by",
-      "functions",
-      "intro_to_lists",
-      "equal_temperament",
-      "indices",
-      "generators",
-      "expressive_generators",
-      "cool_coefficients",
-    ],
-  },
-]
+import { MenuDatum } from "../menus"
 
 const MenuSection = (props: {
   data: MenuDatum
@@ -71,7 +38,11 @@ const MenuSection = (props: {
   )
 }
 
-const Menu = () => {
+interface MenuProps extends React.HTMLAttributes<Element> {
+  data: MenuDatum[]
+}
+
+const Menu = (props: MenuProps) => {
   const [open, setOpen] = useState(false)
   const windowSize = useWindowSize()
   const SizedMenu = windowSize.width! < 1000 ? MobileStyledMenu : StyledMenu
@@ -83,7 +54,7 @@ const Menu = () => {
       {windowSize.width! < 1000 && <Burger open={open} setOpen={setOpen} />}
       <SizedMenu open={open}>
         <div style={{ marginTop: "5rem" }}>
-          {data.map((section, i) => {
+          {props.data.map((section, i) => {
             return (
               <MenuSection
                 key={i}
