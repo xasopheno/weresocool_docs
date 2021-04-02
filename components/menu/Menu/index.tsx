@@ -38,6 +38,20 @@ const MenuSection = (props: {
   )
 }
 
+interface SizedMenuProps extends React.HTMLAttributes<Element> {
+  children: React.ReactChild | React.ReactChildren
+  open: boolean
+}
+
+const SizedMenu = ({ children, open }: SizedMenuProps): React.ReactElement => {
+  const windowSize = useWindowSize()
+  if (windowSize.width! < 1000) {
+    return <MobileStyledMenu open={open}>{children}</MobileStyledMenu>
+  } else {
+    return <StyledMenu>{children}</StyledMenu>
+  }
+}
+
 interface MenuProps extends React.HTMLAttributes<Element> {
   data: MenuDatum[]
 }
@@ -45,7 +59,7 @@ interface MenuProps extends React.HTMLAttributes<Element> {
 const Menu = (props: MenuProps) => {
   const [open, setOpen] = useState(false)
   const windowSize = useWindowSize()
-  const SizedMenu = windowSize.width! < 1000 ? MobileStyledMenu : StyledMenu
+  // const SizedMenu = windowSize.width! < 1000 ? MobileStyledMenu : StyledMenu
   const router = useRouter()
   const stopAndWait = useStopAndWait()
 

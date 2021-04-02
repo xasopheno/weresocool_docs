@@ -5,7 +5,6 @@ import renderToString from "next-mdx-remote/render-to-string"
 import Head from "next/head"
 import path from "path"
 import { interviewFilePaths, INTERVIEWS_PATH } from "../../utils/mdxUtils"
-import { MdxRemote } from "next-mdx-remote/types"
 import { GetStaticPropsResult, GetStaticPropsContext } from "next"
 import { capitalize } from "../../utils/misc"
 import { useRouter } from "next/router"
@@ -18,7 +17,7 @@ import {
   PostStaticProps,
 } from "../../components/postComponents"
 import Layout from "../../components/layout"
-import { interviewMenu, tutorialMenu } from "../../components/menu/menus"
+import { interviewMenu } from "../../components/menu/menus"
 
 const components = {
   Image,
