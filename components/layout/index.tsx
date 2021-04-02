@@ -2,13 +2,15 @@ import { ReactChild, ReactChildren } from "react"
 import { Box, Grid, ThemeProvider } from "theme-ui"
 import { useWindowSize } from "../../utils/useWindowSize"
 import { Menu } from "../menu"
-import { tutorialMenu } from "../menu/menus"
+import { MenuDatum, tutorialMenu } from "../menu/menus"
 import { theme } from "./theme"
 
 export default function Layout({
   children,
+  menuData,
 }: {
   children: ReactChild | ReactChildren
+  menuData: MenuDatum[]
 }) {
   const windowSize = useWindowSize()
 
@@ -25,7 +27,7 @@ export default function Layout({
           <Box style={{ overflow: "auto", height: "100%" }}>{children}</Box>
           <Box>
             <Menu
-              data={tutorialMenu}
+              data={menuData}
               style={{
                 position: "fixed",
                 maxHeight: "100%",
@@ -48,7 +50,7 @@ export default function Layout({
 
           <Box>
             <Menu
-              data={tutorialMenu}
+              data={menuData}
               style={{
                 overflow: "scroll",
                 paddingBottom: "2em",

@@ -15,8 +15,10 @@ import {
   GoldLink,
   PostContainer,
   PostProps,
-  PostStaticPropsType as PostStaticProps,
+  PostStaticProps,
 } from "../../components/postComponents"
+import Layout from "../../components/layout"
+import { interviewMenu, tutorialMenu } from "../../components/menu/menus"
 
 const components = {
   Image,
@@ -28,26 +30,28 @@ export default function InterviewPage({ source, frontMatter }: PostProps) {
   const router = useRouter()
 
   return (
-    <PostContainer>
-      <div>
-        <h1>{frontMatter.title}</h1>
-        {frontMatter.description && (
-          <p className="description">{frontMatter.description}</p>
-        )}
-      </div>
-      <div>
-        {content}
-        {frontMatter.next && (
-          <GoldLink
-            onClick={async () => {
-              router.push(`/interviews/${frontMatter.next}`)
-            }}
-          >
-            {`Next Interview ~> ${capitalize(frontMatter.next)}`}
-          </GoldLink>
-        )}
-      </div>
-    </PostContainer>
+    <Layout menuData={interviewMenu}>
+      <PostContainer>
+        <div>
+          <h1>{frontMatter.title}</h1>
+          {frontMatter.description && (
+            <p className="description">{frontMatter.description}</p>
+          )}
+        </div>
+        <div>
+          {content}
+          {frontMatter.next && (
+            <GoldLink
+              onClick={async () => {
+                router.push(`/interviews/${frontMatter.next}`)
+              }}
+            >
+              {`Next Interview ~> ${capitalize(frontMatter.next)}`}
+            </GoldLink>
+          )}
+        </div>
+      </PostContainer>
+    </Layout>
   )
 }
 

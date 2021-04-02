@@ -31,3 +31,10 @@ export const tutorialMenu: MenuDatum[] = [
     ],
   },
 ]
+
+export const interviewMenu: MenuDatum[] = [
+  {
+    title: "Brad Goode",
+    items: [{ name: "Brad Goode", link: "brad_goode_1" }],
+  },
+]

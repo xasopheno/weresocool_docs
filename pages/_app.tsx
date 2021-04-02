@@ -3,18 +3,26 @@ import { AppProps } from "next/app"
 import { useWasm } from "../utils/useWasm"
 import Layout from "../components/layout"
 import { NavBar } from "../components/nav"
+import { ThemeProvider } from "theme-ui"
+import { theme } from "../components/layout/theme"
 
 function App({ Component, pageProps }: AppProps) {
   const [WasmProvider, wasmObject] = useWasm()
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <NavBar />
-      <Layout>
+      <div
+        style={{
+          overflow: "auto",
+          height: "calc(100vh - 60px)",
+          marginTop: "60px",
+        }}
+      >
         <WasmProvider value={wasmObject}>
           <Component {...pageProps} />
         </WasmProvider>
-      </Layout>
-    </div>
+      </div>
+    </ThemeProvider>
   )
 }
 

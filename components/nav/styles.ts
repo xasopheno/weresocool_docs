@@ -16,11 +16,11 @@ export const StyledNav = styled.div`
 `
 
 export const NavItem = styled.p`
-  padding: 0 20px 0 20px;
+  padding: 0 10px 0 10px;
   line-height: 60px;
   align-self: center;
   font-weight: 300;
-  font-size: 1.3em;
+  font-size: 16px;
   cursor: pointer;
   margin: 0 10px 0 10px;
   :active {
@@ -33,7 +33,7 @@ export const LogoText = styled.p`
   line-height: 60px;
   align-self: center;
   font-weight: 700;
-  font-size: 1.3em;
+  font-size: 16px;
   cursor: pointer;
   margin: 0 10px 0 0;
   color: goldenrod;

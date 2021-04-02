@@ -2,6 +2,7 @@ import React from "react"
 import { useWasm, WASM_READY_STATE } from "../utils/useWasm"
 import { WSCWithRatioChart } from "../components/WSC_with_RatioChart"
 import styled from "styled-components"
+import Link from "next/link"
 
 const Stuff = (): React.ReactElement => {
   return <WSCWithRatioChart />
@@ -83,12 +84,19 @@ const App = () => {
           </HeaderDescription>
           <HeaderButtonContainer>
             <GetStartedButton>Get Started</GetStartedButton>
-            <TakeTutorialButton>Take the Tutorial {"~>"}</TakeTutorialButton>
+            <Link href={"/posts/welcome"}>
+              <TakeTutorialButton>Take the Tutorial {"~>"}</TakeTutorialButton>
+            </Link>
           </HeaderButtonContainer>
         </HeaderPadding>
       </HeaderContainer>
       <WasmProvider value={wasmObject}>
-        <div>
+        <div
+          style={{
+            maxWidth: "80vw",
+            margin: "auto",
+          }}
+        >
           {wasmObject.readyState === WASM_READY_STATE.READY && <Stuff />}
         </div>
       </WasmProvider>
