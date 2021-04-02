@@ -17,13 +17,13 @@ export const NavBar = () => {
           {windowSize.width! > 680 ? <LogoText>WereSoCool</LogoText> : <></>}
         </Link>
       </LogoBox>
-      <Link href="/posts/welcome">
+      <Link href="/tutorials/welcome">
         <NavItem>Tutorial</NavItem>
       </Link>
       <Link href="/">
-        <NavItem>Concert Series</NavItem>
+        <NavItem>TV</NavItem>
       </Link>
-      <Link href="/interviews/brad_goode_1">
+      <Link href="/interviews">
         <NavItem>Interviews</NavItem>
       </Link>
       <Link href="/">

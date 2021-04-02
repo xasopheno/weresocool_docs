@@ -4,7 +4,7 @@ import hydrate from "next-mdx-remote/hydrate"
 import renderToString from "next-mdx-remote/render-to-string"
 import Head from "next/head"
 import path from "path"
-import { postFilePaths, POSTS_PATH } from "../../utils/mdxUtils"
+import { tutorialFilePaths, TUTORIAL_PATH } from "../../utils/mdxUtils"
 import { WereSoCool } from "../../components/WereSoCool"
 import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart"
 import { GetStaticPropsResult, GetStaticPropsContext } from "next"
@@ -32,7 +32,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
   const stopAndWait = useStopAndWait()
 
   return (
-    <Layout menuData={tutorialMenu}>
+    <Layout sectionPath={"tutorials"} menuData={tutorialMenu}>
       <PostContainer>
         <div>
           <h1>{frontMatter.title}</h1>
@@ -44,7 +44,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
             <GoldLink
               onClick={async () => {
                 await stopAndWait()
-                router.push(`/posts/${frontMatter.next}`)
+                router.push(`/tutorials/${frontMatter.next}`)
               }}
             >
               {`Next Tutorial ~> ${capitalize(frontMatter.next)}`}
@@ -60,7 +60,7 @@ export async function getStaticProps(
   context: GetStaticPropsContext
 ): Promise<GetStaticPropsResult<PostStaticProps>> {
   const slug = context.params!.slug
-  const postFilePath = path.join(POSTS_PATH, `${slug}.mdx`)
+  const postFilePath = path.join(TUTORIAL_PATH, `${slug}.mdx`)
   const source = fs.readFileSync(postFilePath)
 
   const { content, data } = matter(source)
@@ -84,7 +84,7 @@ export async function getStaticProps(
 }
 
 export const getStaticPaths = async () => {
-  const paths = postFilePaths
+  const paths = tutorialFilePaths
     .map((path) => path.replace(/\.mdx?$/, ""))
     .map((slug) => ({ params: { slug } }))
 

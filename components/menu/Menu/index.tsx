@@ -54,12 +54,12 @@ const SizedMenu = ({ children, open }: SizedMenuProps): React.ReactElement => {
 
 interface MenuProps extends React.HTMLAttributes<Element> {
   data: MenuDatum[]
+  sectionPath: string
 }
 
 const Menu = (props: MenuProps) => {
   const [open, setOpen] = useState(false)
   const windowSize = useWindowSize()
-  // const SizedMenu = windowSize.width! < 1000 ? MobileStyledMenu : StyledMenu
   const router = useRouter()
   const stopAndWait = useStopAndWait()
 
@@ -75,7 +75,7 @@ const Menu = (props: MenuProps) => {
                 data={section}
                 onClick={async (path: string) => {
                   await stopAndWait()
-                  router.push(`/posts/${path}`)
+                  router.push(`/${props.sectionPath}/${path}`)
                   setOpen(false)
                 }}
               />

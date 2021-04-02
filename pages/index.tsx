@@ -114,7 +114,7 @@ const App = () => {
           </HeaderDescription>
           <HeaderButtonContainer>
             <GetStartedButton>Get Started</GetStartedButton>
-            <Link href={"/posts/welcome"}>
+            <Link href={"/tutorials/welcome"}>
               <TakeTutorialButton>Take the Tutorial {"~>"}</TakeTutorialButton>
             </Link>
           </HeaderButtonContainer>

@@ -29,7 +29,7 @@ export default function InterviewPage({ source, frontMatter }: PostProps) {
   const router = useRouter()
 
   return (
-    <Layout menuData={interviewMenu}>
+    <Layout sectionPath={"interviews"} menuData={interviewMenu}>
       <PostContainer>
         <div>
           <h1>{frontMatter.title}</h1>

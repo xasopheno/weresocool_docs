@@ -8,7 +8,9 @@ export const StyledMenu = styled.nav`
   text-align: left;
   padding: 2rem;
   height: 100%;
-  width: 100%;
+  // width: -moz-available; [> WebKit-based browsers will ignore this. <]
+  // width: -webkit-fill-available; [> Mozilla-based browsers will ignore this. <]
+  // width: fill-available;
   overflow-y: scroll;
   position: fixed;
   padding-bottom: 10%;

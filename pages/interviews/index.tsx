@@ -1,6 +1,8 @@
 import React from "react"
 import Image from "next/image"
 import styled from "styled-components"
+import Layout from "../../components/layout"
+import { interviewMenu } from "../../components/menu/menus"
 
 const InterviewImageContainer = styled.div`
   display: block;
@@ -11,11 +13,13 @@ const InterviewImageContainer = styled.div`
 
 const InterviewMain = () => {
   return (
-    <InterviewImageContainer>
-      <h1>Interviews</h1>
-      <Image src={"/danny_interview_small.jpeg"} width={509} height={409} />
-      <p>Interviews with nice smart people.</p>
-    </InterviewImageContainer>
+    <Layout sectionPath={"interviews"} menuData={interviewMenu}>
+      <InterviewImageContainer>
+        <h1>Interviews</h1>
+        <Image src={"/danny_interview_small.jpeg"} width={509} height={409} />
+        <p>Interviews with nice smart people.</p>
+      </InterviewImageContainer>
+    </Layout>
   )
 }
 
