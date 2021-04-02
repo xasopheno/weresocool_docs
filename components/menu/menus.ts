@@ -35,6 +35,7 @@ export const tutorialMenu: MenuDatum[] = [
 export const interviewMenu: MenuDatum[] = [
   {
     title: "Brad Goode: Stories from Chicago",
+
     items: [
       { name: "Life and Music", link: "brad_goode_1" },
       { name: "Red Rodney, Chris Potter, Eddie Harris", link: "brad_goode_2" },
@@ -42,6 +43,15 @@ export const interviewMenu: MenuDatum[] = [
       { name: "Lin Halliday", link: "brad_goode_4" },
       { name: "Mentors", link: "brad_goode_5" },
       { name: "Von Freeman", link: "brad_goode_6" },
+    ],
+  },
+  {
+    title: "Ron Miles Plays the Most Beautiful Melodies",
+
+    items: [
+      { name: "Growing", link: "ron_miles_1" },
+      { name: "Inspiration", link: "ron_miles_2" },
+      { name: "Bill Frisell", link: "ron_miles_3" },
     ],
   },
 ]
