@@ -54,4 +54,18 @@ export const interviewMenu: MenuDatum[] = [
       { name: "Bill Frisell", link: "ron_miles_3" },
     ],
   },
+  {
+    title: "Grant Gordy: Amazing Guitarist, Really Nice Guy",
+
+    items: [
+      { name: "Jazz and Bluegrass", link: "grant_gordy" },
+      { name: "Three Beautiful Things", link: "grant_gordy_beautiful" },
+      {
+        name: "Dave Grisman and Darol Anger",
+        link: "grant_gordy_grisman_anger",
+      },
+      { name: "Recording", link: "grant_gordy_recording" },
+      { name: "Moving To New York", link: "grant_gordy_moving" },
+    ],
+  },
 ]
