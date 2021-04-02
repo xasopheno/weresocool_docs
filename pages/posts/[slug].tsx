@@ -36,9 +36,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
       <PostContainer>
         <div>
           <h1>{frontMatter.title}</h1>
-          {frontMatter.description && (
-            <p className="description">{frontMatter.description}</p>
-          )}
+          {frontMatter.description && <p>{frontMatter.description}</p>}
         </div>
         <div>
           {content}

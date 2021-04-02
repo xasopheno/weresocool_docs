@@ -2,7 +2,7 @@ import { ReactChild, ReactChildren } from "react"
 import { Box, Grid, ThemeProvider } from "theme-ui"
 import { useWindowSize } from "../../utils/useWindowSize"
 import { Menu } from "../menu"
-import { MenuDatum, tutorialMenu } from "../menu/menus"
+import { MenuDatum } from "../menu/menus"
 import { theme } from "./theme"
 
 export default function Layout({
@@ -44,7 +44,13 @@ export default function Layout({
           }}
           columns={[2, "3fr 1fr"]}
         >
-          <Box style={{ overflow: "auto", height: "95%", marginTop: "5%" }}>
+          <Box
+            style={{
+              overflow: "auto",
+              height: "calc(100vh - 60px)",
+              marginTop: "60px",
+            }}
+          >
             {children}
           </Box>
 
