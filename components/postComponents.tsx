@@ -6,8 +6,11 @@ export const GoldLink = styled.div`
 `
 
 export const PostContainer = styled.div`
-  max-width: "55em";
+  max-width: 55em;
   margin: auto;
+  text-align: justify;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
 `
 
 export type FrontMatter = {

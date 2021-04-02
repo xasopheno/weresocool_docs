@@ -46,7 +46,7 @@ export const interviewMenu: MenuDatum[] = [
     ],
   },
   {
-    title: "Ron Miles Plays the Most Beautiful Melodies",
+    title: "Ron Miles: Beautiful Melodies",
 
     items: [
       { name: "Growing", link: "ron_miles_1" },
