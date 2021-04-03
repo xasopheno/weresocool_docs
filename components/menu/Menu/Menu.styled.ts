@@ -8,7 +8,7 @@ export const StyledMenu = styled.nav`
   text-align: left;
   padding: 20px;
   height: 100%;
-  width: calc(0.3 * 100vw);
+  width: calc(0.29 * 100vw);
   overflow-y: scroll;
   position: fixed;
   padding-bottom: 10%;
