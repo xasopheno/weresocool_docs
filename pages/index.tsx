@@ -1,5 +1,5 @@
 import React from "react"
-import { useWasm, WASM_READY_STATE } from "../utils/useWasm"
+import { useLoadedWasm, useWasm, WASM_READY_STATE } from "../utils/useWasm"
 import { WSCWithRatioChart } from "../components/WSC_with_RatioChart"
 import styled from "styled-components"
 import Link from "next/link"
@@ -102,7 +102,7 @@ const TakeTutorialButton = styled.div`
 `
 
 const App = () => {
-  const [WasmProvider, wasmObject] = useWasm()
+  const { readyState } = useLoadedWasm()
 
   return (
     <div>
@@ -120,16 +120,14 @@ const App = () => {
           </HeaderButtonContainer>
         </HeaderPadding>
       </HeaderContainer>
-      <WasmProvider value={wasmObject}>
-        <div
-          style={{
-            maxWidth: "80vw",
-            margin: "auto",
-          }}
-        >
-          {wasmObject.readyState === WASM_READY_STATE.READY && <Stuff />}
-        </div>
-      </WasmProvider>
+      <div
+        style={{
+          maxWidth: "80vw",
+          margin: "auto",
+        }}
+      >
+        {readyState === WASM_READY_STATE.READY && <Stuff />}
+      </div>
     </div>
   )
 }

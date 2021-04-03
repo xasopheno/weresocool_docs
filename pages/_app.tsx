@@ -9,18 +9,18 @@ function App({ Component, pageProps }: AppProps) {
   const [WasmProvider, wasmObject] = useWasm()
   return (
     <ThemeProvider theme={theme}>
-      <NavBar />
-      <div
-        style={{
-          overflow: "auto",
-          height: "calc(100vh - 60px)",
-          marginTop: "60px",
-        }}
-      >
-        <WasmProvider value={wasmObject}>
+      <WasmProvider value={wasmObject}>
+        <NavBar />
+        <div
+          style={{
+            overflow: "auto",
+            height: "calc(100vh - 60px)",
+            marginTop: "60px",
+          }}
+        >
           <Component {...pageProps} />
-        </WasmProvider>
-      </div>
+        </div>
+      </WasmProvider>
     </ThemeProvider>
   )
 }
