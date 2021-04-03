@@ -31,4 +31,8 @@ export const MenuItem = styled.div`
     // color: #beb;
     color: goldenrod;
   }
+
+  &:active {
+    opacity: 70%;
+  }
 `

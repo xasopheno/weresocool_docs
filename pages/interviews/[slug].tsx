@@ -9,7 +9,7 @@ import { GetStaticPropsResult, GetStaticPropsContext } from "next"
 import { capitalize } from "../../utils/misc"
 import { useRouter } from "next/router"
 import Image from "next/image"
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import {
   GoldLink,
   PostContainer,
@@ -24,6 +24,21 @@ const components = {
   Head,
 }
 
+const Content: React.FC = ({ children }) => {
+  const topRef = useRef(null)
+  const router = useRouter()
+  useEffect(() => {
+    // @ts-ignore
+    topRef.current.scrollIntoView()
+  }, [router.asPath])
+  return (
+    <div>
+      <div ref={topRef} />
+      {children}
+    </div>
+  )
+}
+
 export default function InterviewPage({ source, frontMatter }: PostProps) {
   const content = hydrate(source, { components })
   const router = useRouter()
@@ -31,24 +46,24 @@ export default function InterviewPage({ source, frontMatter }: PostProps) {
   return (
     <Layout sectionPath={"interviews"} menuData={interviewMenu}>
       <PostContainer>
-        <div>
-          <h1>{frontMatter.title}</h1>
-          {frontMatter.description && (
-            <p className="description">{frontMatter.description}</p>
-          )}
-        </div>
-        <div>
-          {content}
-          {frontMatter.next && (
-            <GoldLink
-              onClick={async () => {
-                router.push(`/interviews/${frontMatter.next}`)
-              }}
-            >
-              {`Next Interview ~> ${capitalize(frontMatter.next)}`}
-            </GoldLink>
-          )}
-        </div>
+        <Content>
+          <div>
+            <h1>{frontMatter.title}</h1>
+            {frontMatter.description && <p>{frontMatter.description}</p>}
+          </div>
+          <div>
+            {content}
+            {frontMatter.next && (
+              <GoldLink
+                onClick={async () => {
+                  router.push(`/interviews/${frontMatter.next}`)
+                }}
+              >
+                {`Next Interview ~> ${capitalize(frontMatter.next)}`}
+              </GoldLink>
+            )}
+          </div>
+        </Content>
       </PostContainer>
     </Layout>
   )
