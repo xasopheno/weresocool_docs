@@ -9,8 +9,9 @@ import { GetStaticPropsResult, GetStaticPropsContext } from "next"
 import { capitalize } from "../../utils/misc"
 import { useRouter } from "next/router"
 import Image from "next/image"
-import React, { useEffect, useRef } from "react"
+import React from "react"
 import {
+  Content,
   GoldLink,
   PostContainer,
   PostProps,
@@ -22,21 +23,6 @@ import { interviewMenu } from "../../components/menu/menus"
 const components = {
   Image,
   Head,
-}
-
-const Content: React.FC = ({ children }) => {
-  const topRef = useRef(null)
-  const router = useRouter()
-  useEffect(() => {
-    // @ts-ignore
-    topRef.current.scrollIntoView()
-  }, [router.asPath])
-  return (
-    <div>
-      <div ref={topRef} />
-      {children}
-    </div>
-  )
 }
 
 export default function InterviewPage({ source, frontMatter }: PostProps) {

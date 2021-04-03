@@ -16,6 +16,7 @@ import {
   PostContainer,
   PostStaticProps,
   PostProps,
+  Content,
 } from "../../components/postComponents"
 import Layout from "../../components/layout"
 import { tutorialMenu } from "../../components/menu/menus"
@@ -34,23 +35,25 @@ export default function PostPage({ source, frontMatter }: PostProps) {
   return (
     <Layout sectionPath={"tutorials"} menuData={tutorialMenu}>
       <PostContainer>
-        <div>
-          <h1>{frontMatter.title}</h1>
-          {frontMatter.description && <p>{frontMatter.description}</p>}
-        </div>
-        <div>
-          {content}
-          {frontMatter.next && (
-            <GoldLink
-              onClick={async () => {
-                await stopAndWait()
-                router.push(`/tutorials/${frontMatter.next}`)
-              }}
-            >
-              {`Next Tutorial ~> ${capitalize(frontMatter.next)}`}
-            </GoldLink>
-          )}
-        </div>
+        <Content>
+          <div>
+            <h1>{frontMatter.title}</h1>
+            {frontMatter.description && <p>{frontMatter.description}</p>}
+          </div>
+          <div>
+            {content}
+            {frontMatter.next && (
+              <GoldLink
+                onClick={async () => {
+                  await stopAndWait()
+                  router.push(`/tutorials/${frontMatter.next}`)
+                }}
+              >
+                {`Next Tutorial ~> ${capitalize(frontMatter.next)}`}
+              </GoldLink>
+            )}
+          </div>
+        </Content>
       </PostContainer>
     </Layout>
   )

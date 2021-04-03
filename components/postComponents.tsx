@@ -1,4 +1,6 @@
 import { MdxRemote } from "next-mdx-remote/types"
+import { useRouter } from "next/router"
+import { useEffect, useRef } from "react"
 import styled from "styled-components"
 export const GoldLink = styled.div`
   color: goldenrod;
@@ -23,4 +25,19 @@ export interface PostStaticProps {
   source: MdxRemote.Source
   frontMatter: FrontMatter
   slug: string | string[]
+}
+
+export const Content: React.FC = ({ children }) => {
+  const topRef = useRef(null)
+  const router = useRouter()
+  useEffect(() => {
+    // @ts-ignore
+    topRef.current.scrollIntoView()
+  }, [router.asPath])
+  return (
+    <div>
+      <div ref={topRef} />
+      {children}
+    </div>
+  )
 }
