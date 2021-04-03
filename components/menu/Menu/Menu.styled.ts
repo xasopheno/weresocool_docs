@@ -17,9 +17,6 @@ export const StyledMenu = styled.nav`
 export const MenuItem = styled.div<{ selected: boolean }>`
   font-size: 1.25em;
   padding: 0.25em 0 0 1em;
-  // font-weight: 500;
-  // letter-spacing: 0.15rem;
-  //color: ${({ theme }) => theme.primaryDark};
   color: #edd;
   text-decoration: none;
   transition: color 0.3s linear;
@@ -27,8 +24,6 @@ export const MenuItem = styled.div<{ selected: boolean }>`
   font-weight: ${({ selected }) => (selected ? "700" : "300")};
 
   &:hover {
-    //color: ${({ theme }) => theme.primaryHover};
-    // color: #beb;
     color: goldenrod;
   }
 
@@ -37,9 +32,9 @@ export const MenuItem = styled.div<{ selected: boolean }>`
   }
 `
 
-export const Display = styled.span`
+export const SelectedMenuItem = styled.span`
   width: 7px;
-  height: 40px;
+  height: 30px;
   border-left: 8px solid goldenrod;
   padding-left: 6px;
   position: absolute;

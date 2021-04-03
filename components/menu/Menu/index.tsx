@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Burger } from "../../menu"
-import { MenuItem, StyledMenu, Display } from "./Menu.styled"
+import { MenuItem, StyledMenu, SelectedMenuItem } from "./Menu.styled"
 import { capitalize, useStopAndWait } from "../../../utils/misc"
 import { useRouter } from "next/router"
 import { MobileStyledMenu } from "./MobileMenu.styled"
@@ -40,7 +40,7 @@ const MenuSection = (props: {
             selected={current === itemLink}
             onClick={() => props.onClick(itemLink)}
           >
-            {current === itemLink && <Display />}
+            {current === itemLink && <SelectedMenuItem />}
             {`${capitalize(itemName)}`}
           </MenuItem>
         )

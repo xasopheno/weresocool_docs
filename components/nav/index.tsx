@@ -8,7 +8,8 @@ import { LogoBox, LogoText, NavItem, StyledNav } from "./styles"
 export const NavBar = () => {
   const router = useRouter()
   const windowSize = useWindowSize()
-  // console.log(router.asPath.split("/")[0])
+  const current = router.asPath.split("/").slice(1)[0]
+  console.log(current)
 
   return (
     <StyledNav>
@@ -19,16 +20,16 @@ export const NavBar = () => {
         </Link>
       </LogoBox>
       <Link href="/tutorials/welcome">
-        <NavItem>Tutorial</NavItem>
+        <NavItem selected={current === "tutorials"}>Tutorial</NavItem>
       </Link>
       <Link href="/">
-        <NavItem>TV</NavItem>
+        <NavItem selected={current === "tv"}>TV</NavItem>
       </Link>
       <Link href="/interviews">
-        <NavItem>Interviews</NavItem>
+        <NavItem selected={current === "interviews"}>Interviews</NavItem>
       </Link>
       <Link href="/">
-        <NavItem>Danny</NavItem>
+        <NavItem selected={current === "danny"}>Danny</NavItem>
       </Link>
     </StyledNav>
   )
