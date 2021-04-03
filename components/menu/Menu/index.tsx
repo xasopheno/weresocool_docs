@@ -17,7 +17,7 @@ const MenuSection = (props: {
 
   return (
     <div>
-      <h1>{section.title}</h1>
+      <h1 style={{ fontSize: "20px" }}>{section.title}</h1>
       {section.items.map((item, idx) => {
         let itemName: string
         let itemLink: string
@@ -67,7 +67,7 @@ const Menu = (props: MenuProps) => {
     <div>
       {windowSize.width! < 1000 && <Burger open={open} setOpen={setOpen} />}
       <SizedMenu open={open}>
-        <div style={{ marginTop: "5rem" }}>
+        <div>
           {props.data.map((section, i) => {
             return (
               <MenuSection

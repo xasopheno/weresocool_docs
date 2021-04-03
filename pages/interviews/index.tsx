@@ -15,7 +15,6 @@ const InterviewMain = () => {
   return (
     <Layout sectionPath={"interviews"} menuData={interviewMenu}>
       <InterviewImageContainer>
-        <h1>Interviews</h1>
         <Image src={"/danny_interview_small.jpeg"} width={509} height={409} />
         <p>Interviews with nice smart people.</p>
       </InterviewImageContainer>

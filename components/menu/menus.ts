@@ -54,6 +54,23 @@ export const interviewMenu: MenuDatum[] = [
       { name: "Bill Frisell", link: "ron_miles_3" },
     ],
   },
+
+  {
+    title: "Art Lande: Music Is A Language To Talk About Life",
+
+    items: [
+      { name: "Community", link: "art_lande_community" },
+      { name: "Balance", link: "art_lande_balance" },
+      { name: "Mentors", link: "art_lande_mentors" },
+      {
+        name: "The Great Bassists and Drummers",
+        link: "art_lande_bassists_drummers",
+      },
+      { name: "Chet Baker", link: "art_lande_chet_baker" },
+      { name: "Music and Society", link: "art_lande_music_and_society" },
+    ],
+  },
+
   {
     title: "Grant Gordy: Amazing Guitarist, Really Nice Guy",
 
