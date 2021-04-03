@@ -6,25 +6,25 @@ export const StyledMenu = styled.nav`
   background-color: #262523;
   border-left: 1px solid #272727;
   text-align: left;
-  padding: 2rem;
+  padding: 20px;
   height: 100%;
-  // width: -moz-available; [> WebKit-based browsers will ignore this. <]
-  // width: -webkit-fill-available; [> Mozilla-based browsers will ignore this. <]
-  // width: fill-available;
+  width: calc(0.3 * 100vw);
   overflow-y: scroll;
   position: fixed;
   padding-bottom: 10%;
 `
 
-export const MenuItem = styled.div`
+export const MenuItem = styled.div<{ selected: boolean }>`
   font-size: 1.25em;
   padding: 0.25em 0 0 1em;
-  // font-weight: bold;
+  // font-weight: 500;
   // letter-spacing: 0.15rem;
   //color: ${({ theme }) => theme.primaryDark};
   color: #edd;
   text-decoration: none;
   transition: color 0.3s linear;
+
+  font-weight: ${({ selected }) => (selected ? "700" : "300")};
 
   &:hover {
     //color: ${({ theme }) => theme.primaryHover};
@@ -35,4 +35,14 @@ export const MenuItem = styled.div`
   &:active {
     opacity: 70%;
   }
+`
+
+export const Display = styled.span`
+  width: 7px;
+  height: 40px;
+  border-left: 8px solid goldenrod;
+  padding-left: 6px;
+  position: absolute;
+  left: 0px;
+  margin-top: -3px;
 `

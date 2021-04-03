@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Burger } from "../../menu"
-import { MenuItem, StyledMenu } from "./Menu.styled"
+import { MenuItem, StyledMenu, Display } from "./Menu.styled"
 import { capitalize, useStopAndWait } from "../../../utils/misc"
 import { useRouter } from "next/router"
 import { MobileStyledMenu } from "./MobileMenu.styled"
@@ -17,7 +17,13 @@ const MenuSection = (props: {
 
   return (
     <div>
-      <h1 style={{ fontSize: "20px" }}>{section.title}</h1>
+      <h1
+        style={{
+          fontSize: "20px",
+        }}
+      >
+        {section.title}
+      </h1>
       {section.items.map((item, idx) => {
         let itemName: string
         let itemLink: string
@@ -29,8 +35,13 @@ const MenuSection = (props: {
           itemLink = item.link
         }
         return (
-          <MenuItem key={idx} onClick={() => props.onClick(itemLink)}>
-            {`${current === itemLink ? ">" : " "} ${capitalize(itemName)}`}
+          <MenuItem
+            key={idx}
+            selected={current === itemLink}
+            onClick={() => props.onClick(itemLink)}
+          >
+            {current === itemLink && <Display />}
+            {`${capitalize(itemName)}`}
           </MenuItem>
         )
       })}

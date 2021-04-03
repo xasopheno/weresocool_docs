@@ -8,6 +8,7 @@ import { LogoBox, LogoText, NavItem, StyledNav } from "./styles"
 export const NavBar = () => {
   const router = useRouter()
   const windowSize = useWindowSize()
+  // console.log(router.asPath.split("/")[0])
 
   return (
     <StyledNav>

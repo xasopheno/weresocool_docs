@@ -4,10 +4,11 @@ import { useEffect, useRef } from "react"
 import styled from "styled-components"
 export const GoldLink = styled.div`
   color: goldenrod;
-  font-size: 1.25em;
+  font-size: 1.4em;
 `
 
 export const PostContainer = styled.div`
+  padding-bottom: 80px;
   max-width: 55em;
   margin: auto;
   text-align: justify;

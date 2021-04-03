@@ -52,7 +52,7 @@ export default function Layout({
             style={{
               overflow: "auto",
               height: "calc(100vh - 60px)",
-              marginTop: "60px",
+              marginTop: "50px",
             }}
           >
             {children}
