@@ -17,9 +17,9 @@ export class Dispatch {
     })
   }
 
-  onVolumeChange(volume: number, manager: Manager | null): Promise<void> {
-    manager!.update_volume(volume / 100)
+  onVolumeChange(volume: number, manager: Manager | null): void {
     this.dispatch({ _k: "Update_Volume", volume })
+    manager!.update_volume(volume / 100)
   }
 }
 

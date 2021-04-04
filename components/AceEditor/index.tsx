@@ -17,7 +17,7 @@ import "ace-builds/src-noconflict/keybinding-vim"
 import "ace-builds/src-noconflict/keybinding-emacs"
 import "ace-builds/src-noconflict/ext-language_tools"
 import { stopLang, isMobile } from "../../utils/misc"
-import { VolumeBar } from "../volume"
+// import { VolumeBar } from "../volume"
 import styled from "styled-components"
 
 const customMode = new WSCMode()
@@ -124,7 +124,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
         <ControlContainer>
           <Button onClick={() => setRender(true)}>Play</Button>
           <Button onClick={() => props.onRender(stopLang)}>Stop</Button>
-          <VolumeBar />
+          {/* <VolumeBar /> */}
         </ControlContainer>
       )}
       <AceEditor
