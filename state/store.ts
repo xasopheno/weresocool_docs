@@ -1,12 +1,12 @@
 import { createContext } from "react"
 
 export interface Store {
-  editor: "text" | "vim" | "emacs"
+  editor: "Text" | "Vim" | "Emacs"
   volume: number
 }
 
 export const intialStore: Store = {
-  editor: "vim",
+  editor: "Vim",
   volume: 70,
 }
 

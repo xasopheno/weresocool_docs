@@ -26,7 +26,7 @@ export default function Layout({
           }}
           columns={[1]}
         >
-          <Box style={{ overflow: "auto", height: "100%" }}>{children}</Box>
+          <Box style={{ overflowX: "hidden", height: "100%" }}>{children}</Box>
           <Box>
             <Menu
               data={menuData}

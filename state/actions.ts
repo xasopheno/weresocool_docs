@@ -9,7 +9,7 @@ export type Action =
 export class Dispatch {
   constructor(public dispatch: React.Dispatch<Action>) {}
 
-  onIncrementEditorType(editor: "text" | "vim" | "emacs"): void {
+  onChangeEditorType(editor: "text" | "vim" | "emacs"): void {
     localStorage.setItem("editor", editor)
     this.dispatch({
       _k: "Update_Editor_Type",

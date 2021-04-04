@@ -19,6 +19,8 @@ import "ace-builds/src-noconflict/ext-language_tools"
 import { stopLang, isMobile } from "../../utils/misc"
 // import { VolumeBar } from "../volume"
 import styled from "styled-components"
+import { EditorSelect } from "../editorSelect"
+import { GlobalContext } from "../../state/store"
 
 const customMode = new WSCMode()
 
@@ -43,6 +45,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
   const [language, onUpdateLanguage] = useState<string>(props.language)
   const [markers, setMarkers] = useState<IMarker[]>([])
   const [error, setError] = useState<string>("")
+  const store = useContext(GlobalContext)
 
   const fontSize = isMobile() ? 14 : 20
 
@@ -124,7 +127,11 @@ export const Editor = (props: EditorProps): React.ReactElement => {
         <ControlContainer>
           <Button onClick={() => setRender(true)}>Play</Button>
           <Button onClick={() => props.onRender(stopLang)}>Stop</Button>
+          <Button onClick={() => onUpdateLanguage(props.language)}>
+            Reset
+          </Button>
           {/* <VolumeBar /> */}
+          <EditorSelect />
         </ControlContainer>
       )}
       <AceEditor
@@ -134,7 +141,9 @@ export const Editor = (props: EditorProps): React.ReactElement => {
         }}
         name="aceEditor"
         readOnly={props.readOnly ? true : false}
-        keyboardHandler={props.keyboard ? props.keyboard : "vim"}
+        keyboardHandler={
+          props.keyboard ? props.keyboard : store.editor.toLowerCase()
+        }
         showGutter={props.hideGutter ? false : true}
         fontSize={props.fontSize ? props.fontSize : fontSize}
         markers={markers}

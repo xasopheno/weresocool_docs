@@ -7,7 +7,7 @@ import { theme } from "../components/layout/theme"
 import { Dispatch, DispatchContext } from "../state/actions"
 import { mainReducer } from "../state/reducers"
 import { GlobalContext, intialStore } from "../state/store"
-
+import "../styles.css"
 function App({ Component, pageProps }: AppProps) {
   const [WasmProvider, wasmObject] = useWasm()
 
@@ -22,7 +22,6 @@ function App({ Component, pageProps }: AppProps) {
             <NavBar />
             <div
               style={{
-                overflow: "auto",
                 height: "calc(100vh - 60px)",
                 marginTop: "60px",
               }}

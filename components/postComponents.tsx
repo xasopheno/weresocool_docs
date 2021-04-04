@@ -14,6 +14,7 @@ export const PostContainer = styled.div`
   text-align: justify;
   -ms-text-justify: distribute-all-lines;
   text-justify: distribute-all-lines;
+  overflow: auto;
 `
 
 export type FrontMatter = {
