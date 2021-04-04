@@ -18,8 +18,7 @@ export const VolumeBar = () => {
         id="volumeSlider"
         value={store.volume}
         onChange={(e) => {
-          const volume = parseInt(e.target.value)
-          dispatch.onVolumeChange(volume, manager)
+          dispatch.onVolumeChange(parseInt(e.target.value), manager)
         }}
       />
       <VolumeText id={"volumeText"} active={store.volume > 0.0}>

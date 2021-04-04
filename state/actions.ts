@@ -17,9 +17,8 @@ export class Dispatch {
     })
   }
 
-  async onVolumeChange(volume: number, manager: Manager | null): Promise<void> {
+  onVolumeChange(volume: number, manager: Manager | null): Promise<void> {
     manager!.update_volume(volume / 100)
-    localStorage.setItem("volume", volume.toString())
     this.dispatch({ _k: "Update_Volume", volume })
   }
 }
