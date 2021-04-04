@@ -13,15 +13,10 @@ use weresocool::{
     manager::RenderManager,
 };
 
+// console::log_1(&value.into());
+
 const BUFFER_SIZE: usize = 1024 * 8;
 const SAMPLE_RATE: usize = 44100;
-
-#[allow(dead_code)]
-fn log(s: String) {
-    let array = js_sys::Array::new();
-    array.push(&s.into());
-    web_sys::console::log(&array);
-}
 
 #[wasm_bindgen]
 pub struct Manager {

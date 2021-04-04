@@ -1,5 +1,5 @@
 import React from "react"
-import { useLoadedWasm, useWasm, WASM_READY_STATE } from "../utils/useWasm"
+import { useLoadedWasm, WASM_READY_STATE } from "../utils/useWasm"
 import { WSCWithRatioChart } from "../components/WSC_with_RatioChart"
 import styled from "styled-components"
 import Link from "next/link"

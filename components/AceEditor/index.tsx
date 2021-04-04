@@ -1,109 +1,116 @@
 // eslint-disable-next-line
-import React, { useState, useEffect } from "react";
-import AceEditor, { IMarker } from "react-ace";
-import WSCMode from "./mode.js";
-import "./theme";
+import React, { useState, useEffect, useContext } from "react"
+import AceEditor, { IMarker } from "react-ace"
+import WSCMode from "./mode.js"
+import "./theme"
 import {
   ResponseType,
   makeMarker,
   Container,
   Button,
   ErrorContainer,
-} from "./components";
+} from "./components"
 
-import "ace-builds/src-noconflict/mode-elixir";
-import "ace-builds/src-noconflict/theme-github";
-import "ace-builds/src-noconflict/keybinding-vim";
-import "ace-builds/src-noconflict/keybinding-emacs";
-import "ace-builds/src-noconflict/ext-language_tools";
-import { stopLang, isMobile } from "../../utils/misc";
+import "ace-builds/src-noconflict/mode-elixir"
+import "ace-builds/src-noconflict/theme-github"
+import "ace-builds/src-noconflict/keybinding-vim"
+import "ace-builds/src-noconflict/keybinding-emacs"
+import "ace-builds/src-noconflict/ext-language_tools"
+import { stopLang, isMobile } from "../../utils/misc"
+import { VolumeBar } from "../volume"
+import styled from "styled-components"
 
-const customMode = new WSCMode();
+const customMode = new WSCMode()
 
 export type EditorProps = {
-  language: string;
-  onRender: (language: string) => void;
-  keyboard?: "vim" | "emacs" | "";
-  readOnly?: boolean;
-  hideGutter?: boolean;
-  fontSize?: number;
-  height?: number;
-};
+  language: string
+  onRender: (language: string) => void
+  keyboard?: "vim" | "emacs" | ""
+  readOnly?: boolean
+  hideGutter?: boolean
+  fontSize?: number
+  height?: number
+}
+
+const ControlContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`
 
 export const Editor = (props: EditorProps): React.ReactElement => {
-  const [renderSpace, setRenderSpace] = useState<AceEditor | null>();
-  const [render, setRender] = useState<boolean>(false);
-  const [language, onUpdateLanguage] = useState<string>(props.language);
-  const [markers, setMarkers] = useState<IMarker[]>([]);
-  const [error, setError] = useState<string>("");
+  const [renderSpace, setRenderSpace] = useState<AceEditor | null>()
+  const [render, setRender] = useState<boolean>(false)
+  const [language, onUpdateLanguage] = useState<string>(props.language)
+  const [markers, setMarkers] = useState<IMarker[]>([])
+  const [error, setError] = useState<string>("")
 
-  const fontSize = isMobile() ? 14 : 20;
+  const fontSize = isMobile() ? 14 : 20
 
   useEffect(() => {
     if (renderSpace) {
       // @ts-ignore
-      renderSpace.editor.getSession().setMode(customMode);
-      renderSpace.editor.setTheme("ace/theme/wsc");
+      renderSpace.editor.getSession().setMode(customMode)
+      renderSpace.editor.setTheme("ace/theme/wsc")
     }
-  }, [renderSpace]);
+  }, [renderSpace])
 
   useEffect(() => {
     const submit = async () => {
       if (render) {
-        setError("");
-        setMarkers([]);
+        setError("")
+        setMarkers([])
         try {
-          props.onRender(language);
+          props.onRender(language)
         } catch (err) {
-          handleError(err, language);
+          handleError(err, language)
         }
-        setRender(false);
+        setRender(false)
       }
-    };
+    }
 
     submit().catch((e) => {
-      throw e;
-    });
-  }, [render, language, props]);
+      throw e
+    })
+  }, [render, language, props])
 
   const setRenderSpaceOuter = (el: AceEditor | null) => {
     if (el) {
-      setRenderSpace(el);
+      setRenderSpace(el)
       if (props.readOnly) {
         // @ts-ignore
-        el.editor.renderer.$cursorLayer.element.style.opacity = 0;
+        el.editor.renderer.$cursorLayer.element.style.opacity = 0
       }
     }
-  };
+  }
 
   const handleError = (response: ResponseType, language: string) => {
-    const responseType = Object.keys(response)[0];
+    const responseType = Object.keys(response)[0]
     // eslint-disable-next-line
-    const value: any = Object.values(response)[0];
+    const value: any = Object.values(response)[0]
 
     switch (responseType) {
       case ResponseType.ParseError:
         setMarkers([
           makeMarker(value.line, value.column, language.split("\n").length),
-        ]);
-        setError(`<Parse Error> Line: ${value.line} | Column ${value.column}`);
-        break;
+        ])
+        setError(`<Parse Error> Line: ${value.line} | Column ${value.column}`)
+        break
       case ResponseType.IdError:
-        setError(`<ID Error> "${value.id}" not found.`);
-        break;
+        setError(`<ID Error> "${value.id}" not found.`)
+        break
       case ResponseType.IndexError:
-        setError(`<Index Error> ${value.message}`);
-        break;
+        setError(`<Index Error> ${value.message}`)
+        break
 
       case ResponseType.MsgError:
-        setError(`<Error> ${value.message}`);
-        break;
+        setError(`<Error> ${value.message}`)
+        break
       default:
-        console.log("Unhandled error");
-        console.log(response);
-        break;
+        console.log("Unhandled error")
+        console.log(response)
+        break
     }
-  };
+  }
 
   return (
     <Container
@@ -114,15 +121,16 @@ export const Editor = (props: EditorProps): React.ReactElement => {
       }
     >
       {!props.readOnly && (
-        <div>
+        <ControlContainer>
           <Button onClick={() => setRender(true)}>Play</Button>
           <Button onClick={() => props.onRender(stopLang)}>Stop</Button>
-        </div>
+          <VolumeBar />
+        </ControlContainer>
       )}
       <AceEditor
         focus={true}
         ref={(el) => {
-          setRenderSpaceOuter(el);
+          setRenderSpaceOuter(el)
         }}
         name="aceEditor"
         readOnly={props.readOnly ? true : false}
@@ -152,14 +160,14 @@ export const Editor = (props: EditorProps): React.ReactElement => {
             name: "submit",
             bindKey: { win: "Shift-Enter", mac: "Shift-Enter" },
             exec: () => {
-              setRender(true);
+              setRender(true)
             },
           },
           {
             name: "stop",
             bindKey: { win: "Ctrl-Enter", mac: "Command-Enter" },
             exec: async () => {
-              props.onRender(stopLang);
+              props.onRender(stopLang)
             },
           },
         ]}
@@ -170,5 +178,5 @@ export const Editor = (props: EditorProps): React.ReactElement => {
       />
       <ErrorContainer>{error}</ErrorContainer>
     </Container>
-  );
-};
+  )
+}

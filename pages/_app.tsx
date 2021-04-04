@@ -1,27 +1,38 @@
-import React from "react"
+import React, { useReducer, useState } from "react"
 import { AppProps } from "next/app"
 import { useWasm } from "../utils/useWasm"
 import { NavBar } from "../components/nav"
 import { ThemeProvider } from "theme-ui"
 import { theme } from "../components/layout/theme"
+import { Dispatch, DispatchContext } from "../state/actions"
+import { mainReducer } from "../state/reducers"
+import { GlobalContext, intialStore } from "../state/store"
 
 function App({ Component, pageProps }: AppProps) {
   const [WasmProvider, wasmObject] = useWasm()
+
+  const [store, rawDispatch] = useReducer(mainReducer, intialStore)
+  const [dispatch] = useState(new Dispatch(rawDispatch))
+
   return (
-    <ThemeProvider theme={theme}>
-      <WasmProvider value={wasmObject}>
-        <NavBar />
-        <div
-          style={{
-            overflow: "auto",
-            height: "calc(100vh - 60px)",
-            marginTop: "60px",
-          }}
-        >
-          <Component {...pageProps} />
-        </div>
-      </WasmProvider>
-    </ThemeProvider>
+    <WasmProvider value={wasmObject}>
+      <GlobalContext.Provider value={store}>
+        <DispatchContext.Provider value={dispatch}>
+          <ThemeProvider theme={theme}>
+            <NavBar />
+            <div
+              style={{
+                overflow: "auto",
+                height: "calc(100vh - 60px)",
+                marginTop: "60px",
+              }}
+            >
+              <Component {...pageProps} />
+            </div>
+          </ThemeProvider>
+        </DispatchContext.Provider>
+      </GlobalContext.Provider>
+    </WasmProvider>
   )
 }
 

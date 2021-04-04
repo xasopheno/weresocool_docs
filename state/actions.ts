@@ -1,33 +1,26 @@
 import React from "react"
 import { createContext } from "react"
+import { Manager } from "../wasm/pkg/weresocool_wasm"
 
 export type Action =
   | { _k: "Update_Volume"; volume: number }
-  | { _k: "Update_Editor_Type"; editor: number }
+  | { _k: "Update_Editor_Type"; editor: "text" | "vim" | "emacs" }
 
 export class Dispatch {
   constructor(public dispatch: React.Dispatch<Action>) {}
 
-  onIncrementEditorType(current_editor: number): void {
-    const editor = (current_editor + 1) % 3
-    localStorage.setItem("editor", editor.toString())
+  onIncrementEditorType(editor: "text" | "vim" | "emacs"): void {
+    localStorage.setItem("editor", editor)
     this.dispatch({
       _k: "Update_Editor_Type",
       editor,
     })
   }
 
-  async onVolumeChange(volume: number): Promise<void> {
-    try {
-      await axios.post(settings.volumeURL, {
-        volume: volume / 100,
-      })
-
-      localStorage.setItem("volume", volume.toString())
-      this.dispatch({ _k: "Update_Volume", volume })
-    } catch (e) {
-      this.dispatch({ _k: "Backend", fetch: { state: "bad", error: e } })
-    }
+  async onVolumeChange(volume: number, manager: Manager | null): Promise<void> {
+    manager!.update_volume(volume / 100)
+    localStorage.setItem("volume", volume.toString())
+    this.dispatch({ _k: "Update_Volume", volume })
   }
 }
 

@@ -11,7 +11,6 @@ export const NavBar = () => {
   const windowSize = useWindowSize()
   const current = router.asPath.split("/").slice(1)[0]
   const stopAndWait = useStopAndWait()
-  console.log(current)
 
   return (
     <StyledNav>
