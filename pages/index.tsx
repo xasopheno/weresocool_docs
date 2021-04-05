@@ -122,7 +122,7 @@ const App = () => {
       </HeaderContainer>
       <div
         style={{
-          maxWidth: "80vw",
+          maxWidth: "90vw",
           margin: "auto",
         }}
       >

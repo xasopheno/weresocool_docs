@@ -1,18 +1,14 @@
 import { IMarker } from "react-ace"
 import styled from "styled-components"
 
-export const Container = styled.div<{ numLines: number }>`
+export const Container = styled.div<{ editorHeight: number }>`
   margin-bottom: 20px;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   height: ${(props) => {
-    if (props.numLines === -1) {
-      return 840
-    } else {
-      return props.numLines * (props.numLines > 10 ? 1.5 : 1.7) * 20
-    }
+    return props.editorHeight
   }}px;
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;

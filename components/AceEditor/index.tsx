@@ -10,13 +10,17 @@ import {
   Button,
   ErrorContainer,
 } from "./components"
+import ReactTooltip from "react-tooltip"
+import usePlatform from "use-platform"
+// @ts-ignore
+import useMobileDetect from "use-mobile-detect-hook"
 
 import "ace-builds/src-noconflict/mode-elixir"
 import "ace-builds/src-noconflict/theme-github"
 import "ace-builds/src-noconflict/keybinding-vim"
 import "ace-builds/src-noconflict/keybinding-emacs"
 import "ace-builds/src-noconflict/ext-language_tools"
-import { stopLang, isMobile } from "../../utils/misc"
+import { stopLang } from "../../utils/misc"
 // import { VolumeBar } from "../volume"
 import styled from "styled-components"
 import { EditorSelect } from "../editorSelect"
@@ -48,8 +52,10 @@ export const Editor = (props: EditorProps): React.ReactElement => {
   const [markers, setMarkers] = useState<IMarker[]>([])
   const [error, setError] = useState<string>("")
   const store = useContext(GlobalContext)
-
-  const fontSize = isMobile() ? 14 : 20
+  const detectMobile = useMobileDetect()
+  //@ts-ignore
+  const { isMac } = usePlatform()
+  const fontSize = detectMobile.isMobile() ? 14 : 18
 
   useEffect(() => {
     if (renderSpace) {
@@ -117,23 +123,37 @@ export const Editor = (props: EditorProps): React.ReactElement => {
     }
   }
 
+  const editorHeight = () => {
+    const height = props.height
+      ? parseInt(`${props.height}px`)
+      : language.split("\n").length
+    if (props.height === -1) {
+      return 840
+    } else {
+      return height * (height > 10 ? 1.5 : 1.7) * fontSize
+    }
+  }
+
   return (
-    <Container
-      numLines={
-        props.height
-          ? parseInt(`${props.height}px`)
-          : language.split("\n").length
-      }
-    >
+    <Container editorHeight={editorHeight()}>
+      {!detectMobile.isMobile() && <ReactTooltip />}
+
       {!props.readOnly && (
         <ControlContainer>
-          <Button onClick={() => setRender(true)}>Play</Button>
-          <Button onClick={() => props.onRender(stopLang)}>Stop</Button>
+          <Button data-tip="Shift+Enter" onClick={() => setRender(true)}>
+            Play
+          </Button>
+          <Button
+            data-tip={isMac ? "Command+Enter" : "Ctrl-Enter"}
+            onClick={() => props.onRender(stopLang)}
+          >
+            Stop
+          </Button>
           <Button onClick={() => onUpdateLanguage(props.language)}>
             Reset
           </Button>
           {/* <VolumeBar /> */}
-          <EditorSelect />
+          {!detectMobile.isMobile() && <EditorSelect />}
         </ControlContainer>
       )}
       <AceEditor

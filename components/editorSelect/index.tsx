@@ -56,6 +56,7 @@ export const EditorSelect: React.FC = () => {
       {/* <Label>Editor:</Label> */}
       <ButtonContainer>
         <Button
+          data-tip="Change Editor"
           style={{ backgroundColor: "cadetblue" }}
           onClick={() => setIsOpen(!isOpen)}
         >

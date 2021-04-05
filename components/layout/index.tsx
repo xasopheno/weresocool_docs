@@ -21,8 +21,8 @@ export default function Layout({
       {isMobile ? (
         <Grid
           style={{
-            marginLeft: "4%",
-            marginRight: "4%",
+            marginLeft: "1%",
+            marginRight: "1%",
           }}
           columns={[1]}
         >

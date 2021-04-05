@@ -34,7 +34,7 @@ export const NavBar = () => {
           Tutorial
         </NavItem>
       </Link>
-      <Link href="/">
+      <Link href="/tv">
         <NavItem
           onClick={async () => await stopAndWait()}
           selected={current === "tv"}
