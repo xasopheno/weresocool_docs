@@ -20,10 +20,27 @@ export const Container = styled.div<{ numLines: number }>`
 
 export const Button = styled.button`
   font-weight: 700;
-  font-size: 16px;
-  width: 8em;
-  height: 2em;
+  font-size: 1rem;
+  width: 5rem;
+  height: 2rem;
   background-color: goldenrod;
+
+  // outline: none !important;
+  // box-shadow: none !important;
+
+  &:active {
+    opacity: 70%;
+    border: 2px solid white;
+  }
+
+  :focus {
+    outline: 2px solid darkgoldenrod;
+  }
+
+  &:hover {
+    border: 2px solid white;
+    cursor: pointer;
+  }
 `
 
 export const ErrorContainer = styled.p`

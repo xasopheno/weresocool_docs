@@ -14,11 +14,11 @@ export default function Layout({
   menuData: MenuDatum[]
   sectionPath: string
 }) {
-  const windowSize = useWindowSize()
+  const { isMobile } = useWindowSize()
 
   return (
     <ThemeProvider theme={theme}>
-      {windowSize.width! < 1000 ? (
+      {isMobile ? (
         <Grid
           style={{
             marginLeft: "4%",

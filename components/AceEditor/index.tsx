@@ -37,6 +37,8 @@ export type EditorProps = {
 const ControlContainer = styled.div`
   display: flex;
   flex-direction: row;
+  margin-bottom: 1px;
+  overflow-x: visible;
 `
 
 export const Editor = (props: EditorProps): React.ReactElement => {

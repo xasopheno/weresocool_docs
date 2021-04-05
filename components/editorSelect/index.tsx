@@ -8,23 +8,32 @@ import { Button } from "../AceEditor/components"
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: auto;
+  // margin-left: auto;
 `
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
 `
 
-const Label = styled.p`
-  padding: 0;
-  margin: 0;
-  margin-right: 10px;
-  font-size: 20px;
-  text-align: center;
-`
+// const Label = styled.p`
+// padding: 0;
+// margin: 0;
+// margin-right: 10px;
+// font-size: 20px;
+// text-align: center;
+// `
 
 const Option = styled.a`
   font-size: 20px;
+  :hover {
+    color: goldenrod;
+  }
+
+  &:active {
+    opacity: 70%;
+  }
+
+  transition: color 0.3s linear;
 `
 
 const Options = styled.div`
@@ -46,7 +55,12 @@ export const EditorSelect: React.FC = () => {
     <Container>
       {/* <Label>Editor:</Label> */}
       <ButtonContainer>
-        <Button onClick={() => setIsOpen(!isOpen)}>{store.editor}</Button>
+        <Button
+          style={{ backgroundColor: "cadetblue" }}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {store.editor}
+        </Button>
 
         {isOpen && (
           <Options role="menu">
