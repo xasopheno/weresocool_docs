@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import useDropdownMenu from "react-accessible-dropdown-menu-hook"
-import React, { SyntheticEvent, useContext } from "react"
+import React, { useContext } from "react"
 import { GlobalContext } from "../../state/store"
 import { DispatchContext } from "../../state/actions"
 import { Button } from "../AceEditor/components"
@@ -55,11 +55,7 @@ export const EditorSelect: React.FC = () => {
     <Container>
       {/* <Label>Editor:</Label> */}
       <ButtonContainer>
-        <Button
-          data-tip="Change Editor"
-          style={{ backgroundColor: "cadetblue" }}
-          onClick={() => setIsOpen(!isOpen)}
-        >
+        <Button data-tip="Change Editor" onClick={() => setIsOpen(!isOpen)}>
           {store.editor}
         </Button>
 

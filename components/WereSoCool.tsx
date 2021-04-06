@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { useLoadedWasm } from "../utils/useWasm"
 import { EditorProps } from "./AceEditor"
 import dynamic from "next/dynamic"

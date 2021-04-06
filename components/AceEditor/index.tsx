@@ -140,7 +140,11 @@ export const Editor = (props: EditorProps): React.ReactElement => {
 
       {!props.readOnly && (
         <ControlContainer>
-          <Button data-tip="Shift+Enter" onClick={() => setRender(true)}>
+          <Button
+            style={{ backgroundColor: "mediumseagreen" }}
+            data-tip="Shift+Enter"
+            onClick={() => setRender(true)}
+          >
             Play
           </Button>
           <Button

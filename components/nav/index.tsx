@@ -50,7 +50,7 @@ export const NavBar = () => {
           Interviews
         </NavItem>
       </Link>
-      <Link href="/">
+      <Link href="/danny">
         <NavItem
           onClick={async () => await stopAndWait()}
           selected={current === "danny"}

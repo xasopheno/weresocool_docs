@@ -26,11 +26,11 @@ export const Button = styled.button`
 
   &:active {
     opacity: 70%;
-    border: 2px solid white;
+    // border: 2px solid white;
   }
 
   :focus {
-    outline: 2px solid darkgoldenrod;
+    outline: 1px solid darkgoldenrod;
   }
 
   &:hover {

@@ -4,12 +4,12 @@ import { Manager } from "../wasm/pkg/weresocool_wasm"
 
 export type Action =
   | { _k: "Update_Volume"; volume: number }
-  | { _k: "Update_Editor_Type"; editor: "text" | "vim" | "emacs" }
+  | { _k: "Update_Editor_Type"; editor: "Text" | "Vim" | "Emacs" }
 
 export class Dispatch {
   constructor(public dispatch: React.Dispatch<Action>) {}
 
-  onChangeEditorType(editor: "text" | "vim" | "emacs"): void {
+  onChangeEditorType(editor: "Text" | "Vim" | "Emacs"): void {
     localStorage.setItem("editor", editor)
     this.dispatch({
       _k: "Update_Editor_Type",

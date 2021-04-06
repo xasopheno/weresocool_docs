@@ -1,7 +1,7 @@
 import React from "react"
 import { WereSoCool } from "./WereSoCool"
 import { RatioChart } from "./RatioChart"
-//@ts-ignore
+// @ts-ignore
 import useMobileDetect from "use-mobile-detect-hook"
 
 export const WSCWithRatioChart = (props: { language: string }) => {
@@ -18,7 +18,7 @@ export const WSCWithRatioChart = (props: { language: string }) => {
       <div style={{ width: "100%", height: "100%" }}>
         <WereSoCool language={props.language} height={28} />
       </div>
-      {!detectMobile.isMobile && (
+      {!detectMobile.isMobile() && (
         <div style={{ marginTop: "1.5em" }}>
           <RatioChart />
         </div>
