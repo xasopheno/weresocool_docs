@@ -32,6 +32,14 @@ export const tutorialMenu: MenuDatum[] = [
   },
 ]
 
+export const dannyMenu: MenuDatum[] = [
+  {
+    title: "Info",
+
+    items: [{ name: "Itinerary", link: "live" }],
+  },
+]
+
 export const interviewMenu: MenuDatum[] = [
   {
     title: "Brad Goode: Stories from Chicago",
