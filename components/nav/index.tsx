@@ -8,7 +8,7 @@ import { LogoBox, LogoText, NavItem, StyledNav } from "./styles"
 
 export const NavBar = () => {
   const router = useRouter()
-  const { isMobile } = useWindowSize()
+  const { isMobile } = useWindowSize(680)
   const current = router.asPath.split("/").slice(1)[0]
   const stopAndWait = useStopAndWait()
 
@@ -17,7 +17,7 @@ export const NavBar = () => {
       <LogoBox onClick={() => router.push("/")}>
         <Image src="/magic.png" alt="WereSoCool.logo" width="40" height="40" />
         <Link href="/">
-          {isMobile ? (
+          {!isMobile ? (
             <LogoText onClick={async () => await stopAndWait()}>
               WereSoCool
             </LogoText>
@@ -50,7 +50,7 @@ export const NavBar = () => {
           Interviews
         </NavItem>
       </Link>
-      <Link href="/danny">
+      <Link href="/danny/mdx/about">
         <NavItem
           onClick={async () => await stopAndWait()}
           selected={current === "danny"}
