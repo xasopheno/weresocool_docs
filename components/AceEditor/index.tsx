@@ -126,7 +126,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
     if (editor === "Text") {
       return ""
     } else {
-      editor.toLowerCase()
+      return editor.toLowerCase()
     }
   }
   const editorHeight = () => {
