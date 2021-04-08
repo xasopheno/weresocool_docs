@@ -1,0 +1,29 @@
+export const artist = {
+  date: "9/19/20",
+  location: "L.A.",
+  name: "Chris Votek",
+  instrument: "Cello",
+  bio: [
+    "Chris Votek is a creative cellist living and breathing music in Los Angeles. He studied with the masters of the West then learned from the masters of the East, and much of his work is a dialogue between cultures. A disciple of the legendary violinist Padmabushan Dr. N. Rajam, he is one of the only cellists in the world performing Hindustani Raga.",
+
+    "Votek has performed at top venues throughout the world with Julia Holter, Amanda Palmer, The Dirty Projectors, Father John Misty, Jherek Bischoff, WildUp, and The Silk Road Ensemble. Votek is an active member of many world music and cross-cultural ensembles. He is the principal cellist of Nabil Azzam’s Arabic Orchestra MESTO, a member of Bridge to Everywhere, and a collaborator with Iranian singers, Homayoun Shajarian and Mamak Khadem.",
+    "Votek is releasing his first two albums this winter. Memories of A Shadow is an evocative string quintet merging the svara of raga with medieval polyphony and Searching is a collection of electro-acoustic songs exploring the digitization of nature.",
+  ],
+  links: [
+    {
+      text: "Chris' Website",
+      link: "http://www.chrisvotek.com/",
+    },
+  ],
+  payment: {
+    venmo: "./chris_votek_qr.png",
+    paypal: "",
+  },
+  charity: {
+    name: "Black Immigrants Bail Fund",
+    bio: [
+      "Black Immigrants Bail Fund is a National project of the Haitian Bridge Alliance (HBA) and  African Bureau for Immigration and Social Affairs (ABISA)  with support of other Black led organizations  that provides free assistance and relief to black immigrants in pursuit of Liberation and Justice. Our commitment is to eradicate the mass incarceration of black immigrants and level the playing field of equity in due process; transforming one life at a time.",
+    ],
+    link: "https://www.blackimmigrantsbailfund.com/",
+  },
+};

@@ -122,7 +122,13 @@ export const Editor = (props: EditorProps): React.ReactElement => {
         break
     }
   }
-
+  const toEditor = (editor) => {
+    if (editor === "Text") {
+      return ""
+    } else {
+      editor.toLowerCase()
+    }
+  }
   const editorHeight = () => {
     const height = props.height
       ? parseInt(`${props.height}px`)
@@ -168,7 +174,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
         name="aceEditor"
         readOnly={props.readOnly ? true : false}
         keyboardHandler={
-          props.keyboard ? props.keyboard : store.editor.toLowerCase()
+          props.keyboard ? props.keyboard : toEditor(store.editor)
         }
         showGutter={props.hideGutter ? false : true}
         fontSize={props.fontSize ? props.fontSize : fontSize}

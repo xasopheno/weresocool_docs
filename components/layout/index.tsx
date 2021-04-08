@@ -46,7 +46,6 @@ export default function Layout({
             marginLeft: "8%",
           }}
           columns={[2, "7fr 3fr"]}
-          // columns={[2, "3fr 1fr"]}
         >
           <Box
             style={{

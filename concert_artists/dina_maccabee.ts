@@ -1,0 +1,30 @@
+export const artist = {
+  date: "7/9/20",
+  location: "NYC",
+  name: "Dina Maccabee",
+  instrument: "Viola/Effects",
+  bio: [
+    "Dina Maccabee is a songwriter, composer, performer and teacher. She has been fortunate to be part of arts communities in San Francisco, New York, and Los Angeles. You might have heard her play Viola or sing with Julia Holter, Ramon & Jessica, or some other band.",
+  ],
+  links: [
+    {
+      text: "Dina's record, The Sharpening Machine",
+      link: "https://dinamaccabee.bandcamp.com/album/the-sharpening-machine",
+    },
+    {
+      text: "Dina's website",
+      link: "https://www.dinamaccabee.com/",
+    },
+  ],
+  payment: {
+    venmo: "./dina_qr.png",
+    paypal: "",
+  },
+  charity: {
+    name: "City Harvest",
+    bio: [
+      "City Harvest helped start the food rescue movement in 1982 when a group of New Yorkers saw that New York City had an abundance of excess food even while a large number of its residents struggled to feed themselves and their families. We recognized the practical purpose that this surplus food could serve if directed to New Yorkers who needed it, filling the plates of the working mom who had trouble making ends meet at month’s end, the senior in the apartment upstairs living on a fixed income, or the family around the corner coping with a large and unexpected medical bill.",
+    ],
+    link: "https://www.cityharvest.org/",
+  },
+};

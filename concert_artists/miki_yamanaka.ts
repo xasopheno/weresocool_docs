@@ -1,0 +1,38 @@
+export const artist = {
+  date: "10/8/2020",
+  location: "NYC",
+  name: "Miki Yamanaka",
+  instrument: "Piano",
+  bio: [
+    "Miki Yamanaka is a New York-based pianist from Kobe, Japan. She moved to New York City in 2012 and has studied Piano with Jason Lindner, Jeb Patton, and Fred Hersch, and Organ with Sam Yahel and Larry Goldings. In 2015 she was one of three pianists selected to participate in “Betty Carter’s Jazz Ahead”, an intensive composition residency at the Kennedy Center. She earned her Master of Music degree from Queens College, receiving the Sir Roland Hanna Award. Miki has appeared in concert with many notable musicians including Steve Nelson, Jerry Dodgion, Victor Lewis, Rich Perry, Antonio Hart and Peter Bernstein. She became one of the busiest pianists in NYC, holding residencies at Smalls and Mezzrow Jazz Clubs in NYC, and having multiple one-week-long engagements at Dizzy’s Club Coca Cola. She is the current pianist in the Philip Harper Quintet, the Roxy Coss Quintet and the Antonio Hart Group. Her recent projects include a mini album “Songs Without Lyrics” (2012), a critically acclaimed official debut “Miki” (Cellar Live, 2018), and a new release “Human Dust Suite” inspired by a striking photograph by Agnes Denes called “Human Dust”.",
+  ],
+  links: [
+    {
+      text: "Miki's Website",
+      link: "https://www.mikiyamanaka.com/",
+    },
+    {
+      text: "Miki on Instagram",
+      link: "https://www.instagram.com/mikimikiyummy/",
+    },
+    {
+      text: "Miki on Facebook",
+      link: "https://www.facebook.com/mikiyamanakamusic/",
+    },
+    {
+      text: "Miki on Paypal",
+      link: "paypal.me/mikiyamanakamusic",
+    },
+  ],
+  payment: {
+    venmo: "./miki_yamanaka_qr.jpeg",
+    paypal: "",
+  },
+  charity: {
+    name: "Equal Justice Initiative",
+    bio: [
+      "The Equal Justice Initiative is committed to ending mass incarceration and excessive punishment in the United States, to challenging racial and economic injustice, and to protecting basic human rights for the most vulnerable people in American society.",
+    ],
+    link: "https://eji.org/",
+  },
+};

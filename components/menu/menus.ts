@@ -43,6 +43,89 @@ export const dannyMenu: MenuDatum[] = [
   },
 ]
 
+export const tvMenu: MenuDatum[] = [
+  {
+    title: "Past Concerts",
+    items: [
+      "1/28/21 - Shags Chamberlain - Synths, I think? - (LA)",
+
+      "1/21/21 - Kjetil Jerve - Piano - (Norway)",
+
+      "1/14/21 - Gabi Hartmann - Songs - (Paris)",
+
+      "12/17/20 -> Caleb Curtis - Saxophone (NYC)",
+
+      "12/10/20 -> Doors That Dont - Songs - (Denver, CO)",
+
+      "12/3/20 -> Caroline Davis - Saxophone (NYC)",
+
+      "11/19/20 -> Pablo Eluchans - Drums - (NYC)",
+
+      "11/12/20 -> Jacquelyn West - Songs - (NYC)",
+
+      "11/5/20 -> Tomoko Omura - Violin - (NYC)",
+
+      "10/27/20 -> Kimberly Hawkey - Jazz Standards - (New York)",
+
+      "10/22/20 -> Polartropica - Popular Music - (LA)",
+
+      "10/15/20 -> John Gunther - Saxophone/Electronics - (Boulder, CO)",
+
+      "10/8/20 -> Miki Yamanaka - Piano - (NYC)",
+
+      "10/1/20 -> Who is Andrew Fox - ??? - (NYC)",
+
+      "9/24/20 -> Soft Talon - Violin/Beats - (NYC)",
+
+      "9/17/20 -> Chris Votek - Cello - (LA)",
+
+      "9/10/20 -> Glenn Zaleski - Piano - (NYC)",
+
+      "9/3/20 -> AJ Salas - Keyboards/Beats - (Denver)",
+
+      "8/27/20 -> Molly Bolten (Oakland)",
+
+      "8/20/20 -> Ross Martin - Guitar - (NYC)",
+
+      "8/13/20 -> Cleek Schrey - (Princeton, NY)",
+
+      "8/6/20 - John Grigsby - (Denver)",
+
+      "7/23/20 - Dan Tepfer - (NYC)",
+
+      "7/16/20 - Corey Fogel - Drums/Sounds - (L.A.)",
+
+      "7/9/20 - Dina Maccabee - Viola, Effects - (NYC)",
+
+      "7/2/20 - Gabi Hartmann - Songs (Paris)",
+
+      "6/25/20 - Mike Thies - Electronics, Drums (NYC)",
+
+      "6/18/20 - Topu Lyo - Cello and Effects (NYC)",
+
+      "6/11/20 - Bob Woods-LaDue - Drums and Computer Programming (Oakland)",
+
+      "6/4/20 - Dameion Hines a.k.a. Dj Check One - Beats (Denver)",
+
+      "5/28/20 - Ayo Awosika - Songs (LA)",
+
+      "5/21/20 - Jesse Harris and Jeremy Gustin - Songs/Drums (NYC)",
+
+      "5/14/20 - Colin Stranahan - Drums/Sounds (NYC)",
+
+      "5/7/2020 - Marandi Hostetter and Eric Lane (NYC)",
+
+      "4/30/2020 - Beck Burger Piano (New Orleans)",
+
+      "4/23/2020 - Inner Movements - Mark Clifford Vibraphone, Crystal Pascucci",
+
+      "4/16/2020 - Grant Gordy - Guitar (NYC)",
+
+      "4/9/2020 - Danny Meyer - Saxophone (NYC)",
+    ],
+  },
+]
+
 export const interviewMenu: MenuDatum[] = [
   {
     title: "Brad Goode: Stories from Chicago",

@@ -1,0 +1,26 @@
+export const artist = {
+  date: "6/11/20",
+  location: "Oakland",
+  name: "Bob Woods-Ladue",
+  instrument: "Drums && Computer Programming",
+  bio: [
+    "Robert Woods-LaDue is percussionist and composer living in the San Francisco Bay Area. He has received a BFA in Percussion Performance from University of Miami and an MFA in Composition and Performance from CalArts.  He has studied percussion with Ney Rosauro, David Johnson, Sandy Perez, and Jesus Diaz, and Composition with Robert Wannamaker and David Rosenboom.  Robert is the bandleader for DennyDennyBreakfast and Onkos. Robert often makes music and dance collaborative work with his wife Sarah Woods-LaDue.",
+  ],
+  links: [
+    {
+      text: "Check out Bob's bandcamp",
+      link: "https://music.dennydennybreakfast.com/",
+    },
+  ],
+  payment: {
+    venmo: "",
+    paypal: "",
+  },
+  charity: {
+    name: "ACLU",
+    bio: [
+      "The ACLU has been at the center of nearly every major civil liberties battle in the U.S. for over 100 years. This vital work depends on the support of ACLU members in all 50 states and beyond.",
+    ],
+    link: "https://action.aclu.org/give/now",
+  },
+};

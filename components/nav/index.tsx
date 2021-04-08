@@ -39,7 +39,7 @@ export const NavBar = () => {
           onClick={async () => await stopAndWait()}
           selected={current === "tv"}
         >
-          TV
+          Concert Series
         </NavItem>
       </Link>
       <Link href="/interviews/brad_goode_1">
