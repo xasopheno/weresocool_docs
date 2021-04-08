@@ -2,15 +2,6 @@ import Youtube from "../../components/youtube"
 import styled from "styled-components"
 import React from "react"
 import { Box, Grid } from "theme-ui"
-import { Menu } from "../../components/menu"
-import { tvMenu } from "../../components/menu/menus"
-
-const Wrapper = styled.div`
-  max-width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
-`
-
 const TV = () => {
   return (
     <Grid
@@ -26,11 +17,8 @@ const TV = () => {
           marginTop: "50px",
         }}
       >
-        <Wrapper>
-          <Youtube code={"ikGA9wDE9nM"} />
-        </Wrapper>
+        TV
       </Box>
-
       <Box>
         <div
           style={{

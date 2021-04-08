@@ -1,0 +1,42 @@
+{
+  "date": "11/19/202",
+  "location": "NYC",
+  "name": "Pablo Eluchans",
+  "instrument": "Drums/Percussion",
+  "bio": [
+    "Pablo Eluchans is a professional Drummer and Percussionist living in New York City. He works as a freelance musician; performing, recording and teaching.",
+
+    "Pablo was born in Santiago, Chile and from a very young age felt a very powerful attraction to music and specially drums. Like most kids, he started playing Rock, in his case influenced by his many cousins that played music, mainly drummers and bass players. It wasn't long before he discovered other genres like Progressive Rock, Metal, Funk and then got heavily into Jazz music, exploring all it's subtleties and sub-genres, such as Swing, Be Bop, Fusion, Modern Jazz and many others.",
+
+    "He studied privately with many of Chile’s best drummers and also at Escuela Moderna de Musica. In 2006 he was awarded a scholarship to attend the prestigious Berklee College of Music, from which he Graduated in 2009 with a Degree in Performance. While there, he was the recipient of several awards including The World Scholarship Tour 2006, the Zildjian Scholarship Award 2007, the Achievement-based Scholarship (BAS) and the Thayer A. Peck Memorial Scholarship.",
+
+    "In May of 2009, he placed 3rd in the International Kodolanyi Jazz Competition with Mitsuru Hirayama’s Quintet in Siofok, Hungary.",
+
+    "In 2011 Pablo moved to New York City, where he performs regularly with several projects in many different styles; Jazz, Funk, Pop, etc. He has done International Tours in North and South America, The Caribbean, Europe and Asia. His recording credits include over 70 CDs as a sideman and co-leader, DVDs, Film Scores, TV and Radio Jingles.",
+
+    "Pablo is a partner and the house drummer/percussionist at Pinch Recording, a recording studio opened in 2016 in Long Island City, NY. (www.pinchrecording.com) There he records for a variety of artists and also teaches private drum and percussion lessons. He is a member of Pinch Music, a Production Music Library based at Pinch Recording Studio. (www.pinchmusic.com) Pablo is also very active in the modern dance world, working regularly as an accompanist for schools like Alvin Ailey, Paul Taylor, Steps on Broadway and Joffrey Ballet.",
+
+    "Pablo Eluchans earned a Professional Degree in Architecture from Universidad Finis Terrae in Santiago, Chile in 2005."
+  ],
+  "links": [
+    {
+      "text": "Listen to Pablo Eluchans on drums on Spotify. (He's played on so many records!)",
+      "link": "https://open.spotify.com/playlist/1L8xEU8L2ui37i88R7KR7c?si=m6ZKXnOpRM2pmgzPkldEug "
+    },
+    {
+      "text": "Make a record with Pablo at Pinch Recording. A beautiful studio.",
+      "link": "https://www.pinchrecording.com"
+    }
+  ],
+  "payment": {
+    "venmo": "./pablo_eluchans.png",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "Breaking Walls Program",
+    "bio": [
+      "Breaking Walls fosters global dialogue among the leaders of tomorrow by creating artistic, educational and community-building opportunities for youth to become empathetic, system changing leaders. Breaking Walls’ activist approach allows participants to create an alternative community, modeling an inclusive and peaceful cohabitation and social interaction built on the arts, empathy and acceptance. We empower youth to discover their voice, offer them a platform on which to use it by promoting a continually-expanding inclusive, respectful and trusting world cultivated by our artists, ambassadors and associates. Breaking Walls engages and supports young people as they become creative artists and empathetic leaders of tomorrow who will actively advance personal transformation and social change within their home communities and on the global stage."
+    ],
+    "link": "http://breakingwallsprogram.org/ "
+  }
+}

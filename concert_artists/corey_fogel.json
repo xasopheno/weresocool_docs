@@ -1,0 +1,31 @@
+{
+  "cone": "Ksy093uLGkc",
+  "date": "7/16/20",
+  "location": "L.A.",
+  "name": "Corey Fogel",
+  "instrument": "Drums",
+  "bio": [
+    "Corey Fogel (b. 1977) is a drummer and artist living in Los Angeles, CA.  His practice is based around momentary encounters between music and objects, textiles, foods, and other collaborators. Fogel engages the viewer to consider sound as a medium on par with paint and cellulose, a constant in our daily lives.  He challenges us to consider the contexts in which we create, store, and understand music performance.",
+
+    "Fogel’s works have been presented at Machine Project, Los Angeles;  Los Angeles County Museum of Art, Human Resources, Los Angeles; Redling Fine Art, Los Angeles; The Wulf, Los Angeles; The Hammer Museum, Los Angeles; the Museo de Arte Contemporaneo de Oaxaca, REDCAT; Los Angeles; and New Music for Strings Festival: Reykjavik. His performance work was also included in J. Paul Getty Museum’s Pacific Standard Time Performance and Public Art Festival and West of Rome’s Trespass Parade. Corey was awarded The California Community Foundation 2014 Fellowship in Visual Arts.",
+
+    "Fogel also performs and composes in many rock, jazz, noise, folk, and chamber music capacities. Recent collaborations include: Julia Holter, Tashi Wada, Patty Waters, Abigail Levine, Simone Forti, Raven Chacon, Yoshi Wada, Michael Winter, Robert Blatt, Maya Dunietz, John Butcher, John Russell, Todd Barton, Misha Marks, Brian Allen, Alexander Bruck, Patrick Shiroishi, Liz Glynn, Chris Speed, Mark Dresser, Kathleen Kim, Ezra Buchla, Tony Malaby, John Dieterich, Carlin Wing, Sam Mickens."
+  ],
+  "links": [
+    {
+      "text": "Corey's Website",
+      "link": "http://www.coreyfogel.com"
+    }
+  ],
+  "payment": {
+    "venmo": "./corey_qr.png",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "Defend Our Democracy",
+    "bio": [
+      "We fight to make elections fair, end mass incarceration, and preserve our liberties — in Congress, the states, the courts, and the court of public opinion. Join us in building an America that is democratic, just, and free."
+    ],
+    "link": "https://secure.brennancenter.org/secure/defend-our-democracy?amount=25&recurring=0"
+  }
+}

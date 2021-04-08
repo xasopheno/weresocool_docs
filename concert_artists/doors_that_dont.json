@@ -1,0 +1,42 @@
+{
+  "date": "12/10/2020",
+  "location": "Denver, CO",
+  "name": "DOORS THAT DON'T",
+  "instrument": "Songs, Guitar, Vox",
+  "bio": [
+    "DOORS THAT DON’T are a Denver-based group, composed of Dave Devine and Tania Katz. The duo performs art rock that is at times discordant and gritty, meditative and serene, deep, lush, and dark. Mechanical elements and heavily distorted synths meld organically with Katz' dreamy yet grounded vocals and Devine's carefully constructed layers of acoustic and electric guitars. Their use of pulse and pattern that shifts moment to moment, unbound by rhythmic and sonic constraints, alongside their use of folk melody against an electronic backdrop, is both meticulously crafted and wildly organic, ultimately producing rich soundscapes that are of the Earth.",
+    "Hailed as “Denver’s Guitar Guru” by Westword magazine, guitarist, composer, and educator Dave Devine is known throughout the Denver jazz and rock scene for his virtuosity as a performer, his versatility as an artist, and his keen ability to connect with and inspire his students. With a background in classical guitar performance and a deep abiding love for guitar pedals, his sound is one of dense melodic layers, ambient washes, and lush sonic landscapes.",
+
+    "Devine’s recording projects have ranged from experimental jazz (momen terra, Static Trio) and chamber pop (Greybird, Delby L), to jazz metal (Hate Camels) and ambient (Mountain Coast). Devine presents his original compositions with his group Dave Devine Relay, blending effect-heavy guitars, layered synths, and shifting meters into rich instrumental pop songs.",
+
+    "In Invisible Bird, a modern jazz trio with trumpeter Shane Endsley (Kneebody) and drummer Scott Amendola (Nels Cline Singers), Devine serves as one of three distinct compositional voices, presenting original music that traverses an array of textures from rootsy backbeat grooves and pop melodies to swirling soundscapes and meditative structures. Invisible Bird released their debut album Flutter to Fuzz in 2018 with guest appearances from Orenda Fink (Azure Ray) and Sam Amidon.",
+
+    "Devine has also recorded and/or performed with Brian Blade and the Fellowship Band (Body and Shadow, Blue Note), John Grant and the Czars (Sorry I Made You Cry, Bella Union) Art Lande, The Barr Brothers, Don Byron, Chuck Prophet, Marc Broussard, Janet Feder, Elliott Sharp, Ron Miles, Matt Wilson, Ben Goldberg, Neil Halstead, and Sun Kil Moon among others.",
+
+    "Devine presents his chamber arrangements of Ennio Morricone’s spaghetti western scores annually in conjunction with the Denver Western Stock Show. The Good, The Bad, and the Devine is a show as much educational as it is entertaining, and currently features Tania Katz (vocals), Shane Endsley (trumpet), Patrick Lee (keyboards), and DeVotchKa members Tom Hagerman (violin), Jeanie Schroder (bass), and Shawn King (drums).",
+    "Tania Katz is a member of several projects, including: Doors That Don’t, playing synth and singing alongside Dave Devine on guitar; Big Dirty Horse, singing with fellow vocalists Mina Bradley-Belcaid and Emily Hale; Witches & Science, a collective project featuring several rotating Denver musicians, led by Aaron Burris-Deboskey; and The Good, The Bad, and The Devine, a chamber group led by Dave Devine who presents arrangements of the late Ennio Morricone’s spaghetti western scores.",
+    "Katz has performed and/or recorded with fantastic musicians such as Greg Garrison, Sean King, Tom Hagerman, and Jeanie Schroder of Devotchka, Chris Pandolfi of Trad+ and The Infamous Stringdusters, Julia Mendiolea of Y La Bamba, Kris Becker, Adam Bartczak Republic, Joseph Lamar, and Moon Atomizer.",
+    "Katz received her Bachelor of Music in Jazz and American Improvised Music Performance from Metropolitan State University of Denver, studying under Ashlee Varner, Ron Miles, and Dave Devine. She is now an instructor at her alma mater, teaching voice and ensembles within the same program."
+  ],
+  "links": [
+    {
+      "text": "DOORS THAT DON'T Bandcamp",
+      "link": "https://doorsthatdont.bandcamp.com/album/doors-that-dont"
+    },
+    {
+      "text": "DOORS THAT DON'T Website",
+      "link": "https://www.doorsthatdont.com"
+    }
+  ],
+  "payment": {
+    "venmo": "./doors_that_dont.jpg",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "Clean Air Task Force",
+    "bio": [
+      "Every year people produce almost forty billion tons of carbon dioxide that is pumped into the atmosphere – that’s a hundred times faster than the Earth has ever seen. If we don’t take action, our planet will change far faster than we can adapt. This is the mother of all environmental problems and the Clean Air Task Force is on it."
+    ],
+    "link": "https://www.catf.us/"
+  }
+}

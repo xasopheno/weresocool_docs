@@ -19,4 +19,4 @@ export const artist = {
     bio: [""],
     link: "",
   },
-};
+}

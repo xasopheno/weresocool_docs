@@ -1,0 +1,30 @@
+{
+  "date": "12/3/20",
+  "location": "NYC",
+  "name": "Caroline Davis",
+  "instrument": "Saxophone/Voice/Electronics",
+  "bio": [
+    "Mobile since her birth in Singapore, Caroline Davis’ music covers a wide range of styles, owed to her constantly shifting environment. Her albums include Live Work & Play (2012), Doors: Chicago Storylines (2015), Maitri’s Afterglow (2017) Heart Tonic (2018), Alula (2019), and Persona’s Anthems (2019). She won the Downbeat Critic's Poll “rising star” in 2018. Davis has worked with Lee Konitz, Angelica Sanchez, The Femme Jam, Matt Mitchell, Terry Riley, Miles Okazaki, J. Hoard, Thana Alexa, and Billy Kaye. In 2019, Davis was a composer-in-residence at the esteemed MacDowell Colony and awarded the Jerome Hill Artist Fellowship. Her compositional practice integrates music with the cognitive sciences and anatomical structures, influenced by her Ph.D in Music Cognition. "
+  ],
+  "links": [
+    {
+      "text": "Check out Caroline's record Alula. There's Vinyl available.",
+      "link": "https://carolinedavismusic.bandcamp.com/album/alula"
+    },
+    {
+      "text": "And also her record Anthems",
+      "link": "https://carolinedavismusic.bandcamp.com/album/anthems"
+    }
+  ],
+  "payment": {
+    "venmo": "./caroline_davis_qr.jpg",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "The Audre Lorde Project",
+    "bio": [
+      "The Audre Lorde Project is a Brooklyn, New York-based organization for LGBT people of color. The organization concentrates on community organizing and radical nonviolent activism around progressive issues within New York City, especially relating to LGBT communities, AIDS and HIV activism, pro-immigrant activism, prison reform and organizing among youth of color. It is named for the lesbian-feminist poet and activist Audre Lorde and was founded in 1994."
+    ],
+    "link": "https://alp.org/"
+  }
+}
