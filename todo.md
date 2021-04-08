@@ -19,3 +19,12 @@ Styling
 audio
 links to records
 youtube videos
+
+## Concert Series
+Glenn
+AJ Salas
+Beck
+Eric Marandi
+Inner Movements
+Grant
+Danny

@@ -29,7 +29,34 @@ const Wrapper = styled.div`
   margin-right: auto;
 `
 
-export default function TV({ source }: PostProps) {
+type Concert = {
+  date: string
+  code: string
+  location: string
+  name: string
+  instrument: string
+  bio: string[]
+  links: Array<{
+    text: string
+    link: string
+  }>
+  payment: {
+    venmo: string
+    paypal: string
+  }
+  charity: {
+    name: string
+    bio: string[]
+    link: string
+  }
+}
+
+export interface TVProps {
+  source: Concert
+  slug: string | string[]
+}
+
+export default function TV({ source }: TVProps) {
   console.log(source)
   return (
     <Grid
@@ -46,7 +73,7 @@ export default function TV({ source }: PostProps) {
         }}
       >
         <Wrapper>
-          <Youtube code={"ikGA9wDE9nM"} />
+          <Youtube code={source.code} />
         </Wrapper>
       </Box>
 
