@@ -76,22 +76,23 @@ export interface TVProps {
 export default function TV({ source }: TVProps) {
   return (
     <Grid
+      gap={2}
       style={{
         marginLeft: "3%",
       }}
-      columns={[3, "3fr 1fr, 2fr"]}
+      columns={[3, "1fr 1fr 1fr"]}
     >
       <Box
         style={{
           overflow: "auto",
           height: "calc(100vh - 60px)",
-          marginTop: "50px",
           paddingBottom: "100px",
         }}
       >
-        <h1>
+        <h1>WereSoCool Concert Series</h1>
+        <h2>
           #{source.number} | {source.name}
-        </h1>
+        </h2>
         <p>{source.date}</p>
         <Wrapper>
           <Youtube code={source.code} />
@@ -101,11 +102,12 @@ export default function TV({ source }: TVProps) {
       <Box>
         <div
           style={{
-            overflow: "scroll",
+            overflow: "auto",
+            height: "calc(100vh - 60px)",
+            marginTop: "20px",
             paddingBottom: "2em",
           }}
         >
-          {/* bio */}
           <h3>Who:</h3>
           <div>
             {source.bio.map((p, i) => {
@@ -129,7 +131,6 @@ export default function TV({ source }: TVProps) {
             })}
           </div>
 
-          {/* charity */}
           <h3>Why: </h3>
           <h4>{source.charity.name}</h4>
           <div>
@@ -187,7 +188,6 @@ export const getStaticPaths = async () => {
     .map((path) => path.replace(/\.json/, ""))
     .map((slug) => ({ params: { slug } }))
 
-  console.log(paths)
   return {
     paths,
     fallback: false,

@@ -101,6 +101,14 @@ export const tvMenu: MenuDatum[] = [
         name: "#19 | Cleek Schrey - Hardanger D’Amore, - (NYC)",
         link: "cleek",
       },
+      {
+        name: "#17 | Alejandro Castaño - Jazz (Denver, CO)",
+        link: "alejandro",
+      },
+      {
+        name: "#16 | Dan Tepfer - Piano and Computer (NYC)",
+        link: "dan_tepfer",
+      },
       { name: "#11 | Topu Lyo - Cello and Effects (NYC)", link: "topu_lyo" },
 
       // "10/22/20 -> Polartropica - Popular Music - (LA)",
