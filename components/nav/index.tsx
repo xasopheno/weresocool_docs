@@ -34,7 +34,7 @@ export const NavBar = () => {
           Tutorial
         </NavItem>
       </Link>
-      <Link href="/tv">
+      <Link href="/tv/shags_chamberlain">
         <NavItem
           onClick={async () => await stopAndWait()}
           selected={current === "tv"}
@@ -50,7 +50,7 @@ export const NavBar = () => {
           Interviews
         </NavItem>
       </Link>
-      <Link href="/danny/mdx/about">
+      <Link href="/danny/who/about">
         <NavItem
           onClick={async () => await stopAndWait()}
           selected={current === "danny"}

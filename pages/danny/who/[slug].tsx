@@ -26,7 +26,7 @@ export default function InterviewPage({ source }: PostProps) {
   const content = hydrate(source, { components })
 
   return (
-    <Layout sectionPath={"danny/mdx"} menuData={dannyMenu}>
+    <Layout sectionPath={"danny/who"} menuData={dannyMenu}>
       <PostContainer>
         <Content>
           <div>{content}</div>
