@@ -1,4 +1,3 @@
-import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -8,7 +7,7 @@ import { useWindowSize } from "../../utils/useWindowSize"
 import { LogoBox, LogoText, NavItem, StyledNav } from "./styles"
 import _ from "lodash"
 
-export const NavBar = (props: { concerts: string[] }) => {
+export const NavBar = () => {
   const router = useRouter()
   const { isMobile } = useWindowSize(680)
   const current = router.asPath.split("/").slice(1)[0]

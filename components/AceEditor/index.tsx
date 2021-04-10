@@ -122,7 +122,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
         break
     }
   }
-  const toEditor = (editor) => {
+  const toEditor = (editor: "Text" | "Vim" | "Emacs") => {
     if (editor === "Text") {
       return ""
     } else {

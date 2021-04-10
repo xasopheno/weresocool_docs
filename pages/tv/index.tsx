@@ -1,5 +1,3 @@
-import Youtube from "../../components/youtube"
-import styled from "styled-components"
 import React from "react"
 import { Box, Grid } from "theme-ui"
 const TV = () => {
