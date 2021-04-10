@@ -139,7 +139,7 @@ export default function TV({ source }: TVProps) {
             })}
           </div>
           <CoolLink href={source.charity.link}>
-            <LinkText>Website</LinkText>
+            <LinkText>More Information</LinkText>
           </CoolLink>
         </div>
       </Box>

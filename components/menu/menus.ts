@@ -48,6 +48,10 @@ export const tvMenu: MenuDatum[] = [
     title: "Watch to Past Concerts",
     items: [
       {
+        name: "#40 | Maya Laliberte - Dance - (Boulder, CO)",
+        link: "maya_laliberte",
+      },
+      {
         name: "#39 | Shags Chamberlain - Synths - (LA)",
         link: "shags_chamberlain",
       },
@@ -71,12 +75,20 @@ export const tvMenu: MenuDatum[] = [
         link: "pablo_eluchans",
       },
       {
+        name: "#32 | Jacquelyn West - Songs - (NYC)",
+        link: "jacquelyn_west",
+      },
+      {
         name: "#31 | Tomoko Omura - Violin - (NYC)",
         link: "tomoko_omura",
       },
       {
         name: "#30 | Kimberly Hawkey - Jazz Standards (New York)",
         link: "kim_hawkey",
+      },
+      {
+        name: "#29 | Polartropica - Popular Music - (L.A.)",
+        link: "polartropica",
       },
       {
         name: "#28 | John Gunther - Woodwinds and Effects - (Boulder, CO)",
@@ -95,11 +107,17 @@ export const tvMenu: MenuDatum[] = [
         link: "soft_talon",
       },
       { name: "#24 | Chris Votek - Cello - (LA)", link: "chris_votek" },
-      // { name: "#21 | Molly Bolton - Songs", link: "molly_bolten" },
+      { name: "#23 | Glenn Zaleski - Piano - (NYC)", link: "glenn_zaleski" },
+      { name: "#22 | AJ Salas - Keys/Beats - (Denver, CO)", link: "aj_salas" },
+      { name: "#21 | Moly Bolton - Songs - (Oakland)", link: "molly_bolten" },
       { name: "#20 | Ross Martin - Guitar - (NYC)", link: "ross_martin" },
       {
         name: "#19 | Cleek Schrey - Hardanger D’Amore, - (NYC)",
         link: "cleek",
+      },
+      {
+        name: "#18 | John Grigsby - Bass and More - (Denver, CO)",
+        link: "john_grigsby",
       },
       {
         name: "#17 | Alejandro Castaño - Jazz (Denver, CO)",
@@ -114,6 +132,10 @@ export const tvMenu: MenuDatum[] = [
       {
         name: "#13 | Gabi Hartmann (#2) - Songs - (Paris)",
         link: "gabi_hartmann",
+      },
+      {
+        name: "#12 | Mike Thies - Drums and Effects (NYC)",
+        link: "mike_thies",
       },
       { name: "#11 | Topu Lyo - Cello and Effects (NYC)", link: "topu_lyo" },
       {
@@ -130,8 +152,26 @@ export const tvMenu: MenuDatum[] = [
         link: "jesse_harris",
       },
       { name: "#6 | Colin Stranahan - Songs (NYC)", link: "colin_stranahan" },
-
-      // "10/22/20 -> Polartropica - Popular Music - (LA)",
+      {
+        name: "#5 | Eric Lane and Marandi Hostetter - Piano and Violin (NYC)",
+        link: "eric_marandi",
+      },
+      {
+        name: "#4 | Beck Burger - Piano (New Orleans)",
+        link: "beck_burger",
+      },
+      {
+        name: "#3 | Beck Burger - Piano (New Orleans)",
+        link: "beck_burger",
+      },
+      {
+        name: "#2 | Grant Gordy - Guitar (NYC)",
+        link: "grant_gordy",
+      },
+      {
+        name: "#1 | Danny Meyer - Saxophone - (NYC)",
+        link: "danny_meyer",
+      },
 
       // "9/10/20 -> Glenn Zaleski - Piano - (NYC)",
 

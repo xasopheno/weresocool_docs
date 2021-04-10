@@ -1,0 +1,28 @@
+{
+  "date": "4/30/2020",
+  "code": "ZW7BtcLDKsk",
+  "number": 4,
+  "location": "New Orleans",
+  "name": "Beck Burger",
+  "instrument": "Piano",
+  "bio": [
+    "Beck Burger is a keyboardist and pianist from Boulder Colorado. He moved to New York City and studied at the new school university for jazz and contemporary music. In 2010 he released a record of original music entitled Strong Medicine. In 2015 he moved to New Orleans and plays regularly and recorded with artists such as Corey Henry and the Treme Funktet, James Martin Band, Sam Friend, Michael Watson’s Alchemy, and many others who are a part of the New Orleans music community."
+  ],
+  "links": [
+    {
+      "text": "Beck on Bandcamp",
+      "link": "www.bandcamp.com/beckburger"
+    }
+  ],
+  "payment": {
+    "venmo": "./",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "New Orleans Jazz Relief Fund",
+    "bio": [
+      "The New Orleans Jazz & Heritage Foundation, the non-profit organization that owns the New Orleans Jazz & Heritage Festival presented by Shell, has established the Jazz & Heritage Music Relief Fund – a statewide relief fund to support  Louisiana musicians who have lost income amid the COVID-19 pandemic.  This unprecedented crisis has led to the indefinite cancellation of gigs, event postponements, and venue closures around the world. It has left many Louisiana musicians and others who work in the music industry facing a total or near-total loss of income for the foreseeable future.  "
+    ],
+    "link": "https://www.jazzandheritage.org/what-we-do/jazz-heritage-music-relief-fund"
+  }
+}

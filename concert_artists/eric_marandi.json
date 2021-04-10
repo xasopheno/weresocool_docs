@@ -1,0 +1,39 @@
+{
+  "date": "5/7/2020",
+  "code": "oZWbmgANGZk",
+  "number": 5,
+  "location": "NYC",
+  "name": "Eric Lane & Marandi Hostetter",
+  "instrument": "",
+  "bio": [
+    "Marandi Hostetter works as a freelance violinist and violist in New York City playing in classical ensembles as well as in many music projects based in Arabic, Greek, Jewish and other traditions from around the world. Born into a musical household, playing music was part of her everyday upbringing and she had a wide range of musical influences from a young age.",
+
+    "Along with being a principal member of the String Orchestra of Brooklyn, Marandi performs with Tipsy Oxcart, a 5 piece instrumental Balkan-inspired dance band as well as her own project, Sharq Attack, which performs traditional and contemporary Arabic classical music. Her most recent recording projects include working in the string quartet behind singer songwriter Natalie Merchant, and multiple parts for Weird Al Yankovic's Mandatory Fun album.",
+
+    "Marandi is a founding member of Brooklyn Maqam, an organization dedicated to presenting Middle Eastern (in particular, Arabic) music with the goals of expanding it's audience, preserving it as an art form, and building community centered around the music. Now in its 3rd year, Brooklyn Maqam is a thriving twice monthly series that is beginning to expand and collaborate with other venues around NYC.",
+    "Eric Lane is a Brooklyn based performer and producer specializing in keyboards and saxophone. He is a graduate of New England Conservatory.",
+
+    "Lane is co-founder of the Post-Truth Tropical Psychedelic band, Los Cumpleaños. The band has played extensively in Brooklyn and recently released an EP and 2 music videos. As a sideman, Eric has toured internationally with Joan as Police Woman and Tei Shi. He has appeared on NPR's Tiny Desk with Cautious Clay and most recently on CBS Saturday Morning with Margaret Glaspy."
+  ],
+  "links": [
+    {
+      "text": "Marandi's Website",
+      "link": "http://www.marandihostetter.com"
+    },
+    {
+      "text": "Los Cumpleaños on Youtube",
+      "link": "https://www.youtube.com/watch?v=aG-P9tA1Fus"
+    }
+  ],
+  "payment": {
+    "venmo": "./",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "Fortune Society",
+    "bio": [
+      "Though individuals released from incarceration are no longer behind bars, there are many hurdles that can prevent their successful reentry into the community. Legal barriers and widespread stigmatization make it difficult to access housing, employment, education, mental health, substance use treatment, and health care."
+    ],
+    "link": "https://donate.fortunesociety.org/give/186379/#!/donation/checkout"
+  }
+}

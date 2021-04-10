@@ -1,3 +1,4 @@
+import { GetStaticPropsContext, GetStaticPropsResult } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -5,8 +6,9 @@ import React from "react"
 import { useStopAndWait } from "../../utils/misc"
 import { useWindowSize } from "../../utils/useWindowSize"
 import { LogoBox, LogoText, NavItem, StyledNav } from "./styles"
+import _ from "lodash"
 
-export const NavBar = () => {
+export const NavBar = (props: { concerts: string[] }) => {
   const router = useRouter()
   const { isMobile } = useWindowSize(680)
   const current = router.asPath.split("/").slice(1)[0]
@@ -34,7 +36,7 @@ export const NavBar = () => {
           Tutorial
         </NavItem>
       </Link>
-      <Link href="/tv/shags_chamberlain">
+      <Link href={`/tv/${_.sample(concerts)}`}>
         <NavItem
           onClick={async () => await stopAndWait()}
           selected={current === "tv"}
@@ -61,3 +63,32 @@ export const NavBar = () => {
     </StyledNav>
   )
 }
+
+const concerts = [
+  "aj_salas",
+  "alejandro",
+  "ayo_awosika",
+  "beck_burger",
+  "bob_ladue",
+  "caleb_curtis",
+  "caroline_davis",
+  "chris_votek",
+  "corey_fogel",
+  "dan_tepfer",
+  "dina_maccabee",
+  "dj_check_one",
+  "doors_that_dont",
+  "eric_marandi",
+  "glenn_zaleski",
+  "grant_gordy",
+  "john_grigsby",
+  "john_gunther",
+  "kjetil_jerve",
+  "maya_laliberte",
+  "mike_thies",
+  "pablo_eluchans",
+  "shags_chamberlain",
+  "soft_talon",
+  "tomoko_omura",
+  "topu_lyo",
+]

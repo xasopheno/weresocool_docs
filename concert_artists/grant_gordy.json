@@ -1,0 +1,28 @@
+{
+  "date": "4/16/2020",
+  "code": "nAgCJQXzlo0",
+  "number": 2,
+  "location": "NYC",
+  "name": "Grant Gordy",
+  "instrument": "Guitar",
+  "bio": [
+    "'An exciting young player who, despite a plethora of influences, now sounds like nobody but himself.' So proclaims The Fretboard Journal of Brooklyn guitarist Grant Gordy, who in recent years has emerged as one of the most highly regarded young instrumentalists of his generation. Having spent six years in the guitar chair with the legendary David Grisman Quintet/Sextet, he's also worked alongside such musical luminaries as Darol Anger, Tony Trishcka and Edgar Meyer. In myriad collaborative capacities he's performed all over North America, Europe and in India. Gordy has received attention from international music periodicals such as Just Jazz Guitar, Acoustic Guitar Magazine and No Depression, who describe Grant as: “A special musician and a strikingly singular voice on the guitar; one that is worth giving your attention."
+  ],
+  "links": [
+    {
+      "text": "Grant's Website",
+      "link": "www.grantgordy.com"
+    }
+  ],
+  "payment": {
+    "venmo": "./",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "Coalition for the Homeless",
+    "bio": [
+      "The Coalition for the Homeless is the nation’s oldest advocacy and direct service organization helping homeless men, women and children. We believe that affordable housing, sufficient food and the chance to work for a living wage are fundamental rights in a civilized society. Since our inception in 1981, the Coalition has worked through litigation, public education and direct services to ensure that these goals are realized."
+    ],
+    "link": "https://www.coalitionforthehomeless.org/"
+  }
+}
