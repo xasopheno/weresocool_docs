@@ -109,7 +109,27 @@ export const tvMenu: MenuDatum[] = [
         name: "#16 | Dan Tepfer - Piano and Computer (NYC)",
         link: "dan_tepfer",
       },
+      { name: "#15 | Corey Fogel - Drums (L.A.)", link: "corey_fogel" },
+      { name: "#14 | Dina Maccabee - Viola (NYC)", link: "dina_maccabee" },
+      {
+        name: "#13 | Gabi Hartmann (#2) - Songs - (Paris)",
+        link: "gabi_hartmann",
+      },
       { name: "#11 | Topu Lyo - Cello and Effects (NYC)", link: "topu_lyo" },
+      {
+        name: "#10 | Bob Woods Ladue - Drums - (Oakland)",
+        link: "bob_ladue",
+      },
+      {
+        name: "#9 | Dj Check One - Drums/Beats - (Denver, CO)",
+        link: "dj_check_one",
+      },
+      { name: "#8 | Ayo Awosika - Songs (L.A.)", link: "ayo_awosika" },
+      {
+        name: "#7 | Jesse Harris and Jeremy Gustin  - Songs (NYC)",
+        link: "jesse_harris",
+      },
+      { name: "#6 | Colin Stranahan - Songs (NYC)", link: "colin_stranahan" },
 
       // "10/22/20 -> Polartropica - Popular Music - (LA)",
 
