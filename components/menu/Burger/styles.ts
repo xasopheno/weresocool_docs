@@ -5,25 +5,24 @@ interface BurgerProps {
 }
 
 export const StyledBurger = styled.button<BurgerProps>`
-  position: absolute;
-  top: 1%;
-  right: 2rem;
+  position: fixed;
+  bottom: 4%;
+  right: 13%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
   z-index: 10;
   outline: none !important;
   box-shadow: 0 0 0 0 rgba(0, 123, 255, 0) !important; // Or none
 
   span {
-    width: 2rem;
-    height: 0.25rem;
+    width: 3.25rem;
+    height: 0.5rem;
     background: ${({ theme, open }) =>
       open ? theme.primaryDark : theme.primaryLight};
     border-radius: 10px;

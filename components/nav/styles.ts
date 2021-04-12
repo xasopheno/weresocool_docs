@@ -15,12 +15,13 @@ export const StyledNav = styled.div`
   padding-left: 5%;
 `
 
-export const NavItem = styled.p<{ selected: boolean }>`
-  padding: 0 10px 0 10px;
+export const NavItem = styled.p<{ selected: boolean; mobile: boolean }>`
+  padding: ${({ mobile }) => (mobile ? "0 2px 0 2px" : "0 10px 0 10px")};
   line-height: 50px;
   align-self: center;
   font-weight: 300;
   font-size: 16px;
+  font-size: ${({ mobile }) => (mobile ? "13px" : "16px")};
   cursor: pointer;
   margin: 0 10px 0 10px;
   margin-bottom: -6px;

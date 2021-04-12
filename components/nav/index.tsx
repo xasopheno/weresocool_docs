@@ -29,6 +29,7 @@ export const NavBar = () => {
       </LogoBox>
       <Link href="/tutorials/welcome">
         <NavItem
+          mobile={isMobile}
           onClick={async () => await stopAndWait()}
           selected={current === "tutorials"}
         >
@@ -37,14 +38,16 @@ export const NavBar = () => {
       </Link>
       <Link href={`/tv/${_.sample(concerts)}`}>
         <NavItem
+          mobile={isMobile}
           onClick={async () => await stopAndWait()}
           selected={current === "tv"}
         >
-          Concert Series
+          Concerts
         </NavItem>
       </Link>
       <Link href="/interviews/brad_goode_1">
         <NavItem
+          mobile={isMobile}
           onClick={async () => await stopAndWait()}
           selected={current === "interviews"}
         >
@@ -53,6 +56,7 @@ export const NavBar = () => {
       </Link>
       <Link href="/danny/who/about">
         <NavItem
+          mobile={isMobile}
           onClick={async () => await stopAndWait()}
           selected={current === "danny"}
         >

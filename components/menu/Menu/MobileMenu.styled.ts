@@ -1,20 +1,21 @@
 import styled from "styled-components"
 
 export const MobileStyledMenu = styled.nav<{ open: boolean }>`
-  // display: flex;
   flex-direction: column;
   justify-content: center;
-  //background: ${({ theme }) => theme.primaryLight};
-  width: 90%;
+  width: 100%;
 
   background-color: #202020;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-110%)")};
   border-width: 1em;
-  border-color: goldenrod;
-  border: solid;
+  border: 1px solid;
   text-align: left;
   padding: 2rem;
-  position: absolute;
+  padding-bottom: 80px;
+  margin-top: 60px;
+  position: fixed;
+  height: calc(100vh - 60px);
+  overflow: scroll;
   top: 0;
   left: 0;
   z-index: 5;

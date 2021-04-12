@@ -71,29 +71,46 @@ interface MenuProps extends React.HTMLAttributes<Element> {
 const Menu = (props: MenuProps) => {
   const [open, setOpen] = useState(false)
   const { isMobile } = useWindowSize()
-  const router = useRouter()
-  const stopAndWait = useStopAndWait()
 
   return (
     <div>
       {isMobile && <Burger open={open} setOpen={setOpen} />}
       <SizedMenu open={open}>
-        <div>
-          {props.data.map((section, i) => {
-            return (
-              <MenuSection
-                key={i}
-                data={section}
-                onClick={async (path: string) => {
-                  await stopAndWait()
-                  router.push(`/${props.sectionPath}/${path}`)
-                  setOpen(false)
-                }}
-              />
-            )
-          })}
-        </div>
+        <MenuInner
+          setOpen={setOpen}
+          data={props.data}
+          sectionPath={props.sectionPath}
+        />
       </SizedMenu>
+    </div>
+  )
+}
+
+interface MenuInnerProps extends React.HTMLAttributes<Element> {
+  data: MenuDatum[]
+  sectionPath: string
+  setOpen?: (open: boolean) => void
+}
+
+export const MenuInner = (props: MenuInnerProps) => {
+  const router = useRouter()
+  const stopAndWait = useStopAndWait()
+  return (
+    <div>
+      {props.data.map((section, i) => {
+        return (
+          <MenuSection
+            key={i}
+            data={section}
+            onClick={async (path: string) => {
+              await stopAndWait()
+              router.push(`/${props.sectionPath}/${path}`)
+
+              props.setOpen && props.setOpen(false)
+            }}
+          />
+        )
+      })}
     </div>
   )
 }
