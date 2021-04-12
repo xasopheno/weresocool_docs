@@ -36,11 +36,6 @@ export const MenuItem = styled.div`
   text-decoration: none;
   transition: color 0.3s linear;
 
-  //  @media (max-width: ${({ theme }) => theme.mobile}) {
-  //  font-size: 1.5rem;
-  //  text-align: center;
-  //  }
-
   &:hover {
     //color: ${({ theme }) => theme.primaryHover};
     color: #beb;
