@@ -37,7 +37,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
       <PostContainer>
         <Content>
           <div>
-            <h1>{frontMatter.title}</h1>
+            <h1 style={{ textDecoration: "underline" }}>{frontMatter.title}</h1>
             {frontMatter.description && <p>{frontMatter.description}</p>}
           </div>
           <div>
