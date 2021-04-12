@@ -9,6 +9,7 @@ export const StyledMenu = styled.nav`
   padding: 20px;
   height: 100%;
   width: calc(0.29 * 100vw);
+  scrollbar-color: goldenrod;
   overflow-y: scroll;
   position: fixed;
   padding-bottom: 10%;
