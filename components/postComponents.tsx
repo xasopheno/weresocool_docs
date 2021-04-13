@@ -17,6 +17,34 @@ export const PostContainer = styled.div`
   overflow: auto;
 `
 
+export const CoolLink = styled.a`
+  color: #edd;
+`
+
+export const LinkText = styled.p`
+  color: #edd;
+  text-decoration: none;
+  transition: color 0.2s linear;
+  transition: border 0.4s linear;
+  font-weight: 700;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: fit-content;
+
+  border-radius: 10px;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-radius: 10px;
+    border: 1px solid goldenrod;
+    color: goldenrod;
+  }
+
+  &:active {
+    opacity: 70%;
+  }
+`
+
 export type FrontMatter = {
   [key: string]: any
 }

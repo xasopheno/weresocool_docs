@@ -68,7 +68,6 @@ export const NavBar = () => {
 }
 
 const concerts = [
-  "aj_salas",
   "alejandro",
   "ayo_awosika",
   "beck_burger",
@@ -90,7 +89,6 @@ const concerts = [
   "maya_laliberte",
   "mike_thies",
   "pablo_eluchans",
-  "shags_chamberlain",
   "soft_talon",
   "tomoko_omura",
   "topu_lyo",
