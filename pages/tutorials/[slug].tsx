@@ -43,6 +43,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
           </div>
           <div>
             {content}
+            <hr />
             {frontMatter.next && (
               <GoldLink
                 onClick={async () => {
