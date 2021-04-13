@@ -4,7 +4,11 @@ import path from "path"
 import { tvFilePaths, TV_PATH } from "../../utils/mdxUtils"
 import { GetStaticPropsResult, GetStaticPropsContext } from "next"
 import React from "react"
-import { PostStaticProps } from "../../components/postComponents"
+import {
+  CoolLink,
+  LinkText,
+  PostStaticProps,
+} from "../../components/postComponents"
 import { Box, Grid } from "theme-ui"
 import Youtube from "../../components/youtube"
 import styled from "styled-components"
@@ -40,31 +44,6 @@ type Concert = {
     link: string
   }
 }
-
-const CoolLink = styled.a`
-  color: #edd;
-`
-
-const LinkText = styled.p`
-  color: #edd;
-  text-decoration: none;
-  transition: color 0.3s linear;
-  font-weight: 700;
-  padding-left: 10px;
-
-  border-radius: 10px;
-  border: 1px solid transparent;
-
-  &:hover {
-    border-radius: 10px;
-    border: 1px solid goldenrod;
-    color: goldenrod;
-  }
-
-  &:active {
-    opacity: 70%;
-  }
-`
 
 export interface TVProps {
   source: Concert

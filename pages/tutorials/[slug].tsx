@@ -17,6 +17,7 @@ import {
   PostStaticProps,
   PostProps,
   Content,
+  LinkText,
 } from "../../components/postComponents"
 import Layout from "../../components/layout"
 import { tutorialMenu } from "../../components/menu/menus"
@@ -49,7 +50,9 @@ export default function PostPage({ source, frontMatter }: PostProps) {
                   router.push(`/tutorials/${frontMatter.next}`)
                 }}
               >
-                {`Next Tutorial ~> ${capitalize(frontMatter.next)}`}
+                <LinkText>{`Next Tutorial ~> ${capitalize(
+                  frontMatter.next
+                )}`}</LinkText>
               </GoldLink>
             )}
           </div>

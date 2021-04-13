@@ -136,7 +136,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
     if (props.height === -1) {
       return 840
     } else {
-      return height * (height > 10 ? 1.5 : 1.7) * fontSize
+      return height * (height > 14 ? 1.5 : 1.8) * fontSize
     }
   }
 
