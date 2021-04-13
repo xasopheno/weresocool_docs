@@ -1,7 +1,7 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 interface BurgerProps {
-  open: boolean
+  open: boolean;
 }
 
 export const StyledBurger = styled.button<BurgerProps>`
@@ -16,7 +16,7 @@ export const StyledBurger = styled.button<BurgerProps>`
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1000;
   outline: none !important;
   box-shadow: 0 0 0 0 rgba(0, 123, 255, 0) !important; // Or none
 
@@ -44,4 +44,4 @@ export const StyledBurger = styled.button<BurgerProps>`
       transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
     }
   }
-`
+`;
