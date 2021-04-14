@@ -29,8 +29,7 @@ a series of different inputs. Here is a more complicated example.
 
 
 <WereSoCool language={
-`
-{ f: 220, l: 7/8, g: 1/5, p: 0 }\n
+`{ f: 220, l: 7/8, g: 1/5, p: 0 }\n
 overtones = {
   O[
     (7, 0, 1/3, 1),
@@ -43,15 +42,35 @@ overtones = {
     (1/2, 1, 1, 0),
   ]
 }\n
+bass_overtones = {
+  O[
+    (4, 0, 1, 0),
+    (4, 0, 1, 0),
+    (1/1, 2, 1, 1),
+    (1/1, 0, 1, -1),
+    (1/2, 2, 1/2, 1),
+    (1/2, 0, 1/2, -1),
+  ]
+}\n
 -- This is a function that takes 4 arguments and
 -- then plays them in a new order. 
 cool_function(a, b, c, d) = {
-  Seq [
-    c, b, a, b, c, d, c | Lm 2
+  Overlay [
+    overtones | 
+    Seq [
+      c, b, a, b, c, d, c | Lm 2
+    ],
+    -- and also makes a second cool melody
+    bass_overtones
+    | Seq [
+      Fm 0,
+      a | Fm 1/2,
+      a | Fm 3/4, 
+      c | Fm 3/4, 
+    ] | Lm 2
   ]
 }\n
 main = {
-  overtones | 
   Seq [
     -- And then we can use that function with different
     -- arguments to generate different melodies. 

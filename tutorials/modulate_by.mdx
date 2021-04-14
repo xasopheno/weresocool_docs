@@ -13,15 +13,27 @@ ModulateBy lets you use an operation to modulate another operation.
 />
 
 <WereSoCool language={
-`{ f: 261.6, l: 1/3, g: 1, p: 0 }\n
+`{ f: 261.6, l: 1/6, g: 1, p: 0 }\n
 melody = {
   Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2]
 }\n
 main = {
   Seq [
-    melody,
-    melody
-    | ModBy [Fm 1, Fm 1/2]
+    Seq [
+      melody,
+      melody
+      | ModBy [Fm 1, Fm 1/2],
+      melody
+      | ModBy [Fm 1, Gm 1/3],
+      melody
+      | ModBy [Fm 1, Overlay [Fm 1, Fm 3/2]],
+      melody
+      | ModBy [Fm 4/3, Fm 1] 
+      | Overlay [Fm 1, Fm 3/2, Fm 1/2],
+      melody
+      | Overlay [Fm 1 | Pa 2/10, Fm 5/4 | Pa -1/10, Fm 1/2]
+      | Reverse
+    ],
   ]
 }`
 }/>

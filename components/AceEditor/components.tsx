@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 export const Container = styled.div<{ editorHeight: number }>`
   margin-bottom: 20px;
-  max-height: 90vh;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
