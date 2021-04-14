@@ -18,7 +18,7 @@ export const MobileStyledMenu = styled.nav<{ open: boolean }>`
   overflow: scroll;
   top: 0;
   left: 0;
-  z-index: 5;
+  z-index: 100;
   transition: transform 0.1s ease-in-out;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {

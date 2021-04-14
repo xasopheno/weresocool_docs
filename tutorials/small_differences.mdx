@@ -14,8 +14,9 @@ main = {
     Fa 1,
     Fa 0,
   ]
-  -- If you uncomment the line below, you can hear that the 
-  -- beating sound stays the same even when the frequencies change.
+  -- If you uncomment the line below, you can 
+  -- hear the beating sound stays consistent 
+  -- even when the frequencies change.
   -- | Seq [Fm 1/2, Fm 1, Fm 2]
 }`
 }/>
@@ -61,24 +62,21 @@ We can end this experiment with a cool chord.
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 main = {
   Overlay [
-    Fm 17/4 | Fa 8 | Gm 1/8 | Pa -1,
-    Fm 17/4 | Pa -1 | Gm 1/8,\n
-    Fm 13/4 | Fa -6,  Gm 1/8 | Pa 9/10,
-    Fm 13/4 | Fa 7 | Pa 9/10 | Gm 1/8,\n
-    Fm 5/2 | Fa 7 | Pa 1/2,
+    Fm 17/4 | Fa 8 | Pa 3/10 | Gm 1/2,
+    Fm 17/4 | Pa -9/10 | Gm 1/2,
+    Fm 13/4 | Fa -6 | Gm 1/2 | Pa -3/10,
+    Fm 13/4 | Fa 7 | Gm 1/2 | Pa 9/10,
+    Fm 5/2 | Fa 1 | Pa 1/2,
     Fm 5/2 | Pa -1/2,\n
-    Fm 11/8 | Pa 2/3,
-    Fm 11/8 | Fa 1 | Pa 2/3,\n
-    Fm 9/4 | Pa -1/3,
-    Fm 9/4 | Fa 4 | Pa -1/3,\n
-    Fm 2 | Gm 1/2 | Pa 1/2,
-    Fm 2 | Fa 4 | Gm 1/2 | Pa 1/2,\n
-    Fm 5/3 | Fa -9 | Gm 1/4 | Pa 1,
-    Fm 5/3 | Gm 1/4 | Pa -1,\n
-    Fm 1/2,    
-    Fm 1/2 | Fa 2/3,    
-    Fm 1/4 | Gm 1/16,    
-    Fm 1/4 | Fa 1/3 | Gm 1/16,    
+    Fm 9/4 | Fa 3 | Pa 1,
+    Fm 9/4 | Pa 1,
+    Fm 3/2 | Pa -1, 
+    Fm 3/2 | Fa 2 | Pa -1,
+    Fa 1 | Pa -1,
+    Fa 0 | Pa 1,
+    Fm 1/2 | Fa 1,
+    Fm 1/2,\n
+    Fm 1/4 | Fa 1 | Gm 1/6,
   ]
   | Lm 8
   | Gm 1/4

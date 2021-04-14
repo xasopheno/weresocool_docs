@@ -12,13 +12,13 @@ export const StyledBurger = styled.button<BurgerProps>`
   flex-direction: column;
   justify-content: space-around;
   width: 3rem;
-  height: 3rem;
+  height: 3.3rem;
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1000;
   outline: none !important;
-  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0) !important; // Or none
+  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0) !important;
 
   span {
     width: 3.25rem;
@@ -37,7 +37,7 @@ export const StyledBurger = styled.button<BurgerProps>`
 
     :nth-child(2) {
       opacity: ${({ open }) => (open ? "0" : "1")};
-      transform: ${({ open }) => (open ? "translateX(20px)" : "translateX(0)")};
+      transform: ${({ open }) => (open ? "translateX(30px)" : "translateX(0)")};
     }
 
     :nth-child(3) {

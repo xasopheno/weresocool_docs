@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
-    "dev:watch": "next-remote-watch ./tutorials ./interviews",
+    "dev:watch": "next-remote-watch ./tutorials ./interviews ./concert_artists",
     "build": "next build",
     "start": "next start",
     "typecheck": "yarn run tsc",

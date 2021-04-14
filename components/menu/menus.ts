@@ -28,6 +28,7 @@ export const tutorialMenu: MenuDatum[] = [
       "generators",
       "expressive_generators",
       "cool_coefficients",
+      "timbre",
     ],
   },
 ]

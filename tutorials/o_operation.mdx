@@ -64,8 +64,10 @@ melody2 = {
   | Fm 1/2
 }\n
 main = {
--- "overtones" contains 4 voices defined above with O[] syntax.
--- by Piping it into the Overlay results in the same sound as
+-- "overtones" contains 4 voices 
+-- defined above with O[] syntax.
+-- by Piping it into the Overlay 
+-- results in the same sound as
 -- if we wrote the following:
 -- Overlay [
 --   overtones | melody1,
@@ -76,8 +78,8 @@ main = {
     melody1,
     melody2,
   ]
---  Then we play the melodies above, 
---  first at Fm 1 (where they would normally play),
+--  Then we play the melodies above first at Fm 1
+--  (where they would normally play),
 --  then play it backwards using Reverse.
   | Seq [
     Fm 1, 
