@@ -1,6 +1,9 @@
 {
   "name": "with-mdx-remote",
   "version": "1.0.0",
+  "engines": {
+    "node": "14"
+  },
   "scripts": {
     "dev": "next",
     "dev:watch": "next-remote-watch ./tutorials ./interviews ./concert_artists",
