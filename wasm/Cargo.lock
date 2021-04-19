@@ -2456,6 +2456,7 @@ dependencies = [
  "hound",
  "serde",
  "serde_json",
+ "thiserror",
  "wasm-bindgen",
 ]
 
