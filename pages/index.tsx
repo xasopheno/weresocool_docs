@@ -77,6 +77,9 @@ const HeaderButtonContainer = styled.div`
   align-items: center;
 `
 const GetStartedButton = styled.div`
+  a {
+    text-decoration: none;
+  }
   text-align: right;
   padding-right: 7px;
   padding-left: 7px;
@@ -87,6 +90,7 @@ const GetStartedButton = styled.div`
   color: rgb(0, 0, 0);
   padding: 10px 25px;
   white-space: nowrap;
+  cursor: pointer;
   transition: background-color 0.2s ease-out 0s;
   :hover {
     background-color: goldenrod;
@@ -95,6 +99,7 @@ const GetStartedButton = styled.div`
 
 const TakeTutorialButton = styled.div`
   padding-left: 20px;
+  cursor: pointer;
   color: darkgoldenrod;
   :hover {
     color: white;
@@ -113,7 +118,9 @@ const App = () => {
             A language for composing microtonal music
           </HeaderDescription>
           <HeaderButtonContainer>
-            <GetStartedButton>Get Started</GetStartedButton>
+            <GetStartedButton>
+              <Link href={"/tutorials/getting_started"}>Get Started</Link>
+            </GetStartedButton>
             <Link href={"/tutorials/welcome"}>
               <TakeTutorialButton>Take the Tutorial {"~>"}</TakeTutorialButton>
             </Link>

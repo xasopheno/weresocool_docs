@@ -6,7 +6,10 @@ export type MenuDatum = {
 export const tutorialMenu: MenuDatum[] = [
   {
     title: "Documentation",
-    items: [{ name: "WereSoCool Docs", link: "documentation" }],
+    items: [
+      { name: "Getting Started", link: "getting_started" },
+      { name: "WereSoCool Docs", link: "documentation" },
+    ],
   },
   {
     title: "Tutorials",

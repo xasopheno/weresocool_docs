@@ -6,7 +6,7 @@
   },
   "scripts": {
     "dev": "next",
-    "dev:watch": "next-remote-watch ./tutorials ./interviews ./concert_artists",
+    "dev:watch": "next-remote-watch ./tutorials",
     "build": "next build",
     "start": "next start -p $PORT",
     "typecheck": "yarn run tsc",
