@@ -1,0 +1,75 @@
+---
+title: Cool Coefficients
+description: Coolificients? 
+---
+
+### Multiples
+
+-1, -1, -1, -1, -1, -1, -1. 
+
+That is a strange thing to write. WereSoCool
+has a shorthand for multiple coefficients in a row in 
+a generator. You can use `*` to say how many of a coefficient
+should happen in a row,
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/10, g: 1, p: 0 }\n
+main = {
+  *(
+    -- essentially, go up 4 half steps 3 times
+    -- then go down 5 half steps 3 times
+    -- keep doing that until you get to 40
+    f: 0|12 [4*3, -5*3]
+  ) Take 40
+  | Repeat 3
+}`
+}/>
+
+### Math Expressions
+These are both experimental syntaxes. start|division works a bit differntly. 
+For all axes, the function is Poly
+or Expr is applied starting at the start and stepping forward
+through the subdivions. So, 9|10 would start at 9/10 and then
+the next values would be the result of the expression applied
+to 10/10 followed by the expression applied to 11/10. On the frequency
+axis, the result is normalized to log space. 
+
+### Poly - Polynomials
+Creates a Polynomial from a list of coefficients in ascending order.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/10, g: 1, p: 0 }\n
+main = {
+  *(
+    -- -1/3x^2 + x + 2
+    f: 0|12 Poly [2, 1, -1/3]
+  ) Take 70
+}`
+}/>
+
+### Expr - Expressions
+
+#### Operations
+> +, -, *, /
+
+#### Functions
+> sqrt, abs
+
+> exp, ln, log10
+
+> sin, cos, tan, asin, acos, atan, atan2
+
+> sinh, cosh, tanh, asinh, acosh, atanh
+
+#### Constants
+> pi, e
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/10, g: 1, p: 0 }\n
+main = {
+  *(
+    f: 0|12 Expr \`sin(5 * x)\`
+  ) Take 70
+}`
+}/>
+

@@ -1,0 +1,40 @@
+{
+  "date": "2/11/2021",
+  "code": "ikGA9wDE9nM",
+  "number": 40,
+  "location": "Boulder, Colorado",
+  "name": "Maya Laliberte",
+  "instrument": "Dance",
+  "bio": [
+    "'Take Two' weaves together the spaces, stories and songs that emerged for Maya during the first few months of the pandemic. In March of 2020, Maya moved from Brooklyn to Western MA. As she navigated both familiar and foreign spaces, in the world and within herself, Maya explored the ways that shifts in connection evolved to expose the richness of solitude, the sweetness of sisterhood, the pangs of separation, and the power of starting over.",
+
+    "Maya LaLiberté (she/they)* is a dance and visual artist, poet, teacher, and musician based in alliterative homes across the continental US; Brooklyn, the Berkshires, and Boulder**. As a performer and choreographer she is invested in the exploration of the voice, vulnerability, and power of the dancing body. Her work has been presented at the American Dance Festival, the Bates Dance Festival, the Boulder Jazz Dance Festival, Smith College, Triskelion Arts, as well as various venues throughout NYC. Maya's training spans many forms and disciplines, all of which inform her improvisation. Maya honors and thanks her teachers and fellow students.",
+
+    "You can follow Maya on instagram to stay updated (albeit somewhat infrequently) on their upcoming performances and various projects: @maya.laliberte",
+
+    "Maya is also gathering material to share in a monthly newsletter, which has yet to launch. If you're interested in receiving a monthly collection of poems, musings, and works of art, and possibly some more timely updates, you are invited to email Maya at maya.c.laliberte@gmail.com, and she will add you to the list!",
+
+    "*Interested in learning more about pronouns and why they matter? Please visit https://www.mypronouns.org/",
+
+    "**Maya acknowledges that she has been gathering on the occupied lands of the Munsee Lenape and Canarsie (also known as NYC, Brooklyn); the lands of the Mohican, Pocumtuc, Nipmuc, and the Wabanaki Confederacy (Western MA); the lands of the Nauset and Wampanoag (Cape Cod); and the lands of the Ute, Arapaho, and Cheyenne (Boulder, CO).",
+
+    "Why are land acknowledgements important? Want to learn more about the indigenous peoples in the land you occupy? Visit https://native-land.ca"
+  ],
+  "links": [
+    {
+      "text": "Maya on Instagram",
+      "link": "https://www.instagram.com/maya.laliberte/?hl=en"
+    }
+  ],
+  "payment": {
+    "venmo": "./",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "The Audre Lorde Project",
+    "bio": [
+      "The Audre Lorde Project is a Lesbian, Gay, Bisexual, Two Spirit, Trans and Gender Non-Conforming People of Color community organizing center, focusing on the New York City area"
+    ],
+    "link": "https://alp.org/index.php?q=civicrm/contribute/transact&reset=1&id=5"
+  }
+}

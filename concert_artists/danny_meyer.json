@@ -1,0 +1,28 @@
+{
+  "date": "4/9/2020",
+  "code": "o31ZtZbJDzk",
+  "number": 1,
+  "location": "NYC",
+  "name": "Danny Meyer",
+  "instrument": "Saxophone",
+  "bio": [
+    "Danny Meyer is a New York City-based musician and computer programmer. His credits as a multi-instrumentalist include performing, recording and touring internationally with the likes of Julia Holter, Chairlift, ExoTech, Live Footage and others. He is currently writing a programming language for composing microtonal music geometrically and participates in on-going projects with dancers, video artists, poets, photographers and other musicians and programmers."
+  ],
+  "links": [
+    {
+      "text": "Youtube",
+      "link": "https://www.youtube.com/channel/UCBCjwUpz2HiOZglcHP2Io5Q"
+    }
+  ],
+  "payment": {
+    "venmo": "./",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "This Concert Series",
+    "bio": [
+      "I played this concert in order to raise money to fund this concert series. We raised about $1,500 and that was all used to pay artists for future concerts. Very cool."
+    ],
+    "link": "https://www.weresocool.org"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "date": "9/3/2020",
+  "code": "sbdWt4XkoV0",
+  "number": 22,
+  "location": "Denver, CO",
+  "name": "AJ Salas",
+  "instrument": "Keys/Beats",
+  "bio": ["AJ Salas is multi-instrumentalist and old friend."],
+  "links": [
+    {
+      "text": "Aj on Spotify",
+      "link": "https://open.spotify.com/artist/7qCkg7zHpH32m9uTX6d1zv?si=SaoreDYiTiaBRoG-WZG_kg"
+    }
+  ],
+  "payment": {
+    "venmo": "./",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "Colorado Conservatory for the Jazz Arts",
+    "bio": [
+      "The Colorado Conservatory for the Jazz Arts is a unique 501-(c)(3) non-profit organization dedicated to empowering youth to creatively express themselves through the language of jazz. CCJA gives young musicians life-changing musical experiences through mentorship by the region’s most sought-after professional jazz musicians. Our students experience personal and artistic grown through participation in small ensembles, big bands, vocal ensembles, jazz instruction camps, jam sessions, clinics, community performances, and much more."
+    ],
+    "link": "https://www.jazzarts.org/"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "date": "4/23/2020",
+  "code": "NDDesjwJmh4",
+  "number": 3,
+  "location": "Oakland",
+  "name": "Inner Movements",
+  "instrument": "Vibraphone and Cello",
+  "bio": [
+    "Inner Movements is a collective founded by Crystal Pascucci and Mark Clifford celebrating the music of the 20th, 21st centuries and newly commissioned works. Realizing works of open instrumentation, Inner Movements aims to explore the sonorities exposed by the combination of strings and percussion. The aleatoric nature of percussion overtones combined with complex string instrument resonance supports ambiguity, reinforcement, and envelope contrast.",
+    "Inner Movements is a highly flexible ensemble, with performances ranging from large groups to solo sets. Pascucci and Clifford both compose for the ensemble, and often perform as a duo. Their performances predominantly feature original compositions for vibraphone and cello that explore 20th and 21st century musical language, intersected with idiomatic free improvisation."
+  ],
+  "links": [
+    {
+      "text": "Inner Movements Website",
+      "link": "https://www.innermovements.org/"
+    },
+    {
+      "text": "Mark Clifford - Tidy Universe",
+      "link": "https://thedirtysnacksensemble.bandcamp.com/album/tidy-universe"
+    },
+    {
+      "text": "Two Ariels on Bandcamp",
+      "link": "https://twoaerials.bandcamp.com/releases"
+    }
+  ],
+  "payment": {
+    "venmo": "./",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "Alameda County Community Food Bank",
+    "bio": [
+      "For over 35 years, we have stood by our unwavering belief that food is a basic human right. We distribute millions of healthy meals every year, and are on the forefront of new approaches to ending hunger and poverty."
+    ],
+    "link": "https://www.accfb.org/about-us/"
+  }
+}

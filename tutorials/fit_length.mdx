@@ -1,0 +1,82 @@
+---
+title: FitLength
+next: modulate_by
+---
+
+Once you've started writing songs with Overlays, you'll likely notice
+that lining up the ends of phrases can be tedious. 
+Luckily, the "FitLength" operations makes it super easy to align
+the ends of operations. 
+
+## `Operation: FitLength`
+Here, operation2 is something new you've written. 
+operation1 is something you wrote earlier in the piece.
+FitLength is going to stretch or squish operation2
+to make it the same length as operation1. 
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`operation2 | FitLength operation1`}
+/>
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/7, g: 1, p: 0 }\n
+-- If we wrote this melody
+melody = {
+  Seq [
+    Fm 2, Fm 15/8, Fm 3/2, Fm 5/3, Fm 3/2, Fm 5/4,
+    Fm 9/8, Fm 1, Fm 5/6, Fm 1,
+    Fm 3/4 | Lm 3
+  ]
+  | Seq [AsIs, Reverse]
+}\n
+main = {
+  Overlay [
+    -- We could add a low note that would stretch 
+    -- to the length of the melody
+    melody,
+    Fm 1/2 
+    -- Comment out the FitLength operation to see what
+    -- would happen without it. 
+    | FitLength melody
+  ]
+}`
+}/>
+
+You can create very complicated rhythmic relationships using Fitlength.
+
+<WereSoCool language={
+`{ f: 440, l: 1/3, g: 1, p: 0 }\n
+melody1 = {
+  O[
+    (1/1, 3, 1/2, 1/2),
+    (1/1, 0, 1/2, -1/2),
+    (3/4, 0, 1/2, 0),
+  ]
+  | Seq [
+    Fm 1, Fm 9/8, Fm 5/4, Fm 3/2, Fm 5/3 | Lm 3/2, 
+    Seq [Fm 2, Fm 5/3] | Lm 1/2,
+    Fm 3/2, Fm 1
+  ]
+}\n
+melody2 = {
+  O[
+    (1/2, 1, 1/2, -1),
+    (1/2, 0, 1/2, 1)
+  ]
+  | Seq [
+    Fm 3/4, Fm 5/6, Fm 5/4, Fm 2/3, Fm 5/4, Fm 9/4 
+  ]
+}\n
+main = {
+  Overlay [
+    melody1,
+    melody2 
+    | Seq [Fm 1, Fm 7/8]
+    | FitLength melody1
+  ]
+  | Repeat 3
+}`
+}/>
+

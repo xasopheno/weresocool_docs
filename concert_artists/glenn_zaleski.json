@@ -1,0 +1,36 @@
+{
+  "date": "9/10/20",
+  "code": "rl6GfbHlONo",
+  "number": 23,
+  "location": "NYC",
+  "name": "Glenn Zaleski",
+  "instrument": "Piano",
+  "bio": [
+    "Glenn Zaleski is one of the most in-demand pianists on the New York City jazz scene. Originally from Boylston, MA, Glenn has made a name for himself playing with the likes of Ravi Coltrane, Lage Lund, and Ari Hoenig. His new quintet album, 'The Question', will be released in July 2020 from Sunnyside Records.",
+
+    "His most recent release, 'Live at Jazz Standard' (Capri 2019), features his long-standing co-led trio, Stranahan/Zaleski/Rosato, in a live set the legendary NYC club.",
+
+    "One year prior, 'Solo Vol. 1', was released in early 2018 - his first solo piano album, as well as the first release from his own label Stark Terrace Music. In 2017 he released his second album for Sunnyside Records, 'Fellowship', prompting All About Jazz to note, 'Glenn Zaleski has quickly become one of the most important pianists of his generation and it's easy to see why.' His debut album, 'My Ideal', was released in March of 2015, also on Sunnyside, and received critical acclaim: Downbeat Magazine named it 'sublime', Jazz Times called it, 'an engaging set by a talent worth watching,' and the New York Times named the record a 'strong statement,' praising its 'fluent but unhurried sense of phrase'.",
+
+    "Glenn has also released two popular albums with the collective Stranahan/Zaleski/Rosato: 'Limitless' (Capri, 2013), and 'Anticipation' (Capri, 2011), as well as a duo record with his brother, saxophonist Mark Zaleski. ('Duet Suite', 2010)",
+
+    "In 2011, Glenn was a semi-finalist in the Thelonious Monk International Jazz Piano Competition, as well as a finalist for the 2011 APA Cole Porter Fellowship in Jazz. He attended the Brubeck Institute Fellowship program in Stockton, CA from 2005-2007, and then finished his undergraduate studies at The New School in 2009. From 2009-2011, while working towards his graduate degree at NYU, Glenn was also on NYU faculty, teaching a variety of classes and private students."
+  ],
+  "links": [
+    {
+      "text": "Glenn's Website",
+      "link": " glennzaleski.com"
+    }
+  ],
+  "payment": {
+    "venmo": "./",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "ACLU",
+    "bio": [
+      "The ACLU has been at the center of nearly every major civil liberties battle in the U.S. for over 100 years. This vital work depends on the support of ACLU members in all 50 states and beyond."
+    ],
+    "link": "https://action.aclu.org/give/now"
+  }
+}

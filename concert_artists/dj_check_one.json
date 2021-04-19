@@ -1,0 +1,28 @@
+{
+  "date": "6/4/20",
+  "code": "Y40l8lpy1oc",
+  "number": 9,
+  "location": "Denver",
+  "name": "Dameion Hines a.k.a. Dj Check One",
+  "instrument": "",
+  "bio": [
+    "Dameion Hines a.k.a. Dj Check One became obsessed with music one funky Sunday morning when he was eight years old, listening to Prince in his underwear. He’s been a music fan first and lucky enough to share the stage with some of his influences.  He’s a colorado based artist Performing nationally and internationally with with any style from Jazz to hip-hop and R&B to Bluegrass and soul. He grew up as a drummer, developed a large music collection, and became a DJ.  A collector of all J Dilla music, drumming, and having lots of samples is a gateway drug to being a beatmaker.  Now he can’t stop and enjoys making music like bodybuilders like to work out. He will be putting out a quarantine be an album on all platforms and or the name Dj Check One here soon.  He will be donating 10% of his earnings to the Matter Organization. "
+  ],
+  "links": [
+    {
+      "text": "Follow DJ Check One on Instagram",
+      "link": "https://www.instagram.com/djcheckone/"
+    }
+  ],
+  "payment": {
+    "venmo": "./check_one_qr.jpg",
+    "paypal": ""
+  },
+  "charity": {
+    "name": "Black Lives Matter",
+    "bio": [
+      "#BlackLivesMatter was founded in 2013 in response to the acquittal of Trayvon Martin’s murderer. Black Lives Matter Foundation, Inc is a global organization in the US, UK, and Canada, whose mission is to eradicate white supremacy and build local power to intervene in violence inflicted on Black communities by the state and vigilantes. By combating and countering acts of violence, creating space for Black imagination and innovation, and centering Black joy, we are winning immediate improvements in our lives."
+    ],
+    "link": "https://blacklivesmatter.com/"
+  }
+}
