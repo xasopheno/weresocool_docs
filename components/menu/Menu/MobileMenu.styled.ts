@@ -25,6 +25,7 @@ export const MobileStyledMenu = styled.nav<{ open: boolean }>`
     width: 100%;
   }
 `;
+
 export const MenuItem = styled.div`
   font-size: 1.5rem;
   //  text-transform: uppercase;

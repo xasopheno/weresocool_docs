@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const StyledMenu = styled.nav`
   flex-direction: column;
@@ -9,11 +9,10 @@ export const StyledMenu = styled.nav`
   padding: 20px;
   height: 100%;
   width: calc(0.29 * 100vw);
-  scrollbar-color: goldenrod;
   overflow-y: scroll;
   position: fixed;
   padding-bottom: 10%;
-`
+`;
 
 export const MenuItem = styled.div<{ selected: boolean }>`
   font-size: 1.25em;
@@ -31,7 +30,7 @@ export const MenuItem = styled.div<{ selected: boolean }>`
   &:active {
     opacity: 70%;
   }
-`
+`;
 
 export const SelectedMenuItem = styled.span`
   width: 7px;
@@ -41,4 +40,4 @@ export const SelectedMenuItem = styled.span`
   position: absolute;
   left: 0px;
   margin-top: -3px;
-`
+`;

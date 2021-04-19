@@ -20,7 +20,7 @@
 *.pem
 
 wasm/target
-wasm/pkg
+# wasm/pkg
 
 # debug
 npm-debug.log*

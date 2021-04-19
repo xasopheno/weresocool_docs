@@ -1,0 +1,15 @@
+{
+  "name": "weresocool-wasm",
+  "collaborators": [
+    "Danny Meyer <weresocool@xasopheno.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "weresocool_wasm_bg.wasm",
+    "weresocool_wasm.js",
+    "weresocool_wasm.d.ts"
+  ],
+  "module": "weresocool_wasm.js",
+  "types": "weresocool_wasm.d.ts",
+  "sideEffects": false
+}

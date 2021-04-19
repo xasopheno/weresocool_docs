@@ -1,11 +1,14 @@
 {
   "name": "with-mdx-remote",
   "version": "1.0.0",
+  "engines": {
+    "node": "14"
+  },
   "scripts": {
     "dev": "next",
-    "dev:watch": "next-remote-watch ./tutorials ./interviews ./concert_artists",
+    "dev:watch": "next-remote-watch ./tutorials",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "typecheck": "yarn run tsc",
     "lint": "yarn run eslint",
     "fix": "yarn run eslint --fix",
