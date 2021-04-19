@@ -27,18 +27,17 @@ export const MobileStyledMenu = styled.nav<{ open: boolean }>`
 `;
 
 export const MenuItem = styled.div`
+  cursor: pointer;
   font-size: 1.5rem;
   //  text-transform: uppercase;
   padding: 0.5rem 0;
   font-weight: bold;
   letter-spacing: 0.15rem;
-  //color: ${({ theme }) => theme.primaryDark};
   color: #edd;
   text-decoration: none;
   transition: color 0.3s linear;
 
   &:hover {
-    //color: ${({ theme }) => theme.primaryHover};
     color: #beb;
   }
 `;

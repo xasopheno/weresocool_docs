@@ -79,6 +79,12 @@ const HeaderButtonContainer = styled.div`
 const GetStartedButton = styled.div`
   a {
     text-decoration: none;
+    &:visited,
+    &:active,
+    &:link {
+      color: black;
+      font-size: 16px;
+    }
   }
   text-align: right;
   padding-right: 7px;
@@ -102,7 +108,7 @@ const TakeTutorialButton = styled.div`
   cursor: pointer;
   color: darkgoldenrod;
   :hover {
-    color: white;
+    color: goldenrod;
   }
 `;
 

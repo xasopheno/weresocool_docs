@@ -15,6 +15,7 @@ export const StyledMenu = styled.nav`
 `;
 
 export const MenuItem = styled.div<{ selected: boolean }>`
+  cursor: pointer;
   font-size: 1.25em;
   padding: 0.25em 0 0 1em;
   color: #edd;
