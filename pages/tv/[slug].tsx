@@ -10,7 +10,7 @@ import {
   PostStaticProps,
 } from "../../components/postComponents"
 import { Box, Grid } from "theme-ui"
-import Youtube from "../../components/youtube"
+import { Youtube } from "../../components/video"
 import styled from "styled-components"
 import { tvMenu } from "../../components/menu/menus"
 import { Menu } from "../../components/menu"
