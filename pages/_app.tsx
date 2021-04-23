@@ -7,8 +7,14 @@ import { theme } from "../components/layout/theme"
 import { Dispatch, DispatchContext } from "../state/actions"
 import { mainReducer } from "../state/reducers"
 import { GlobalContext, intialStore } from "../state/store"
+import ReactGA from "react-ga"
+ReactGA.initialize("UA-38957815-2")
 import "../styles.css"
+
 function App({ Component, pageProps }: AppProps) {
+  if (typeof window !== "undefined") {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }
   const [WasmProvider, wasmObject] = useWasm()
 
   const [store, rawDispatch] = useReducer(mainReducer, intialStore)
