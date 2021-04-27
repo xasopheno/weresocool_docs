@@ -20,7 +20,7 @@ import "ace-builds/src-noconflict/theme-github"
 import "ace-builds/src-noconflict/keybinding-vim"
 import "ace-builds/src-noconflict/keybinding-emacs"
 import "ace-builds/src-noconflict/ext-language_tools"
-import { stopLang } from "../../utils/misc"
+import { stopLang, supportsWasm } from "../../utils/misc"
 // import { VolumeBar } from "../volume"
 import styled from "styled-components"
 import { EditorSelect } from "../editorSelect"
@@ -144,7 +144,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
     <Container editorHeight={editorHeight()}>
       {!detectMobile.isMobile() && <ReactTooltip />}
 
-      {!props.readOnly && (
+      {!props.readOnly && supportsWasm() && (
         <ControlContainer>
           <Button
             style={{ backgroundColor: "mediumseagreen" }}
