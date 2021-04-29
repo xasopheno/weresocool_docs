@@ -1,7 +1,7 @@
 export type MenuDatum = {
-  title: string;
-  items: (string | { name: string; link: string })[];
-};
+  title: string
+  items: (string | { name: string; link: string })[]
+}
 
 export const tutorialMenu: MenuDatum[] = [
   {
@@ -35,7 +35,7 @@ export const tutorialMenu: MenuDatum[] = [
       "stems",
     ],
   },
-];
+]
 
 export const dannyMenu: MenuDatum[] = [
   {
@@ -43,10 +43,11 @@ export const dannyMenu: MenuDatum[] = [
 
     items: [
       { name: "About", link: "about" },
+      { name: "Make Work", link: "made_things" },
       { name: "Itinerary", link: "live" },
     ],
   },
-];
+]
 
 export const tvMenu: MenuDatum[] = [
   {
@@ -219,7 +220,7 @@ export const tvMenu: MenuDatum[] = [
       // "4/9/2020 - Danny Meyer - Saxophone (NYC)",
     ],
   },
-];
+]
 
 export const interviewMenu: MenuDatum[] = [
   {
@@ -274,4 +275,4 @@ export const interviewMenu: MenuDatum[] = [
       { name: "Moving To New York", link: "grant_gordy_moving" },
     ],
   },
-];
+]

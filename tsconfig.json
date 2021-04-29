@@ -23,8 +23,14 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "preserveSymlinks": true
-
   },
-  "include": [".eslintrc.js", "next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
+  "include": [
+    ".eslintrc.js",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "work.jsonc"
+  ],
   "exclude": ["node_modules", "cypress"]
 }

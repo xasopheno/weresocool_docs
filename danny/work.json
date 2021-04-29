@@ -1,0 +1,58 @@
+{
+  "years": [
+    {
+      "year": "2020",
+      "work": [
+        {
+          "title": "Neverone",
+          "year": 2020,
+          "collaborators": ["Colin Stranahan", "Danny Meyer"],
+          "type": "recording",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": "1o2lyjv0LniAAA1tVSCxfR",
+          "image": null
+        },
+        {
+          "title": "Danz CM - The Absurdity of Human Existence",
+          "year": 2020,
+          "collaborators": ["Danz Cm"],
+          "type": "recording",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "Aor4hhvYBqw",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        }
+      ]
+    },
+    {
+      "year": "2019",
+      "work": [
+        {
+          "title": "Unfinished Sountrack",
+          "year": 2019,
+          "collaborators": [
+            "Live Footage",
+            "Mike Theis",
+            "Topu Lyo",
+            "Danny Meyer"
+          ],
+          "type": "recording",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": "2KJYwIcoy3DmzZYsswoHh3",
+          "image": null
+        }
+      ]
+    }
+  ]
+}
