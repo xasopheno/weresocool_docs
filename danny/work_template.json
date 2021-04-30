@@ -1,0 +1,41 @@
+{
+  "years": [
+    {
+      "year": "2020",
+      "work": [
+        {
+          "title": "",
+          "year": 2020,
+          "collaborators": [{ "Danny Meyer": "Saxophone" }],
+          "tags": [""],
+          "type": "recording",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+
+        {
+          "title": "Danz CM - The Absurdity of Human Existence",
+          "year": 2020,
+          "collaborators": [
+            { "Danz Cm": "It's her record." },
+            { "Danny Meyer": "Saxophone" }
+          ],
+          "tags": [],
+          "type": "recording",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "Aor4hhvYBqw",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        }
+      ]
+    }
+  ]
+}

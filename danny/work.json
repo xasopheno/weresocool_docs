@@ -6,9 +6,19 @@
         {
           "title": "Neverone",
           "year": 2020,
-          "collaborators": ["Colin Stranahan", "Danny Meyer"],
+          "collaborators": [
+            { "Danny Meyer": "Saxophone" },
+            { "Colin Stranahan": "Drums" },
+            { "Alex Popov": "Video" },
+            { "Jimmy Katz": "Recording" },
+            { "Miles Benjamin Anthony Robinson": "Mixing" }
+          ],
+          "tags": ["Steve Maxwell's"],
           "type": "recording",
-          "description": ["It's cool"],
+          "description": [
+            "Colin and I have been playing duo together for 20 years.",
+            "Recorded in NYC at Steve Maxwell's Drums by Jimmy Katz Mixed by Miles Benjamin at CRC in Brooklyn, NY"
+          ],
           "links": [{ "text": "cool link", "href": "weresocool.com" }],
           "vimeo": null,
           "youtube": null,
@@ -19,7 +29,11 @@
         {
           "title": "Danz CM - The Absurdity of Human Existence",
           "year": 2020,
-          "collaborators": ["Danz Cm"],
+          "collaborators": [
+            { "Danz Cm": "It's her record." },
+            { "Danny Meyer": "Saxophone" }
+          ],
+          "tags": [],
           "type": "recording",
           "description": ["It's cool"],
           "links": [{ "text": "cool link", "href": "weresocool.com" }],
@@ -38,18 +52,101 @@
           "title": "Unfinished Sountrack",
           "year": 2019,
           "collaborators": [
-            "Live Footage",
-            "Mike Theis",
-            "Topu Lyo",
-            "Danny Meyer"
+            { "Mike Theis": "drums/keys/effects/photography" },
+            { "Topu Lyo": "cello/effects" },
+            { "Danny Meyer": "saxophone/effects" },
+            { "Quinn McCarthy": "saxophone/effects" },
+            { "Tori": "Graphic Design and Art" },
+            { "Nolan Thies": "audio mastering" }
           ],
+          "tags": ["Live Footage"],
           "type": "recording",
-          "description": ["It's cool"],
-          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "description": [
+            "“Unwritten Soundtrack” is a collaboration between avant electro duo Live Footage and saxophonist Danny Meyer and will be released by the multifarious Ephemeral Arts label on December 6th, 2019. For the past 13 years cellist Topu Lyo and drummer/keyboardist Mike Thies have produced improvisational cinematic mini-soundtracks constructed from loops, samples, tape manipulations and synthesizer treatments that lie somewhere at the crossroads between Eno, Morricone and Carpenter.",
+
+            "The result of this collaboration with multi-disciplinarian artist Meyer (who has contributed musically to such acts as Julia Holter, Chairlift, ExoTech and MGMT) is an expansion on the urbane electro charged atmosphere that the duo has fulfilled in which the saxophone overlays an organicness that simultaneously pays homage to the jazz of a past age with a future that is only just being discovered.",
+
+            "“Broken” kicks off a world where Jack DeJohnette and Coltrane somehow meet in the back alleys of a distant time with a repetitive riff that evolves from the pure and unaffected to reverbed and delayed horns woven through Lyo’s delicately effected strings. “Sea Marsh” references the downiness of Richard Thomas’ work with Cocteau Twins and is equally as majestic as anything yielded from...  more",
+            "released December 11, 2019",
+
+            "Recorded and mixed at The Creamery Studio, New York, NY by Quinn McCarthy.",
+            "Mastered at The Blue Rooms Studios by Nolan Thies. Photography by Mike Thies. Design and Art by Tori Huang.Ephemeral Arts EA0012."
+          ],
+          "links": [
+            {
+              "text": "Check out Live Footage",
+              "href": "http://www.livefootagebrooklyn.com"
+            }
+          ],
           "vimeo": null,
           "youtube": null,
           "bandcamp": null,
           "spotify": "2KJYwIcoy3DmzZYsswoHh3",
+          "image": null
+        },
+        {
+          "title": "Honshirabe",
+          "year": 2019,
+          "collaborators": [
+            { "Mike Theis": "drums/keys/effects/photography" },
+            { "Topu Lyo": "cello/effects" },
+            { "Danny Meyer": "saxophone/effects" },
+            { "Quinn McCarthy": "saxophone/effects" },
+            { "Nolan Thies": "audio mastering" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": "327587163",
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        }
+      ]
+    },
+    {
+      "year": "2018",
+      "work": [
+        {
+          "title": "Mantis Love",
+          "year": 2018,
+          "collaborators": [
+            { "Mike Theis": "drums/keys/effects/photography" },
+            { "Topu Lyo": "cello/effects" },
+            { "Danny Meyer": "saxophone/effects" },
+            { "Quinn McCarthy": "saxophone/effects" },
+            { "Nolan Thies": "audio mastering" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": 249750401,
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "Wet - Lately",
+          "year": 2018,
+          "collaborators": [
+            { "Mike Theis": "drums/keys/effects/photography" },
+            { "Topu Lyo": "cello/effects" },
+            { "Danny Meyer": "saxophone/effects" },
+            { "Quinn McCarthy": "saxophone/effects" },
+            { "Nolan Thies": "audio mastering" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "ybq7Jl5OkHE",
+          "bandcamp": null,
+          "spotify": null,
           "image": null
         }
       ]

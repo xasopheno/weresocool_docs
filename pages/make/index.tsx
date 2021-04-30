@@ -1,26 +1,28 @@
 // import Head from "next/head"
-import { Youtube } from "../../components/video"
+import { Vimeo, Youtube } from "../../components/video"
 import content from "../../danny/work.json"
 
-type Content = {
-  years: Year[]
-}
+// type Content = {
+// years: Year[]
+// }
 
-type Year = {
-  year: string
-  work: Work[]
-}
+// type Year = {
+// year: string
+// work: Work[]
+// }
 
 type Work = {
   title: string
-  subtitle: string
+  // subtitle: string
   year: number
-  collaborators: string[]
+  tags?: string[]
+  collaborators: { string: string }[]
   type: "video" | "image" | "text" | "recording"
-  description: string
+  description: string[]
   links: [{ text: "cool link"; href: "weresocool.com" }]
   vimeo?: string
   youtube?: string
+  spotify?: string
   bandcamp?: string
   image?: string
 }
@@ -31,8 +33,8 @@ const Spotify = (props: { code: string }) => {
       src={`https://open.spotify.com/embed/album/${props.code}`}
       width="300"
       height="380"
-      frameborder="0"
-      allowtransparency="true"
+      frameBorder="0"
+      // allowtransparency="true"
       allow="encrypted-media"
     ></iframe>
   )
@@ -42,28 +44,37 @@ export default function Work({ page }) {
   return (
     <div>
       {content.years.map((year, i) => {
-        console.log(year)
+        // console.log(year)
         return (
           <div key={i}>
             <h1>{year.year}</h1>
-            {year.work.map((work, j) => {
+            {year.work.map((work: Work, j) => {
               return (
                 <div key={j}>
                   <h2>{work.title}</h2>
+                  <div style={{ maxWidth: "800px" }}>
+                    {work.description.map((p: string) => (
+                      <p>{p}</p>
+                    ))}
+                  </div>
                   <div
                     style={{
                       display: "flex",
-                      flexDirection: "row",
+                      flexDirection: "column",
                     }}
                   >
-                    {work.collaborators.map((c, i) => (
-                      <p style={{ padding: "5px" }} key={i}>
-                        {c}
-                      </p>
-                    ))}
+                    {work.collaborators.map((c: { string: string }, i) => {
+                      return (
+                        <p style={{ padding: "0px", margin: "0px" }} key={i}>
+                          <span>{Object.keys(c)[0]}</span>:
+                          <span> {Object.values(c)[0]}</span>
+                        </p>
+                      )
+                    })}
                   </div>
                   {work.spotify && <Spotify code={work.spotify} />}
                   {work.youtube && <Youtube code={work.youtube} />}
+                  {work.vimeo && <Vimeo code={work.vimeo} />}
                 </div>
               )
             })}
