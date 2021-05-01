@@ -1,4 +1,5 @@
 // import Head from "next/head"
+import { Break } from "../../components/mdx"
 import { Vimeo, Youtube } from "../../components/video"
 import content from "../../danny/work.json"
 
@@ -57,6 +58,9 @@ export default function Work({ page }) {
                       <p>{p}</p>
                     ))}
                   </div>
+                  {work.spotify && <Spotify code={work.spotify} />}
+                  {work.youtube && <Youtube code={work.youtube} />}
+                  {work.vimeo && <Vimeo code={work.vimeo} />}
                   <div
                     style={{
                       display: "flex",
@@ -72,9 +76,7 @@ export default function Work({ page }) {
                       )
                     })}
                   </div>
-                  {work.spotify && <Spotify code={work.spotify} />}
-                  {work.youtube && <Youtube code={work.youtube} />}
-                  {work.vimeo && <Vimeo code={work.vimeo} />}
+                  <Break />
                 </div>
               )
             })}

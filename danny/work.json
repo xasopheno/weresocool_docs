@@ -133,6 +133,50 @@
           "title": "Wet - Lately",
           "year": 2018,
           "collaborators": [
+            { "Danny Meyer": "saxophone" },
+            { "Wet": "cool band" }
+          ],
+          "tags": [""],
+          "type": "session",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "ybq7Jl5OkHE",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        }
+      ]
+    },
+    {
+      "year": "2017",
+      "work": [
+        {
+          "title": "This Is Amazing Vol. 2",
+          "year": 2017,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone/Effect, Composer, Video" },
+            { "Topu Lyo": "Cello/Effects" },
+            { "Mike Thies": "Drums/Effects" },
+            { "Miho Hatori": "Voice/Effects" },
+            { "Sam Yulsman": "Piano" },
+            { "Cleek Schrey": "Violin" },
+            { "Mark Bengston": "Audio Engineer" }
+          ],
+          "tags": [""],
+          "type": "video",
+          "description": ["Recorded at Redbull Studios in NYC"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": "229055691",
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "Unwritten Soundtrack",
+          "year": 2017,
+          "collaborators": [
             { "Mike Theis": "drums/keys/effects/photography" },
             { "Topu Lyo": "cello/effects" },
             { "Danny Meyer": "saxophone/effects" },
@@ -140,11 +184,28 @@
             { "Nolan Thies": "audio mastering" }
           ],
           "tags": [""],
-          "type": "recording",
-          "description": ["It's cool"],
+          "type": "video",
+          "description": [""],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": "241213245",
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "MGMT - She Works Out Too Much",
+          "year": 2017,
+          "collaborators": [
+            { "Danny Meyer": "saxophone/effects" },
+            { "Patrick Wimberly": "producer" }
+          ],
+          "tags": [""],
+          "type": "video",
+          "description": [""],
           "links": [{ "text": "cool link", "href": "weresocool.com" }],
           "vimeo": null,
-          "youtube": "ybq7Jl5OkHE",
+          "youtube": "e0QT4N-5PA4",
           "bandcamp": null,
           "spotify": null,
           "image": null
