@@ -42,9 +42,9 @@ export const dannyMenu: MenuDatum[] = [
     title: "Danny Meyer",
 
     items: [
-      { name: "About", link: "about" },
-      { name: "Make Work", link: "made_things" },
-      { name: "Itinerary", link: "live" },
+      { name: "About", link: "who/about" },
+      { name: "Make Work", link: "make" },
+      { name: "Itinerary", link: "who/live" },
     ],
   },
 ]

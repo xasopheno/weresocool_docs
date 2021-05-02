@@ -198,7 +198,8 @@
           "year": 2017,
           "collaborators": [
             { "Danny Meyer": "saxophone/effects" },
-            { "Patrick Wimberly": "producer" }
+            { "Patrick Wimberly": "producer" },
+            { "MGMT": "band" }
           ],
           "tags": [""],
           "type": "video",
@@ -206,6 +207,112 @@
           "links": [{ "text": "cool link", "href": "weresocool.com" }],
           "vimeo": null,
           "youtube": "e0QT4N-5PA4",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        }
+      ]
+    },
+    {
+      "year": "2016",
+      "work": [
+        {
+          "title": "Everything Is A Mirror",
+          "year": 2016,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone, Video, Words" },
+            { "Julia Holter": "Voice recorded in a desert" },
+            { "Mark Clifford": "Vibraphone" },
+            { "Colin Stranahan": "Drums" },
+            { "Patrick Wimberly": "Mix" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["Recorded at NFA Studios in Denver, CO"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": "142294610",
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "Chorale",
+          "year": 2016,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone, Video, Composer" },
+            { "Areni Agbabian": "Voice" },
+            { "Sam Yulsam": "Piano" },
+            { "Tyler Gilmore": "Audio Recording and Mixing/Mastering" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["Recorded at Ibeam in Brooklyn"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": "148172942",
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "Twos",
+          "year": 2016,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone, Video, Composer" },
+            { "Maya Laliberte": "Dance" },
+            { "Alex Popov": "Video, Photography" },
+            { "Tyler Gilmore": "Audio Recording and Mixing/Mastering" },
+            { "Mark Clifford": "Vibraphone" },
+            { "Colin Stranahan": "Drums" },
+            { "Patrick Wimberly": "Mix" },
+            { "Miles Benjamin Anthony Robinson": "Audio Engineer for Vox" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": [""],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": "149482770",
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "A Song For Us",
+          "year": 2016,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone" },
+            { "Colin Stranahan": "Drums" },
+            { "Alex Popov": "Video" },
+            { "Jimmy Katz": "Recording" },
+            { "Miles Benjamin Anthony Robinson": "Mixing" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": [""],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": "123360698",
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "Neverone",
+          "year": 2016,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone, Video" },
+            { "Colin Stranahan": "Drums" },
+            { "Jimmy Katz": "Recording" },
+            { "Miles Benjamin Anthony Robinson": "Mixing" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": [""],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": "132569222",
+          "youtube": null,
           "bandcamp": null,
           "spotify": null,
           "image": null
