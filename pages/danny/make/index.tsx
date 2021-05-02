@@ -68,7 +68,6 @@ export default function Work({ page }) {
           around in a cloud somewhere. This page is an effort to give these
           things a home.
         </PostContainer>
-        <Break />
         {content.years.map((year, i) => {
           // console.log(year)
           return (
@@ -78,6 +77,7 @@ export default function Work({ page }) {
                   textAlign: "center",
                   fontSize: "7rem",
                   color: "darkgoldenrod",
+                  border: "1px solid goldenrod",
                 }}
               >
                 {year.year}
@@ -95,10 +95,14 @@ export default function Work({ page }) {
                     >
                       {work.title}
                     </h2>
-                    <PostContainer>
-                      <div style={{ fontSize: "1.25rem" }}>
-                        {work.description.map((p: string) => (
-                          <p>{p}</p>
+                    <PostContainer style={{ padding: 0 }}>
+                      <div
+                        style={{
+                          fontSize: "1.25rem",
+                        }}
+                      >
+                        {work.description.map((p: string, k) => (
+                          <p key={k}>{p}</p>
                         ))}
                       </div>
                     </PostContainer>
@@ -114,7 +118,7 @@ export default function Work({ page }) {
                         textAlign: "center",
                       }}
                     >
-                      {work.collaborators.map((c: { string: string }, i) => {
+                      {work.collaborators.map((c: { string: string }, l) => {
                         return (
                           <p
                             style={{
@@ -122,7 +126,7 @@ export default function Work({ page }) {
                               margin: "0px",
                               fontSize: "1.5rem",
                             }}
-                            key={i}
+                            key={l}
                           >
                             <span>{Object.keys(c)[0]}</span>:
                             <span> {Object.values(c)[0]}</span>
