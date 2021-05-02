@@ -1,29 +1,31 @@
 // import Head from "next/head"
 import { Break } from "../../../components/mdx"
 import { Vimeo, Youtube } from "../../../components/video"
-import content from "../../../danny/work.json"
+// import * as content from "../../../danny/work.json"
 import { PostContainer } from "../../../components/postComponents"
 import Layout from "../../../components/layout"
 import { dannyMenu } from "../../../components/menu/menus"
 
-// type Content = {
-// years: Year[]
-// }
+const content = require("../../../danny/work.json")
 
-// type Year = {
-// year: string
-// work: Work[]
-// }
+type Years = {
+  years: [
+    {
+      year: string
+      work: Work[]
+    }
+  ]
+}
 
 type Work = {
   title: string
   // subtitle: string
   year: number
-  tags?: string[]
   collaborators: { string: string }[]
+  tags?: string[]
   type: "video" | "image" | "text" | "recording"
   description: string[]
-  links: [{ text: "cool link"; href: "weresocool.com" }]
+  links: { text: string; href: string }[]
   vimeo?: string
   youtube?: string
   spotify?: string
@@ -46,7 +48,7 @@ const Spotify = (props: { code: string }) => {
   )
 }
 
-export default function Work({ page }) {
+export default function Work() {
   return (
     <Layout sectionPath={"danny"} menuData={dannyMenu}>
       <div>
@@ -68,7 +70,7 @@ export default function Work({ page }) {
           around in a cloud somewhere. This page is an effort to give these
           things a home.
         </PostContainer>
-        {content.years.map((year, i) => {
+        {((content as unknown) as Years).years.map((year, i) => {
           // console.log(year)
           return (
             <div key={i}>

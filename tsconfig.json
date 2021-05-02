@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    "work.jsonc"
+    "danny/work.json"
   ],
   "exclude": ["node_modules", "cypress"]
 }
