@@ -50,7 +50,7 @@
       "year": "2019",
       "work": [
         {
-          "title": "Unfinished Sountrack",
+          "title": "Unfinished Soundtrack",
           "year": 2019,
           "collaborators": [
             { "Mike Theis": "drums/keys/effects/photography" },
@@ -549,10 +549,15 @@
           "bandcamp": null,
           "spotify": null,
           "image": null
-        },
+        }
+      ]
+    },
+    {
+      "year": "2012",
+      "work": [
         {
           "title": "FreeBear - Four Brothers",
-          "year": 2013,
+          "year": 2012,
           "collaborators": [
             { "Danny Meyer": "Saxophone" },
             { "Stephen Thurston": "Keyboards" },
@@ -565,6 +570,24 @@
           "links": [{ "text": "cool link", "href": "weresocool.com" }],
           "vimeo": null,
           "youtube": "ufKL-TxCZII",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "Children w/ Ron Miles and Kent McLagan",
+          "year": 2012,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone" },
+            { "Ron Miles": "Cornet" },
+            { "Kent McLagan": "Bass" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "B8FwYLv_3BI",
           "bandcamp": null,
           "spotify": null,
           "image": null

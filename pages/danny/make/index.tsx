@@ -44,7 +44,7 @@ const BandCamp = (props: { code: string }) => {
         marginLeft: "auto",
         marginRight: "auto",
       }}
-      src="https://bandcamp.com/EmbeddedPlayer/album=1039466788/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/"
+      src={`https://bandcamp.com/EmbeddedPlayer/album=${props.code}/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/`}
       seamless
     >
       <a href="https://liveinch.bandcamp.com/album/live-in-ch">
