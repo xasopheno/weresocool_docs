@@ -33,6 +33,28 @@ type Work = {
   image?: string
 }
 
+const BandCamp = (props: { code: string }) => {
+  return (
+    <iframe
+      style={{
+        border: "0",
+        width: "350px",
+        height: "621px",
+        display: "block",
+        marginLeft: "auto",
+        marginRight: "auto",
+      }}
+      src="https://bandcamp.com/EmbeddedPlayer/album=1039466788/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/"
+      seamless
+    >
+      <a href="https://liveinch.bandcamp.com/album/live-in-ch">
+        Live in Ch by Meyer, Karason, Iannone, Zufferey, Xiaoping Ruiz, Aaron,
+        Liechti, Ruther
+      </a>
+    </iframe>
+  )
+}
+
 const Spotify = (props: { code: string }) => {
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -112,6 +134,7 @@ export default function Work() {
                       {work.spotify && <Spotify code={work.spotify} />}
                       {work.youtube && <Youtube code={work.youtube} />}
                       {work.vimeo && <Vimeo code={work.vimeo} />}
+                      {work.bandcamp && <BandCamp code={work.bandcamp} />}
                     </div>
                     <div
                       style={{

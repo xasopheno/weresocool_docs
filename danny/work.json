@@ -365,6 +365,130 @@
       ]
     },
     {
+      "year": "2015",
+      "work": [
+        {
+          "title": "Painting",
+          "year": 2015,
+          "collaborators": [
+            { "Jean-Lou Treboux": "vibraphone, composer" },
+            { "Danny Meyer": "saxophone" },
+            { "Colin Stranahan": "drums" },
+            { "Tyler Gilmore": "audio engineering and mixing" },
+            { "James Gunderson": "Live Images" },
+            { "Romain Iannone": "Animations and Editing" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": [
+            "Special Thanks to Monkey, Alex, Jarrett, Mike, Topu, Dean and Ayo. Recorded Live at Tommy's Brooklyn, NYC"
+          ],
+          "links": [
+            {
+              "text": "Ramain's Website",
+              "href": "http://www.romainiannone.ch"
+            }
+          ],
+          "vimeo": "118862756",
+          "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "Have You In My Wilderness",
+          "year": 2015,
+          "collaborators": [
+            { "Julia Holter": "Julia Holter" },
+            { "Danny Meyer": "saxophone" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": [
+            "I play saxophone and clarinet on this record. Proud of the saxophone solo on 'The Sea Calls Me Home'."
+          ],
+          "links": [
+            {
+              "text": "cool link",
+              "href": "http://www.weresocool.org"
+            }
+          ],
+          "vimeo": null,
+          "youtube": "OERixQR-hxY",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        }
+      ]
+    },
+    {
+      "year": "2014",
+      "work": [
+        {
+          "title": "Live in Ch",
+          "year": 2014,
+          "collaborators": [
+            { "Danny Meyer": "saxophone" },
+            { "Ari Bragi Kárason": "trumpet" },
+            { "Fabian Ianonne": "bass" },
+            { "Jonas Ruther": "drums" },
+            { "Gabriel Zufferey": "piano" },
+            { "Luca Aaron": "guitar" },
+            { "Valentin Liechti": "drums" },
+            { "Vincent Xiaoping Ruiz": "bass" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": [""],
+          "links": [
+            {
+              "text": "cool link",
+              "href": "http://www.weresocool.org"
+            }
+          ],
+          "vimeo": null,
+          "youtube": null,
+          "bandcamp": "1039466788",
+          "spotify": null,
+          "image": null
+        },
+
+        {
+          "title": "This Is Amazing Vol. 1",
+          "year": 2014,
+          "collaborators": [
+            { "Danny Meyer": "saxophone" },
+            { "Fabian Ianonne": "bass" },
+            { "Jonas Ruther": "drums" },
+            { "Gabriel Zufferey": "piano" },
+            { "Dapo Dina": "piano" },
+            { "Kenneth Dahl Knudson": "bass" },
+            { "Valentine Schuster": "drums" },
+            { "Tyler Gilmore": "laptop" },
+            { "John Lake": "trumpet" },
+            { "Kayla Randomski": "dance" },
+            { "Scott Shaw": "dance" },
+            { "Brianna Goodman": "dance" },
+            { "Ariel Asch": "dance" },
+            { "Marisa Martin": "dance" },
+            { "Tina Wang": "dance" },
+            { "Mark Clifford": "vibraphone" },
+            { "Colin Stranahan": "drums" }
+          ],
+
+          "tags": [""],
+          "type": "recording",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "PIZxNcnKNkM",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        }
+      ]
+    },
+    {
       "year": "2013",
       "work": [
         {
@@ -405,8 +529,128 @@
       ]
     },
     {
+      "year": "2013",
+      "work": [
+        {
+          "title": "w/ Paul Romaine - Green Chimneys",
+          "year": 2013,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone" },
+            { "Paul Romaine": "Drums" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": [
+            "Recorded at Dazzle in Denver, CO at my going away party when I moved to NYC."
+          ],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "KnoqUsn8ajU",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "FreeBear - Four Brothers",
+          "year": 2013,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone" },
+            { "Stephen Thurston": "Keyboards" },
+            { "Patrick McDevitt": "Bass" },
+            { "Alejandro Castano": "Drums" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["It's cool"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "ufKL-TxCZII",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        }
+      ]
+    },
+    {
       "year": "2011",
       "work": [
+        {
+          "title": "Freebear - Single Ladies",
+          "year": 2011,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone" },
+            { "Stephen Thurston": "Keyboards" },
+            { "Patrick McDevitt": "Bass" },
+            { "Alejandro Castano": "Drums" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["Recorded at The Sink in Boulder, CO"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "epooNrA5oag",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "FreeBear - Ridin' Dirty",
+          "year": 2011,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone" },
+            { "Stephen Thurston": "Keyboards" },
+            { "Patrick McDevitt": "Bass" },
+            { "Alejandro Castano": "Drums" },
+            { "Donald FreeBear": "Bear" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["Recorded at The Sink in Boulder, CO"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "5e-bcWPnY2U",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "Art Lande and Danny Meyer - Arabesque Grotesque",
+          "year": 2011,
+          "collaborators": [
+            { "Danny Meyer": "Saxophone" },
+            { "Art Lande": "Piano, Composer" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["Recorded at Dazzle in Denver, CO"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "NjIXF-7l8Vc",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "Thurston Group - Heading Home",
+          "year": 2011,
+          "collaborators": [
+            { "Stephen Thurston": "Keys" },
+            { "John Moore": "Drums" },
+            { "Garrett Sayers": "Bass" },
+            { "Danny Meyer": "Saxophone" },
+            { "Mark Donovan": "Guitar" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["Recorded at The Sink in Boulder, CO"],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "n-42QlOn-xg",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+
         {
           "title": "Musician insists he's not playing for the prairie dogs",
           "year": 2011,
