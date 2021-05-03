@@ -179,7 +179,7 @@
           "title": "This Is Amazing Vol. 2",
           "year": 2017,
           "collaborators": [
-            { "Danny Meyer": "Saxophone/Effect, Composer, Video" },
+            { "Danny Meyer": "Saxophone/Effects, Composer, Video" },
             { "Topu Lyo": "Cello/Effects" },
             { "Mike Thies": "Drums/Effects" },
             { "Miho Hatori": "Voice/Effects" },
@@ -193,6 +193,24 @@
           "links": [{ "text": "cool link", "href": "weresocool.com" }],
           "vimeo": "229055691",
           "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "Killing the Blues w/ Areni and Fabian",
+          "year": 2017,
+          "collaborators": [
+            { "Areni Agbabian": "Singing" },
+            { "Fabian Iannone": "Bass" },
+            { "Danny Meyer": "Saxophone" }
+          ],
+          "tags": [""],
+          "type": "video",
+          "description": [""],
+          "links": [{ "text": "cool link", "href": "weresocool.com" }],
+          "vimeo": null,
+          "youtube": "_Yvoe1kDd8o",
           "bandcamp": null,
           "spotify": null,
           "image": null
@@ -364,6 +382,7 @@
         }
       ]
     },
+
     {
       "year": "2015",
       "work": [
@@ -391,6 +410,52 @@
           ],
           "vimeo": "118862756",
           "youtube": null,
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "SOLO - A Bag in the Wind",
+          "year": 2015,
+          "collaborators": [
+            { "Danny Meyer": "saxophone" },
+            { "Nina Tygalskia": "video" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["Recorded in Kotwasice, Polska."],
+          "links": [
+            {
+              "text": "cool link",
+              "href": "http://www.weresocool.org"
+            }
+          ],
+          "vimeo": null,
+          "youtube": "TUl7vcbeVbI",
+          "bandcamp": null,
+          "spotify": null,
+          "image": null
+        },
+        {
+          "title": "Youthandageia - Literature of World Wars",
+          "year": 2015,
+          "collaborators": [
+            { "Art Lande": "Drums" },
+            { "Sam Yulsman": "Piano" },
+            { "Kent McLagan": "Bass" },
+            { "Danny Meyer": "Saxophone" }
+          ],
+          "tags": [""],
+          "type": "recording",
+          "description": ["Recorded at Dazzle in Denver, CO"],
+          "links": [
+            {
+              "text": "cool link",
+              "href": "http://www.weresocool.org"
+            }
+          ],
+          "vimeo": null,
+          "youtube": "xnQTvN24qAc",
           "bandcamp": null,
           "spotify": null,
           "image": null
