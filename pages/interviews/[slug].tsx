@@ -1,11 +1,9 @@
 import fs from "fs"
 import matter from "gray-matter"
-import hydrate from "next-mdx-remote/hydrate"
-import renderToString from "next-mdx-remote/render-to-string"
 import Head from "next/head"
 import path from "path"
 import { interviewFilePaths, INTERVIEWS_PATH } from "../../utils/mdxUtils"
-import { GetStaticPropsResult, GetStaticPropsContext } from "next"
+import { GetStaticPropsContext } from "next"
 import { capitalize } from "../../utils/misc"
 import { useRouter } from "next/router"
 import Image from "next/image"
@@ -15,10 +13,11 @@ import {
   GoldLink,
   PostContainer,
   PostProps,
-  PostStaticProps,
 } from "../../components/postComponents"
 import Layout from "../../components/layout"
 import { interviewMenu } from "../../components/menu/menus"
+import {serialize} from "next-mdx-remote/serialize"
+import {MDXRemote} from "next-mdx-remote"
 
 const components = {
   Image,
@@ -26,7 +25,6 @@ const components = {
 }
 
 export default function InterviewPage({ source, frontMatter }: PostProps) {
-  const content = hydrate(source, { components })
   const router = useRouter()
 
   return (
@@ -38,7 +36,7 @@ export default function InterviewPage({ source, frontMatter }: PostProps) {
             {frontMatter.description && <p>{frontMatter.description}</p>}
           </div>
           <div>
-            {content}
+            <MDXRemote {...source} components={components} />
             {frontMatter.next && (
               <GoldLink
                 onClick={async () => {
@@ -55,17 +53,15 @@ export default function InterviewPage({ source, frontMatter }: PostProps) {
   )
 }
 
-export async function getStaticProps(
-  context: GetStaticPropsContext
-): Promise<GetStaticPropsResult<PostStaticProps>> {
-  const slug = context.params!.slug
-  const interviewFilePath = path.join(INTERVIEWS_PATH, `${slug}.mdx`)
-  const source = fs.readFileSync(interviewFilePath)
+export const getStaticProps = async (context: GetStaticPropsContext) => {
+  const slug = context.params?.slug;
+  const postFilePath = path.join(INTERVIEWS_PATH, `${slug}.mdx`)
+  const source = fs.readFileSync(postFilePath)
 
   const { content, data } = matter(source)
 
-  const mdxSource = await renderToString(content, {
-    components,
+  const mdxSource = await serialize(content, {
+    // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
       rehypePlugins: [],
@@ -77,11 +73,10 @@ export async function getStaticProps(
     props: {
       source: mdxSource,
       frontMatter: data,
-      slug: slug!,
+      slug: slug!
     },
   }
 }
-
 export const getStaticPaths = async () => {
   const paths = interviewFilePaths
     .map((path) => path.replace(/\.mdx?$/, ""))

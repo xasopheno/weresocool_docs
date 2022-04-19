@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -22,7 +26,8 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "preserveSymlinks": true
+    "preserveSymlinks": true,
+    "incremental": true
   },
   "include": [
     ".eslintrc.js",
@@ -32,5 +37,8 @@
     "**/*.js",
     "danny/work.json"
   ],
-  "exclude": ["node_modules", "cypress"]
+  "exclude": [
+    "node_modules",
+    "cypress"
+  ]
 }

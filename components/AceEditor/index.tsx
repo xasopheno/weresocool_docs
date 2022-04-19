@@ -73,7 +73,7 @@ export const Editor = (props: EditorProps): React.ReactElement => {
         try {
           props.onRender(language)
         } catch (err) {
-          handleError(err, language)
+          handleError(err as ResponseType, language)
         }
         setRender(false)
       }
@@ -140,9 +140,12 @@ export const Editor = (props: EditorProps): React.ReactElement => {
     }
   }
 
+  // const tooltip: React.SFC<{}> = (props) => <ReactTooltip/>
+
+
   return (
     <Container editorHeight={editorHeight()}>
-      {!detectMobile.isMobile() && <ReactTooltip />}
+      {!detectMobile.isMobile() && <ReactTooltip /> }
 
       {!props.readOnly && supportsWasm() && (
         <ControlContainer>

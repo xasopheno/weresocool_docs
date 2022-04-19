@@ -1,4 +1,4 @@
-import { MdxRemote } from "next-mdx-remote/types"
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { useRouter } from "next/router"
 import { useEffect, useRef } from "react"
 import styled from "styled-components"
@@ -49,15 +49,15 @@ export type FrontMatter = {
   [key: string]: any
 }
 
-export type PostProps = { source: MdxRemote.Source; frontMatter: FrontMatter }
+export type PostProps = { source: MDXRemoteSerializeResult; frontMatter: FrontMatter }
 
 export interface PostStaticProps {
-  source: MdxRemote.Source
+  source: typeof MDXRemote,
   frontMatter: FrontMatter
   slug: string | string[]
 }
 
-export const Content: React.FC = ({ children }) => {
+export const Content: React.FC<{children: React.ReactNode}> = ({ children }): React.ReactElement => {
   const topRef = useRef(null)
   const router = useRouter()
   useEffect(() => {

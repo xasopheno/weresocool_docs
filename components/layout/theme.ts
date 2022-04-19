@@ -1,11 +1,11 @@
 export const theme = {
-  breakpoints: ["40em", "52em", "64em"],
+  breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body:
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
-    heading: "inherit",
-    monospace: "Menlo, monospace",
+    heading: 'inherit',
+    monospace: 'Menlo, monospace',
   },
   fontSizes: [12, 14, 17, 20, 24, 32, 48, 64, 96],
   fontWeights: {
@@ -18,73 +18,59 @@ export const theme = {
     heading: 1.125,
   },
   colors: {
-    text: "rgb(236, 224, 204)",
-    background: "#212121",
-    primary: "#07c",
-    secondary: "#30c",
-    muted: "#f6f6f6",
+    text: 'rgb(236, 224, 204)',
+    background: '#212121',
+    primary: '#07c',
+    secondary: '#30c',
+    muted: '#f6f6f6',
   },
   text: {
     heading: {
-      fontFamily: "heading",
-      lineHeight: "heading",
-      fontWeight: "heading",
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
     },
   },
   styles: {
     root: {
-      fontFamily: "body",
-      lineHeight: "body",
-      fontWeight: "body",
+      fontFamily: 'body',
+      lineHeight: 'body',
+      fontWeight: 'body',
     },
     h1: {
-      variant: "text.heading",
+      variant: 'text.heading',
       fontSize: 5,
     },
     h2: {
-      variant: "text.heading",
+      variant: 'text.heading',
       fontSize: 4,
     },
     h3: {
-      variant: "text.heading",
+      variant: 'text.heading',
       fontSize: 3,
     },
     h4: {
-      variant: "text.heading",
+      variant: 'text.heading',
       fontSize: 2,
     },
     h5: {
-      variant: "text.heading",
+      variant: 'text.heading',
       fontSize: 1,
     },
     h6: {
-      variant: "text.heading",
+      variant: 'text.heading',
       fontSize: 0,
     },
     pre: {
-      fontFamily: "monospace",
-      overflowX: "auto",
+      fontFamily: 'monospace',
       code: {
-        color: "inherit",
+        color: 'inherit',
       },
     },
-    p: { variant: "text.p", fontSize: 2 },
+    p: { variant: 'text.p', fontSize: 2 },
     code: {
-      fontFamily: "monospace",
-      fontSize: "inherit",
-    },
-    table: {
-      width: "100%",
-      borderCollapse: "separate",
-      borderSpacing: 0,
-    },
-    th: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
-    },
-    td: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
+      fontFamily: 'monospace',
+      fontSize: 'inherit',
     },
   },
 };

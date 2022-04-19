@@ -50,7 +50,7 @@ const MenuSection = (props: {
 }
 
 interface SizedMenuProps extends React.HTMLAttributes<Element> {
-  children: React.ReactChild | React.ReactChildren
+  children: React.ReactNode
   open: boolean
 }
 

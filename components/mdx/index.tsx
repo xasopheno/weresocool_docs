@@ -8,7 +8,9 @@ const StyledCoolText = styled.span`
 export const Break = styled.div`
   border-bottom: 1px solid goldenrod;
 `
-
-export const CoolText: React.FC = ({ children }) => {
-  return <StyledCoolText>{children}</StyledCoolText>
+export const CoolText = (
+  props: {children: React.ReactNode}
+): React.ReactElement => {
+  return <StyledCoolText>{props.children}</StyledCoolText>
 }
+

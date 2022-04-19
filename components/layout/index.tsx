@@ -1,4 +1,3 @@
-import { ReactChild, ReactChildren } from "react"
 import { Box, Grid, ThemeProvider } from "theme-ui"
 import { useWindowSize } from "../../utils/useWindowSize"
 import { Menu } from "../menu"
@@ -10,7 +9,7 @@ export default function Layout({
   menuData,
   sectionPath,
 }: {
-  children: ReactChild | ReactChildren
+  children: React.ReactNode
   menuData: MenuDatum[]
   sectionPath: string
 }) {

@@ -2,13 +2,16 @@ import Head from "next/head"
 import Layout from "../../components/layout"
 import React from "react"
 import fs from "fs"
-import hydrate from "next-mdx-remote/hydrate"
+{/* import hydrate from "next-mdx-remote/hydrate" */}
 import matter from "gray-matter"
+import { MDXRemote } from 'next-mdx-remote'
+import { serialize } from 'next-mdx-remote/serialize'
+
 import path from "path"
-import renderToString from "next-mdx-remote/render-to-string"
-import { GetStaticPropsResult, GetStaticPropsContext } from "next"
+{/* import renderToString from "next-mdx-remote/render-to-string" */}
+import { GetStaticPropsContext } from "next"
 import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart"
-import { Break, CoolText } from "../../components/mdx"
+import { Break, CoolText, } from "../../components/mdx"
 import { WereSoCool } from "../../components/WereSoCool"
 import { capitalize, useStopAndWait } from "../../utils/misc"
 import { tutorialFilePaths, TUTORIAL_PATH } from "../../utils/mdxUtils"
@@ -21,7 +24,6 @@ import {
   LinkText,
   PostContainer,
   PostProps,
-  PostStaticProps,
 } from "../../components/postComponents"
 
 const components = {
@@ -34,7 +36,6 @@ const components = {
 }
 
 export default function PostPage({ source, frontMatter }: PostProps) {
-  const content = hydrate(source, { components })
   const router = useRouter()
   const stopAndWait = useStopAndWait()
 
@@ -47,12 +48,12 @@ export default function PostPage({ source, frontMatter }: PostProps) {
             {frontMatter.description && <p>{frontMatter.description}</p>}
           </div>
           <div>
-            {content}
+            <MDXRemote {...source} components={components} />
             <Break />
             {frontMatter.next && (
               <GoldLink
                 onClick={async () => {
-                  await stopAndWait()
+                  stopAndWait()
                   router.push(`/tutorials/${frontMatter.next}`)
                 }}
               >
@@ -67,18 +68,15 @@ export default function PostPage({ source, frontMatter }: PostProps) {
     </Layout>
   )
 }
-
-export async function getStaticProps(
-  context: GetStaticPropsContext
-): Promise<GetStaticPropsResult<PostStaticProps>> {
-  const slug = context.params!.slug
+export const getStaticProps = async (context: GetStaticPropsContext) => {
+  const slug = context.params?.slug;
   const postFilePath = path.join(TUTORIAL_PATH, `${slug}.mdx`)
   const source = fs.readFileSync(postFilePath)
 
   const { content, data } = matter(source)
 
-  const mdxSource = await renderToString(content, {
-    components,
+  const mdxSource = await serialize(content, {
+    // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
       rehypePlugins: [],
@@ -90,10 +88,11 @@ export async function getStaticProps(
     props: {
       source: mdxSource,
       frontMatter: data,
-      slug: slug!,
+      slug: slug!
     },
   }
 }
+
 
 export const getStaticPaths = async () => {
   const paths = tutorialFilePaths
