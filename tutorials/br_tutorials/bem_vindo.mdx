@@ -1,0 +1,82 @@
+---
+title: bem_vindo.socool
+next: série_harmônica
+---
+
+
+WereSoCool é uma linguagem para compor música microtonal. Você pode achar essa linguagem útil se quiser fazer sons legais e impressionar seus amigos/animais de estimação/plantas.
+
+
+## Origem
+
+Se você quiser fazer som no WereSoCool, você precisará de um arquivo `.socool`. No topo do seu arquivo `.socool`, você precisará de uma `origem`:
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`{ f: 220, l: 1, g: 1, p: 0 }`}
+/>
+
+Esta expressão define a `origem` do nosso programa. Cada arquivo `.socool` é essencialmente uma série de operações em um ponto.
+
+- f é a frequência inicial. aqui, 220 a um "A".
+- l é o duração inicial em segundos. aqui, 1 segundo.
+- g é o 'gain' (volume) inicial. menor é mais silencioso, maior é mais alto.
+- p é o 'pan' local inicial da esquerda para a direita. 0 está no meio. -1 está à esquerda. 1 está à direita
+
+Todo programa `.socool` também precisa de um bloco `main`.
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`main = {
+  sons_você_quer_fazer
+}`
+}/>
+
+---
+
+## `Operação: Fm (Multiplicação de Frequência)`
+Também precisamos de uma operação para fazer algo legal. A primeira operação que usaremos é `Fm`. Esta operação multiplica a frequência de sua entrada pelo multiplicador. Números em WereSoCool podem ser números inteiros, decimais ou racionais.
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`-- Linhas que começam com -- são comentários e não serão executados
+-- Fm 1 é a identidade de Fm.
+Fm 1
+-- Números maiores que 1 serão acima..
+-- Uma oitava é uma duplicação de frequência,
+-- então Fm 2 é a mesma nota uma oitava acima e
+-- Fm 4 seria outra oitava acima disso.
+Fm 2
+Fm 4
+-- Números menores que 1 reduzirão a frequência.
+-- Fm 1/2 é a mesma nota uma oitava abaixo
+Fm 1/2
+-- Fm 0 é silencioso.
+Fm 0`
+}/>
+
+---
+
+## Juntando tudo
+
+Agora, vamos fazer nosso primeiro som legal. Como não há outras operações em nosso programa, esta operação será aplicada diretamente à nossa `origem`.
+
+Clique no botão 'play' e você ouvirá uma onda senoidal em 220hz que dura 1 segundo antes de desaparecer. O gain é 1 e o som é pan para 0, que é o centro.
+
+experimente mudar o número na operação Fm. Lembrete: O número tem que ser >= 0. Você também pode alterar os valores na `origem` e ver como isso muda o som.
+
+<WereSoCool language={`
+-- linhas que começam com -- são comentários
+-- e não será executado.
+-- Pressionar Shift-Enter também produzirá o som
+-- Você pode parar o som com cmd + enter (ctl + enter no linux/windows).
+{ f: 220, l: 1, g: 1, p: 0 }\n
+main = {
+  Fm 1
+}`
+}/>
+
