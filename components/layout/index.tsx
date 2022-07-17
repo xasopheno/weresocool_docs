@@ -1,3 +1,4 @@
+import {useRouter} from "next/router"
 import { Box, Grid, ThemeProvider } from "theme-ui"
 import { useWindowSize } from "../../utils/useWindowSize"
 import { Menu } from "../menu"
@@ -14,6 +15,8 @@ export default function Layout({
   sectionPath: string
 }) {
   const { isMobile } = useWindowSize()
+  const {locale} = useRouter()
+  let currentLocal = locale === "pt" ? "pt" : "en"
 
   return (
     <ThemeProvider theme={theme}>
@@ -30,6 +33,7 @@ export default function Layout({
             <Menu
               data={menuData}
               sectionPath={sectionPath}
+              locale={currentLocal}
               style={{
                 position: "fixed",
                 maxHeight: "100%",
@@ -60,6 +64,7 @@ export default function Layout({
             <Menu
               data={menuData}
               sectionPath={sectionPath}
+              locale={currentLocal}
               style={{
                 overflow: "scroll",
                 paddingBottom: "2em",

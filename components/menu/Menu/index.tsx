@@ -5,14 +5,16 @@ import { capitalize, useStopAndWait } from "../../../utils/misc"
 import { useRouter } from "next/router"
 import { MobileStyledMenu } from "./MobileMenu.styled"
 import { useWindowSize } from "../../../utils/useWindowSize"
-import { MenuDatum } from "../menus"
+import { isTranslation, MenuDatum, Translation } from "../menus"
 
 const MenuSection = (props: {
   data: MenuDatum
   onClick: (path: string) => void
+  locale: string
 }) => {
   const section = props.data
   const router = useRouter()
+  const {locale} = useRouter()
   const current = router.asPath.split("/").slice(-1)[0]
 
   return (
@@ -30,6 +32,9 @@ const MenuSection = (props: {
         if (typeof item === "string") {
           itemName = item
           itemLink = item
+        } else if (isTranslation(item)) {
+          itemName = (locale && locale in item.trans) ? item.trans[locale] : item.trans['en'];
+          itemLink = item.link
         } else {
           itemName = item.name
           itemLink = item.link
@@ -66,6 +71,7 @@ const SizedMenu = ({ children, open }: SizedMenuProps): React.ReactElement => {
 interface MenuProps extends React.HTMLAttributes<Element> {
   data: MenuDatum[]
   sectionPath: string
+  locale: string
 }
 
 const Menu = (props: MenuProps) => {
@@ -80,6 +86,7 @@ const Menu = (props: MenuProps) => {
           setOpen={setOpen}
           data={props.data}
           sectionPath={props.sectionPath}
+          locale={props.locale}
         />
       </SizedMenu>
     </div>
@@ -89,6 +96,7 @@ const Menu = (props: MenuProps) => {
 interface MenuInnerProps extends React.HTMLAttributes<Element> {
   data: MenuDatum[]
   sectionPath: string
+  locale: string
   setOpen?: (open: boolean) => void
 }
 
@@ -102,6 +110,7 @@ export const MenuInner = (props: MenuInnerProps) => {
           <MenuSection
             key={i}
             data={section}
+            locale={props.locale}
             onClick={async (path: string) => {
               await stopAndWait()
               router.push(`/${props.sectionPath}/${path}`)

@@ -4,7 +4,7 @@ export const capitalize = (s: string): string => {
   return s
     .split('_')
     .map((word, i) => {
-      if (i > 0 && ['and', 'or', 'of'].includes(word)) {
+      if (i > 0 && ['and', 'or', 'of', 'de', 'e', 'às', 'ao'].includes(word)) {
         return word;
       } else {
         return word.charAt(0).toUpperCase() + word.slice(1);

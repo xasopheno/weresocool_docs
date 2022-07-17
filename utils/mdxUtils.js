@@ -2,12 +2,17 @@ import fs from "fs"
 import path from "path"
 
 export const TUTORIAL_PATH = path.join(process.cwd(), "tutorials")
+export const PT_TUTORIAL_PATH = path.join(process.cwd(), "pt/tutorials")
 export const INTERVIEWS_PATH = path.join(process.cwd(), "interviews")
 export const DANNY_PATH = path.join(process.cwd(), "danny")
 export const TV_PATH = path.join(process.cwd(), "concert_artists")
 
 export const tutorialFilePaths = fs
   .readdirSync(TUTORIAL_PATH)
+  .filter((path) => /\.mdx?$/.test(path))
+
+export const ptTutorialFilePaths = fs
+  .readdirSync(PT_TUTORIAL_PATH)
   .filter((path) => /\.mdx?$/.test(path))
 
 export const interviewFilePaths = fs

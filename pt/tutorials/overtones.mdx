@@ -1,20 +1,20 @@
+
 ---
-title: Overtones 
+title: Série Harmônica 
 description: Where do sounds come from?
-next: overlay
-nextLink: overlay
+next: sobreposição
 ---
 
-## `Operation: Seq` 
-The next most useful operation is the Sequence or Seq operation. 
+## `Operação: Seq`
+A próxima operação mais útil é a operação Sequence ou Seq.
 
 <WereSoCool
   readOnly
   hideGutter
-  language={`Seq [operations]`}
+  language={`Seq [operações]`}
 />
 
-We can use `Seq` to create a series of sounds. These are the first 12 notes of the overtone series starting at 261.6hz - a "C" on the piano.
+Podemos usar `Seq` para criar uma série de sons. Estas são as primeiras 12 notas da série de harmônicos começando em 261,6 hz - um "C" no piano.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1/7, g: 1, p: 0 }\n
@@ -36,16 +36,15 @@ main = {
 }`
 }/>
 
-## Discovering Intervals
+## Descobrindo Intervalos
 
-There are intervals that show up in music all over the world. Where do they come from? They come from a structure in nature that's called the overtone series (also known as the harmonic series) in which each frequency is an integer multiple of a fundamental. Let's explore the overtone series and find some old and new sounds. 
+Há intervalos que aparecem na música em todo o mundo. De onde eles vêm? Eles vêm de uma estrutura na natureza que é chamada de série harmônica na qual cada frequência é um múltiplo inteiro de uma fundamental. Vamos explorar a série harmônica e encontrar alguns sons antigos e novos.
 
-### Interval Complexity
+### Complexidade do intervalo
 
-Interverals are named in relationship to the fundamental. In WereSoCool, the fundamental can be described by the operation `Fm 1`. The simples interval is unison. Fm 1 sounding at the same time as Fm 1. Following unison is the doubling (Fm 2) and halving of frequencies (Fm 1/2) which we saw in the last tutorial. A doubled frequency is known as an octave in western music theory (WMT). Another way to say it that the distance between the 1st and 2nd overtones is an octave. 
+Os intervalos são nomeados em relação ao fundamental. Neste caso, a fundamental pode ser descrita pela operação `Fm 1`. O intervalo simples é uníssono. Fm 1 soando ao mesmo tempo que Fm 1. Seguindo o uníssono é a duplicação (Fm 2) e metade das frequências (Fm 1/2) que vimos no último tutorial. Uma frequência dobrada é conhecida como uma oitava na teoria musical ocidental (TMO). Outra maneira de dizer que a distância entre o 1º e o 2º harmônico é uma oitava.
 
-
-What about the distance between the 2nd and 3rd overtones? The name in WMT is the `Perfect 5th`. Listen below to the interval. First in the natural position in the overtone series and then the ratio transposed down an octave so we can here it in the context of the fundamental, `Fm 1`.
+What about the distance between the 2nd and 3rd overtones? The name in TMO is the `Perfect 5th`. Listen below to the interval. First in the natural position in the overtone series and then the ratio transposed down an octave so we can here it in the context of the fundamental, `Fm 1`.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n

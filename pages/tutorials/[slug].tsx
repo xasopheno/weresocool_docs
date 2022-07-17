@@ -14,7 +14,7 @@ import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart"
 import { Break, CoolText, } from "../../components/mdx"
 import { WereSoCool } from "../../components/WereSoCool"
 import { capitalize, useStopAndWait } from "../../utils/misc"
-import { tutorialFilePaths, TUTORIAL_PATH } from "../../utils/mdxUtils"
+import { tutorialFilePaths, ptTutorialFilePaths, TUTORIAL_PATH, PT_TUTORIAL_PATH } from "../../utils/mdxUtils"
 import { tutorialMenu } from "../../components/menu/menus"
 import { useRouter } from "next/router"
 import { Vimeo } from "../../components/video"
@@ -36,11 +36,11 @@ const components = {
 }
 
 export default function PostPage({ source, frontMatter }: PostProps) {
-  const router = useRouter()
+  const router = useRouter();
+  const menu = tutorialMenu;
   const stopAndWait = useStopAndWait()
-
   return (
-    <Layout sectionPath={"tutorials"} menuData={tutorialMenu}>
+    <Layout sectionPath={"tutorials"} menuData={menu}>
       <PostContainer>
         <Content>
           <div>
@@ -54,7 +54,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
               <GoldLink
                 onClick={async () => {
                   stopAndWait()
-                  router.push(`/tutorials/${frontMatter.next}`)
+                  router.push(`/tutorials/${frontMatter.nextLink}`)
                 }}
               >
                 <LinkText>{`Next Tutorial ~> ${capitalize(
@@ -70,7 +70,8 @@ export default function PostPage({ source, frontMatter }: PostProps) {
 }
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const slug = context.params?.slug;
-  const postFilePath = path.join(TUTORIAL_PATH, `${slug}.mdx`)
+  let tutorialPath = context.locale === "pt" ? PT_TUTORIAL_PATH : TUTORIAL_PATH; 
+  const postFilePath = path.join(tutorialPath, `${slug}.mdx`)
   const source = fs.readFileSync(postFilePath)
 
   const { content, data } = matter(source)
@@ -94,13 +95,18 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 }
 
 
-export const getStaticPaths = async () => {
-  const paths = tutorialFilePaths
+export const getStaticPaths = async ({defaultLocale, locales}: {defaultLocale: string; locales: string[]}) => {
+
+  const enPaths = tutorialFilePaths
     .map((path) => path.replace(/\.mdx?$/, ""))
     .map((slug) => ({ params: { slug } }))
 
+  const ptPaths = ptTutorialFilePaths
+    .map((path) => path.replace(/\.mdx?$/, ""))
+    .map((slug) => ({ params: { slug }, locale: "pt" }))
+
   return {
-    paths,
+    paths: [...enPaths, ...ptPaths],
     fallback: false,
   }
 }
