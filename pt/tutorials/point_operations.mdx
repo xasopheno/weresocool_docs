@@ -1,0 +1,91 @@
+---
+title: Operações de Ponto
+next: Operações de Pipe
+nextLink: pipe_operations
+---
+
+Vamos dar uma olhada em todas as `Operações de Ponto` Essas operações são a base de todas as outras operações.
+
+## `Fm <número> - Multiplicação de Frequência`
+
+- Multiplica a frequência de entrada pelo valor.
+- O valor pode ser qualquer número >= 0.
+- Valores muito altos ou muito baixos podem não ser audíveis.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Fm 5/4
+}`
+}/>
+
+## `Fa <número> - Adição de Frequência`
+
+- Adiciona o valor à frequência de entrada.
+- O valor pode ser qualquer número.
+- Se a soma da frequência de entrada e o número fornecido for menor que 0, o som será silencioso.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Fa -7
+}`
+}/>
+
+## `Lm <número> - Multiplicação de Duração`
+
+- Multiplies the input length by the  provided. 
+- Value may be any  >= 0. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Lm 3
+}`
+}/>
+
+## `Gm <número> - Multiplicação de Volume`
+
+- Multiplica o ganho de entrada pelo valor.
+- O valor pode ser qualquer número >= 0.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Gm 1/2
+}`
+}/>
+
+## `Pm <número> - Multiplicação de Panorâmico`
+
+- Multiplica o pan de entrada pelo valor.
+- O valor pode ser qualquer número.
+- Recomenda-se manter os valores de pan entre -1 e 1
+- Os números positivos são deslocados para a esquerda e os números negativos são deslocados para a direita.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: -1 }\n
+main = {
+  Pm 7/8
+}`
+}/>
+
+## `Pa <número> - Adição de Panorâmico`
+
+- Adiciona o valor ao pan de entrada.
+- O valor pode ser qualquer número.
+- Recomenda-se manter os valores de pan entre -1 e 1
+- Os números positivos são deslocados para a esquerda e os números negativos são deslocados para a direita.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Pa 9/10 
+}`
+}/>
+
+## Operações de Identidade
+- Algumas operações são "no-ops" que atuam como uma identidade.
+- Fm 1, Gm 1, Lm 1, Pm 1, Fa 0 e Pa 0 são operações de identidade.
+
+

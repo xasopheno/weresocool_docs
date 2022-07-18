@@ -8,23 +8,3 @@ Etudes for Yelling
 
 # Tutorial
 Practicing
-
-# Interviews
-Images in /images
-
-Light and Dark Mode
-Styling 
-
-## Brad Goodle: 
-audio
-links to records
-youtube videos
-
-## Concert Series
-Glenn
-AJ Salas
-Beck
-Eric Marandi
-Inner Movements
-Grant
-Danny

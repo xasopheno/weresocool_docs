@@ -27,15 +27,11 @@ export const tutorialMenu: MenuDatum[] = [
         link: 'point_operations',
       },
       {
-        trans: { en: 'pipe_operations', pt: 'operações_de_pipe' },
+        trans: { en: 'pipe_operations', pt: 'operações_de_cano' },
         link: 'pipe_operations',
       },
       {
-        trans: { en: 'pipe_operations', pt: 'operações_de_pipe' },
-        link: 'pipe_operations',
-      },
-      {
-        trans: { en: 'pipe_and_sequences', pt: 'pipe_e_sequências' },
+        trans: { en: 'pipe_and_sequences', pt: 'cano_e_sequências' },
         link: 'pipe_and_sequences',
       },
       {

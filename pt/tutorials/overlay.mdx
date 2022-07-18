@@ -1,0 +1,91 @@
+---
+title: Sobreposição
+next: Operações de Ponto
+nextLink: point_operations
+---
+
+Até agora, exploramos apenas os intervalos melodicamente. Agora, adicionaremos uma nova Operação - Overlay - que nos permitirá explorar intervalos harmonicamente.
+
+
+## `Operação: Overlay` 
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`Overlay [operações]`}
+/>
+
+O Overlay pega uma série de operações e as executa ao mesmo tempo. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 3, g: 1, p: 0 }\n
+main = {
+  -- Tríade Dó Maior. Uau, Aaaah.
+  Overlay [
+    Fm 3/2,
+    Fm 5/4,
+    Fm 1, 
+  ]
+}`
+}/>
+
+Que tal uma sequência de sobreposições?
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Seq [
+Dó maior, Fá maior,
+    -- I - Dó maior
+    Overlay [
+      Fm 3/2,
+      Fm 5/4,
+      Fm 1, 
+    ],
+    -- IV - Fá maior
+    Overlay [
+      Fm 5/3,
+      Fm 4/3,
+      Fm 1, 
+    ],
+    -- I - Dó maior
+    Overlay [
+      Fm 3/2,
+      Fm 5/4,
+      Fm 1, 
+    ],
+    -- V - Sol maior 
+    Overlay [
+      Fm 3/2,
+      Fm 9/8,
+      Fm 15/16, 
+    ],
+    -- I - Dó maior
+    Overlay [
+      Fm 3/2,
+      Fm 5/4,
+      Fm 1, 
+    ],
+  ]
+}`
+}/>
+
+## Exploração Mais Harmônica
+
+Você verá um BeloGráfico™ à direita do seguinte o WereSoCool Editor (abaixo no celular). Você pode usar este gráfico para se orientar na rica paisagem da harmonia baseada em proporção. Proporções cercadas por Caixas Douradas são as proporções que descrevem a escala Maior. Ratios of similar dissonace are the same color. Proporções de dissonâncias semelhantes são da mesma cor. Há muitos novos intervalos para explorar dos quais você talvez nunca tenha ouvido falar. Terceiro submenor? Sim por favor. 11/8 Trítono? muito legal.
+
+<WSCWithRatioChart language={`{ f: 440, l: 5, g: 1/2, p: 0 }\n
+main = {
+  Overlay [
+    Fm 10/3,
+    Fm 8/3,
+    Fm 5/2,
+    Fm 9/4,
+    Fm 7/4,
+    Fm 12/7,
+    Fm 7/6,
+    Fm 7/8, 
+    Fm 1/2, 
+  ]
+}`
+}/>
+

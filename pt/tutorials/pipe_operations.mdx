@@ -1,0 +1,48 @@
+---
+title: Operações de Cano 
+next: cano e sequência
+nextLink: pipe_and_sequence
+---
+
+## `Operação: operação | operação - Cano` 
+Uma das operações mais importantes neste idioma é "|" (Cano),
+porque permite que você encadeie as operações.
+
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Seq [
+    -- As operações são cumulativas, então:
+    -- Fm 3/2 | Fm 5/4 == Fm 15/8
+    Fm 1,
+    Fm 3/2 | Fm 5/4,
+    Fm 1,
+    Fm 15/8
+  ]
+}`
+}/>
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/3, g: 1, p: 0 }\n
+-- Podemos fatorar nosso escala_maior em seu próprio bloco.
+escala_maior = {
+	Seq [
+        Fm 1, Fm 9/8, Fm 5/4, Fm 4/3, 
+        Fm 3/2, Fm 5/3, Fm 15/8, Fm 2
+  ]
+}\n
+main = {
+  Seq [
+     -- Podemos usar o bloco escala_maior pelo nome aqui.
+     -- Agora podemos usar a operação de cano para tocar um escala_maior um segundo maior acima e duas vezes mais rápido
+     escala_maior
+     -- multiplique todas as frequências em nosso major_scale por 9/8 para subir um segundo maior.
+     | Fm 9/8
+     -- multiplique todo o duração de todas as notas em nosso
+     -- major_scale por 1/2
+     | Lm 1/2
+  ]
+}`
+}/>
+
