@@ -1,0 +1,85 @@
+---
+title: Cano e Sequências 
+next: pequenas_diferenças
+nextLink: small_differences
+---
+
+Antes de continuar, podemos adicionar mais algumas operações ao nosso repertório.
+
+## `Reverse`
+Reverse pega uma entrada e a reproduz para trás.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/6, g: 1, p: 0 }\n
+escala_maior = {
+  Seq [
+    Fm 1, Fm 9/8, Fm 5/4, Fm 4/3, 
+    Fm 3/2, Fm 5/3, Fm 15/8, Fm 2
+  ]
+}\n
+main = {
+  Seq [
+    escala_maior, 
+    escala_maior | Reverse
+  ]
+}`
+}/>
+
+## `Repeat <number>`
+Repeat é super legal se você quer que algo aconteça novamente. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/4, g: 1, p: 0 }\n
+melody = {
+  Seq [ Fm 5/4, Fm 9/8, Fm 5/4, Fm 1]
+}\n
+main = {
+  Seq [
+    melody | Repeat 3
+  ]
+}`
+}/>
+
+---
+
+# Seqüência | Seqüência 
+
+Se você tem acompanhado, você deve estar se perguntando,
+o que acontece quando você faz algo assim?:
+
+`Seq [op1, op2, ...] | Seq [op3, op4, ...]`
+
+<WereSoCool language={
+`{ f: 220, l: 1, g: 1, p: 0 }\n
+-- Precisamos de um som legal para explorar essa nova ideia. 
+-- Esta é uma escala_pentatonica. É um subconjunto legal do escala_maior.
+  escala_pentatonica = {
+	Seq [
+      Fm 1, Fm 9/8, Fm 5/4,  
+      Fm 3/2, Fm 5/3 
+  ]
+  -- 8x faster...uau!
+  | Lm 1/8
+}\n
+main = { 
+  -- Agora vamos canalizar a escala_pentatônica na Seq [Fm 1, Fm 9/8, Fm 5/4].
+  -- O resultado será a escala_pentatônica subindo nas 2ªs principais 
+  escala_pentatonica
+  | Seq [
+      Fm 1, Fm 9/8, Fm 5/4,
+      -- ===== descomente a seguinte linha com cmd + / (ctl + / no linux/windows)======
+      -- Fm 9/8 | Reverse
+      -- O reverso é super legal. É preciso o que você canalizar para ele
+      -- e o reproduz ao contrário. Simples assim.
+  ]
+      -- ===== e descomente a seguinte linha com cmd + / (ctl + / no linux/windows)
+  -- | Repeat 4
+}`
+}/>
+
+#Parabéns!
+Agora você sabe o suficiente para começar a fazer algumas coisas bem legais. Antes de continuar com o tutorial,
+Eu recomendo tentar fazer sua própria composição começando com esta. Um bom ponto de partida seria mudar o pentatonic_scale para ser
+outro conjunto de operação. Talvez, adicione um 'Fm' adicional ou
+canalizar a composição existente em outra Sequência.
+

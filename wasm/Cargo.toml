@@ -9,7 +9,7 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 wasm-bindgen = { version="0.2.71" }
-weresocool = { path = "../../weresocool", default_features=false, features=["wasm"], package="weresocool_core"}
+weresocool = { path = "../../weresocool", default_features=false, features=["wasm"], package="weresocool"}
 rand = { version="0.7.3", features=["wasm-bindgen"]}
 cpal = { version="0.13.1", features=["wasm-bindgen"]}
 web-sys = { version="0.3", features=["console"]}
@@ -17,10 +17,6 @@ js-sys = "0.3.48"
 
 [target."cfg(debug_assertions)".dependencies]
 console_error_panic_hook = "0.1.5"
-
-# [profile.release]
-# # Tell `rustc` to optimize for small code size.
-# opt-level = "s"
 
 [package.metadata.wasm-pack.profile.release]
 wasm-opt = false
