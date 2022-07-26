@@ -347,13 +347,12 @@ dependencies = [
 
 [[package]]
 name = "crossbeam-utils"
-version = "0.8.3"
+version = "0.8.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e7e9d99fa91428effe99c5c6d4634cdeba32b8cf784fc428a2a687f61a952c49"
+checksum = "51887d4adc7b564537b15adcfb307936f8075dfcd5f00dde9a9f1d29383682bc"
 dependencies = [
- "autocfg",
  "cfg-if 1.0.0",
- "lazy_static",
+ "once_cell",
 ]
 
 [[package]]
@@ -1228,6 +1227,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "once_cell"
+version = "1.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "18a6dbe30758c9f83eb00cbea4ac95966305f5a7772f3f42ebfc7fc7eddbd8e1"
+
+[[package]]
 name = "opmap"
 version = "0.1.0"
 dependencies = [
@@ -1919,36 +1924,14 @@ dependencies = [
 name = "weresocool"
 version = "1.0.0"
 dependencies = [
- "bytes",
  "clap",
- "colored",
- "crossbeam-channel",
- "csv",
- "difference",
- "env_logger",
- "failure",
- "failure_derive",
- "float-cmp",
- "futures",
- "hound",
- "indexmap",
  "notify",
- "num",
- "num-complex",
- "num-rational",
  "opmap",
- "rand",
- "rayon",
  "scop",
- "serde",
- "serde_derive",
- "serde_json",
- "term",
- "test-generator",
  "thiserror",
- "uuid",
  "weresocool_analyze",
  "weresocool_ast",
+ "weresocool_core",
  "weresocool_error",
  "weresocool_instrument",
  "weresocool_parser",
@@ -1993,6 +1976,45 @@ dependencies = [
  "scop",
  "serde",
  "weresocool_error",
+ "weresocool_ring_buffer",
+ "weresocool_shared",
+]
+
+[[package]]
+name = "weresocool_core"
+version = "1.0.0"
+dependencies = [
+ "bytes",
+ "clap",
+ "colored",
+ "crossbeam-channel",
+ "csv",
+ "difference",
+ "env_logger",
+ "failure",
+ "failure_derive",
+ "float-cmp",
+ "futures",
+ "hound",
+ "indexmap",
+ "num",
+ "num-complex",
+ "num-rational",
+ "opmap",
+ "rand",
+ "rayon",
+ "scop",
+ "serde",
+ "serde_derive",
+ "serde_json",
+ "term",
+ "test-generator",
+ "uuid",
+ "weresocool_analyze",
+ "weresocool_ast",
+ "weresocool_error",
+ "weresocool_instrument",
+ "weresocool_parser",
  "weresocool_ring_buffer",
  "weresocool_shared",
 ]
