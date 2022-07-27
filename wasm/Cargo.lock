@@ -1925,9 +1925,17 @@ name = "weresocool"
 version = "1.0.0"
 dependencies = [
  "clap",
+ "difference",
+ "indexmap",
  "notify",
+ "num-rational",
  "opmap",
  "scop",
+ "serde",
+ "serde_derive",
+ "serde_json",
+ "term",
+ "test-generator",
  "thiserror",
  "weresocool_analyze",
  "weresocool_ast",
