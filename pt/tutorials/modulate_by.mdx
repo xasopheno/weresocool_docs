@@ -1,0 +1,90 @@
+---
+title: Modulação
+next: funções
+extLink: functions
+---
+
+## `Operação: ModBy` 
+ModulateBy permite usar uma operação para modular outra operação.
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`operation | ModBy [operations]`}
+/>
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/6, g: 1, p: 0 }\n
+melody = {
+  Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2]
+}\n
+main = {
+  Seq [
+    Seq [
+      melody,
+      melody
+      | ModBy [Fm 1, Fm 1/2],
+      melody
+      | ModBy [Fm 1, Gm 1/3],
+      melody
+      | ModBy [Fm 1, Overlay [Fm 1, Fm 3/2]],
+      melody
+      | ModBy [Fm 4/3, Fm 1] 
+      | Overlay [Fm 1, Fm 3/2, Fm 1/2],
+      melody
+      | Overlay [Fm 1 | Pa 2/10, Fm 5/4 | Pa -1/10, Fm 1/2]
+      | Reverse
+    ],
+  ]
+}`
+}/>
+
+---
+
+ModulateBy é útil quando você fez algo legal
+e, em seguida, deseja alterá-lo enquanto deixa a duração
+o mesmo.
+
+<WereSoCool language={
+`{ f: 285, l: 1, g: 1/3, p: 0 }\n
+overtones = {
+  O[
+    (1/1, 4, 1, 1),
+    (1/1, 0, 1, -1),
+  ]
+}\n
+-- Esta operação é essencialmente um fade out.
+gain_modulator = {
+  Seq [
+    Gm 1, Gm 2/3, Gm 1/3, Gm 1/6, Gm 1/9, Gm 1/12
+  ]
+}\n
+-- E usaremos esta operação para modular a melodia.
+melodic_modulator = {
+  Seq [
+    Fm 1,
+    Overlay [Fm 5/4, Fm 3/2],
+    Overlay [Fm 5/6, Fm 9/8, Fm 4/3] | Lm 2
+  ]  
+  | Repeat 6
+}\n
+-- Eu recomendaria comentar coisas dentro e fora
+-- para descobrir como isso funciona.
+thing1 = {
+  Seq [
+  -- Uma melodia simples.
+    Fm 1, Fm 4/3, Fm 5/3
+  ]
+  -- modulado pelas duas operações que criamos anteriormente.
+  | ModulateBy [melodic_modulator]
+  | ModulateBy [gain_modulator]
+}\n
+main = {
+  overtones
+  | thing1
+  | Seq [Fm 1, Fm 9/8]
+  | Seq [Fm 1, Fm 5/4]
+}
+`
+}/>
+

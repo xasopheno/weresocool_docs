@@ -47,7 +47,7 @@ export const tutorialMenu: MenuDatum[] = [
         link: 'fit_length',
       },
       {
-        trans: { en: 'modulate_by', pt: 'modular_por' },
+        trans: { en: 'modulate_by', pt: 'modulação' },
         link: 'modulate_by',
       },
       {
