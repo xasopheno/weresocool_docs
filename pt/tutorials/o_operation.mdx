@@ -1,0 +1,97 @@
+---
+title: O[] Operação
+next: Ajuste ao Duração
+nextLink: fit_length
+---
+
+Se você se divertiu tanto fazendo acordes legais quanto eu, ficará feliz em saber que existe uma operação para fazer exatamente isso.
+
+
+## `Operação: O[]` 
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`-- Cada conjunto de quatro valores descreve
+-- multiplicação de frequência, adição de frequência,
+-- ganho multiplicado e pan de uma nota.
+O[(Fm, Fa, Gm, Pa), ...]`}
+/>
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+-- Por exemplo: Este O[] descreve duas notas.
+-- O fundo é o fundamental - 1/1
+-- no ganho 1, panou 1/2 à direita e
+-- o topo é uma nota uma oitava acima do fundamental
+-- mais 2hz no ganho 1 pan 1/2 para a esquerda.
+-- Eu geralmente organizo as notas com a nota mais baixa no fundo.
+  O[
+    (2/1, 2, 1, 1/2),
+    (1/1, 0, 1, -1/2),
+  ]
+}`
+}/>
+
+Dentro do O[], você pode colocar quantos (Fm, Fa, Gm, Pa) quiser.
+Esta pode ser uma ótima maneira de compor acordes de várias vozes em uma série
+ou - como é usado na música abaixo - para adicionar harmônicos a outras operações.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+overtones = {
+-- O[(Fm, Fa, Gm, Pa), ...]
+  O[
+    (3/1, 1, 1/4, -1/4),
+    (3/1, 0, 1/4, 1/4),
+    (1/1, 2, 1, 1/2),
+    (1/1, 0, 1, -1/2),
+  ]
+}\n
+-- Esta é uma pequena música de duas partes:
+melody1 = {
+  Seq [
+    Fm 1, Fm 9/8, Fm 5/4 | Lm 2, Fm 9/8, Fm 1,
+    Fm 3/2 | Lm 4, Fm 5/3, Fm 9/8
+  ]
+}\n
+melody2 = {
+  Seq [
+    Fm 5/4, Fm 3/2, Fm 5/3 | Lm 2, Fm 3/2, Fm 4/3,
+    Fm 9/8 | Lm 3/2, Fm 5/4 | Lm 3/2, Fm 4/3 | Lm 3 
+  ]
+  | Fm 1/2
+}\n
+main = {
+-- "overtones" contém 4 vozes
+-- definido acima com a sintaxe O[].
+-- canalizando-o para a sobreposição
+-- resulta no mesmo som que
+-- se escrevemos o seguinte:
+-- Overlay [
+--   overtones | melody1,
+--   overtones | melody2
+--]
+  overtones
+  | Overlay [
+    melody1,
+    melody2,
+  ]
+-- Então tocamos as melodias acima primeiro em Fm 1
+-- (onde eles normalmente jogariam),
+-- então jogue de trás para frente usando Reverse.
+  | Seq [
+    Fm 1, 
+    Reverse
+  ]
+-- mais rápido
+  | Lm 2/5
+-- 2x
+  | Repeat 2 
+-- mais silencioso
+  | Gm 1/3
+}
+`
+}/>
+
+

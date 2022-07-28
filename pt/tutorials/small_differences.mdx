@@ -4,9 +4,8 @@ next: o_operação
 nextLink: o_operation
 ---
 
-We have explored sound that seperated by big distances like octaves. What about sounds that are really close together. Lets listen to two sine waves 1 hz apart.
-A hertz is defined as one cycle per seconed. You'll here that two pitches 1hz apart create a beating sound with a 1 second cycle.
-
+Exploramos sons separados por grandes distâncias como oitavas. Agora, vamos brincar com sons muito próximos. Abaixo, você ouvirá duas ondas senoidais separadas por 1 hz.
+Um hertz é definido como um ciclo por segundo. Você ouvirá os dois tons criando um som de batida com um ciclo de 1 segundo.
 
 <WereSoCool language={
 `{ f: 261.6, l: 5, g: 1, p: 0 }\n
@@ -15,15 +14,15 @@ main = {
     Fa 1,
     Fa 0,
   ]
-  -- If you uncomment the line below, you can 
-  -- hear the beating sound stays consistent 
-  -- even when the frequencies change.
-  -- | Seq [Fm 1/2, Fm 1, Fm 2]
+   -- Se você descomentar a linha abaixo, você pode
+   -- ouvir o som da batida permanece consistente
+   -- mesmo quando as frequências mudam.
+   -- | Seq [Fm 1/2, Fm 1, Fm 2]
 }`
 }/>
 
 
-We can make cool rhythms by building harmonies that take advantage of this beating sound. Listen to the following interval - the ratio of 3/2 or a perfect 5th - which is also imbued with the rhythm of 3 against 2 thanks to the use of `Fa`.
+Podemos fazer ritmos legais construindo harmonias que tirem proveito desse som de batida. Ouça o seguinte intervalo - a proporção de 3/2 ou uma 5ª perfeita - que também está imbuída do ritmo de 3 contra 2.
 
 <WereSoCool language={
 `{ f: 261.6, l: 5, g: 1/2, p: 0 }\n
@@ -37,7 +36,7 @@ main = {
 }`
 }/>
 
-Interesting things happen when you separate these small differences in space by panning them. I recommend listening to this in headphones or stereo speakers. 
+Coisas interessantes acontecem quando você separa essas pequenas diferenças no espaço fazendo uma panorâmica. Recomendo ouvir em fones de ouvido.
 
 <WereSoCool language={
 `{ f: 261.6, l: 5, g: 1/3, p: 0 }\n
@@ -55,18 +54,18 @@ main = {
 }`
 }/>
 
-## A Cool Chord
+## Um Som Legal
 
-We can end this experiment with a cool chord. 
+Podemos terminar este experimento com um som legal.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 main = {
   Overlay [
-    Fm 17/4 | Fa 8 | Pa 3/10 | Gm 1/2,
-    Fm 17/4 | Pa -9/10 | Gm 1/2,
-    Fm 13/4 | Fa -6 | Gm 1/2 | Pa -3/10,
-    Fm 13/4 | Fa 7 | Gm 1/2 | Pa 9/10,
+    Fm 17/4 | Fa 8 | Pa 3/10,
+    Fm 17/4 | Pa -9/10,
+    Fm 13/4 | Fa -6 | Pa -3/10,
+    Fm 13/4 | Fa 7 | Pa 9/10,
     Fm 5/2 | Fa 1 | Pa 1/2,
     Fm 5/2 | Pa -1/2,\n
     Fm 9/4 | Fa 3 | Pa 1,
