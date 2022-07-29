@@ -59,7 +59,7 @@ export const tutorialMenu: MenuDatum[] = [
         link: 'intro_to_lists',
       },
       {
-        trans: { en: 'equal_temperament', pt: 'temeramento_igual' },
+        trans: { en: 'equal_temperaments', pt: 'temperamentos_iguais' },
         link: 'equal_temperament',
       },
       {

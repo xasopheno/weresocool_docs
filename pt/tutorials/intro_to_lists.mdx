@@ -1,0 +1,88 @@
+---
+title: Introdução às Listas
+next: Temeramento Igual
+nextLink: equal_temperament
+---
+
+## `Operação: List` 
+As listas são indicadas por um `&`. Você pode indexar na lista com um `@` seguido por `[operações]` Listas não
+ainda suportam índices negativos, mas provavelmente um dia.
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`&[op1, op2, op3, ...] @ [índices]`}
+/>
+
+### Lista básica
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+-- Os índices da lista começam em 0
+main = {
+  &[Fm 1, Fm 9/8] @ [0, 1, 0]
+}`
+}/>
+
+
+### Listas e Aleatórios
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/4, g: 1, p: 0 }\n
+-- Também podemos escolher índices aleatoriamente
+-- Toda vez que você executar o programa, será diferente
+main = {
+  &[Fm 0, Fm 1, Fm 9/8, Fm 3/2] @ [Random(8)]
+}`
+}/>
+
+### A Composition Using Lists
+
+<WereSoCool language={
+`{ f: 285, l: 1, g: 1/5, p: 0 }\n
+overtones = {
+  O[
+    (2/1, -3, 1, 1),
+    (2/1, 0, 1, -1),
+    (1/1, 3, 1, 1),
+    (1/1, 0, 1, -1),
+    (1/2, 0, 1, 1),
+    (1/2, 3, 1, -1),
+  ]
+}\n
+-- Esta é uma declaração de lista.
+-- Nesta lista, você encontrará uma escala maior
+-- com um silêncio (Fm 0) no final.
+cool_list = &[
+  Fm 1, Fm 9/8, Fm 5/4, Fm 4/3,
+  Fm 3/2, Fm 5/3, Fm 15/8, Fm 2,
+  Fm 0,
+]\n 
+main = {
+  overtones
+  | Seq [
+    -- O primeiro na sequência é a lista reproduzida como uma sequência.
+    &cool_list,
+    -- Em seguida, a lista indexada em. A sintaxe para índices é:
+    -- &list_name @ [index1, index2, index 3, etc]
+    &cool_list @ [
+      0, 1, 2, 3, 2, 1, 3, 5, 
+      7, 6, 5, 4, 3, 2, 1, 0, 8
+    ],
+    -- Existem alguns tipos especiais de índices na linguagem.
+    -- Random(n) é um tipo especial de índice que
+    -- escolheu n elementos aleatórios da sua lista
+    &cool_list @ [Random(30)] | Lm 2/3,
+    -- E aqui está uma pequena melodia para terminar nossa frase.
+    Seq [
+      Fm 3/2,
+      Fm 15/16, 
+      Fm 1
+    ] 
+    | Lm 3
+  ]
+  | Lm 1/7
+}`
+}/>
+
+
