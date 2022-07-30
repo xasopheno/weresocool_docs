@@ -126,7 +126,6 @@ main = {
 }/>
 
 ### Gain
-
 In a axis expression on the gain axis, the resulting value will be Max(value, 0). There are no negative gains. You can write expressions that travel
 below zero, but they will only sound when the value is positive
 
@@ -145,9 +144,8 @@ main = {
 }/>
 
 ### Length 
-In a axis expression on the gain axis, the smallest value that can be
-generated is 1/subdivision. Lengths <= 0 do not make sense, so length will be Man(value, 1/subdivision)  
-
+In a axis expression on the length axis, the smallest value that can be
+generated is 1/subdivision. Lengths <= 0 do not make sense, so length will be Max(value, 1/subdivision)  
 
 <WereSoCool language={
 `{ f: 311.127, l: 1/2, g: 1, p: 0 }\n

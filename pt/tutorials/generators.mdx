@@ -1,0 +1,199 @@
+---
+title: Introdução aos Geradores
+next: Geradores Expressivos
+nextLink: expressive_generators
+---
+
+Os geradores tornam possível descrever uma lista infinita em WereSoCool.
+
+Um gerador é uma coleção de
+Expressões do Eixo. Os geradores começam com em `*`.
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`*(Eixo Expressões...) Take n`
+}/>
+
+### Expressões de Eixo
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`eixo: iniciar|subdivisão [coeficientes]`
+}/>
+
+Uma expressão de eixo tem 4 partes: eixo, início, subdivisão, coeficientes
+
+### Eixo 
+Existem quatro eixos no WereSoCool:
+Frequência, Duração, Ganho e Pan.
+f, l, g e p no contexto de um gerador.
+
+### Subdivisão
+Uma parte um pouco complicada. Isso depende do eixo. Por
+Duração, Ganho e Pan, estamos dividindo 1 em tantos
+subdivisões. Para frequência, estamos dividindo e oitava nessa
+muitas partes. Estamos criando um gerador no espaço ET(n).
+
+### Início
+Estamos um pouco fora de ordem, pois você precisa saber o que
+a subdivisão está fazendo antes que você possa entender o que o início significa. Iniciar diz: "Calcule o valor inicial para este eixo neste gerador tomando o valor de entrada naquele eixo e
+adicionando start * subdivision". Há alguns exemplos abaixo que
+esperamos tornar isso mais claro.
+
+### Coeficientes
+Os coeficientes descrevem a mudança no eixo em cada passo.
+A lista de coeficientes é repetida infinitamente.
+
+## Gerador de escala cromática
+O seguinte é uma expressão de eixo para um
+gerador de escala cromática. Eu li como:
+No eixo de frequência, comece na entrada
+frequência * (0 * subdivisão). A cada passo, adicione
+1 * subdivisão para a última frequência.
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`f: 0|12 [1]`
+}/>
+
+### Take
+A última parte do Generator é Take. Desde geradores
+são infinitos, você deve ser explícito quantos passos
+você gostaria de tomar. Os geradores realmente têm alguns padrões
+no lugar e vai fazer sons sem um take, mas é
+sempre melhor usar um Take.
+
+Aqui usaremos nossa expressão de eixo de escala cromática
+dentro de um Gerador e depois Take 12.
+
+<WereSoCool language={
+`{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
+main = {
+  *(
+    f: 0|12 [1]
+  ) Take 12
+}`
+}/>
+
+## Mais expressões de eixo
+
+Para deixar claro o que os geradores estão fazendo,
+vamos adicionar um pequeno ataque no início de cada nota.
+
+<WereSoCool language={
+`{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
+main = {
+  -- Eu costumo descrever o ataque de uma nota como um Overlay
+  -- de Fm 1 e depois uma sequência que descreve o ataque.
+  Overlay [
+    Fm 1,
+    -- Fm 2 é a frequência do ataque, o primeiro
+    -- Fm 0 é o decaimento desse ataque, e o segundo
+    -- Fm 0 é o silêncio após o decaimento.
+    Seq [Fm 2, Fm 0, Fm 0] | Lm 1/8,
+  ]
+  | Repeat 4
+}`
+}/>
+
+### Escala Diminuída
+
+Uma escala diminuta em ET(12) é uma escala sintética construída a partir de alternando passos inteiros e meio-passos. Existem duas escalas diminutas: 1-2 e 2-1. Aqui está uma escala diminuta de 2-1.
+
+<WereSoCool language={
+`{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
+main = {
+  Overlay [
+    Fm 1,
+    Seq [Fm 2, Fm 0, Fm 0] | Lm 1/8,
+  ]
+  | *(
+    f: 0|12 [2, 1]
+  ) Take 9
+}`
+}/>
+
+### Ganho
+Em uma expressão de eixo no eixo de ganho, o valor resultante será Max(valor, 0). Não há ganhos negativos. Você pode escrever expressões que viajam
+abaixo de zero, mas soarão somente quando o valor for positivo
+<WereSoCool language={
+`{ f: 311.127, l: 1/5, g: 1, p: 0 }\n
+main = {
+  Overlay [
+    Fm 1,
+    Seq [Fm 2, Fm 0, Fm 0] | Lm 1/8,
+  ]
+  | *(
+    g: 10|10 [-1],
+  ) Take 10
+  | Repeat 3
+}`
+}/>
+
+### Duração 
+Em uma expressão de eixo no eixo de duração, o menor valor que pode ser gerado é 1/subdivisão. Durations <= 0 não é possível, então a duração será Max(valor, 1/subdivisão)
+
+
+<WereSoCool language={
+`{ f: 311.127, l: 1/2, g: 1, p: 0 }\n
+main = {
+  Overlay [
+    Fm 1,
+    Seq [Fm 2, Fm 0, Fm 0] | Lm 1/8,
+  ]
+  | *(
+    l: 10|10 [-1],
+  ) Take 10
+  | Repeat 3
+}`
+}/>
+
+### Pan 
+Em um eixo expresso no eixo panorâmico, você deve ter em mente que 0 é panorâmico centralizado.
+Eu recomendei manter os valores de pan entre -1 e 1
+Os números positivos são deslocados para a esquerda e os números negativos são deslocados para a direita.
+
+<WereSoCool language={
+`{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
+main = {
+  Overlay [
+    Fm 1,
+    Seq [Fm 2, Fm 0, Fm 0] | Lm 1/8,
+  ]
+  | *(
+    p: 5|5 [-1],
+  ) Take 10
+  | Repeat 3
+}`
+}/>
+
+### Expressões de Vários Eixos
+
+As coisas começam a ficar bem legais quando você
+combinar várias expressões de eixo em um único Gerador.
+
+<WereSoCool language={
+`{ f: 311.127, l: 1/3, g: 1, p: 0 }\n
+main = {
+  Overlay [
+    Seq [Fm 2, Fm 0 | Lm 8] | Lm 1/10,
+    Fm 1,
+    Fm 1/2,
+  ]
+  | *(
+    f: 0|12 [2, 1],
+    g: 16|16 [-1],
+    l: 16|16 [-1],
+    p: 5|5 [-1],
+  ) Take 16
+  | Seq [AsIs, Reverse | Lm 1/2]
+  | Repeat 3
+}`
+}/>
+
+
