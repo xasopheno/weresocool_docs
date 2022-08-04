@@ -1,0 +1,87 @@
+---
+title: Geradores Mais Expressivos
+next: Coeficientes Legais
+nextLink: cool_coefficients
+---
+
+Os geradores são super legais. Vamos continuar com eles.
+
+### Melodias Infinitas
+
+Vamos ficar em ET(12) por enquanto. Usando geradores,
+pode fazer algumas belas, longas e sinuosas estruturas melódicas.
+Mark Turner, coma seu coração.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/8, g: 1, p: 0 }\n
+-- Três Melodias de geradores.
+main = {
+  Overlay [Fm 1/2, Fm 1, Fm 2]
+  | Seq [
+    *(
+      f: 0|12 [7, -3, -4, -2, 1]
+    ) Take 30,
+    Fm 0,
+    *(
+      f: 0|12 [-3, 4, 3, 2, -4, 2, 1, -2]
+    ) Take 25,
+    Fm 0,
+    *(
+      f: 12|12 [2, -3, 4, -5, 8, -3, -2, 1, -2, 2, -3, -1, -1, 2]
+    ) Take 60,
+  ]
+}`
+}/>
+
+# Sente o Tempo
+Ah, os músicos adoram falar sobre a sensação do tempo. Um dos
+maiores elogios que você pode dar a alguém.
+"Cara... ela tem a melhor sensação de tempo..."
+Para uma linguagem de programação, acho que WereSoCool
+tem uma sensação de tempo muito bom. Os geradores são
+um lugar muito bom para explorar o relacionamento
+entre melodia, andamento e sensação de tempo.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/5, g: 1, p: 0 }\n
+-- Três sensações de tempo diferentes dos geradores.
+main = {
+  Overlay [Fm 1/2, Fm 1, Fm 2]
+  | Seq [
+    *(
+        f: 0|12 [7, -3, -4, -2, 1],
+        l: 13|13 [-3, 3],
+        g: 10|10 [-3, 3]
+    ) Take 31,
+    Fm 0,
+    *(
+        f: 0|12 [7, -3, -4, -2, 1],
+        l: 15|13 [-6, 6],
+        g: 10|10 [-3, 3]
+    ) Take 31,
+    Fm 0,
+    *(
+        f: 0|12 [7, -3, -4, -2, 1],
+        l: 16|13 [-8, 8],
+        g: 10|10 [-3, 3]
+    ) Take 31
+  ]
+}
+`
+}/>
+
+# Dinâmica
+Qualquer maneira fácil de adicionar dinâmica a algo que você já tenha
+escrito é para ModBy [gerador].
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/6, g: 1, p: 0 }\n
+main = {
+  Overlay [Fm 1/2, Fm 1, Fm 2]
+  | ET(12) @ [Random(35)]
+  | ModBy [
+    *(g: 10|10 [-1]) Take 10
+  ]
+}`
+}/>
+

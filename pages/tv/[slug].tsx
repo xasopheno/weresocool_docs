@@ -208,8 +208,12 @@ export const getStaticPaths = async () => {
     .map((path) => path.replace(/\.json/, ""))
     .map((slug) => ({ params: { slug } }))
 
+  const ptPaths = tvFilePaths
+    .map((path) => path.replace(/\.json/, ""))
+    .map((slug) => ({ params: { slug }, locale: "pt" }))
+
   return {
-    paths,
+    paths: [...paths, ...ptPaths],
     fallback: false,
   }
 }

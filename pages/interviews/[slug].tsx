@@ -82,8 +82,12 @@ export const getStaticPaths = async () => {
     .map((path) => path.replace(/\.mdx?$/, ""))
     .map((slug) => ({ params: { slug } }))
 
+  const ptPaths = interviewFilePaths
+    .map((path) => path.replace(/\.mdx/, ""))
+    .map((slug) => ({ params: { slug }, locale: "pt" }))
+
   return {
-    paths,
+    paths: [...paths, ...ptPaths],
     fallback: false,
   }
 }

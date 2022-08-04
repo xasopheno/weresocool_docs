@@ -1,0 +1,35 @@
+---
+title: Stems
+---
+
+## `Operação: Stems` 
+Você pode usar o `WereSoCool cli` para imprimir as 'stems'.
+Pipe uma palavra começando com uma marca de hash (#) em
+uma qualquer operação.
+
+Você pode imaginar a tag em cascata pelo
+linguagem e tudo o que toca no caminho
+para se tornar um som se tornará uma parte desse 'stem'.
+
+No bloco principal você pode usar a seguinte sintaxe
+para escolher as 'stems' para imprimir.
+`main = { ops } -> [listo_do_stems]`
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+thing1 = {
+  #stem1 | Seq [Fm 1, Fm 9/8]
+}\n
+thing2 = {
+  #stem2 | Seq [Fm 3/2, Fm 9/8]
+}\n
+main = {
+  Overlay [
+    thing1,
+  ]
+  | Seq [AsIs | Repeat 2, Reverse]
+  | Repeat 3
+} -> [stem1, stem2]`
+}/>
+
+

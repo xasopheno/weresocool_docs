@@ -1,0 +1,79 @@
+---
+title: Coeficientes Legais
+next: timbre
+nextLink: timbre
+---
+
+### Múltiplas
+
+-1, -1, -1, -1, -1, -1, -1. 
+
+Isso é uma coisa estranha de se escrever. 
+WereSoCool tem um atalho para vários coeficientes em uma linha em
+um gerador. Você pode usar `*` para dizer quanto de um coeficiente
+deve acontecer em sequência,
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/10, g: 1, p: 0 }\n
+main = {
+  *(
+     -- essencialmente, suba 4 meios passos 3 vezes
+     -- depois desça 5 meios passos 3 vezes
+     -- continue fazendo isso até chegar aos 40
+    f: 0|12 [4*3, -5*3]
+  ) Take 40
+  | Repeat 3
+}`
+}/>
+
+### Expressões Matemáticas
+Ambas são sintaxes experimentais.
+
+iniciar|divisão funciona um pouco diferente no gerador.
+
+Para todos os eixos, a função é Poly
+ou Expr é aplicado começando no início e avançando
+pelas subdivisões. Então, 9|10 começaria em 9/10 e então
+os próximos valores seriam o resultado da expressão aplicada
+a 10/10 seguido da expressão aplicada a 11/10. Na frequência
+eixo, o resultado é normalizado para o espaço de log.
+
+### Poly - Polinômios
+Cria um polinômio a partir de uma lista de coeficientes em ordem crescente.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/10, g: 1, p: 0 }\n
+main = {
+  *(
+    -- -1/3x^2 + x + 2
+    f: 0|12 Poly [2, 1, -1/3]
+  ) Take 70
+}`
+}/>
+
+### Expr - Expressões
+
+#### Operações
+> +, -, *, /
+
+#### Funções
+> sqrt, abs
+
+> exp, ln, log10
+
+> sin, cos, tan, asin, acos, atan, atan2
+
+> sinh, cosh, tanh, asinh, acosh, atanh
+
+#### Constantes
+> pi, e
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/10, g: 1, p: 0 }\n
+main = {
+  *(
+    f: 0|12 Expr \`sin(5 * x)\`
+  ) Take 70
+}`
+}/>
+
