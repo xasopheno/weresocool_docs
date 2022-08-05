@@ -5,7 +5,7 @@ import { capitalize, useStopAndWait } from "../../../utils/misc"
 import { useRouter } from "next/router"
 import { MobileStyledMenu } from "./MobileMenu.styled"
 import { useWindowSize } from "../../../utils/useWindowSize"
-import { isTranslation, MenuDatum, Translation } from "../menus"
+import { isTranslation, MenuDatum } from "../menus"
 
 const MenuSection = (props: {
   data: MenuDatum

@@ -96,17 +96,12 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 
 
 export const getStaticPaths = async ({defaultLocale, locales}: {defaultLocale: string; locales: string[]}) => {
-
-  const enPaths = tutorialFilePaths
+    const paths = locales.flatMap(locale => ptTutorialFilePaths
     .map((path) => path.replace(/\.mdx?$/, ""))
-    .map((slug) => ({ params: { slug } }))
-
-  const ptPaths = ptTutorialFilePaths
-    .map((path) => path.replace(/\.mdx?$/, ""))
-    .map((slug) => ({ params: { slug }, locale: "pt" }))
+    .map((slug) => ({ params: { slug }, locale })))
 
   return {
-    paths: [...enPaths, ...ptPaths],
+    paths,
     fallback: false,
   }
 }

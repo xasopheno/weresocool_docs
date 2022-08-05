@@ -3,7 +3,6 @@ import { useLoadedWasm, WASM_READY_STATE } from "../utils/useWasm";
 import { WSCWithRatioChart } from "../components/WSC_with_RatioChart";
 import styled from "styled-components";
 import Link from "next/link";
-import {useRouter} from "next/router";
 
 const language = `{ f: 311.127, l: 1, g: 1, p: 0 }
 
