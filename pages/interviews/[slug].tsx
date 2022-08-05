@@ -77,17 +77,13 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
     },
   }
 }
-export const getStaticPaths = async () => {
-  const paths = interviewFilePaths
+export const getStaticPaths = async ({locales}: {locales: string[]}) => {
+    const paths = locales.flatMap(locale => interviewFilePaths
     .map((path) => path.replace(/\.mdx?$/, ""))
-    .map((slug) => ({ params: { slug } }))
-
-  const ptPaths = interviewFilePaths
-    .map((path) => path.replace(/\.mdx/, ""))
-    .map((slug) => ({ params: { slug }, locale: "pt" }))
+    .map((slug) => ({ params: { slug }, locale })))
 
   return {
-    paths: [...paths, ...ptPaths],
+    paths,
     fallback: false,
   }
 }

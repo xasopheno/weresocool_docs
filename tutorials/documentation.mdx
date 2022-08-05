@@ -90,7 +90,7 @@ main = {
 
 # Group Operations
 
-## `Seq [operations] - Sequence`
+## `Seq [operations]`
 
 - Operations will performed in series. 
 
@@ -345,3 +345,23 @@ main = {
 }`
 }/>
 
+
+## `Stems`
+
+`main = { ops } -> [list of stems]`
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+thing1 = {
+  #stem1 | Seq [Fm 1, Fm 9/8]
+}\n
+thing2 = {
+  #stem2 | Seq [Fm 3/2, Fm 9/8]
+}\n
+main = {
+  Overlay [
+    thing1,
+  ]
+  | Seq [AsIs | Repeat 2, Reverse]
+  | Repeat 3
+} -> [stem1, stem2]`
+}/>

@@ -11,10 +11,6 @@ export const tutorialFilePaths = fs
   .readdirSync(TUTORIAL_PATH)
   .filter((path) => /\.mdx?$/.test(path))
 
-export const ptTutorialFilePaths = fs
-  .readdirSync(PT_TUTORIAL_PATH)
-  .filter((path) => /\.mdx?$/.test(path))
-
 export const interviewFilePaths = fs
   .readdirSync(INTERVIEWS_PATH)
   .filter((path) => /\.mdx?$/.test(path))

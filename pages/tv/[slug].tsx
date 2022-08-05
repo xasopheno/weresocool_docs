@@ -203,17 +203,13 @@ export async function getStaticProps(
   }
 }
 
-export const getStaticPaths = async () => {
-  const paths = tvFilePaths
-    .map((path) => path.replace(/\.json/, ""))
-    .map((slug) => ({ params: { slug } }))
-
-  const ptPaths = tvFilePaths
-    .map((path) => path.replace(/\.json/, ""))
-    .map((slug) => ({ params: { slug }, locale: "pt" }))
+export const getStaticPaths = async ({locales}: {locales: string[]}) => {
+    const paths = locales.flatMap(locale => tvFilePaths
+    .map((path) => path.replace(/\.json?$/, ""))
+    .map((slug) => ({ params: { slug }, locale })))
 
   return {
-    paths: [...paths, ...ptPaths],
+    paths,
     fallback: false,
   }
 }

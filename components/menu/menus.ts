@@ -12,8 +12,14 @@ export const tutorialMenu: MenuDatum[] = [
   {
     title: 'Documentation',
     items: [
-      { name: 'Getting Started', link: 'getting_started' },
-      { name: 'WereSoCool Docs', link: 'documentation' },
+      {
+        trans: { en: 'Getting Started', pt: 'Começando' },
+        link: 'getting_started',
+      },
+      {
+        trans: { en: 'Documentation', pt: 'Documentação' },
+        link: 'documentation',
+      },
     ],
   },
   {

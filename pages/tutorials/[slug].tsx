@@ -14,7 +14,7 @@ import { WSCWithRatioChart } from "../../components/WSC_with_RatioChart"
 import { Break, CoolText, } from "../../components/mdx"
 import { WereSoCool } from "../../components/WereSoCool"
 import { capitalize, useStopAndWait } from "../../utils/misc"
-import { tutorialFilePaths, ptTutorialFilePaths, TUTORIAL_PATH, PT_TUTORIAL_PATH } from "../../utils/mdxUtils"
+import { tutorialFilePaths, TUTORIAL_PATH, PT_TUTORIAL_PATH } from "../../utils/mdxUtils"
 import { tutorialMenu } from "../../components/menu/menus"
 import { useRouter } from "next/router"
 import { Vimeo } from "../../components/video"
@@ -95,8 +95,8 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 }
 
 
-export const getStaticPaths = async ({defaultLocale, locales}: {defaultLocale: string; locales: string[]}) => {
-    const paths = locales.flatMap(locale => ptTutorialFilePaths
+export const getStaticPaths = async ({locales}: {locales: string[]}) => {
+    const paths = locales.flatMap(locale => tutorialFilePaths
     .map((path) => path.replace(/\.mdx?$/, ""))
     .map((slug) => ({ params: { slug }, locale })))
 

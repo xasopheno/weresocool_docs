@@ -1,0 +1,380 @@
+---
+title: Documentação do WereSoCool 
+---
+
+Esta linguagem já tem alguns anos. Mudou muito até agora e imagino que continuará a mudar... espero que para melhor. Este documento descreverá o estado atual da linguagem.
+
+## Numbers
+- Os números no WereSoCool podem ser qualquer número inteiro, decimal ou racional. 1, 1.314 e 2/3 são números significativos na linguagem.
+- Sob o capô, todos os cálculos são feitos com números racionais até pouco antes da renderização para preservar a precisão.
+
+# Operações de ponto
+
+
+## `Fm <número> - Multiplicação de Frequência`
+
+- Multiplica a frequência de entrada pelo valor.
+- O valor pode ser qualquer número >= 0.
+- Valores muito altos ou muito baixos podem não ser audíveis.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Fm 5/4
+}`
+}/>
+
+## `Fa <número> - Adição de Frequência`
+
+- Adiciona o valor à frequência de entrada.
+- O valor pode ser qualquer número.
+- Se a soma da frequência de entrada e o número fornecido for menor que 0, o som será silencioso.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Fa -7
+}`
+}/>
+
+## `Lm <número> - Multiplicação de Duração`
+
+- Multiplies the input length by the  provided. 
+- Value may be any  >= 0. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Lm 3
+}`
+}/>
+
+## `Gm <número> - Multiplicação de Volume`
+
+- Multiplica o ganho de entrada pelo valor.
+- O valor pode ser qualquer número >= 0.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Gm 1/2
+}`
+}/>
+
+## `Pm <número> - Multiplicação de Panorâmico`
+
+- Multiplica o pan de entrada pelo valor.
+- O valor pode ser qualquer número.
+- Recomenda-se manter os valores de pan entre -1 e 1
+- Os números positivos são deslocados para a esquerda e os números negativos são deslocados para a direita.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: -1 }\n
+main = {
+  Pm 7/8
+}`
+}/>
+
+## `Pa <número> - Adição de Panorâmico`
+
+- Adiciona o valor ao pan de entrada.
+- O valor pode ser qualquer número.
+- Recomenda-se manter os valores de pan entre -1 e 1
+- Os números positivos são deslocados para a esquerda e os números negativos são deslocados para a direita.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Pa 9/10 
+}`
+}/>
+
+# Operações do Grupo
+
+## `Seq [operações]`
+
+- As operações serão realizadas em série.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Seq [
+    Fm 1, Fm 9/8, Fm 5/4, Fm 4/3, 
+    Fm 3/2, Fm 5/3, Fm 15/8, Fm 2
+  ]
+}`
+}/>
+
+## `Overlay [operações]`
+
+- As operações serão realizadas ao mesmo tempo.
+
+<WereSoCool language={
+`{ f: 261.6, l: 5, g: 1/3, p: 0 }\n
+main = {
+  Overlay [
+    Fm 7/2,
+    Fm 9/4,
+    Fm 3/2,
+    Fa 5,
+    Fm 1,
+    Fm 1/2
+  ]
+}`
+}/>
+
+# Form Operations
+
+## `AsIs - Identidade`
+
+- Esta operaçăo năo é operativa. Útil para descrever a forma.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Seq [ Fm 1, Fm 9/8 ]  
+  | Seq [AsIs, Fm 3/2]
+}`
+}/>
+
+## `Repeat <número>`
+Repetir é super legal se você quiser que algo aconteça novamente.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/4, g: 1, p: 0 }\n
+melody = {
+  Seq [ Fm 5/4, Fm 9/8, Fm 5/4, Fm 1]
+}\n
+main = {
+  Seq [
+    melody | Repeat 3
+  ]
+}`
+}/>
+
+## `Reverse`
+Reverse pega uma entrada e a reproduz para trás.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/3, g: 1, p: 0 }\n
+pentatonic_scale = {
+  Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2, Fm 5/3]
+}\n
+main = {
+  Seq [
+    pentatonic_scale, 
+    pentatonic_scale | Reverse
+  ]
+}`
+}/>
+
+## `FitLength`
+Aqui, a operação2 é algo novo que você escreveu.
+operação1 é algo que você escreveu anteriormente.
+FitLength vai esticar ou esmagar a operação2
+para torná-lo o mesmo duração de operação1.
+
+<WereSoCool
+  language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+pentatonic_scale = {
+  Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2, Fm 5/3]
+}\n
+bass = {
+  Fm 1/2 |
+  Seq [Fm 1, Fm 7/8, Fm 5/6, Fm 2/3]
+}\
+main = {
+  Overlay [
+    pentatonic_scale, 
+    bass | Seq [Fm 9/8, Fm 1] | FitLength pentatonic_scale
+  ]
+}`
+}/>
+
+## `Operação: ModBy`
+ModulateBy permite usar uma operação para modular outra operação.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/3, g: 1, p: 0 }\n
+melody = {
+  Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2]
+}\n
+main = {
+  Seq [
+    melody,
+    melody
+    | ModBy [Fm 1, Fm 1/2]
+  ]
+}`
+}/>
+
+
+## `Invert`
+Inverter é uma operação na Frequência que inverte a razão da corrente
+frequência atual sobre o 'f' no topo do arquivo.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+pentatonic_scale = {
+  Seq [Fm 1, Fm 9/8, Fm 5/4, Fm 3/2, Fm 5/3]
+}\n
+main = {
+  Overlay [
+    pentatonic_scale, 
+    pentatonic_scale | Invert
+  ]
+}`
+}/>
+
+---
+
+## `Functions` 
+Qualquer bloco, exceto o bloco "principal", pode ser estendido para
+aceitar argumentos.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/3, g: 1, p: 0 }\n
+melody(a) = {
+  a | Repeat 3
+}\n
+main = {
+  melody(
+    Seq [
+      Fm 5/4, Fm 9/8, Fm 1
+    ]
+  )
+}`
+}/>
+
+--
+
+# Listas
+
+## `Sintaxe da Lista`
+As listas são indicadas por um `&`. Você pode indexar na lista com um `@` seguido por `[operações]`
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`&[operações] @ [índices]`}
+/>
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+-- Os índices da lista começam em 0
+main = {
+  &[Fm 1, Fm 9/8] @ [0, 1, 0]
+}`
+}/>
+
+
+## `ET - Temperamento Igual`
+A operação ET cria uma escala temperada igual dividida n vezes.
+O resultado é uma lista e pode ser indexado.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/4, g: 1, p: 0 }\n
+main = {
+  ET(17) 
+}`
+}/>
+
+## `Índices`
+
+<WereSoCool language={
+`{ f: 310, l: 1, g: 1/4, p: 0 }\n
+overtones = {
+  O[
+    (2/1, 0, 1, 0),
+    (1/1, 2, 1, 1),
+    (1/1, 0, 1, -1),
+    (1/2, 0, 1, 0),
+  ]
+}\n
+-- Existem vários índices diferentes que você pode
+-- use para selecionar elementos de uma lista.
+main = {
+  overtones |
+   -- Temperamento igual de doze tons.
+  ET(12) 
+  @ [
+    -- Você já sabe que pode escolher elementos por índice.
+     0, 3, 4, 6, 9,
+    -- Fatias podem ser usadas para selecionar intervalos de elementos.
+    -- esta fatia selecionará o 3º -> 7º elemento da lista
+    -- O intervalo é inclusivo.
+    3:7,
+    -- As fatias também podem retroceder. Novamente, as fatias são inclusivas,
+    -- então isso escolherá os índices 8, 7, 6, 5, 4, 3 e 2.
+    8:2,
+    -- As fatias também podem receber um terceiro argumento chamado "skip".
+    -- Isso começará da viagem do 2º elemento até o 10º
+    -- pulando 3 de cada vez.
+    0:11:3,
+    -- Você já viu Random(n). 
+    -- Que escolhe elementos aleatórios da lista.
+    Random(5),
+    -- Você também pode aplicar operações a qualquer índice!
+    Random(30) | Overlay [Fm 1, Fm 9/8, Fm 15/8] | Gm 1/3,\n
+    -- Silêncio rápido. Eu estarei adicionando um índice silencioso em breve. :)
+    0 | Fm 0,\n
+    -- Para a vitória!
+    11:2:2 
+    | Fm 3/4 
+    | Seq [Fm 1, Fm 9/8, Fm 4/3, Fm 5/4, Fm 3/2, Fm 5/3]
+    | Overlay [Fm 1, Fm 3/2, Fm 2]
+    | Gm 1/3,\n
+    8:4 
+    | Fm 1/2 
+    | Lm 1/2,\n
+    3 
+    | Fm 1/2 
+    | Lm 4
+    | Overlay [Fm 1, Fm 9/4, Fm 3/2, Fm 5/4] | Gm 1/4
+  ]
+  | Lm 1/11
+}`
+}/>
+
+
+## `Geradores`
+
+<WereSoCool language={
+`{ f: 311.127, l: 1/3, g: 1, p: 0 }\n
+main = {
+  Overlay [
+    Seq [Fm 2, Fm 0 | Lm 8] | Lm 1/10,
+    Fm 1,
+    Fm 1/2,
+  ]
+  | *(
+    f: 0|12 [2, 1],
+    g: 16|16 [-1],
+    l: 16|16 [-1],
+    p: 5|5 [-1],
+  ) Take 16
+  | Seq [AsIs, Reverse | Lm 1/2]
+  | Repeat 3
+}`
+}/>
+
+## `Stems`
+
+`main = { ops } -> [lista de 'stems']`
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+thing1 = {
+  #stem1 | Seq [Fm 1, Fm 9/8]
+}\n
+thing2 = {
+  #stem2 | Seq [Fm 3/2, Fm 9/8]
+}\n
+main = {
+  Overlay [
+    thing1,
+  ]
+  | Seq [AsIs | Repeat 2, Reverse]
+  | Repeat 3
+} -> [stem1, stem2]`
+}/>
