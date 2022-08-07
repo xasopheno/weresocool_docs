@@ -60,10 +60,10 @@ export async function getStaticProps(
   }
 }
 
-export const getStaticPaths = async () => {
-  const paths = dannyFilePaths
+export const getStaticPaths = async ({locales}: {locales: string[]}) => {
+    const paths = locales.flatMap(locale => dannyFilePaths
     .map((path) => path.replace(/\.mdx?$/, ""))
-    .map((slug) => ({ params: { slug } }))
+    .map((slug) => ({ params: { slug }, locale })))
 
   return {
     paths,

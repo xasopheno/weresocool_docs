@@ -1,1 +1,1 @@
-/*eslint-disable*/module.exports={messages:{}};
+/*eslint-disable*/module.exports={messages:{"A language for composing microtonal music":"A language for composing microtonal music","Get Started":"Get Started"}};

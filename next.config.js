@@ -41,6 +41,14 @@ module.exports = {
         '/tv',
         '/interviews'
     ],
-  }
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.po/,
+      use: ['@lingui/loader'],
+    })
+
+    return config
+  },
 };
 

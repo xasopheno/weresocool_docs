@@ -51,9 +51,6 @@ function App({ Component, pageProps }: AppProps) {
                   marginTop: "60px",
                 }}
               >
-                <p>
-                  <Trans id="next-explanation">My text to be translated</Trans>
-                </p>
                 <Component {...pageProps} />
               </div>
             </ThemeProvider>

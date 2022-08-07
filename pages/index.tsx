@@ -3,8 +3,10 @@ import { useLoadedWasm, WASM_READY_STATE } from "../utils/useWasm";
 import { WSCWithRatioChart } from "../components/WSC_with_RatioChart";
 import styled from "styled-components";
 import Link from "next/link";
-import {GetStaticProps} from "next";
-import {loadTranslation} from "../translation/utils";
+import { GetStaticProps } from "next";
+import { loadTranslation } from "../translation/utils";
+import { Trans } from '@lingui/macro'
+
 
 const language = `{ f: 311.127, l: 1, g: 1, p: 0 }
 
@@ -123,14 +125,14 @@ const App = () => {
         <HeaderPadding>
           <HeaderTitle>WereSoCool</HeaderTitle>
           <HeaderDescription>
-            A language for composing microtonal music
+            <Trans>A language for composing microtonal music</Trans>
           </HeaderDescription>
           <HeaderButtonContainer>
             <GetStartedButton>
-              <Link href={"/tutorials/getting_started"}>Get Started</Link>
+              <Link href={"/tutorials/getting_started"}><Trans>Get Started</Trans></Link>
             </GetStartedButton>
             <Link href={"/tutorials/welcome"}>
-              <TakeTutorialButton>Take the Tutorial {"~>"}</TakeTutorialButton>
+              <TakeTutorialButton><Trans>Take the Tutorial</Trans> {"~>"}</TakeTutorialButton>
             </Link>
           </HeaderButtonContainer>
         </HeaderPadding>

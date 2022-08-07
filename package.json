@@ -54,6 +54,7 @@
     ]
   },
   "devDependencies": {
+    "raw-loader": "^0.5.1",
     "@babel/core": "^7.18.10",
     "@lingui/cli": "^3.14.0",
     "@lingui/loader": "^3.14.0",

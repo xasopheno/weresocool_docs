@@ -12,3 +12,15 @@ msgstr ""
 "Last-Translator: \n"
 "Language-Team: \n"
 "Plural-Forms: \n"
+
+#: pages/index.tsx:128
+msgid "A language for composing microtonal music"
+msgstr "Uma linguagem para compor música microtonal"
+
+#: pages/index.tsx:132
+msgid "Get Started"
+msgstr "Começando"
+
+#: pages/index.tsx:135
+msgid "Take the Tutorial"
+msgstr "Faça o tutorial"
