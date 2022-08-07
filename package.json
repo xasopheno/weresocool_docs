@@ -23,6 +23,7 @@
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
+    "make-plural": "^7.1.0",
     "next": "^12.2.2",
     "next-mdx-remote": "3.0.4",
     "next-remote-watch": "1.0.0",
@@ -53,7 +54,11 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.18.6",
+    "@babel/core": "^7.18.10",
+    "@lingui/cli": "^3.14.0",
+    "@lingui/loader": "^3.14.0",
+    "@lingui/macro": "^3.14.0",
+    "@lingui/react": "^3.14.0",
     "@theme-ui/presets": "^0.3.5",
     "@types/jest": "^26.0.20",
     "@types/lodash": "^4.14.168",

@@ -3,6 +3,8 @@ import { useLoadedWasm, WASM_READY_STATE } from "../utils/useWasm";
 import { WSCWithRatioChart } from "../components/WSC_with_RatioChart";
 import styled from "styled-components";
 import Link from "next/link";
+import {GetStaticProps} from "next";
+import {loadTranslation} from "../translation/utils";
 
 const language = `{ f: 311.127, l: 1, g: 1, p: 0 }
 
@@ -144,5 +146,18 @@ const App = () => {
     </div>
   );
 };
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const translation = await loadTranslation(
+    ctx.locale!,
+    process.env.NODE_ENV === 'production'
+  )
+
+  return {
+    props: {
+      translation
+    }
+  }
+}
 
 export default App;
