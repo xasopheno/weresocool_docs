@@ -123,12 +123,21 @@ const App = () => {
             "A language for composing microtonal music"
   const getStarted = isPt ? "Começando" : "Get Started"
   const takeTheTutorial = isPt ? "Explore o Tutorial" : "Explore the Tutorial"
+  const { pathname, asPath, query } = router
 
   return (
     <div>
       <HeaderContainer>
         <HeaderPadding>
           <HeaderTitle>WereSoCool</HeaderTitle>
+          <HeaderButtonContainer>
+            <GetStartedButton onClick={() => 
+              router.push({ pathname, query }, asPath, { locale: "en" })
+            }>English</GetStartedButton>
+            <GetStartedButton onClick={() => 
+              router.push({ pathname, query }, asPath, { locale: "pt" })
+            }>Portuguêse</GetStartedButton>
+          </HeaderButtonContainer>
           <HeaderDescription>
             {description}
           </HeaderDescription>

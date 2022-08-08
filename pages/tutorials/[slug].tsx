@@ -39,6 +39,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
   const router = useRouter();
   const menu = tutorialMenu;
   const stopAndWait = useStopAndWait()
+
   return (
     <Layout sectionPath={"tutorials"} menuData={menu}>
       <PostContainer>
