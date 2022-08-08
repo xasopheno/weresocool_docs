@@ -3,9 +3,7 @@ import { useLoadedWasm, WASM_READY_STATE } from "../utils/useWasm";
 import { WSCWithRatioChart } from "../components/WSC_with_RatioChart";
 import styled from "styled-components";
 import Link from "next/link";
-import { GetStaticProps } from "next";
-import { loadTranslation } from "../translation/utils";
-import { Trans } from '@lingui/macro'
+import {useRouter} from "next/router";
 
 
 const language = `{ f: 311.127, l: 1, g: 1, p: 0 }
@@ -118,6 +116,13 @@ const TakeTutorialButton = styled.div`
 
 const App = () => {
   const { readyState } = useLoadedWasm();
+  const router = useRouter()
+  const isPt = router.locale === "pt"
+  const description = isPt ? 
+    "Uma linguagem para compor música microtonal" :
+            "A language for composing microtonal music"
+  const getStarted = isPt ? "Começando" : "Get Started"
+  const takeTheTutorial = isPt ? "Explore o Tutorial" : "Explore the Tutorial"
 
   return (
     <div>
@@ -125,14 +130,14 @@ const App = () => {
         <HeaderPadding>
           <HeaderTitle>WereSoCool</HeaderTitle>
           <HeaderDescription>
-            <Trans>A language for composing microtonal music</Trans>
+            {description}
           </HeaderDescription>
           <HeaderButtonContainer>
             <GetStartedButton>
-              <Link href={"/tutorials/getting_started"}><Trans>Get Started</Trans></Link>
+              <Link href={"/tutorials/getting_started"}>{getStarted}</Link>
             </GetStartedButton>
             <Link href={"/tutorials/welcome"}>
-              <TakeTutorialButton><Trans>Take the Tutorial</Trans> {"~>"}</TakeTutorialButton>
+              <TakeTutorialButton>{takeTheTutorial} {"~>"}</TakeTutorialButton>
             </Link>
           </HeaderButtonContainer>
         </HeaderPadding>
@@ -148,18 +153,5 @@ const App = () => {
     </div>
   );
 };
-
-export const getStaticProps: GetStaticProps = async (ctx) => {
-  const translation = await loadTranslation(
-    ctx.locale!,
-    process.env.NODE_ENV === 'production'
-  )
-
-  return {
-    props: {
-      translation
-    }
-  }
-}
 
 export default App;
