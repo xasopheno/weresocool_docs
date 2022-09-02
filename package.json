@@ -54,7 +54,6 @@
     ]
   },
   "devDependencies": {
-    "raw-loader": "^0.5.1",
     "@babel/core": "^7.18.10",
     "@lingui/cli": "^3.14.0",
     "@lingui/loader": "^3.14.0",
@@ -63,7 +62,7 @@
     "@theme-ui/presets": "^0.3.5",
     "@types/jest": "^26.0.20",
     "@types/lodash": "^4.14.168",
-    "@types/node": "^14.14.20",
+    "@types/node": "^18.7.14",
     "@types/react": "^17.0.1",
     "@types/react-dom": "^17.0.1",
     "@types/react-tooltip": "^4.2.4",
@@ -73,6 +72,8 @@
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-styled-components": "^1.12.0",
     "babel-preset-react-app": "^10.0.0",
+    "eslint": "8.23.0",
+    "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "^7.0.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.2.0",
@@ -85,6 +86,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^3.10.1",
     "prettier": "^2.6.2",
+    "raw-loader": "^0.5.1",
     "react-app-rewired": "^2.2.1",
     "typescript": "^4.7.4"
   },
