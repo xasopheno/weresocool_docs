@@ -122,6 +122,7 @@ export default function TV({ source }: TVProps) {
         </div>
 
         <Menu
+          locale={"en"}
           data={tvMenu}
           sectionPath={"tv"}
           style={{
@@ -172,6 +173,7 @@ export default function TV({ source }: TVProps) {
         >
           <Menu
             data={tvMenu}
+            locale={"en"}
             sectionPath={"tv"}
             style={{
               overflow: "scroll",

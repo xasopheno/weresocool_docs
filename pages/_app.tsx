@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useState } from "react"
+import React, { useReducer, useState } from "react"
 import { AppProps } from "next/app"
 import { useWasm } from "../utils/useWasm"
 import { NavBar } from "../components/nav"
@@ -10,7 +10,7 @@ import { GlobalContext, intialStore } from "../state/store"
 import ReactGA from "react-ga"
 ReactGA.initialize("UA-38957815-2")
 import "../styles.css"
-import {useRouter} from "next/router"
+// import {useRouter} from "next/router"
 
 function App({ Component, pageProps }: AppProps) {
 
