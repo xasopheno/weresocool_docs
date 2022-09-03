@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next",
     "dev:watch": "next-remote-watch ./tutorials",
-    "build": "next build",
+    "build": "yarn link weresocool-wasm && next build",
     "start": "next start -p $PORT",
     "typecheck": "yarn run tsc",
     "lint": "yarn run eslint",
