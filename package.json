@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "next",
     "dev:watch": "next-remote-watch ./tutorials",
-    "build": "yarn link weresocool-wasm && next build",
+    "build": "next build",
     "start": "next start -p $PORT",
     "typecheck": "yarn run tsc",
     "lint": "yarn run eslint",
@@ -16,6 +16,7 @@
     "link-wasm": "cd wasm/pkg && yarn link && cd ../ && yarn link weresocool-wasm"
   },
   "dependencies": {
+    "weresocool-wasm": "file:./wasm/pkg",
     "@theme-ui/typography": "^0.6.0",
     "@types/theme-ui": "^0.6.0",
     "ace-builds": "^1.4.14",
