@@ -23,13 +23,11 @@ export function sleep(ms: number) {
 export const stopLang = `{ f: 220, l: 1, g: 1, p: 0 }\nmain = {Fm 0}`;
 
 export const supportsWasm = () => {
-  // TODO: When is wasm supported now
-  return true;
-  // return (
-  // typeof window !== 'undefined' &&
-  // (navigator.userAgent.indexOf('Chrome') != -1 ||
-  // navigator.userAgent.indexOf('Firefox') != -1)
-  // );
+  return (
+    typeof window !== 'undefined' &&
+    (navigator.userAgent.indexOf('Chrome') != -1 ||
+      navigator.userAgent.indexOf('Firefox') != -1)
+  );
 };
 
 export function useStopAndWait() {

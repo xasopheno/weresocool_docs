@@ -130,14 +130,6 @@ const App = () => {
       <HeaderContainer>
         <HeaderPadding>
           <HeaderTitle>WereSoCool</HeaderTitle>
-          <HeaderButtonContainer>
-            <GetStartedButton onClick={() => 
-              router.push({ pathname, query }, asPath, { locale: "en" })
-            }>English</GetStartedButton>
-            <GetStartedButton onClick={() => 
-              router.push({ pathname, query }, asPath, { locale: "pt" })
-            }>Portuguêse</GetStartedButton>
-          </HeaderButtonContainer>
           <HeaderDescription>
             {description}
           </HeaderDescription>

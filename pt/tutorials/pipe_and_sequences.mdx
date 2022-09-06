@@ -1,5 +1,5 @@
 ---
-title: Cano e Sequências 
+title: Pipe e Sequências 
 next: pequenas_diferenças
 nextLink: small_differences
 ---
@@ -62,14 +62,14 @@ o que acontece quando você faz algo assim?:
   | Lm 1/8
 }\n
 main = { 
-  -- Agora vamos canalizar a escala_pentatônica na Seq [Fm 1, Fm 9/8, Fm 5/4].
+  -- Agora vamos pipe a escala_pentatônica na Seq [Fm 1, Fm 9/8, Fm 5/4].
   -- O resultado será a escala_pentatônica subindo nas 2ªs principais 
   escala_pentatonica
   | Seq [
       Fm 1, Fm 9/8, Fm 5/4,
       -- ===== descomente a seguinte linha com cmd + / (ctl + / no linux/windows)======
       -- Fm 9/8 | Reverse
-      -- O reverso é super legal. É preciso o que você canalizar para ele
+      -- O reverso é super legal. É preciso o que você pipe para ele
       -- e o reproduz ao contrário. Simples assim.
   ]
       -- ===== e descomente a seguinte linha com cmd + / (ctl + / no linux/windows)
@@ -81,5 +81,5 @@ main = {
 Agora você sabe o suficiente para começar a fazer algumas coisas bem legais. Antes de continuar com o tutorial,
 Eu recomendo tentar fazer sua própria composição começando com esta. Um bom ponto de partida seria mudar o pentatonic_scale para ser
 outro conjunto de operação. Talvez, adicione um 'Fm' adicional ou
-canalizar a composição existente em outra Sequência.
+pipe a composição existente em outra Sequência.
 

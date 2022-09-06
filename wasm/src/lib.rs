@@ -13,8 +13,6 @@ use weresocool::{
     manager::RenderManager,
 };
 
-// console::log_1(&value.into());
-
 const BUFFER_SIZE: usize = 1024 * 8;
 const SAMPLE_RATE: usize = 44100;
 
