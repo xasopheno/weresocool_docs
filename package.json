@@ -5,8 +5,8 @@
     "node": "16"
   },
   "scripts": {
-    "dev": "next",
-    "dev:watch": "next-remote-watch ./tutorials",
+    "dev": "next -p 8765",
+    "dev:watch": "PORT=8765 next-remote-watch ./tutorials",
     "build": "next build",
     "start": "next start -p $PORT",
     "typecheck": "yarn run tsc",
