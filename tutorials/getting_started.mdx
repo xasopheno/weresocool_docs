@@ -1,35 +1,68 @@
 ---
 title: Getting Started
+next: welcome
+nextLink: welcome
 ---
 
-> **<CoolText>WereSoCool</CoolText>** is a programming language for composing microtonal music. You might find this language useful if you want to make cool sounds and impress your friends/pets/plants. 
+**<CoolText>WereSoCool</CoolText>** is a programming language for composing microtonal music. You might find this language useful if you want to make cool sounds and impress your friends/pets/plants. WereSoCool is available as a command line tool on macOS and Linux. You can also explore the language on Firefox and Chrome browsers in the **<CoolText>WereSoCool Playground</CoolText>** . 
 
-<Vimeo code={"131247474"}/>
 
-## Try WereSoCool
-
-You can download the **<CoolText>WereSoCool Application</CoolText>** which is a standalone editor. This is the coolest way to use WereSoCool and has some bells and even a few whistles. If you'd prefer to use your own editor, then you might enjoy the **<CoolText>WereSoCool CLI</CoolText>**. You can make some sounds in the browser with the **<CoolText>WereSoCool Playground</CoolText>**. WereSoCool is currently only single-threaded in the browser, so more complicated compositions will probably not render without clicks.
-
-## WereSoCool Application 
-How to install the application
+## WereSoCool CLI
 
 ### macOS
-Download the most recent version of the application for macOS here.
+The **<CoolText>WereSoCool CLI</CoolText>** is available on macOS via the homebrew package manager. If you do not have Homebrew installed, follow the installation instructions <CoolLink href={"https://brew.sh/"}>here</CoolLink>.
 
-### Linux
-Download the most recent version of the application for Linux here.
+Install WereSoCool from Homebrew by running the following commands:
 
-## WereSoCool CLI.
-How to install the CLI
+`brew tap xasopheno/weresocool`
 
-### macOS
 `brew install weresocool`
+
+<Break/>
 
 ### Arch Linux
 `pacman -S weresocool`
 
+<Break/>
+
+### Linux - Debian and Rpm
+Debian and rpm packages are generated with each new release of WereSoCool. You can download them on <CoolLink href={"https://github.com/xasopheno/WereSoCool/releases/latest"}>Github</CoolLink>.
+
+If you would like to create a package for your favorite distro, please reach out.
 
 <Break/>
 
+### Windows
 WereSoCool does not currently run on Windows. The underlying technologies are cross-platform, so it's certainly possible. I just don't have a machine to test it on. If you'd like to help get it running on Windows, please reach out. 
 
+<Break/>
+
+## WereSoCool Playground
+ You can make cool sounds in on Firefox and Chrome browsers in the **<CoolLink href={"https://www.weresocool.org/playground"}>WereSoCool Playground</CoolLink>**. WereSoCool is single-threaded in the browser, so more complicated compositions will probably not render without clicks. The playground does not yet run on mobile.
+
+
+
+<Break/>
+
+## Editor Support
+Some simple syntax highlighting is available for a few common editors. If you'd like to create a plugin for your favorite editor, please reach out. 
+
+<Break/>
+
+### Vim
+My editor of choice is currently NeoVim, so support on vim is ahead of other browsers. The package is available on <CoolLink href={"https://github.com/xasopheno/WereSoCool_vim"}>Github</CoolLink>.
+
+If you use vim-plug, add the following line to you `init.vim` and run `:PlugInstall`
+
+`Plug 'xasopheno/WereSoCool_vim'`
+
+<Break/>
+
+### VisualStudio Code
+Minimal syntax highlight is availble via the weresocool extension. Search for 'weresocool' in extensions or <CoolLink href={"https://marketplace.visualstudio.com/items?itemName=weresocool.socool"}> install it from the marketplace.</CoolLink>
+<Break/>
+
+### SublimeText
+Very minimal syntax highlight is availble via the weresocool package. 
+https://github.com/xasopheno/weresocool_sublimetext
+<Break/>

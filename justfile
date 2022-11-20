@@ -2,7 +2,7 @@ dev:
   yarn dev:watch
 
 start: 
-  PORT=4000 yarn build && yarn start
+  yarn build && PORT=4000 yarn start
 
 
 typecheck: 

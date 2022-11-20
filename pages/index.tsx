@@ -1,10 +1,9 @@
-import React from "react";
-import { useLoadedWasm, WASM_READY_STATE } from "../utils/useWasm";
-import { WSCWithRatioChart } from "../components/WSC_with_RatioChart";
-import styled from "styled-components";
-import Link from "next/link";
-import {useRouter} from "next/router";
-
+import React from 'react';
+import { useLoadedWasm, WASM_READY_STATE } from '../utils/useWasm';
+import { WSCWithRatioChart } from '../components/WSC_with_RatioChart';
+import styled from 'styled-components';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const language = `{ f: 311.127, l: 1, g: 1, p: 0 }
 
@@ -105,48 +104,42 @@ const GetStartedButton = styled.div`
   }
 `;
 
-const TakeTutorialButton = styled.div`
-  padding-left: 20px;
-  cursor: pointer;
-  color: darkgoldenrod;
-  :hover {
-    color: goldenrod;
-  }
-`;
+// const TakeTutorialButton = styled.div`
+// padding-left: 20px;
+// cursor: pointer;
+// color: darkgoldenrod;
+// :hover {
+// color: goldenrod;
+// }
+// `;
 
 const App = () => {
   const { readyState } = useLoadedWasm();
-  const router = useRouter()
-  const isPt = router.locale === "pt"
-  const description = isPt ? 
-    "Uma linguagem para compor música microtonal" :
-            "A language for composing microtonal music"
-  const getStarted = isPt ? "Começando" : "Get Started"
-  const takeTheTutorial = isPt ? "Explore o Tutorial" : "Explore the Tutorial"
-  const { pathname, asPath, query } = router
+  const router = useRouter();
+  const isPt = router.locale === 'pt';
+  const description = isPt
+    ? 'Uma linguagem para compor música microtonal'
+    : 'A language for composing microtonal music';
+  const getStarted = isPt ? 'Começando' : 'Get Started';
+  // const { pathname, asPath, query } = router;
 
   return (
     <div>
       <HeaderContainer>
         <HeaderPadding>
           <HeaderTitle>WereSoCool</HeaderTitle>
-          <HeaderDescription>
-            {description}
-          </HeaderDescription>
+          <HeaderDescription>{description}</HeaderDescription>
           <HeaderButtonContainer>
             <GetStartedButton>
-              <Link href={"/tutorials/getting_started"}>{getStarted}</Link>
+              <Link href={'/tutorials/getting_started'}>{getStarted}</Link>
             </GetStartedButton>
-            <Link href={"/tutorials/welcome"}>
-              <TakeTutorialButton>{takeTheTutorial} {"~>"}</TakeTutorialButton>
-            </Link>
           </HeaderButtonContainer>
         </HeaderPadding>
       </HeaderContainer>
       <div
         style={{
-          maxWidth: "90vw",
-          margin: "auto",
+          maxWidth: '90vw',
+          margin: 'auto',
         }}
       >
         {readyState === WASM_READY_STATE.READY && <Stuff />}

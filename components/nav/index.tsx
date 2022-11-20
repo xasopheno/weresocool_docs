@@ -1,21 +1,21 @@
-import Image from "next/image"
-import Link from "next/link"
-import { useRouter } from "next/router"
-import React from "react"
-import { useStopAndWait } from "../../utils/misc"
-import { useWindowSize } from "../../utils/useWindowSize"
-import { LogoBox, LogoText, NavItem, StyledNav } from "./styles"
-import _ from "lodash"
+import Image from 'next/image';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { useStopAndWait } from '../../utils/misc';
+import { useWindowSize } from '../../utils/useWindowSize';
+import { LogoBox, LogoText, NavItem, StyledNav } from './styles';
+import _ from 'lodash';
 
 export const NavBar = () => {
-  const router = useRouter()
-  const { isMobile } = useWindowSize(680)
-  const current = router.asPath.split("/").slice(1)[0]
-  const stopAndWait = useStopAndWait()
+  const router = useRouter();
+  const { isMobile } = useWindowSize(680);
+  const current = router.asPath.split('/').slice(1)[0];
+  const stopAndWait = useStopAndWait();
 
   return (
     <StyledNav>
-      <LogoBox onClick={() => router.push("/")}>
+      <LogoBox onClick={() => router.push('/')}>
         <Image src="/magic.png" alt="WereSoCool.logo" width="40" height="40" />
         <Link href="/">
           {!isMobile ? (
@@ -27,11 +27,11 @@ export const NavBar = () => {
           )}
         </Link>
       </LogoBox>
-      <Link href="/tutorials/welcome">
+      <Link href="/tutorials/getting_started">
         <NavItem
           mobile={isMobile}
           onClick={async () => await stopAndWait()}
-          selected={current === "tutorials"}
+          selected={current === 'tutorials'}
         >
           Tutorial
         </NavItem>
@@ -40,7 +40,7 @@ export const NavBar = () => {
         <NavItem
           mobile={isMobile}
           onClick={async () => await stopAndWait()}
-          selected={current === "tv"}
+          selected={current === 'tv'}
         >
           Concerts
         </NavItem>
@@ -49,7 +49,7 @@ export const NavBar = () => {
         <NavItem
           mobile={isMobile}
           onClick={async () => await stopAndWait()}
-          selected={current === "interviews"}
+          selected={current === 'interviews'}
         >
           Interviews
         </NavItem>
@@ -58,38 +58,38 @@ export const NavBar = () => {
         <NavItem
           mobile={isMobile}
           onClick={async () => await stopAndWait()}
-          selected={current === "danny"}
+          selected={current === 'danny'}
         >
           Danny
         </NavItem>
       </Link>
     </StyledNav>
-  )
-}
+  );
+};
 
 const concerts = [
-  "alejandro",
-  "ayo_awosika",
-  "beck_burger",
-  "bob_ladue",
-  "caleb_curtis",
-  "caroline_davis",
-  "chris_votek",
-  "corey_fogel",
-  "dan_tepfer",
-  "dina_maccabee",
-  "dj_check_one",
-  "doors_that_dont",
-  "eric_marandi",
-  "glenn_zaleski",
-  "grant_gordy",
-  "john_grigsby",
-  "john_gunther",
-  "kjetil_jerve",
-  "maya_laliberte",
-  "mike_thies",
-  "pablo_eluchans",
-  "soft_talon",
-  "tomoko_omura",
-  "topu_lyo",
-]
+  'alejandro',
+  'ayo_awosika',
+  'beck_burger',
+  'bob_ladue',
+  'caleb_curtis',
+  'caroline_davis',
+  'chris_votek',
+  'corey_fogel',
+  'dan_tepfer',
+  'dina_maccabee',
+  'dj_check_one',
+  'doors_that_dont',
+  'eric_marandi',
+  'glenn_zaleski',
+  'grant_gordy',
+  'john_grigsby',
+  'john_gunther',
+  'kjetil_jerve',
+  'maya_laliberte',
+  'mike_thies',
+  'pablo_eluchans',
+  'soft_talon',
+  'tomoko_omura',
+  'topu_lyo',
+];

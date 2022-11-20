@@ -1,48 +1,48 @@
 // import Head from "next/head"
-import { Break } from "../../../components/mdx"
-import { Vimeo, Youtube } from "../../../components/video"
+import { Break } from '../../../components/mdx';
+import { Vimeo, Youtube } from '../../../components/video';
 // import * as content from "../../../danny/work.json"
-import { PostContainer } from "../../../components/postComponents"
-import Layout from "../../../components/layout"
-import { dannyMenu } from "../../../components/menu/menus"
+import { PostContainer } from '../../../components/postComponents';
+import Layout from '../../../components/layout';
+import { dannyMenu } from '../../../components/menu/menus';
 
-const content = require("../../../danny/work.json")
+const content = require('../../../danny/work.json');
 
 type Years = {
   years: [
     {
-      year: string
-      work: Work[]
-    }
-  ]
-}
+      year: string;
+      work: Work[];
+    },
+  ];
+};
 
 type Work = {
-  title: string
+  title: string;
   // subtitle: string
-  year: number
-  collaborators: { string: string }[]
-  tags?: string[]
-  type: "video" | "image" | "text" | "recording"
-  description: string[]
-  links: { text: string; href: string }[]
-  vimeo?: string
-  youtube?: string
-  spotify?: string
-  bandcamp?: string
-  image?: string
-}
+  year: number;
+  collaborators: { string: string }[];
+  tags?: string[];
+  type: 'video' | 'image' | 'text' | 'recording';
+  description: string[];
+  links: { text: string; href: string }[];
+  vimeo?: string;
+  youtube?: string;
+  spotify?: string;
+  bandcamp?: string;
+  image?: string;
+};
 
 const BandCamp = (props: { code: string }) => {
   return (
     <iframe
       style={{
-        border: "0",
-        width: "350px",
-        height: "621px",
-        display: "block",
-        marginLeft: "auto",
-        marginRight: "auto",
+        border: '0',
+        width: '350px',
+        height: '621px',
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
       }}
       src={`https://bandcamp.com/EmbeddedPlayer/album=${props.code}/size=large/bgcol=ffffff/linkcol=0687f5/transparent=true/`}
       seamless
@@ -52,12 +52,12 @@ const BandCamp = (props: { code: string }) => {
         Liechti, Ruther
       </a>
     </iframe>
-  )
-}
+  );
+};
 
 const Spotify = (props: { code: string }) => {
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
       <iframe
         src={`https://open.spotify.com/embed/album/${props.code}`}
         width="100%"
@@ -67,24 +67,24 @@ const Spotify = (props: { code: string }) => {
         allow="encrypted-media"
       ></iframe>
     </div>
-  )
-}
+  );
+};
 
 export default function Work() {
   return (
-    <Layout sectionPath={"danny"} menuData={dannyMenu}>
+    <Layout sectionPath={'danny'} menuData={dannyMenu}>
       <div>
         <h1
           style={{
-            textAlign: "center",
-            fontSize: "7rem",
-            color: "orchid",
-            margin: "1rem",
+            textAlign: 'center',
+            fontSize: '7rem',
+            color: 'orchid',
+            margin: '1rem',
           }}
         >
           Make Work
         </h1>
-        <PostContainer style={{ fontSize: "1.25rem", paddingTop: "20px" }}>
+        <PostContainer style={{ fontSize: '1.25rem', paddingTop: '20px' }}>
           I am always making things, but I never know what to do with those
           things when they're done. I have a bad habit of working on projects
           with all of my might and then having finally finished something I'm
@@ -92,16 +92,16 @@ export default function Work() {
           around in a cloud somewhere. This page is an effort to give these
           things a home.
         </PostContainer>
-        {((content as unknown) as Years).years.map((year, i) => {
+        {(content as unknown as Years).years.map((year, i) => {
           // console.log(year)
           return (
             <div key={i}>
               <h1
                 style={{
-                  textAlign: "center",
-                  fontSize: "7rem",
-                  color: "darkgoldenrod",
-                  border: "1px solid goldenrod",
+                  textAlign: 'center',
+                  fontSize: '7rem',
+                  color: 'darkgoldenrod',
+                  border: '1px solid goldenrod',
                 }}
               >
                 {year.year}
@@ -111,10 +111,10 @@ export default function Work() {
                   <div key={j}>
                     <h2
                       style={{
-                        textAlign: "center",
-                        fontSize: "3rem",
-                        color: "mediumorchid",
-                        textDecoration: "underline",
+                        textAlign: 'center',
+                        fontSize: '3rem',
+                        color: 'mediumorchid',
+                        textDecoration: 'underline',
                       }}
                     >
                       {work.title}
@@ -122,7 +122,7 @@ export default function Work() {
                     <PostContainer style={{ padding: 0 }}>
                       <div
                         style={{
-                          fontSize: "1.25rem",
+                          fontSize: '1.25rem',
                         }}
                       >
                         {work.description.map((p: string, k) => (
@@ -138,37 +138,37 @@ export default function Work() {
                     </div>
                     <div
                       style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        textAlign: "center",
+                        display: 'flex',
+                        flexDirection: 'column',
+                        textAlign: 'center',
                       }}
                     >
                       {work.collaborators.map((c: { string: string }, l) => {
                         return (
                           <p
                             style={{
-                              padding: "0px",
-                              margin: "0px",
-                              fontSize: "1.5rem",
+                              padding: '0px',
+                              margin: '0px',
+                              fontSize: '1.5rem',
                             }}
                             key={l}
                           >
                             <span>{Object.keys(c)[0]}</span>:
                             <span> {Object.values(c)[0]}</span>
                           </p>
-                        )
+                        );
                       })}
                     </div>
                     <Break />
                   </div>
-                )
+                );
               })}
             </div>
-          )
+          );
         })}
       </div>
     </Layout>
-  )
+  );
 }
 
 // {year.work.map((w) => {

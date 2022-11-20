@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Burger } from '../../menu';
-import useDropdownMenu from 'react-accessible-dropdown-menu-hook';
+// import useDropdownMenu from 'react-accessible-dropdown-menu-hook';
 import { MenuItem, StyledMenu, SelectedMenuItem } from './Menu.styled';
 import { capitalize, useStopAndWait } from '../../../utils/misc';
 import { useRouter } from 'next/router';
@@ -79,7 +79,7 @@ interface MenuProps extends React.HTMLAttributes<Element> {
 }
 
 const Menu = (props: MenuProps) => {
-  const { isOpen, setIsOpen } = useDropdownMenu(2);
+  // const { isOpen, setIsOpen } = useDropdownMenu(2);
   const router = useRouter();
   const { pathname, asPath, query } = router;
   const [open, setOpen] = useState(false);

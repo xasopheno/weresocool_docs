@@ -10,21 +10,12 @@ export function isTranslation(thing: any): thing is Translation {
 
 export const tutorialMenu: MenuDatum[] = [
   {
-    title: 'Documentation',
+    title: 'Tutorials',
     items: [
       {
         trans: { en: 'Getting Started', pt: 'Começando' },
         link: 'getting_started',
       },
-      {
-        trans: { en: 'Documentation', pt: 'Documentação' },
-        link: 'documentation',
-      },
-    ],
-  },
-  {
-    title: 'Tutorials',
-    items: [
       { trans: { en: 'welcome', pt: 'bem_vindo' }, link: 'welcome' },
       { trans: { en: 'overtones', pt: 'série_harmônica' }, link: 'overtones' },
       { trans: { en: 'overlay', pt: 'sobreposição' }, link: 'overlay' },
