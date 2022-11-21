@@ -200,7 +200,7 @@ function makeMutClosure(arg0, arg1, dtor, f) {
     return real;
 }
 function __wbg_adapter_24(arg0, arg1) {
-    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h4a6316bb66ff5447(arg0, arg1);
+    wasm._dyn_core__ops__function__FnMut_____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h7bc9a342e3ce6520(arg0, arg1);
 }
 
 /**
@@ -322,6 +322,9 @@ async function load(module, imports) {
 function getImports() {
     const imports = {};
     imports.wbg = {};
+    imports.wbg.__wbindgen_object_drop_ref = function(arg0) {
+        takeObject(arg0);
+    };
     imports.wbg.__wbindgen_cb_drop = function(arg0) {
         const obj = takeObject(arg0).original;
         if (obj.cnt-- == 1) {
@@ -331,8 +334,11 @@ function getImports() {
         const ret = false;
         return ret;
     };
-    imports.wbg.__wbindgen_object_drop_ref = function(arg0) {
-        takeObject(arg0);
+    imports.wbg.__wbg_randomFillSync_d2ba53160aec6aba = function(arg0, arg1, arg2) {
+        getObject(arg0).randomFillSync(getArrayU8FromWasm0(arg1, arg2));
+    };
+    imports.wbg.__wbg_getRandomValues_e57c9b75ddead065 = function(arg0, arg1) {
+        getObject(arg0).getRandomValues(getObject(arg1));
     };
     imports.wbg.__wbg_self_86b4b13392c7af56 = function() { return handleError(function () {
         const ret = self.self;
@@ -361,12 +367,6 @@ function getImports() {
     imports.wbg.__wbg_getRandomValues_dd27e6b0652b3236 = function(arg0) {
         const ret = getObject(arg0).getRandomValues;
         return addHeapObject(ret);
-    };
-    imports.wbg.__wbg_getRandomValues_e57c9b75ddead065 = function(arg0, arg1) {
-        getObject(arg0).getRandomValues(getObject(arg1));
-    };
-    imports.wbg.__wbg_randomFillSync_d2ba53160aec6aba = function(arg0, arg1, arg2) {
-        getObject(arg0).randomFillSync(getArrayU8FromWasm0(arg1, arg2));
     };
     imports.wbg.__wbindgen_json_parse = function(arg0, arg1) {
         const ret = JSON.parse(getStringFromWasm0(arg0, arg1));
@@ -540,8 +540,8 @@ function getImports() {
         const ret = wasm.memory;
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper81 = function(arg0, arg1, arg2) {
-        const ret = makeMutClosure(arg0, arg1, 5, __wbg_adapter_24);
+    imports.wbg.__wbindgen_closure_wrapper132 = function(arg0, arg1, arg2) {
+        const ret = makeMutClosure(arg0, arg1, 29, __wbg_adapter_24);
         return addHeapObject(ret);
     };
 
