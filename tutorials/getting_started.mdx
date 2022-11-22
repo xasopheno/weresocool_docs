@@ -4,24 +4,25 @@ next: welcome
 nextLink: welcome
 ---
 
-**<CoolText>WereSoCool</CoolText>** is a programming language for composing microtonal music. You might find this
-language useful if you want to make cool sounds and impress your friends/pets/plants. WereSoCool is available as a
-command line tool on macOS, Linux and Windows. You can also explore the language on Firefox and Chrome browsers in the **<CoolText>WereSoCool Playground</CoolText>** . 
+**<CoolText>WereSoCool</CoolText>** is a programming language for composing microtonal music. You might find this language useful if you want to make cool sounds and impress your friends/pets/plants. 
 
+The **WereSoCool CLI** is availble on **macOS**, **Linux** and **Windows**. You can also explore the language on Firefox and Chrome browsers in the **<CoolLink href={"/playground"}>WereSoCool Playground</CoolLink>** . 
+
+My recommended approach to learning the language is to do the tutorials in order and write your own composition after completing each one. 
+
+<Break/>
 
 ## Installing the WereSoCool CLI
 
-### From Source:
-You'll need Cargo and optionally Just.
+### Cargo:
 
-Rust: Cargo is the rust package manager for Rust. Install cargo by installing [Rustup](https://www.rust-lang.org/en-US/install.html).
+WereSoCool can be installed on macos, linux, and windows via cargo. You'll also need to install the system dependancies listed in the development section. 
 
-You can install from this source code by cloning this repo and then running:
+Cargo is the rust package manager for Rust. Install cargo by installing <CoolLink href={"https://www.rust-lang.org/en-US/install.html"}>Rustup</CoolLink>. After installing Cargo, run:
 
-1) If you have `just` installed, run `just install`
-    - Just is a command runner. Learn how to install just [here](https://github.com/casey/just).
+`cargo install weresocool`
 
-2) Or run `cargo install --path .` from the root of the repo.
+<Break/>
 
 ### macOS:
 The **<CoolText>WereSoCool CLI</CoolText>** is available on macOS via the homebrew package manager. If you do not have Homebrew installed, follow the installation instructions <CoolLink href={"https://brew.sh/"}>here</CoolLink>.
@@ -34,32 +35,33 @@ Install WereSoCool from Homebrew by running the following commands:
 
 ### Arch Linux:
 
-Available on the AUR [here](https://aur.archlinux.org/packages/weresocool).
+Available on the <CoolLink href={"https://aur.archlinux.org/packages/weresocool"}>AUR</CoolLink>!
 
 <Break/>
 
-### Cargo:
-
-WereSoCool can be installed on macos, linux, and windows via cargo. You'll also need to install the system dependancies listed in the development section. 
-
- Install cargo by installing [Rustup](https://www.rust-lang.org/en-US/install.html).
-
-`cargo install weresocool`
-
-<Break/>
 
 ### Windows:
 
-This software runs on Windows, but in a slightly limited capacity. On Windows, this software is compiled without mp3 and oggvorbis support. I mostly work on macos and linux machines, so I feel a bit out of my depths in Windows land. If you'd like to help work on the Windows implementation, please reach out. 
+This software runs on Windows, in a slightly limited capacity. On Windows, this software is compiled without mp3 and oggvorbis support (you can only print to wav, csv, and json). I mostly work on macos and linux machines, so I feel a bit out of my depths in Windows land. If you'd like to help work on the Windows implementation, please reach out. 
 
-You can install WereSoCool from source or via cargo. See above. 
+You can install WereSoCool from source or via cargo.
+
+### From Source:
+You'll need Cargo and Just.
+
+Cargo is the rust package manager for Rust. Install cargo by installing <CoolLink href={"https://www.rust-lang.org/en-US/install.html"}>Rustup</CoolLink>.
+
+You'll also need to install <CoolLink href={"https://github.com/casey/just"}>Just</CoolLink> - just is a cool cross-platform command runner. 
+
+You can install from this source code by cloning this repo and then running:
+
+`just install`
 
 
 <Break/>
 
 ## WereSoCool Playground:
- You can make cool sounds in on Firefox and Chrome browsers in the **<CoolLink href={"https://www.weresocool.org/playground"}>WereSoCool Playground</CoolLink>**. WereSoCool is single-threaded in the browser, so more complicated compositions will probably not render without clicks. The playground does not yet run on mobile.
-
+ You can make cool sounds in on Firefox and Chrome browsers in the **<CoolLink href={"/playground"}>WereSoCool Playground</CoolLink>**. WereSoCool is single-threaded in the browser, so more complicated compositions will probably not render without clicks. The playground does not yet run on mobile.
 
 
 <Break/>
@@ -83,6 +85,7 @@ Minimal syntax highlight is availble via the weresocool extension. Search for 'w
 <Break/>
 
 ### SublimeText
-Very minimal syntax highlight is availble via the weresocool package. 
-https://github.com/xasopheno/weresocool_sublimetext
+Minimal syntax highlight is availble via the weresocool package. You can find it on<CoolLink href={"https://github.com/xasopheno/weresocool_sublimetext"}>Github</CoolLink>.
+
+
 <Break/>
