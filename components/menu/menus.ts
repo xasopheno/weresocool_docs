@@ -93,6 +93,7 @@ export const dannyMenu: MenuDatum[] = [
 
     items: [
       { name: 'About', link: 'who/about' },
+      { name: 'discography', link: 'who/discography' },
       { name: 'Make Work', link: 'make' },
       { name: 'Itinerary', link: 'who/live' },
     ],
