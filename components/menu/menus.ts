@@ -16,6 +16,7 @@ export const tutorialMenu: MenuDatum[] = [
         trans: { en: 'Getting Started', pt: 'Começando' },
         link: 'getting_started',
       },
+      { trans: { en: 'WereSoCool CLI', pt: 'WereSoCool CLI' }, link: 'cli' },
       { trans: { en: 'welcome', pt: 'bem_vindo' }, link: 'welcome' },
       { trans: { en: 'overtones', pt: 'série_harmônica' }, link: 'overtones' },
       { trans: { en: 'overlay', pt: 'sobreposição' }, link: 'overlay' },
@@ -80,6 +81,10 @@ export const tutorialMenu: MenuDatum[] = [
         link: 'timbre',
       },
       {
+        trans: { en: 'import', pt: 'import' },
+        link: 'import',
+      },
+      {
         trans: { en: 'stems', pt: 'stems' },
         link: 'stems',
       },
@@ -89,13 +94,13 @@ export const tutorialMenu: MenuDatum[] = [
 
 export const dannyMenu: MenuDatum[] = [
   {
-    title: 'Danny Meyer',
+    title: 'Danny',
 
     items: [
       { name: 'About', link: 'who/about' },
       { name: 'discography', link: 'who/discography' },
-      { name: 'Make Work', link: 'make' },
       { name: 'Itinerary', link: 'who/live' },
+      { name: 'Make Work', link: 'make' },
     ],
   },
 ];

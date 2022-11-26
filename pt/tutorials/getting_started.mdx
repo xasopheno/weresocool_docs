@@ -1,35 +1,91 @@
 ---
 title: Getting Started
+next: WereSoCool CLI
+nextLink: cli
 ---
 
-> **<CoolText>WereSoCool</CoolText>** is a programming language for composing microtonal music. You might find this language useful if you want to make cool sounds and impress your friends/pets/plants. 
+**<CoolText>WereSoCool</CoolText>** é uma linguagem de programação para compor música microtonal. Você pode achar esse linguagem útil se quiser fazer sons legais e impressionar seus amigos/bichos/plantas. Essa linguagem não requer familiaridade com música microtonal ou programação de computador, mas a experiência com qualquer um deles certamente ajudará. 
 
-<Vimeo code={"131247474"}/>
+Minha abordagem recomendada para aprender o linguagem  é fazer os tutoriais em ordem e escrever sua própria composição depois de concluir cada um.
 
-## Try WereSoCool
+A **WereSoCool CLI** está disponível em **macOS**, **Linux** e **Windows**. Você também pode explorar o linguagem  nos navegadores Firefox e Chrome no **<CoolLink href={"/playground"}>WereSoCool Playground</CoolLink>**.
 
-You can download the **<CoolText>WereSoCool Application</CoolText>** which is a standalone editor. This is the coolest way to use WereSoCool and has some bells and even a few whistles. If you'd prefer to use your own editor, then you might enjoy the **<CoolText>WereSoCool CLI</CoolText>**. You can make some sounds in the browser with the **<CoolText>WereSoCool Playground</CoolText>**. WereSoCool is currently only single-threaded in the browser, so more complicated compositions will probably not render without clicks.
+<Break/>
 
-## WereSoCool Application 
-How to install the application
+## WereSoCool Playground:
 
-### macOS
-Download the most recent version of the application for macOS here.
-
-### Linux
-Download the most recent version of the application for Linux here.
-
-## WereSoCool CLI.
-How to install the CLI
-
-### macOS
-`brew install weresocool`
-
-### Arch Linux
-`pacman -S weresocool`
+Você pode fazer sons legais nos navegadores Firefox e Chrome no **<CoolLink href={"/playground"}>WereSoCool Playground</CoolLink>**. WereSoCool é de thread único no navegador, então composições mais complicadas provavelmente não serão renderizadas sem cliques. O playground ainda não no celular.
 
 
 <Break/>
 
-WereSoCool does not currently run on Windows. The underlying technologies are cross-platform, so it's certainly possible. I just don't have a machine to test it on. If you'd like to help get it running on Windows, please reach out. 
+## Instalando a WereSoCool CLI
 
+### Cargo:
+
+WereSoCool pode ser instalado em Macos, Linux e Windows via Cargo. Você também precisará instalar as dependências do sistema listadas na seção "development".
+
+Cargo é o "package manager" para Rust. Instale a Cargo instalando <CoolLink href={"https://www.rust-lang.org/en-US/install.html"}>Rustup</CoolLink>. Depois de instalar o Cargo, execute:
+
+`cargo install weresocool`
+
+<Break/>
+
+### macOS:
+A CLI WereSoCool está disponível no macOS via Homebrew. Se você não tiver o Homebrew instalado, siga as instruções de instalação <CoolLink href={"https://brew.sh/"}>aqui</CoolLink>.
+
+Instale o WereSoCool do Homebrew executando os seguintes comandos:
+
+`brew tap xasopheno/weresocool && brew install weresocool`
+
+<Break/>
+
+### Arch Linux:
+
+Disponível no <CoolLink href={"https://aur.archlinux.org/packages/weresocool"}>AUR</CoolLink>!
+
+<Break/>
+
+### Windows:
+
+Este software é executado no Windows, em uma capacidade limitada. No Windows, este software é compilado sem suporte a mp3 e oggvorbis (você só pode renderizar em wav, csv e json). Eu trabalho principalmente em macos e máquinas linux, então me sinto um pouco fora de minhas profundezas na terra do Windows. Se você quiser ajudar a trabalhar na implementação do Windows, entre em contato.
+
+Você pode instalar WereSoCool de "From Source" ou via Cargo.
+
+### From Source:
+Você precisará de Cargo e Just.
+
+Cargo é o "package manager" para Rust. Instale a Cargo instalando <CoolLink href={"https://www.rust-lang.org/en-US/install.html"}>Rustup</CoolLink>.
+
+Você também precisará instalar <CoolLink href={"https://github.com/casey/just"}>Just</CoolLink> - um executor de comandos multiplataforma legal.
+
+Você pode instalar o software "from source" clonando este repositório e executando:
+
+`just install`
+
+
+<Break/>
+
+## Suporte do editor
+Alguns realces de sintaxe simples estão disponíveis para alguns editores comuns. Se você gostaria de criar um plug-in para o seu editor favorito, entre em contato.
+
+<Break/>
+
+### Vim
+Atualmente, meu editor preferido é o NeoVim, portanto, o suporte no vim está à frente de outros navegadores. O pacote está disponível no <CoolLink href={"https://github.com/xasopheno/WereSoCool_vim"}>Github</CoolLink>.
+
+Se você usa o vim-plug, adicione a seguinte linha ao seu `init.vim` e execute `:PlugInstall`
+
+`Plug 'xasopheno/weresocool_vim'`
+
+<Break/>
+
+### VisualStudio Code
+O suporte mínimo do editor está disponível por meio da extensão weresocool. Pesquise por 'weresocool' em extensões ou <CoolLink href={"https://marketplace.visualstudio.com/items?itemName=weresocool.socool"}> instale-o no marketplace.</CoolLink>
+
+<Break/>
+
+### SublimeText
+O suporte mínimo do editor está disponível através do pacote weresocool. Você pode encontrá-lo no <CoolLink href={"https://github.com/xasopheno/weresocool_sublimetext"}>Github</CoolLink>.
+
+<Break/>

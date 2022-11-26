@@ -2,8 +2,7 @@ export const theme = {
   breakpoints: ['40em', '52em', '64em'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
-    body:
-      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'inherit',
     monospace: 'Menlo, monospace',
   },
@@ -36,41 +35,22 @@ export const theme = {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-    },
-    h1: {
-      variant: 'text.heading',
-      fontSize: 5,
-    },
-    h2: {
-      variant: 'text.heading',
-      fontSize: 4,
-    },
-    h3: {
-      variant: 'text.heading',
-      fontSize: 3,
-    },
-    h4: {
-      variant: 'text.heading',
-      fontSize: 2,
-    },
-    h5: {
-      variant: 'text.heading',
-      fontSize: 1,
-    },
-    h6: {
-      variant: 'text.heading',
-      fontSize: 0,
-    },
-    pre: {
-      fontFamily: 'monospace',
       code: {
-        color: 'inherit',
+        fontFamily: 'monospace',
+        fontSize: 'inherit',
+        letterSpacing: 'normal',
+        padding: '0.3em',
+        backgroundColor: '#373737',
       },
-    },
-    p: { variant: 'text.p', fontSize: 2 },
-    code: {
-      fontFamily: 'monospace',
-      fontSize: 'inherit',
+      h1: {
+        textDecoration: 'underline',
+      },
+      h2: {
+        textDecoration: 'underline',
+      },
+      h3: {
+        textDecoration: 'underline',
+      },
     },
   },
 };

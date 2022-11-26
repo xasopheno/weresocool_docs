@@ -80,6 +80,10 @@ export class CustomHighlightRules extends window.ace.acequire(
           regex: 'import',
         },
         {
+          token: 'import',
+          regex: ' as ',
+        },
+        {
           token: 'dot',
           regex: '\\.',
         },
