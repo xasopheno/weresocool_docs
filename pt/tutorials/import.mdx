@@ -4,26 +4,26 @@ next: stems
 nextLink: stems
 ---
 
-## `Operation: import` 
+## `Operação: import` 
 
-You can import compositions from other `.socool` files. 
+Você pode importar composições de outros arquivos `.socool`.
 
-The default behavior is to use the socool file name as the base name for the import, but you can use `as` syntax to rename the import. 
+O comportamento padrão é usar o nome do arquivo .socool como nome base para a importação, mas você pode usar a sintaxe `as` para renomear a importação.
 
-Having imported the file, you can use dot notation to access the part of the imported composition you want to use. 
+Depois de importar o arquivo, você pode usar a notação de ponto para acessar a parte da composição importada que deseja usar.
 
 <WereSoCool
   readOnly
   hideGutter
   language={
-`import some_dir/thing_from_other_file.socool
-import ../../other_dir/cool_thing.socool as whoa
+`import algum_diretório/coisa.socool
+import ../../outro_diretório/legal.socool as coisa2
 
 { f: 261.6, l: 1, g: 1, p: 0 }\n
 main = {
   Overlay [
-    thing_from_other_file.melody,
-    whoa.main
+    coisa.melody,
+    coisa2.main
   ]
 }`
 }/>

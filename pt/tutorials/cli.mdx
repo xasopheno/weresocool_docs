@@ -4,90 +4,84 @@ next: welcome
 nextLink: welcome
 ---
 
-Having installed the WereSoCool CLI, you can do a lot of cool things:
+Depois de instalar a WereSoCool CLI, você pode fazer muitas coisas legais:
 
 ## Demo
 
-All weird software should have a good demo. If you want to make a cool sound and impress your friends/pets/plants without doing any hard work, you can simply run:
+Todo software estranho deve ter uma boa demonstração. Se você quiser fazer um som legal e impressionar seus amigos/bichos/plantas sem fazer nenhum trabalho duro, você pode simplesmente executar:
 
 `weresocool demo` 
 
-This is a good way to check that WereSoCool is working correctly on your system. If you don't like the sound it makes, type `ctrl-c` to stop the application. You can always use `ctrl-c` to stop the application.
+Esta é uma boa maneira de verificar se WereSoCool está funcionando corretamente em seu sistema. Se você não gostar do som que ele faz, digite `ctrl-c` para parar o aplicativo. Você sempre pode usar `ctrl-c` para parar o aplicativo.
 
 <Break/>
 
 ## New
 
-Now that you've heard a cool sound, you might want to make a cool sound of your own. The easiest way to do this is to run: 
+Agora que você ouviu um som legal, você pode querer fazer um som legal de sua preferência. A maneira mais fácil de fazer isso é executar:
 
-  `weresocool new [the_cool_name_of_your_cool_song]` 
+`weresocool new [o_nome_legal_da_sua_composição_legal]` 
 
-That will create a new .socool file using the WereSoCool template. 
+Isso criará um novo arquivo `.socool` usando o modelo WereSoCool.. 
 
 <Break/>
 
 ## Play
 
-If you want to hear a composition written in WereSoCool, you can run:
+Se você quiser ouvir uma composição escrita em WereSoCool, você pode executar:
 
 `weresocool play [filepath]`
 
-This will play the song one time. 
+Isso tocará a música uma vez.
 
 <Break/>
 
-## Watch
+Quando você está desenvolvendo uma música, você vai querer usar o flag `--watch`:
 
-When you're developing a song, you'll want to use the watch command:
+`weresocool play [filepath] --watch`
 
-`weresocool watch [filepath]`
+Isso repetirá a composição toda vez que o arquivo for salvo.
 
-This will replay the composition every time the file is saved.
-
-When I'm composing, what I'll usually do is `weresocool watch` the file that I'm working in a terminal side by side with the composition in my editor
+Quando estou compondo, o que normalmente faço é `weresocool play [composition] --watch` o arquivo que estou trabalhando em um terminal lado a lado com a composição em meu editor.
 
 <Break/>
 
 ## Print
 
-You can render a .socool file to a number of different targets. The default is a `.wav` file. 
+Você pode renderizar um arquivo `.socool` para vários alvos diferentes. O padrão é um arquivo `.wav`.
 
-`weresocool print [filename]` will render that composition to a wav file. 
+`weresocool print [filename]` renderizará essa composição em um arquivo wav.
 
-You can optionally pass a number of other flags. 
+Você pode, opcionalmente, passar vários outros flags.
   Usage: weresocool print [OPTIONS] [filename]
   Options:
       --output_dir               [output_dir]
-      --wav                      print a wav file (default)
-      --mp3                      print an mp3
-      --oggvorbis                print an oggvorbis file
-      --csv                      print a csv file
-      --json                     print a json file
-      --stems                    print stems as a zip file
-      --sound                    print all sound file types
-      --all                      print all file types
+      --wav                      imprimir um arquivo wav (padrão)
+      --mp3                      imprimir um mp3
+      --oggvorbis                imprimir um oggvorbis arquivo
+      --csv                      imprimir um csv arquivo
+      --json                     imprimir um json arquivo
+      --stems                    imprimir stems como um arquivo zip
+      --sound                    imprimir todos os tipos de arquivo de som
+      --all                      imprimir todos os tipos de arquivo
 
 <Break/>
 
 ## Help
 
-You can always use the help flag when you get stuck. 
+Você sempre pode usar o sinalizador de ajuda quando ficar preso. Infelizmente, a ajuda será impressa em inglês.
 
-For example: `weresocool --help` will print the following:
+`weresocool --help` imprimirá o seguinte:
 
 ```
+Usage: weresocool [COMMAND]
+
 Commands:
-  help   Print this message or the help of the given subcommand(s)
-  demo   Hear a cool sound
-    Usage: weresocool demo
   new    Create a new .socool file from the template
-    Usage: weresocool new <filename>
-  play   Render a .socool file
-    Usage: weresocool play <filename>
-  watch  Watch a .socool file. On file save, the composition will be re-rendered
-    Usage: weresocool watch <filename>
+  play   Render a .socool file. Run with --watch to rerend on file save
+  demo   Hear a cool sound
   print  Print a .socool composition to a file
-    Usage: weresocool print [OPTIONS] [filename]
+  help   Print this message or the help of the given subcommand(s)
 ```
 
 
