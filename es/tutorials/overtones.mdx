@@ -1,0 +1,106 @@
+---
+title: Sobretonos 
+next: Sobrepuesta
+nextLink: overlay
+---
+
+## `Operación: Seq`
+La siguiente operación más útil es la operación Sequence o Seq. Seq ~> secuencia.
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`Seq [operaciones]`}
+/>
+
+Podemos usar `Seq` para crear una serie de sonidos. Estas son las primeras 12 notas de la serie de armónicos que comienzan en 261,6 Hz: una "C" (Do) en el piano.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/7, g: 1, p: 0 }\n
+main = {
+  Seq [
+    Fm 1, 
+    Fm 2, 
+    Fm 3, 
+    Fm 4, 
+    Fm 5, 
+    Fm 6, 
+    Fm 7, 
+    Fm 8,
+    Fm 9,
+    Fm 10, 
+    Fm 11, 
+    Fm 12
+  ]
+}`
+}/>
+
+## Descubriendo intervalos
+
+Hay intervalos que aparecen en la música de todo el mundo. ¿De dónde vienen? Provienen de una estructura en la naturaleza que se llama serie de sobretonos (también conocida como serie armónica) en la que cada frecuencia es un múltiplo entero de una fundamental. Exploremos la serie armónica y encontremos algunos sonidos antiguos y nuevos.
+
+### Complejidad del intervalo
+
+Los intervalos se nombran en relación con la fundamental. En WereSoCool, lo fundamental se puede describir mediante la
+operación `Fm 1`. El intervalo simple es al unísono. Fm 1 suena al mismo tiempo que Fm 1. Siguiendo al unísono está la
+duplicación (Fm 2) y la reducción a la mitad de las frecuencias (Fm 1/2) que vimos en el último tutorial. Una
+frecuencia duplicada se conoce como una octava en la teoría musical occidental (TMO). Otra forma de decirlo es que la distancia entre los sobretonos 1 y 2 es una octava.
+
+
+¿Qué tal la distancia entre el segundo y el tercer armónico? El nombre en TMO es `Perfect 5th`. Escucha a continuación el intervalo. Primero en la posición natural en la serie de armónicos y luego la proporción transpuesta una octava hacia abajo para que podamos aquí en el contexto de la fundamental, `Fm 1`.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+   Seq [
+   -- Primero en su posición natural en la serie armónica.
+     Fm 2,
+     Fm 3,
+     Fm 2,
+   -- Y ahora usaremos directamente el intervalo -- 3/2 -- que sonará en
+   -- la misma octava que la fundamental.
+     Fm 1,
+     Fm 3/2,
+     Fm 1,
+   ]
+}`
+}/>
+
+### Escala Mayor
+
+Podemos descubrir todo tipo de intervalos hermosos y útiles explorando las distancias entre las series de armónicos naturales.
+
+Aquí hay una escala de C mayor (261,6 Hz es un A) construida usando proporciones de la serie de armónicos. La primera nota es la fundamental. El segundo es la distancia entre el 9 y el 8. El tercer intervalo es la distancia entre los sobretonos 5 y 4...etc...
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/3, g: 1, p: 0 }\n
+main = {
+  Seq [
+    Fm 1, Fm 9/8, Fm 5/4, Fm 4/3, 
+    Fm 3/2, Fm 5/3, Fm 15/8, Fm 2
+  ]
+}`
+}/>
+
+### Haz una melodía
+
+Ahora podemos crear todo tipo de maravillosas melodías y descubrir intervalos nuevos y geniales. Tómese un momento para escribir su propia melodía.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/7, g: 1, p: 0 }\n
+main = {
+  Seq [
+    Fm 1, Fm 5/4, Fm 3/2, Fm 5/3, 
+    Fm 7/4, Fm 2, Fm 3/2, Fm 9/8, 
+    
+    Fm 1, Fm 25/24, Fm 9/8, Fm 6/5, 
+    Fm 5/4, Fm 3/2, Fm 15/8, Fm 3/2,
+    
+    Fm 2, Fm 9/8, Fm 4/3, Fm 5/3, 
+    Fm 3/2, Fm 4/3, Fm 5/4, Fm 9/8, 
+    
+    Fm 1, Fm 5/4, Fm 3/2, Fm 2, Fm 3/2, Fm 5/4, Fm 1/2
+  ]
+}`
+}/>
+

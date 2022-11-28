@@ -1,0 +1,92 @@
+---
+title: More Expressive Generators
+next: cool_coefficients
+nextLink: cool_coefficients
+---
+
+Generators are super cool. Let's keep going with them. 
+
+### Infinte Melodies
+
+We are going to stay in ET(12) for now. Using generators, we
+can make some beautiful, long and winding melodic structures. 
+Mark Turner, eat your heart out.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/8, g: 1, p: 0 }\n
+-- Three Melodies from generators. 
+main = {
+  Overlay [Fm 1/2, Fm 1, Fm 2]
+  | Seq [
+    *(
+      f: 0|12 [7, -3, -4, -2, 1]
+    ) Take 30,
+    Fm 0,
+    *(
+      f: 0|12 [-3, 4, 3, 2, -4, 2, 1, -2]
+    ) Take 25,
+    Fm 0,
+    *(
+      f: 12|12 [2, -3, 4, -5, 8, -3, -2, 1, -2, 2, -3, -1, -1, 2]
+    ) Take 60,
+  ]
+}`
+}/>
+
+# Time Feels
+Oh, musicians love to talk about time feel. One of the 
+biggest compliments you can give someone. 
+"Man...she has the best time feel..." 
+For a programming language, I think WereSoCool
+has a pretty good time feel. Generators are 
+a really nice place to explore the relationship
+between melody, tempo, and time feel. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/5, g: 1, p: 0 }\n
+-- Three different time feels from generators. 
+main = {
+  Overlay [Fm 1/2, Fm 1, Fm 2]
+  | Seq [
+    -- Swinging, but relatively straight
+    *(
+        f: 0|12 [7, -3, -4, -2, 1],
+        l: 13|13 [-3, 3],
+        -- These gain generators accent the upbeats
+        g: 10|10 [-3, 3]
+    ) Take 31,
+    Fm 0,
+    -- Pretty swinging
+    *(
+        f: 0|12 [7, -3, -4, -2, 1],
+        l: 15|13 [-6, 6],
+        g: 10|10 [-3, 3]
+    ) Take 31,
+    Fm 0,
+    -- Quite swung.
+    *(
+        f: 0|12 [7, -3, -4, -2, 1],
+        l: 16|13 [-8, 8],
+        g: 10|10 [-3, 3]
+    ) Take 31
+  ]
+}
+`
+}/>
+
+# Dynamics
+Any easy way to add dynamics to something you have already
+written is to ModBy [generator].
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/6, g: 1, p: 0 }\n
+-- Three different time feels from generators. 
+main = {
+  Overlay [Fm 1/2, Fm 1, Fm 2]
+  | ET(12) @ [Random(35)]
+  | ModBy [
+    *(g: 10|10 [-1]) Take 10
+  ]
+}`
+}/>
+

@@ -1,0 +1,81 @@
+---
+title: hola_mundo.socool
+next: Sobretonos
+nextLink: overtones
+---
+
+WereSoCool es un lenguaje para componer música microtonal. Puede encontrar este idioma útil si desea hacer sonidos geniales e impresionar a sus amigos/mascotas/plantas.
+
+## Origen
+
+Si quieres hacer sonido en WereSoCool, necesitarás un archivo `.socool`. En la parte superior de su archivo `.socool`, necesitará un `origen`:
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`{ f: 220, l: 1, g: 1, p: 0 }`}
+/>
+
+Esta expresión define el 'origen' de nuestro programa. Cada archivo `.socool` es esencialmente una serie de operaciones en un punto.
+
+- f es su frecuencia inicial. en este caso, 220 que resulta ser una "A".
+- l es su longitud (duración) inicial en segundos. en este caso, 1 segundo.
+- g es su ganancia inicial. más pequeño es más silencioso, más grande es más fuerte.
+- p es tu "pan" inicial. 0 está en el medio. -1 está a la izquierda. 1 está a la derecha
+
+
+Cada programa `.socool` también necesita un bloque `main`.
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`main = {
+  sonidos_que_quieres_hacer
+}`
+}/>
+
+---
+
+## `Operación: Fm (Multiplicación de Frecuencia)`
+También necesitamos una operación para hacer algo genial. La primera operación que usaremos es `Fm`. Esta operación multiplica la frecuencia de su entrada por el multiplicador proporcionado. Los números en WereSoCool pueden ser números enteros, decimales o racionales.
+
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`-- las líneas que comienzan con "--" son comentarios y no se ejecutarán
+-- Fm 1 es la identidad de Fm.
+Fm 1
+-- Los valores de Fm superiores a 1 serán mayores.
+-- Una octava es una duplicación de frecuencia,
+-- entonces Fm 2 es la misma nota una octava arriba y
+-- Fm 4 estaría otra octava por encima de eso.
+Fm 2
+Fm 4
+-- Los valores de Fm inferiores a 1 reducirán la frecuencia.
+-- Fm 1/2 es la misma nota una octava más abajo
+Fm 1/2
+-- Fm 0 es silencioso.
+Fm 0`
+}/>
+
+---
+
+## Poniendolo todo junto
+
+Ahora, hagamos nuestro primer sonido genial. Como no hay otras operaciones en nuestro programa, esta operación se aplicará directamente a nuestro `origen`.
+
+Haga clic en "play" y escuchará una onda sinusoidal a 220 Hz que dura 1 segundo antes de desvanecerse. La ganancia es 1 y el sonido se panoramiza a 0, que es el centro.
+
+Intente cambiar el número en la operación Fm. Recordatorio: el número tiene que ser >= 0. También puedes cambiar los valores en el `origen` y ver cómo cambia el sonido.
+
+<WereSoCool language={`-- las líneas que comienzan con "--" son comentarios
+-- y no se ejecutará.
+-- Presionando Shift-Enter también se reproducirá
+-- A medida que las canciones se hacen más largas, es posible que desee
+-- detenerlos con cmd + enter (ctl + enter en linux/windows).
+{ f: 220, l: 1, g: 1, p: 0 }\n
+principal = {
+   FM 1
+}`
+}/>
+

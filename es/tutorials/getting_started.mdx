@@ -1,0 +1,93 @@
+---
+title: Comenzando
+next: WereSoCool CLI
+nextLink: cli
+---
+
+**<CoolText>WereSoCool</CoolText>** es un lenguaje de programación para componer música microtonal. Puede encontrar este idioma útil si desea hacer sonidos geniales e impresionar a sus amigos/mascotas/plantas. Este lenguaje no requiere familiaridad ni con la música microtonal ni con la programación informática, pero la experiencia con cualquiera de los dos sin duda ayudará.
+
+Mi enfoque recomendado para aprender el idioma es hacer los tutoriales en orden y escribir su propia composición después de completar cada uno.
+
+**WereSoCool CLI** está disponible en **macOS**, **Linux** y **Windows**. También puede explorar el idioma en los navegadores Firefox y Chrome en **<CoolLink href={"/playground"}>WereSoCool Playground</CoolLink>**.
+
+<Break/>
+
+## WereSoCool Playground:
+
+Puedes hacer sonidos geniales en los navegadores Firefox y Chrome en el **<CoolLink href={"/playground"}>WereSoCool
+Playground</CoolLink>**. WereSoCool tiene un solo subproceso en el navegador, por lo que es probable que las composiciones más complicadas no se rendericen sin hacer clic. El WereSoCool Playground aún no se ejecuta en dispositivos móviles.
+
+
+<Break/>
+
+## Instalación de la CLI de WereSoCool
+
+### Cargo:
+
+WereSoCool se puede instalar en macOS, Linux y Windows a través de Cargo. También deberá instalar las dependencias del sistema enumeradas en la sección de desarrollo.
+
+Cargo es el "package manager" para Rust. Instale Cargo instalando <CoolLink href={"https://www.rust-lang.org/en-US/install.html"}>Rustup</CoolLink>. Después de instalar Cargo, ejecute:
+
+`cargo install weresocool`
+
+<Break/>
+
+### macOS:
+La CLI de WereSoCool está disponible en macOS a través de Homebrew. Si no tiene Homebrew instalado, siga las instrucciones de instalación <CoolLink href={"https://brew.sh/"}>aquí</CoolLink>.
+
+Instale WereSoCool desde Homebrew ejecutando los siguientes comandos:
+
+`brew tap xasopheno/weresocool && brew install weresocool`
+
+<Break/>
+
+### Arch Linux:
+
+¡Disponible en <CoolLink href={"https://aur.archlinux.org/packages/weresocool"}>AUR</CoolLink>!
+
+<Break/>
+
+
+### Windows:
+
+Este software se ejecuta en Windows con una capacidad limitada. En Windows, este software está compilado sin compatibilidad con mp3 y oggvorbis (solo puede imprimir en wav, csv y json). Trabajo principalmente en máquinas MacOS y Linux, por lo que me siento un poco fuera de mis profundidades en la tierra de Windows. Si desea ayudar a trabajar en la implementación de Windows, contáctame.
+
+Você pode instalar o WereSoCool "From Source" ou via Cargo.
+
+### From Source:
+Você precisará de Cargo e Just.
+
+Cargo es el "package manager" para Rust. Instale Cargo instalando <CoolLink href={"https://www.rust-lang.org/en-US/install.html"}>Rustup</CoolLink>. Después de instalar Cargo, ejecute:
+
+También necesitarás instalar <CoolLink href={"https://github.com/casey/just"}>Just</CoolLink>, un excelente ejecutor de comandos multiplataforma.
+
+Puede instalar desde este source code clonando este repositorio y luego ejecutando:
+
+`just install`
+
+
+<Break/>
+
+## Editor Support
+Algunos editores comunes tienen disponible un resaltado de sintaxis simple. Si desea crear un complemento para su editor favorito, contáctame.
+
+<Break/>
+
+### Vim
+Mi editor de elección actualmente es NeoVim, por lo que el soporte en vim está por delante de otros editores. Disponible en <CoolLink href={"https://github.com/xasopheno/WereSoCool_vim"}>Github</CoolLink>.
+
+Si usa vim-plug, agregue la siguiente línea `init.vim` y ejecute `:PlugInstall`
+
+`Plug 'xasopheno/weresocool_vim'`
+
+<Break/>
+
+### VisualStudio Code
+El resaltado de sintaxis mínima está disponible a través de la extensión weresocool. Busque 'weresocool' en las extensiones o <CoolLink href={"https://marketplace.visualstudio.com/items?itemName=weresocool.socool"}> instálelo desde el mercado.</CoolLink>
+<Break/>
+
+### SublimeText
+El resaltado de sintaxis mínima está disponible a través del paquete weresocool. Puede encontrarlo en <CoolLink href={"https://github.com/xasopheno/weresocool_sublimetext"}>Github</CoolLink>.
+
+
+<Break/>

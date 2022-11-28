@@ -1,0 +1,91 @@
+---
+title: Operaciones de Puntos
+next: Operaciones de Pipe
+nextLink: pipe_operations
+---
+
+Let's take a moment to look at all of the `Point Operations` These operations are the basis of all other operations.
+
+## `Fm <number> - Frequency Multiply`
+
+- Multiplies the input frequency by the number provided. 
+- Value may be any Number >= 0. 
+- Very high or very low values many not be audible. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Fm 5/4
+}`
+}/>
+
+## `Fa <number> - Frequency Add`
+
+- Adds the number provided to the input frequency. 
+- Value may be any Number. 
+- If the sum of the input frequency and the number provided is less than 0, the sound will be silent. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Fa -7
+}`
+}/>
+
+## `Lm <number> - Length Multiply`
+
+- Multiplies the input length by the number provided. 
+- Value may be any Number >= 0. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Lm 3
+}`
+}/>
+
+## `Gm <number> - Gain Multiply`
+
+- Multiplies the input gain by the number provided. 
+- Value may be any Number >= 0. 
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Gm 1/2
+}`
+}/>
+
+## `Pm <number> - Pan Multiply`
+
+- Multiplies the input pan by the number provided. 
+- Value may be any number. 
+- It is recommended to keep pan values between -1 and 1
+- Positive numbers are panned left and negative numbers are panned right.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: -1 }\n
+main = {
+  Pm 7/8
+}`
+}/>
+
+## `Pa <number> - Pan Add`
+
+- Adds the number provided to the input pan. 
+- Value may be any number. 
+- It is recommended to keep pan values between -1 and 1
+- Positive numbers are panned left and negative numbers are panned right.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Pa 9/10 
+}`
+}/>
+
+## Identity Operations
+ - Some operations are "no-ops" that act as an identity. 
+ - Fm 1, Gm 1, Lm 1, Pm 1, Fa 0 and Pa 0 are identity operations.
+
+

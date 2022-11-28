@@ -1,0 +1,49 @@
+---
+title: Pipe
+next: pipe_and_sequence
+nextLink: pipe_and_sequence
+---
+
+## `Operation: operation | operation - Pipe` 
+One of the most import Operations in this language is "|" (Pipe), 
+because it allows you to chain together operations.
+
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Seq [
+    -- Operations are cumulative, so:
+    -- Fm 3/2 | Fm 5/4 == Fm 15/8
+    Fm 1,
+    Fm 3/2 | Fm 5/4,
+    Fm 1,
+    Fm 15/8
+  ]
+}`
+}/>
+
+<WereSoCool language={
+`{ f: 261.6, l: 1/3, g: 1, p: 0 }\n
+-- We can factor out our major_scale into its own block.
+major_scale = {
+	Seq [
+        Fm 1, Fm 9/8, Fm 5/4, Fm 4/3, 
+        Fm 3/2, Fm 5/3, Fm 15/8, Fm 2
+  ]
+}\n
+main = {
+  Seq [
+    -- We can use the major scale block by name here.
+    major_scale,
+    -- Now we can use the pipe operation to play a major scale up a step and twice as fast
+    major_scale
+    -- multiply all the frequencies in our major_scale by 9/8 to go up one step.
+    | Fm 9/8 
+    -- multiply all the length of all the notes in our 
+    -- major_scale by 1/2
+    | Lm 1/2
+  ]
+}`
+}/>
+

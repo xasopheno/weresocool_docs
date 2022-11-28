@@ -1,5 +1,11 @@
 import { useLoadedWasm } from './useWasm';
 
+export type SupportedLocale = 'es' | 'pt' | 'en';
+export const supportedLocales = ['es', 'pt', 'en'];
+export function supportedLocaleFromLocale(locale: string | undefined): string {
+  return locale && supportedLocales.includes(locale) ? locale : 'en';
+}
+
 export const capitalize = (s: string): string => {
   return s
     .split('_')

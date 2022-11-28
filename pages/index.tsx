@@ -4,6 +4,7 @@ import { WSCWithRatioChart } from '../components/WSC_with_RatioChart';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { SupportedLocale, supportedLocaleFromLocale } from '../utils/misc';
 
 const language = `{ f: 311.127, l: 1, g: 1, p: 0 }
 
@@ -104,24 +105,29 @@ const GetStartedButton = styled.div`
   }
 `;
 
-// const TakeTutorialButton = styled.div`
-// padding-left: 20px;
-// cursor: pointer;
-// color: darkgoldenrod;
-// :hover {
-// color: goldenrod;
-// }
-// `;
+const welcomeTexts = {
+  pt: {
+    description: 'Uma linguagem para compor música microtonal',
+    getStarted: 'Começando',
+  },
+  en: {
+    description: 'A language for composing microtonal music',
+    getStarted: 'Get Started',
+  },
+  es: {
+    description: 'Un lenguaje para componer música microtonal',
+    getStarted: 'Empieza',
+  },
+};
 
 const App = () => {
   const { readyState } = useLoadedWasm();
   const router = useRouter();
-  const isPt = router.locale === 'pt';
-  const description = isPt
-    ? 'Uma linguagem para compor música microtonal'
-    : 'A language for composing microtonal music';
-  const getStarted = isPt ? 'Começando' : 'Get Started';
-  // const { pathname, asPath, query } = router;
+  let supportedLocale = supportedLocaleFromLocale(
+    router.locale,
+  ) as SupportedLocale;
+
+  const { description, getStarted } = welcomeTexts[supportedLocale];
 
   return (
     <div>

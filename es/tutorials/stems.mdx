@@ -1,0 +1,35 @@
+---
+title: Stems
+---
+
+## `Operation: Stems` 
+You can use the weresocool cli to print stems. 
+Pipe a word starting with a hash tag (#) into 
+an any operation. 
+
+You can imagine the tag cascading through the 
+language and anything it touches on the way 
+to becoming a sound will become a part of that stem. 
+
+On the main block you can use the following syntax 
+to choose stems to print. 
+`main = { ops } -> [list_of_stems]`
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+thing1 = {
+  #stem1 | Seq [Fm 1, Fm 9/8]
+}\n
+thing2 = {
+  #stem2 | Seq [Fm 3/2, Fm 9/8]
+}\n
+main = {
+  Overlay [
+    thing1,
+  ]
+  | Seq [AsIs | Repeat 2, Reverse]
+  | Repeat 3
+} -> [stem1, stem2]`
+}/>
+
+

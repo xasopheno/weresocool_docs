@@ -22,6 +22,7 @@ import {
   tutorialFilePaths,
   TUTORIAL_PATH,
   PT_TUTORIAL_PATH,
+  tutorialPathFromLocale,
 } from '../../utils/mdxUtils';
 import { tutorialMenu } from '../../components/menu/menus';
 import { useRouter } from 'next/router';
@@ -81,7 +82,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
 }
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const slug = context.params?.slug;
-  let tutorialPath = context.locale === 'pt' ? PT_TUTORIAL_PATH : TUTORIAL_PATH;
+  const tutorialPath = tutorialPathFromLocale(context.locale);
   const postFilePath = path.join(tutorialPath, `${slug}.mdx`);
   const source = fs.readFileSync(postFilePath);
 

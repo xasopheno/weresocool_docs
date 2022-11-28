@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Burger } from '../../menu';
-// import useDropdownMenu from 'react-accessible-dropdown-menu-hook';
 import { MenuItem, StyledMenu, SelectedMenuItem } from './Menu.styled';
 import { capitalize, useStopAndWait } from '../../../utils/misc';
 import { useRouter } from 'next/router';
@@ -81,7 +80,7 @@ interface MenuProps extends React.HTMLAttributes<Element> {
 const Menu = (props: MenuProps) => {
   // const { isOpen, setIsOpen } = useDropdownMenu(2);
   const router = useRouter();
-  const { pathname, asPath, query } = router;
+  const { pathname, asPath, query, locale } = router;
   const [open, setOpen] = useState(false);
   const { isMobile } = useWindowSize();
 
@@ -100,7 +99,7 @@ const Menu = (props: MenuProps) => {
               Language
             </h3>
             <MenuItem
-              selected={false}
+              selected={!router.locale || router.locale === 'en'}
               onClick={() =>
                 router.push({ pathname, query }, asPath, { locale: 'en' })
               }
@@ -108,12 +107,20 @@ const Menu = (props: MenuProps) => {
               English
             </MenuItem>
             <MenuItem
-              selected={false}
+              selected={Boolean(router.locale) && router.locale === 'pt'}
               onClick={() =>
                 router.push({ pathname, query }, asPath, { locale: 'pt' })
               }
             >
               Portuguêse
+            </MenuItem>
+            <MenuItem
+              selected={Boolean(router.locale) && router.locale === 'es'}
+              onClick={() =>
+                router.push({ pathname, query }, asPath, { locale: 'es' })
+              }
+            >
+              Español
             </MenuItem>
           </div>
         )}

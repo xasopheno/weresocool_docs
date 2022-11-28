@@ -1,0 +1,99 @@
+---
+title: O[] Operation
+next: fit_length
+nextLink: fit_length
+---
+
+If you had as much fun making cool chords as I do, you'll be happy to know
+there's a short-hand for doing just that. 
+
+
+## `Operation: O[]` 
+<WereSoCool
+  readOnly
+  hideGutter
+  language={
+`-- Each set of four values describes 
+-- the frequency multiply, frequency add, 
+-- gain multiply, and pan add of a note. 
+O[(Fm, Fa, Gm, Pa), ...]`}
+/>
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+-- For example: This O[] describes two notes. 
+-- The bottom is the fundamental - 1/1 
+-- at gain 1 panned 1/2 the right and 
+-- the top is a note an octave above the fundemental 
+-- plus 2hz at gain 1 panned 1/2 to the left. 
+-- I generally organize notes with the lowest note on the bottom.
+  O[
+    (2/1, 2, 1, 1/2),
+    (1/1, 0, 1, -1/2),
+  ]
+}`
+}/>
+
+
+Inside of the O[], you can put as many (Fm, Fa, Gm, Pa)'s as you'd like. 
+this can be a great way to compose multi-voice chords in a series 
+or - as it's used in the song below - to add overtones to other operations.
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+overtones = {
+-- O[(Fm, Fa, Gm, Pa), ...]
+  O[
+    (3/1, 1, 1/4, -1/4),
+    (3/1, 0, 1/4, 1/4),
+    (1/1, 2, 1, 1/2),
+    (1/1, 0, 1, -1/2),
+  ]
+}\n
+-- This is a little two part song:
+melody1 = {
+  Seq [
+    Fm 1, Fm 9/8, Fm 5/4 | Lm 2, Fm 9/8, Fm 1,
+    Fm 3/2 | Lm 4, Fm 5/3, Fm 9/8
+  ]
+}\n
+melody2 = {
+  Seq [
+    Fm 5/4, Fm 3/2, Fm 5/3 | Lm 2, Fm 3/2, Fm 4/3,
+    Fm 9/8 | Lm 3/2, Fm 5/4 | Lm 3/2, Fm 4/3 | Lm 3 
+  ]
+  | Fm 1/2
+}\n
+main = {
+-- "overtones" contains 4 voices 
+-- defined above with O[] syntax.
+-- by Piping it into the Overlay 
+-- results in the same sound as
+-- if we wrote the following:
+-- Overlay [
+--   overtones | melody1,
+--   overtones | melody2
+--]
+  overtones
+  | Overlay [
+    melody1,
+    melody2,
+  ]
+--  Then we play the melodies above first at Fm 1
+--  (where they would normally play),
+--  then play it backwards using Reverse.
+  | Seq [
+    Fm 1, 
+    Reverse
+  ]
+-- faster
+  | Lm 2/5
+-- 2x
+  | Repeat 2 
+-- quieter
+  | Gm 1/3
+}
+`
+}/>
+
+

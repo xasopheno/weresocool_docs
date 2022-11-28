@@ -1,0 +1,87 @@
+---
+title: WereSoCool CLI
+next: Bienvenido
+nextLink: welcome
+---
+
+Después de haber instalado la CLI de WereSoCool, puede hacer muchas cosas geniales:
+
+## Demo
+
+Todo software extraño debería tener una buena demostración. Si desea hacer un sonido genial e impresionar a sus amigos/mascotas/plantas sin hacer ningún trabajo duro, simplemente puede ejecutar:
+
+`weresocool demo` 
+
+Esta es una buena manera de comprobar que WereSoCool funciona correctamente en su sistema. Si no le gusta el sonido que hace, escriba `ctrl-c` para detener la aplicación. Siempre puede usar `ctrl-c` para detener la aplicación.
+
+<Break/>
+
+## New
+
+Ahora que ha escuchado un sonido genial, es posible que desee crear uno propio. La forma más fácil de hacer esto es ejecutar:
+
+`weresocool new [el_cool_nombre_de_tu_cool_composición]` 
+
+Eso creará un nuevo archivo `.socool` utilizando la plantilla WereSoCool.
+
+<Break/>
+
+## Play
+
+Si quieres escuchar una composición escrita en WereSoCool, puedes ejecutar:
+
+`weresocool play [filepath]`
+
+Esto reproducirá la canción una vez.
+
+<Break/>
+
+Mientras está componiendo, querrá usar `--watch`:
+
+`weresocool play [filepath] --watch`
+
+Esto reproducirá la composición cada vez que se guarde el archivo.
+
+Cuando estoy componiendo, lo que normalmente hago es `weresocool play [composition] --watch` el archivo en el que estoy trabajando en una terminal al lado de la composición en mi editor.
+
+<Break/>
+
+## Print
+
+Puede renderizar un archivo `.socool` a varios objetivos diferentes. El valor predeterminado es un archivo `.wav`.
+
+`weresocool print [nombre_de_archivo]` convertirá esa composición en un archivo wav.
+
+Opcionalmente, puede pasar una serie de otras opciones:
+  Usage: weresocool print [OPTIONS] [filename]
+  Opciones:
+         --output_dir [salida_dir]
+         --wav imprime un archivo wav (predeterminado)
+         --mp3 imprime un mp3
+         --oggvorbis imprime un archivo oggvorbis
+         --csv imprime un archivo csv
+         --json imprime un archivo json
+         --stems imprimir stems como un archivo zip
+         --sonido imprime todos los tipos de archivos de sonido
+         --all imprime todos los tipos de archivos
+
+<Break/>
+
+## Help
+
+You can always use the help flag when you get stuck. Sadly, the help will be in english. 
+
+Por ejemplo: `weresocool --help` imprimirá lo siguiente:
+
+```
+Usage: weresocool [COMMAND]
+
+Commands:
+  new    Create a new .socool file from the template
+  play   Render a .socool file. Run with --watch to rerend on file save
+  demo   Hear a cool sound
+  print  Print a .socool composition to a file
+  help   Print this message or the help of the given subcommand(s)
+```
+
+

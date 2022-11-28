@@ -1,0 +1,90 @@
+---
+title: Sobrepuesta
+next: Operaciones Puntuales
+nextLink: point_operations
+---
+
+Hasta ahora, solo hemos explorado los intervalos melódicamente. Ahora, agregaremos una nueva Operación - Overlay - que nos permitirá explorar intervalos armónicamente.
+
+
+## `Operation: Overlay` 
+<WereSoCool
+  readOnly
+  hideGutter
+  language={`Overlay [operaciones]`}
+/>
+
+Overlay toma una serie de operaciones y las realiza al mismo tiempo.
+
+<WereSoCool language={
+`{ f: 261.6, l: 3, g: 1, p: 0 }\n
+main = {
+  -- Tríada mayor en Do. Oooh, Aaaah.
+  Overlay [
+    Fm 3/2,
+    Fm 5/4,
+    Fm 1, 
+  ]
+}`
+}/>
+
+¿Qué tal una secuencia de superposiciones?
+
+<WereSoCool language={
+`{ f: 261.6, l: 1, g: 1, p: 0 }\n
+main = {
+  Seq [
+    -- I - C
+    Overlay [
+      Fm 3/2,
+      Fm 5/4,
+      Fm 1, 
+    ],
+    -- IV - F
+    Overlay [
+      Fm 5/3,
+      Fm 4/3,
+      Fm 1, 
+    ],
+    -- I - C
+    Overlay [
+      Fm 3/2,
+      Fm 5/4,
+      Fm 1, 
+    ],
+    -- V - G
+    Overlay [
+      Fm 3/2,
+      Fm 9/8,
+      Fm 15/16, 
+    ],
+    -- I - C
+    Overlay [
+      Fm 3/2,
+      Fm 5/4,
+      Fm 1, 
+    ],
+  ]
+}`
+}/>
+
+## Más exploración de armónicos
+
+Verá un BeautifulChart™ a la derecha del siguiente Editor WereSoCool (abajo en el móvil). Puede usar este cuadro para orientarse en el rico paisaje de la armonía basada en proporciones. Las proporciones rodeadas de recuadros dorados son las proporciones que describen la escala mayor. Las proporciones de disonancia similar son del mismo color. Hay muchos intervalos nuevos para explorar de los que quizás nunca hayas oído hablar. Tercera sub menor? Sí, por favor. 11/8 tritono? ¡Guau!
+
+<WSCWithRatioChart language={`{ f: 440, l: 5, g: 1/2, p: 0 }\n
+main = {
+  Overlay [
+    Fm 10/3,
+    Fm 8/3,
+    Fm 5/2,
+    Fm 9/4,
+    Fm 7/4,
+    Fm 12/7,
+    Fm 7/6,
+    Fm 7/8, 
+    Fm 1/2, 
+  ]
+}`
+}/>
+

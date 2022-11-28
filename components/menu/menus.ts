@@ -13,79 +13,131 @@ export const tutorialMenu: MenuDatum[] = [
     title: 'Tutorials',
     items: [
       {
-        trans: { en: 'Getting Started', pt: 'Começando' },
+        trans: { en: 'Getting Started', pt: 'Começando', es: 'Comenzando' },
         link: 'getting_started',
       },
-      { trans: { en: 'WereSoCool CLI', pt: 'WereSoCool CLI' }, link: 'cli' },
-      { trans: { en: 'welcome', pt: 'bem_vindo' }, link: 'welcome' },
-      { trans: { en: 'overtones', pt: 'série_harmônica' }, link: 'overtones' },
-      { trans: { en: 'overlay', pt: 'sobreposição' }, link: 'overlay' },
       {
-        trans: { en: 'point_operations', pt: 'operações_de_ponto' },
+        trans: {
+          en: 'WereSoCool CLI',
+          pt: 'WereSoCool CLI',
+          es: 'WereSoCool CLI',
+        },
+        link: 'cli',
+      },
+      {
+        trans: { en: 'Welcome', pt: 'Bem Vindo', es: 'Bienvenido' },
+        link: 'welcome',
+      },
+      {
+        trans: { en: 'Overtones', pt: 'Série Harmônica', es: 'Sobretonos' },
+        link: 'overtones',
+      },
+      {
+        trans: { en: 'Overlay', pt: 'Sobreposição', es: 'Sobrepuesta' },
+        link: 'overlay',
+      },
+      {
+        trans: {
+          en: 'Point Operations',
+          pt: 'Operações de Ponto',
+          es: 'Operaciones de Puntos',
+        },
         link: 'point_operations',
       },
       {
-        trans: { en: 'pipe_operations', pt: 'operações_de_pipe' },
+        trans: {
+          en: 'Pipe Operations',
+          pt: 'Operações de Pipe',
+          es: 'Operaciones de Pipe',
+        },
         link: 'pipe_operations',
       },
       {
-        trans: { en: 'pipe_and_sequences', pt: 'pipe_e_sequências' },
+        trans: {
+          en: 'Pipe and Sequences',
+          pt: 'Pipe e Sequências',
+          es: 'Pipe y secuencias',
+        },
         link: 'pipe_and_sequences',
       },
       {
-        trans: { en: 'small_differences', pt: 'pequenas_diferenças' },
+        trans: {
+          en: 'Small Differences',
+          pt: 'Pequenas Diferenças',
+          es: 'Pequeñas Diferencias',
+        },
         link: 'small_differences',
       },
       {
-        trans: { en: 'o_operation', pt: 'o_operação' },
+        trans: { en: 'O Operation', pt: 'O Operação', es: 'O Operación' },
         link: 'o_operation',
       },
       {
-        trans: { en: 'fit_length', pt: 'ajuste_ao_duração' },
+        trans: {
+          en: 'Fit Length',
+          pt: 'Ajuste ao Duração',
+          es: 'Ajustar a la Duración',
+        },
         link: 'fit_length',
       },
       {
-        trans: { en: 'modulate_by', pt: 'modulação' },
+        trans: { en: 'ModulateBy', pt: 'Modulação', es: 'Modulación' },
         link: 'modulate_by',
       },
       {
-        trans: { en: 'functions', pt: 'funções' },
+        trans: { en: 'Functions', pt: 'Funções', es: 'Funciones' },
         link: 'functions',
       },
       {
-        trans: { en: 'intro_to_lists', pt: 'introdução_às_listas' },
+        trans: {
+          en: 'Intro to Lists',
+          pt: 'Introdução às Listas',
+          es: 'Introducción a las Listas',
+        },
         link: 'intro_to_lists',
       },
       {
-        trans: { en: 'equal_temperaments', pt: 'temperamentos_iguais' },
+        trans: {
+          en: 'Equal Temperaments',
+          pt: 'Temperamentos Iguais',
+          es: 'Temperamentos iguales',
+        },
         link: 'equal_temperament',
       },
       {
-        trans: { en: 'indices', pt: 'indices' },
+        trans: { en: 'indices', pt: 'indices', es: 'índices' },
         link: 'indices',
       },
       {
-        trans: { en: 'generators', pt: 'geradores' },
+        trans: { en: 'Generators', pt: 'Geradores', es: 'Generadores' },
         link: 'generators',
       },
       {
-        trans: { en: 'expressive_generators', pt: 'geradores_expressivos' },
+        trans: {
+          en: 'Expressive Generators',
+          pt: 'Geradores Expressivos',
+          es: 'Generadores Expresivos',
+        },
         link: 'expressive_generators',
       },
       {
-        trans: { en: 'cool_coefficients', pt: 'coeficientes_legais' },
+        trans: {
+          en: 'Cool Coefficients',
+          pt: 'Coeficientes Legais',
+          es: 'Coeficientes Geniales',
+        },
         link: 'cool_coefficients',
       },
       {
-        trans: { en: 'timbre', pt: 'timbre' },
+        trans: { en: 'timbre', pt: 'timbre', es: 'timbre' },
         link: 'timbre',
       },
       {
-        trans: { en: 'import', pt: 'import' },
+        trans: { en: 'import', pt: 'import', es: 'import' },
         link: 'import',
       },
       {
-        trans: { en: 'stems', pt: 'stems' },
+        trans: { en: 'stems', pt: 'stems', es: 'stems' },
         link: 'stems',
       },
     ],
