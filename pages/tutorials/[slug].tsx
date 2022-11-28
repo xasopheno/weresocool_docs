@@ -20,8 +20,6 @@ import { WereSoCool } from '../../components/WereSoCool';
 import { capitalize, useStopAndWait } from '../../utils/misc';
 import {
   tutorialFilePaths,
-  TUTORIAL_PATH,
-  PT_TUTORIAL_PATH,
   tutorialPathFromLocale,
 } from '../../utils/mdxUtils';
 import { tutorialMenu } from '../../components/menu/menus';

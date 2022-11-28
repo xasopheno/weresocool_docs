@@ -86,7 +86,7 @@ interface MenuProps extends React.HTMLAttributes<Element> {
 const Menu = (props: MenuProps) => {
   // const { isOpen, setIsOpen } = useDropdownMenu(2);
   const router = useRouter();
-  const { pathname, asPath, query, locale } = router;
+  const { pathname, asPath, query } = router;
   const [open, setOpen] = useState(false);
   const { isMobile } = useWindowSize();
 
