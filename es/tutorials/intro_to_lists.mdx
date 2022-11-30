@@ -1,13 +1,11 @@
 ---
-title: Introduction to Lists
-next: equal_temperament
+title: Introducción a las Listas
+next: Temperamentos iguales
 nextLink: equal_temperament
 ---
 
-## `List` 
-Lists are denoted by an `&`. You can index into the list with an `@` followed by `[operations]` Lists do not
-yet support negative indices, but I'm sure I'll get around to 
-it at some point. 
+## Notación de lista: `&` 
+Las listas se indican con un `&`. Puede indexar la lista con una `@` seguida de `[operaciones]` Las listas no admiten índices negativos.
 
 <WereSoCool
   readOnly
@@ -15,29 +13,29 @@ it at some point.
   language={`&[op1, op2, op3, ...] @ [indices]`}
 />
 
-### Basic List
+### Lista Básica
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
--- List indices start at 0
+-- Los índices de la lista comienzan en 0
 main = {
   &[Fm 1, Fm 9/8] @ [0, 1, 0]
 }`
 }/>
 
 
-### Lists and Random
+### Listas y Aleatorias
 
 <WereSoCool language={
 `{ f: 261.6, l: 1/4, g: 1, p: 0 }\n
--- We can also choose indices randomly
--- Every time you play it, it will be different
+-- También podemos elegir índices aleatoriamente.
+-- Cada vez que lo juegues, será diferente.
 main = {
   &[Fm 0, Fm 1, Fm 9/8, Fm 3/2] @ [Random(8)]
 }`
 }/>
 
-### A Composition Using Lists
+### Una Composición Usando Listas
 
 <WereSoCool language={
 `{ f: 285, l: 1, g: 1/5, p: 0 }\n
@@ -51,9 +49,9 @@ overtones = {
     (1/2, 3, 1, -1),
   ]
 }\n
--- This is a list declaration. 
--- In this list, you'll find a major scale with
--- with a silence (Fm 0) at the end. 
+-- Esta es una declaración de lista.
+-- En esta lista, encontrará una escala mayor con
+-- con un silencio (Fm 0) al final.
 cool_list = &[
   Fm 1, Fm 9/8, Fm 5/4, Fm 4/3,
   Fm 3/2, Fm 5/3, Fm 15/8, Fm 2,
@@ -62,20 +60,20 @@ cool_list = &[
 main = {
   overtones
   | Seq [
-    -- First in the sequence is the list played as 
-    -- a sequence. 
+    -- Primero en la secuencia es la lista reproducida como
+    -- una secuencia.
     &cool_list,
-    -- Next, the list indexed into. The syntax for indices is:
-    -- &list_name @ [index1, index2, index 3, etc]
+    -- A continuación, la lista indexada en. La sintaxis para los índices es:
+    -- &nombre_lista @ [índice1, índice2, índice3, etc.]
     &cool_list @ [
       0, 1, 2, 3, 2, 1, 3, 5, 
       7, 6, 5, 4, 3, 2, 1, 0, 8
     ],
-    -- There are some special kinds of indices in the language. 
-    -- Random(n) is a special kind of index that will 
-    -- chose n random elements from your list
+    -- Hay algunos tipos especiales de índices en el lenguaje.
+    -- Random(n) es un tipo especial de índice que
+    -- elige n elementos aleatorios de tu lista
     &cool_list @ [Random(30)] | Lm 2/3,
-    -- And here's a little melody to end our phrase. 
+    -- Y aquí hay una pequeña melodía para terminar nuestra frase.
     Seq [
       Fm 3/2,
       Fm 15/16, 

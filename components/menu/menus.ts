@@ -56,7 +56,7 @@ export const tutorialMenu: MenuDatum[] = [
         trans: {
           en: 'Pipe and Sequences',
           pt: 'Pipe e Sequências',
-          es: 'Pipe y secuencias',
+          es: 'Pipe y Secuencias',
         },
         link: 'pipe_and_sequences',
       },

@@ -2,17 +2,11 @@ import Head from 'next/head';
 import Layout from '../../components/layout';
 import React from 'react';
 import fs from 'fs';
-{
-  /* import hydrate from "next-mdx-remote/hydrate" */
-}
 import matter from 'gray-matter';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 
 import path from 'path';
-{
-  /* import renderToString from "next-mdx-remote/render-to-string" */
-}
 import { GetStaticPropsContext } from 'next';
 import { WSCWithRatioChart } from '../../components/WSC_with_RatioChart';
 import { Break, CoolText } from '../../components/mdx';
@@ -87,7 +81,6 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
   const { content, data } = matter(source);
 
   const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
       rehypePlugins: [],

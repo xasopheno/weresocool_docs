@@ -5,7 +5,7 @@ nextLink: functions
 ---
 
 ## `Operação: ModBy` 
-ModulateBy permite usar uma operação para modular outra operação.
+`ModBy` permite usar uma operação para modular outra operação.
 
 <WereSoCool
   readOnly
@@ -41,7 +41,7 @@ main = {
 
 ---
 
-ModulateBy é útil quando você fez algo legal
+ModBy é útil quando você fez algo legal
 e, em seguida, deseja alterá-lo enquanto deixa a duração
 o mesmo.
 
@@ -76,8 +76,8 @@ thing1 = {
     Fm 1, Fm 4/3, Fm 5/3
   ]
   -- modulado pelas duas operações que criamos anteriormente.
-  | ModulateBy [melodic_modulator]
-  | ModulateBy [gain_modulator]
+  | ModBy [melodic_modulator]
+  | ModBy [gain_modulator]
 }\n
 main = {
   overtones

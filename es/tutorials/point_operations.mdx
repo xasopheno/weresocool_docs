@@ -4,13 +4,13 @@ next: Operaciones de Pipe
 nextLink: pipe_operations
 ---
 
-Let's take a moment to look at all of the `Point Operations` These operations are the basis of all other operations.
+Tomemos un momento para ver todas las `Operaciones de puntos`. Estas operaciones son la base de todas las demás operaciones.
 
-## `Fm <number> - Frequency Multiply`
+## `Fm <número> - Multiplicación de frecuencia`
 
-- Multiplies the input frequency by the number provided. 
-- Value may be any Number >= 0. 
-- Very high or very low values many not be audible. 
+- Multiplica la frecuencia de entrada por el número proporcionado.
+- El valor puede ser cualquier Número >= 0.
+- Valores muy altos o muy bajos pueden no ser audibles.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
@@ -19,11 +19,11 @@ main = {
 }`
 }/>
 
-## `Fa <number> - Frequency Add`
+## `Fa <número> - Adición de frecuencia`
 
-- Adds the number provided to the input frequency. 
-- Value may be any Number. 
-- If the sum of the input frequency and the number provided is less than 0, the sound will be silent. 
+- Suma el número proporcionado a la frecuencia de entrada.
+- El valor puede ser cualquier número.
+- Si la suma de la frecuencia de entrada y el número proporcionado es inferior a 0, el sonido se silenciará.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
@@ -32,10 +32,10 @@ main = {
 }`
 }/>
 
-## `Lm <number> - Length Multiply`
+## `Lm <número> - Multiplicación de longitud`
 
-- Multiplies the input length by the number provided. 
-- Value may be any Number >= 0. 
+- Multiplica la longitud de entrada por el número proporcionado.
+- El valor puede ser cualquier Número >= 0.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
@@ -44,10 +44,10 @@ main = {
 }`
 }/>
 
-## `Gm <number> - Gain Multiply`
+## `Gm <número> - Multiplicación de gain`
 
-- Multiplies the input gain by the number provided. 
-- Value may be any Number >= 0. 
+- Multiplica la ganancia de entrada por el número proporcionado.
+- El valor puede ser cualquier Número >= 0.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
@@ -56,12 +56,12 @@ main = {
 }`
 }/>
 
-## `Pm <number> - Pan Multiply`
+## `Pm <número> - Multiplicación de pan`
 
-- Multiplies the input pan by the number provided. 
-- Value may be any number. 
-- It is recommended to keep pan values between -1 and 1
-- Positive numbers are panned left and negative numbers are panned right.
+- Multiplica el pan de entrada por el número proporcionado.
+- El valor puede ser cualquier número.
+- Se recomienda mantener los valores de pan entre -1 y 1
+- Los números positivos se desplazan hacia la izquierda y los negativos hacia la derecha.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: -1 }\n
@@ -70,12 +70,12 @@ main = {
 }`
 }/>
 
-## `Pa <number> - Pan Add`
+## `Pa <number> - Adición de pan`
 
-- Adds the number provided to the input pan. 
-- Value may be any number. 
-- It is recommended to keep pan values between -1 and 1
-- Positive numbers are panned left and negative numbers are panned right.
+- Agrega el número proporcionado a la bandeja de entrada.
+- El valor puede ser cualquier número.
+- Se recomienda mantener los valores de pan entre -1 y 1
+- Los números positivos se desplazan hacia la izquierda y los negativos hacia la derecha.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
@@ -84,8 +84,8 @@ main = {
 }`
 }/>
 
-## Identity Operations
- - Some operations are "no-ops" that act as an identity. 
- - Fm 1, Gm 1, Lm 1, Pm 1, Fa 0 and Pa 0 are identity operations.
+## Operaciones de identidad
+- Algunas operaciones son "no-ops" que actúan como una identidad.
+  - Fm 1, Gm 1, Lm 1, Pm 1, Fa 0 y Pa 0 son operaciones de identidad.
 
 

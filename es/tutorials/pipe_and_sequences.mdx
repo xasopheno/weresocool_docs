@@ -1,87 +1,86 @@
 ---
-title: Pipes and Sequences 
-next: small_differences
+title: Pipe y Secuencias 
+next: Pequeñas Diferencias
 nextLink: small_differences
 ---
 
-Before continuing, we can add a couple more operations to our repertoire. 
+Antes de continuar, podemos agregar un par de operaciones más a nuestro repertorio.
 
 ## `Reverse`
-Reverse takes an input and plays it backwards. 
+Reverse toma una entrada y la reproduce hacia atrás.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1/6, g: 1, p: 0 }\n
-major_scale = {
-  Seq [
-    Fm 1, Fm 9/8, Fm 5/4, Fm 4/3, 
-    Fm 3/2, Fm 5/3, Fm 15/8, Fm 2
-  ]
+escala_mayor = {
+   Seq [
+     Fm 1, Fm 9/8, Fm 5/4, Fm 4/3,
+     Fm 3/2, Fm 5/3, Fm 15/8, Fm 2
+   ]
 }\n
 main = {
-  Seq [
-    major_scale, 
-    major_scale | Reverse
-  ]
+   Seq [
+     escala_mayor,
+     escala_mayor | Reverse
+   ]
 }`
 }/>
 
-## `Repeat <number>`
-Repeat is super cool if you want to something to happen again. 
+## `Repeat <número>`
+Repeat es genial si quieres que algo vuelva a suceder.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1/4, g: 1, p: 0 }\n
-melody = {
+melodia = {
   Seq [ Fm 5/4, Fm 9/8, Fm 5/4, Fm 1]
 }\n
 main = {
   Seq [
-    melody | Repeat 3
+    melodia | Repeat 3
   ]
 }`
 }/>
 
 ---
 
-# Sequence | Sequence 
+# Seq | Seq 
 
-If you've been following along, you might be wondering, 
-what happens when you do something like this?:
+Si ha estado siguiendo, es posible que se pregunte,
+¿Qué sucede cuando haces algo como esto?:
 
 `Seq [op1, op2, ...] | Seq [op3, op4, ...]`
 
 <WereSoCool language={
 `{ f: 220, l: 1, g: 1, p: 0 }\n
--- We need a cool sound in order to explore this new idea. 
--- This is a pentatonic_scale. It is a cool subset of the major_scale.
-pentatonic_scale = {
-	Seq [
-      Fm 1, Fm 9/8, Fm 5/4,  
-      Fm 3/2, Fm 5/3 
-  ]
-  -- 8x faster...wheeee!
-  | Lm 1/8
+-- Necesitamos un sonido genial para explorar esta nueva idea.
+-- Esta es una escala_pentatónica. Es un subconjunto genial de escala mayor.
+escala_pentatonica = {
+   Seq [
+       Fm 1, Fm 9/8, Fm 5/4,
+       Fm 3/2, Fm 5/3
+   ]
+   -- 8 veces más rápido... ¡wiiiiii!
+   | Lm 1/8
 }\n
-main = { 
-  -- Now we will pipe the pentatonic_scale into the Seq [Fm 1, Fm 9/8, Fm 5/4]. 
-  -- The result will be the pentatonic_scale moving up in whole steps
-  pentatonic_scale
-  | Seq [
-      Fm 1, Fm 9/8, Fm 5/4,
-      -- ===== uncomment the following line with cmd + / (ctl + / on linux/windows)======
-      -- Fm 9/8 | Reverse
-      -- Reverse is super cool. It takes what ever you Pipe into it
-      -- and reverses it. Simple as that. 
-  ]
-  -- ===== and uncomment the following line with cmd + / (ctl + / on linux/windows)
-  -- | Repeat 4
+main = {
+   -- Ahora conectaremos la escala pentatónica a la secuencia [Fm 1, Fm 9/8, Fm 5/4].
+   -- El resultado será la escala pentatónica subiendo en tono entero
+   escala_pentatonica
+   | Seq [
+       Fm 1, Fm 9/8, Fm 5/4,
+       -- ===== descomente la siguiente línea con cmd + / (ctl + / en linux/windows)======
+       -- Fm 9/8 | Reverse
+       -- El reverso es genial. Toma lo que sea que le pongas
+       -- y lo invierte. Simple como eso.
+   ]
+   -- ===== y descomente la siguiente línea con cmd + / (ctl + / en linux/windows)
+   -- | Repeat 4
 }`
 }/>
 
-# Congratulations!
-You now know enough to start making some pretty cool things. 
-Before going continuing with the tutorial, 
-I recommend trying to make your own piece starting with this one.
-A good starting place would be to change the pentatonic_scale to be 
-another set of operation. Perhaps, add an additional `Fm` or 
-`Pipe` the current composition into another Sequence. 
-
+# ¡Felicidades!
+Ahora sabes lo suficiente para empezar a hacer algunas cosas geniales.
+Antes de continuar con el tutorial,
+Recomiendo tratar de hacer su propia pieza a partir de este.
+Un buen punto de partida sería cambiar la escala_pentatónica para que sea
+otro conjunto de operaciones. Tal vez, agregue un `Fm` adicional o
+`Pipe` la composición actual en otra Secuencia.

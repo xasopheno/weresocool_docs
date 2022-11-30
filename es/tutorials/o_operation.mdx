@@ -1,32 +1,30 @@
 ---
-title: O[] Operation
-next: fit_length
+title: O Operación
+next: Ajustar a la Duración
 nextLink: fit_length
 ---
 
-If you had as much fun making cool chords as I do, you'll be happy to know
-there's a short-hand for doing just that. 
+Si te divertiste tanto haciendo acordes geniales como yo, te alegrará saber que hay una abreviatura para hacer precisamente eso.
 
-
-## `Operation: O[]` 
+## `Operación: O[]` 
 <WereSoCool
   readOnly
   hideGutter
   language={
-`-- Each set of four values describes 
--- the frequency multiply, frequency add, 
--- gain multiply, and pan add of a note. 
+`-- Cada conjunto de cuatro valores describe
+-- la frecuencia se multiplica, la frecuencia se suma,
+-- ganar multiplicar y pan agregar de una nota.
 O[(Fm, Fa, Gm, Pa), ...]`}
 />
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 main = {
--- For example: This O[] describes two notes. 
--- The bottom is the fundamental - 1/1 
--- at gain 1 panned 1/2 the right and 
--- the top is a note an octave above the fundemental 
--- plus 2hz at gain 1 panned 1/2 to the left. 
--- I generally organize notes with the lowest note on the bottom.
+-- Por ejemplo: Esta O[] describe dos notas.
+-- El fondo es lo fundamental - 1/1
+-- en ganancia 1 panoramizó 1/2 de la derecha y
+-- la parte superior es una nota una octava por encima de la fundamental
+-- más 2hz en ganancia 1 panoramizado 1/2 a la izquierda.
+-- Generalmente organizo las notas con la nota más baja en la parte inferior.
   O[
     (2/1, 2, 1, 1/2),
     (1/1, 0, 1, -1/2),
@@ -35,9 +33,9 @@ main = {
 }/>
 
 
-Inside of the O[], you can put as many (Fm, Fa, Gm, Pa)'s as you'd like. 
-this can be a great way to compose multi-voice chords in a series 
-or - as it's used in the song below - to add overtones to other operations.
+Dentro de la O[], puedes poner tantos (Fm, Fa, Gm, Pa) como quieras.
+esta puede ser una excelente manera de componer acordes de varias voces en una serie
+o, como se usa en la siguiente canción, para agregar sobretonos a otras operaciones.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
@@ -50,7 +48,7 @@ overtones = {
     (1/1, 0, 1, -1/2),
   ]
 }\n
--- This is a little two part song:
+-- Esta es una pequeña canción de dos partes:
 melody1 = {
   Seq [
     Fm 1, Fm 9/8, Fm 5/4 | Lm 2, Fm 9/8, Fm 1,
@@ -65,11 +63,11 @@ melody2 = {
   | Fm 1/2
 }\n
 main = {
--- "overtones" contains 4 voices 
--- defined above with O[] syntax.
--- by Piping it into the Overlay 
--- results in the same sound as
--- if we wrote the following:
+-- "overtones" contiene 4 voces
+-- definido arriba con la sintaxis O[].
+-- conectándolo a la superposición
+-- da como resultado el mismo sonido que
+-- si escribimos lo siguiente:
 -- Overlay [
 --   overtones | melody1,
 --   overtones | melody2
@@ -79,18 +77,18 @@ main = {
     melody1,
     melody2,
   ]
---  Then we play the melodies above first at Fm 1
---  (where they would normally play),
---  then play it backwards using Reverse.
+-- Luego tocamos las melodías de arriba primero en Fm 1
+-- (donde normalmente jugarían),
+-- luego reprodúzcalo hacia atrás usando Reverse.
   | Seq [
     Fm 1, 
     Reverse
   ]
--- faster
+-- Más rápida
   | Lm 2/5
 -- 2x
   | Repeat 2 
--- quieter
+-- Mas tranquila
   | Gm 1/3
 }
 `
