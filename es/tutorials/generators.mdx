@@ -1,61 +1,59 @@
 ---
-title: Intro to Generators
-next: expressive_generators
+title: Generadores
+next: Generadores Expresivos
 nextLink: expressive_generators
 ---
 
-Generators make it possible to describe an infinite lists in WereSoCool.
+Los generadores permiten describir infinitas listas en WereSoCool.
 
-A generator is a collection of
-Axis Expressions. Generators start with at `*`.
+Un generador es una colección de Expresiones de eje. 
+Los generadores comienzan con un `*`.
 
 <WereSoCool
   readOnly
   hideGutter
   language={
-`*(Axis Expressions...) Take n`
+`*(Expresiones de eje...) Take n`
 }/>
 
-### Axis Expressions
+### Expresiones de Eje
 <WereSoCool
   readOnly
   hideGutter
   language={
-`axis: start|subdivision [coefficients]`
+`eje: inicio|subdivisión [coeficientes]`
 }/>
 
-An axis expression has 4 parts: axis, start, subdivision, coefficients
+Una expresión de eje tiene 4 partes: eje, inicio, subdivisión, coeficientes
 
-### Axis
-There are four axis in WereSoCool: 
-Frequency, Length, Gain and Pan. 
-f, l, g, and p in the context of a generator.
+### Eje
+Hay cuatro ejes en WereSoCool:
+Frecuencia, Longitud, Ganancia y Pan.
+f, l, g y p en el contexto de un generador.
 
-### Subdivision
-A slightly trickly part. This depends on the axis. For 
-Length, Gain, and Pan, we are dividing 1 in into that many 
-subdivions. For frequency, we are dividing and octave into that
-many parts. We're create a generator in ET(n) space. 
+### Subdivisión
+Una parte un poco complicada. Esto depende del eje. Para
+Longitud, Ganancia y Pan, estamos dividiendo 1 en tantos
+subdivisiones Para frecuencia, estamos dividiendo y octava en eso
+muchas partes. Estamos creando un generador en el espacio ET(n).
 
-### Start
-We're going slightly out of order since you need to know what 
-the subdivision is doing before you can understand what the start 
-means. Start says, "Calculate the starting value for this axis
-on this generator by taking the input value on that axis and 
-adding start * subdivision". There are some examples below that 
-will hopefully make this clearer. 
+### Comienzo
+Nos vamos un poco fuera de secuencia ya que necesita saber qué
+la subdivisión está haciendo antes de que pueda entender "inicio". "Inicio" dice: "Calcular el valor inicial para este eje
+en este generador tomando el valor de entrada en ese eje y
+agregando inicio * subdivisión". Hay algunos ejemplos a continuación que espero que esto quede más claro.
 
-### Coefficients
-The coefficients describe the change in the axis at each step. 
-The list of coefficients are looped infinitely. 
+### Coeficientes
+Los coeficientes describen el cambio en el eje en cada paso.
+La lista de coeficientes se repite infinitamente.
 
-## Chromatic Scale Generator
+## Generador de escala cromática
 
-The following is an Axis Expression for a 
-chromatic scale generator. I read it as:
-On the frequency axis, start at the input 
-frequency * (0 * subdivision). Each step, add 
-1 * subdivision to the last frequency. 
+La siguiente es una expresión de eje para una
+generador de escala cromática. Lo leo como:
+En el eje de frecuencia, comience en la entrada
+frecuencia * (0 * subdivisión). Cada paso, agregar
+1 * subdivisión a la última frecuencia.
 
 <WereSoCool
   readOnly
@@ -66,14 +64,14 @@ frequency * (0 * subdivision). Each step, add
 
 ### Take
 
-The last part of the Generator is Take. Since generators
-are infinite, you should be explicit how many steps 
-you'd like to take. Generators actually have some defaults
-in place and will make sounds without a take, but it is 
-always best to use a Take. 
+La última parte del Generador es Take. Desde generadores
+son infinitos, debe ser explícito cuántos pasos
+te gustaría tomar. Los generadores en realidad tienen algunos valores predeterminados
+en su lugar y hará sonidos sin una toma, pero es
+Siempre es mejor usar un Take.
 
-Here we will use our Chromatic Scale Axis Expression 
-inside a Generator and then Take 12. 
+Aquí usaremos nuestra expresión del eje de escala cromática
+dentro de un Generador y luego Take 12.
 
 <WereSoCool language={
 `{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
@@ -84,16 +82,16 @@ main = {
 }`
 }/>
 
-## More Axis Expressions
+## Más expresiones de eje
 
-In order to make it clear what the generators are doing, 
-we are going to add a little attack at the beginning of each note. 
+Para que quede claro lo que están haciendo los generadores,
+vamos a añadir un pequeño ataque al principio de cada nota.
 
 <WereSoCool language={
 `{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
 main = {
-  -- I usually describe the attack of a note as an Overlay 
-  -- of Fm 1 and then a sequence that describes the attack.
+  -- Normalmente describo el ataque de una nota como una Overlay
+  -- de Fm 1 y luego una secuencia que describe el ataque.
   Overlay [
     Fm 1,
     -- Fm 2 is the frequency of the attack, the first 
@@ -105,12 +103,12 @@ main = {
 }`
 }/>
 
-### Diminished Scale
+### Escala disminuida
 
-A diminished scale in ET(12) is a synthetic scale built from
-alternating whole and half steps. There are two diminished scales:
-Whole-Half and Half-Whole. In WereSoCool Generatorland, you could
-think of it as 2-1 and 1-2. Here is a 2-1 diminished scale. 
+Una escala disminuida en ET(12) es una escala sintética construida a partir de
+alternando pasos enteros y semitonos. Hay dos escalas disminuidas:
+Entero-Medio y Medio-Entero. En WereSoCool podrías
+Piense en ello como 2-1 y 1-2. Aquí hay una escala disminuida 2-1.
 
 <WereSoCool language={
 `{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
@@ -125,9 +123,9 @@ main = {
 }`
 }/>
 
-### Gain
-In a axis expression on the gain axis, the resulting value will be Max(value, 0). There are no negative gains. You can write expressions that travel
-below zero, but they will only sound when the value is positive
+### Ganar
+En una expresión de eje en el eje de ganancia, el valor resultante será Max(value, 0). No hay ganancias negativas. Puedes escribir expresiones que viajan
+bajo cero, pero solo sonarán cuando el valor sea positivo
 
 <WereSoCool language={
 `{ f: 311.127, l: 1/5, g: 1, p: 0 }\n
@@ -143,9 +141,9 @@ main = {
 }`
 }/>
 
-### Length 
-In a axis expression on the length axis, the smallest value that can be
-generated is 1/subdivision. Lengths less than or equal to 0 do not make sense, so length will be Max(value, 1/subdivision)  
+### Longitud
+En una expresión de eje en el eje de longitud, el valor más pequeño que se puede
+generado es 1/subdivisión. Las longitudes menores o iguales a 0 no tienen sentido, por lo que la longitud será Máx. (valor, 1/subdivisión)
 
 <WereSoCool language={
 `{ f: 311.127, l: 1/2, g: 1, p: 0 }\n
@@ -161,10 +159,10 @@ main = {
 }`
 }/>
 
-### Pan 
-In an axis express on the pan axis you should keep in mind that 0 is center panned. 
-I recommended keeping pan values between -1 and 1
-Positive numbers are panned left and negative numbers are panned right.
+### Pan
+En un eje expresado en el eje panorámico, debe tener en cuenta que 0 es el centro panorámico.
+Recomendé mantener los valores de pan entre -1 y 1
+Los números positivos se desplazan hacia la izquierda y los negativos hacia la derecha.
 
 <WereSoCool language={
 `{ f: 311.127, l: 1/6, g: 1, p: 0 }\n
@@ -180,10 +178,10 @@ main = {
 }`
 }/>
 
-### Multiple Axis Expressions
+### Expresiones de Ejes Múltiples
 
-Things start getting pretty cool when you
-combine multiple axis expressions into a single Generator.
+Las cosas empiezan a ponerse bastante bien cuando
+combine múltiples expresiones de eje en un solo generador.
 
 <WereSoCool language={
 `{ f: 311.127, l: 1/3, g: 1, p: 0 }\n

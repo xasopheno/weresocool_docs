@@ -21,27 +21,27 @@ main = {
 }`
 }/>
 
-### Temperamento igual frente a armonía basada en proporciones
+### Temperamento Igual vs Armonía Basada en Proporciones
 
-An equal temperament is a musical temperament or tuning system, 
-which approximates just intervals by dividing an octave 
-(or other interval) into equal steps. 
-This means the ratio of the frequencies of any 
-adkacent pair of notes is the same, which gives an 
-equal perceived step size as pitch is perceived roughly 
-as the logarithm of frequency. - Wikipedia
+Un temperamento igual es un temperamento musical o sistema de afinación,
+que aproxima solo intervalos dividiendo una octava
+(u otro intervalo) en pasos iguales.
+Esto significa la relación de las frecuencias de cualquier
+par adyacente de notas es el mismo, lo que da un
+el mismo tamaño de paso percibido que el tono se percibe aproximadamente
+como el logaritmo de la frecuencia. - Wikipedia
 
-Western music is mostly written in 12-tone equal temperament 
-We divide and octave into 12 parts. The result is
-a very useful scale that approximates - certainely not all - but 
-quite a few of the wonderful intervals discoverable
-in the overtone series. An important question is:
-How good of an approximation is it? In some cases, quite good!
-In others, it may be useful, but it's not particularly accurate. 
-Here's a `chromatic scale` - all of the notes in 12-tone equal temperament. You'll hear it in just intonation
-(ratio based harmony) and equal temperament at the same time. 
-Some of the intervals are essentially the same
-while others less accurate. 
+La música occidental se escribe principalmente en temperamento igual de 12 tonos.
+Dividimos y octavamos en 12 partes. El resultado es
+una escala muy útil que aproxima - ciertamente no todo - pero
+bastantes de los maravillosos intervalos que se pueden descubrir
+en la serie armónica. Una pregunta importante es:
+¿Qué tan buena es una aproximación? En algunos casos, ¡bastante bien!
+En otros, puede ser útil, pero no es particularmente preciso.
+Aquí hay una "escala cromática": todas las notas en temperamento igual de 12 tonos. Lo escucharás en entonación justa
+(armonía basada en proporción) y temperamento igual al mismo tiempo.
+Algunos de los intervalos son esencialmente los mismos
+mientras que otros menos precisos.
 
 
 <WereSoCool language={
@@ -71,19 +71,19 @@ main = {
 
 ---
 
-### Strange Temperament
+### Temperamento extraño
 
-While I may complain from time to time about the tyranny of 12-tone
-equal temperament, equal temperament is a very useful tool. 
-WereSoCool allows for composition in any temperament. I often like to
-compose in ET(19), ET(31), ET(72), and ET(120).
+Aunque de vez en cuando me quejo de la tiranía de los doce tonos
+temperamento igual, temperamento igual es una herramienta muy útil.
+WereSoCool permite la composición en cualquier temperamento. a menudo me gusta
+componer en ET(19), ET(31), ET(72) y ET(120).
 
-ET(120) is interesting because it splits every half-step in 
-12-tone equal temperament into 10 parts...whoa!
-That makes it easy for musicians trained to think in 12-tone 
-equal temperament to explore some pretty expressive melodies, 
-while still thinking in traditional way. Regardless of you background,
-I recommend experimenting with compose melodies in all sorts of equal temperaments. 
+ET(120) es interesante porque divide cada semitono en
+Temperamento igual de 12 tonos en 10 partes... ¡vaya!
+Eso facilita que los músicos entrenados piensen en dodecafonía.
+temperamento igual para explorar algunas melodías bastante expresivas,
+sin dejar de pensar de manera tradicional. Independientemente de sus antecedentes,
+Recomiendo experimentar con componer melodías en todo tipo de temperamentos iguales.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
@@ -95,8 +95,8 @@ overtones = {
     (1/4, 2, 1/2, 1/2),
   ]
 }\n
--- ET can be thought of as simply a special case of the list.
--- You can create lists at the top level and reuse them.
+-- ET puede considerarse simplemente como un caso especial de la lista.
+-- Puede crear listas en el nivel superior y reutilizarlas.
 three_tone_et = ET(3)
 seven_tone_et = ET(7)
 twelve_tone_et = ET(12)
@@ -104,8 +104,8 @@ seventeen_tone_et = ET(17)\n
 all_scales = {
   overtones |
   Seq [
-    -- When you want to use a list later, you prepend it with
-    -- an & symbol. 
+    -- Cuando quiera usar una lista más adelante, antepóngala con
+    -- un símbolo &.
     &three_tone_et,
     &seven_tone_et | Reverse,
     &twelve_tone_et | Reverse,

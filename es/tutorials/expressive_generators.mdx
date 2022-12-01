@@ -1,20 +1,19 @@
 ---
-title: More Expressive Generators
-next: cool_coefficients
+title: Generadores más expresivos
+next: Coeficientes Geniales
 nextLink: cool_coefficients
 ---
 
-Generators are super cool. Let's keep going with them. 
+Los generadores son geniales. Sigamos con ellos.
 
-### Infinte Melodies
+### Melodías infinitas
 
-We are going to stay in ET(12) for now. Using generators, we
-can make some beautiful, long and winding melodic structures. 
-Mark Turner, eat your heart out.
+Vamos a permanecer en ET (12) por ahora. Usando generadores, nosotros
+puede hacer algunas estructuras melódicas hermosas, largas y sinuosas. 
 
 <WereSoCool language={
 `{ f: 261.6, l: 1/8, g: 1, p: 0 }\n
--- Three Melodies from generators. 
+-- Tres Melodías de generadores.
 main = {
   Overlay [Fm 1/2, Fm 1, Fm 2]
   | Seq [
@@ -33,37 +32,37 @@ main = {
 }`
 }/>
 
-# Time Feels
-Oh, musicians love to talk about time feel. One of the 
-biggest compliments you can give someone. 
-"Man...she has the best time feel..." 
-For a programming language, I think WereSoCool
-has a pretty good time feel. Generators are 
-a really nice place to explore the relationship
-between melody, tempo, and time feel. 
+# Tiempo se siente
+Oh, a los músicos les encanta hablar sobre la sensación del tiempo. Uno de los
+el mayor cumplido que le puedes dar a alguien.
+"Hombre... ella tiene la mejor sensación de tiempo..."
+Para un lenguaje de programación, creo que WereSoCool
+tiene una muy buena sensación de tiempo. Los generadores son
+un lugar muy agradable para explorar la relación
+entre melodía, tempo y sensación de tiempo.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1/5, g: 1, p: 0 }\n
--- Three different time feels from generators. 
+-- Tres sensaciones de tiempo diferentes de los generadores.
 main = {
   Overlay [Fm 1/2, Fm 1, Fm 2]
   | Seq [
-    -- Swinging, but relatively straight
+    -- Swinging, pero relativamente recto
     *(
         f: 0|12 [7, -3, -4, -2, 1],
         l: 13|13 [-3, 3],
-        -- These gain generators accent the upbeats
+        -- Estos generadores de ganancia acentúan los upbeats
         g: 10|10 [-3, 3]
     ) Take 31,
     Fm 0,
-    -- Pretty swinging
+    -- Bastante swinging
     *(
         f: 0|12 [7, -3, -4, -2, 1],
         l: 15|13 [-6, 6],
         g: 10|10 [-3, 3]
     ) Take 31,
     Fm 0,
-    -- Quite swung.
+    -- Muy swinging
     *(
         f: 0|12 [7, -3, -4, -2, 1],
         l: 16|13 [-8, 8],
@@ -74,13 +73,12 @@ main = {
 `
 }/>
 
-# Dynamics
-Any easy way to add dynamics to something you have already
-written is to ModBy [generator].
+# Dinámica
+Cualquier forma fácil de agregar dinámica a algo que ya tienes
+escrito es para ModBy [generador].
 
 <WereSoCool language={
 `{ f: 261.6, l: 1/6, g: 1, p: 0 }\n
--- Three different time feels from generators. 
 main = {
   Overlay [Fm 1/2, Fm 1, Fm 2]
   | ET(12) @ [Random(35)]

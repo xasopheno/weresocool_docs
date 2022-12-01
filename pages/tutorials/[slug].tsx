@@ -61,9 +61,7 @@ export default function PostPage({ source, frontMatter }: PostProps) {
                   router.push(`/tutorials/${frontMatter.nextLink}`);
                 }}
               >
-                <LinkText>{`Next Tutorial ~> ${capitalize(
-                  frontMatter.next,
-                )}`}</LinkText>
+                <LinkText>{`~> ${capitalize(frontMatter.next)} ~>`}</LinkText>
               </GoldLink>
             )}
           </div>
