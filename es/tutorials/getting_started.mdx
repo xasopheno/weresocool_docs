@@ -24,11 +24,25 @@ Playground</CoolLink>**. WereSoCool tiene un solo subproceso en el navegador, po
 
 ### Cargo:
 
-WereSoCool se puede instalar en macOS, Linux y Windows a través de Cargo. También deberá instalar las dependencias del sistema enumeradas en la sección de desarrollo.
+WereSoCool se puede instalar en macOS, Linux y Windows a través de Cargo. También deberá instalar las dependencias opcionales para usar algunas funciones.
 
 Cargo es el "package manager" para Rust. Instale Cargo instalando <CoolLink href={"https://www.rust-lang.org/en-US/install.html"}>Rustup</CoolLink>. Después de instalar Cargo, ejecute:
 
 `cargo install weresocool`
+
+#### Dependencias opcionales
+Si desea renderizar a mp3 y oggvorbis, necesitará las siguientes dependencias
+
+```
+Macos:
+brew install lame libvorbis
+
+Arch Linux:
+sudo pacman -S lame vorbis-tools
+
+Ubuntu:
+sudo apt-get lame vorbis-tools
+```
 
 <Break/>
 

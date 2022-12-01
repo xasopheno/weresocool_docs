@@ -8,7 +8,7 @@ nextLink: cli
 
 My recommended approach to learning the language is to do the tutorials in order and write your own composition after completing each one. 
 
-The **WereSoCool CLI** is availble on **macOS**, **Linux** and **Windows**. You can also explore the language on Firefox and Chrome browsers in the **<CoolLink href={"/playground"}>WereSoCool Playground</CoolLink>**. 
+The **WereSoCool CLI** is availble on **macOS**, **Linux (ALSA)** and **Windows**. You can also explore the language on Firefox and Chrome browsers in the **<CoolLink href={"/playground"}>WereSoCool Playground</CoolLink>**. 
 
 <Break/>
 
@@ -23,11 +23,26 @@ The **WereSoCool CLI** is availble on **macOS**, **Linux** and **Windows**. You 
 
 ### Cargo:
 
-WereSoCool can be installed on macos, linux, and windows via cargo. You'll also need to install the system dependancies listed in the development section. 
+WereSoCool can be installed on Macos, Linux, and Windows via cargo. You'll also need to install the optional dependancies to use some features. 
 
 Cargo is the rust package manager for Rust. Install cargo by installing <CoolLink href={"https://www.rust-lang.org/en-US/install.html"}>Rustup</CoolLink>. After installing Cargo, run:
 
 `cargo install weresocool`
+
+#### Optional Dependancies
+If you want to render to mp3 and oggvorbis, you'll need the following dependencies
+
+```
+Macos:
+brew install lame libvorbis
+
+Arch Linux:
+sudo pacman -S lame vorbis-tools
+
+Ubuntu:
+sudo apt-get lame vorbis-tools
+
+```
 
 <Break/>
 
@@ -40,7 +55,7 @@ Install WereSoCool from Homebrew by running the following commands:
 
 <Break/>
 
-### Arch Linux:
+### Arch Linux (Alsa):
 
 Available on the <CoolLink href={"https://aur.archlinux.org/packages/weresocool"}>AUR</CoolLink>!
 

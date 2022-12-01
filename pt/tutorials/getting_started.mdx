@@ -8,14 +8,13 @@ nextLink: cli
 
 Minha abordagem recomendada para aprender o linguagem  é fazer os tutoriais em ordem e escrever sua própria composição depois de concluir cada um.
 
-A **WereSoCool CLI** está disponível em **macOS**, **Linux** e **Windows**. Você também pode explorar o linguagem  nos navegadores Firefox e Chrome no **<CoolLink href={"/playground"}>WereSoCool Playground</CoolLink>**.
+**WereSoCool CLI** está disponível em **macOS**, **Linux** e **Windows**. Você também pode explorar o linguagem  nos navegadores Firefox e Chrome no **<CoolLink href={"/playground"}>WereSoCool Playground</CoolLink>**.
 
 <Break/>
 
 ## WereSoCool Playground:
 
-Você pode fazer sons legais nos navegadores Firefox e Chrome no **<CoolLink href={"/playground"}>WereSoCool Playground</CoolLink>**. WereSoCool é de thread único no navegador, então composições mais complicadas provavelmente não serão renderizadas sem cliques. O playground ainda não no celular.
-
+Você pode fazer sons legais nos navegadores Firefox e Chrome no **<CoolLink href={"/playground"}>WereSoCool Playground</CoolLink>**. WereSoCool é de thread único no navegador, então composições mais complicadas provavelmente não serão renderizadas sem cliques. O playground não funciona no celular.
 
 <Break/>
 
@@ -23,12 +22,24 @@ Você pode fazer sons legais nos navegadores Firefox e Chrome no **<CoolLink hre
 
 ### Cargo:
 
-WereSoCool pode ser instalado em Macos, Linux e Windows via Cargo. Você também precisará instalar as dependências do sistema listadas na seção "development".
+WereSoCool pode ser instalado em Macos, Linux e Windows via Cargo. Você também precisará instalar as dependências opcionais para usar alguns recursos.
 
 Cargo é o "package manager" para Rust. Instale a Cargo instalando <CoolLink href={"https://www.rust-lang.org/en-US/install.html"}>Rustup</CoolLink>. Depois de instalar o Cargo, execute:
 
 `cargo install weresocool`
 
+#### Dependências Opcionais
+Se você deseja renderizar para mp3 e oggvorbis, precisará das seguintes dependências
+```
+Macos:
+brew install lame libvorbis
+
+Arch Linux:
+sudo pacman -S lame vorbis-tools
+
+Ubuntu:
+sudo apt-get lame vorbis-tools
+```
 <Break/>
 
 ### macOS:
@@ -50,7 +61,7 @@ Disponível no <CoolLink href={"https://aur.archlinux.org/packages/weresocool"}>
 
 Este software é executado no Windows, em uma capacidade limitada. No Windows, este software é compilado sem suporte a mp3 e oggvorbis (você só pode renderizar em wav, csv e json). Eu trabalho principalmente em macos e máquinas linux, então me sinto um pouco fora de minhas profundezas na terra do Windows. Se você quiser ajudar a trabalhar na implementação do Windows, entre em contato.
 
-Você pode instalar WereSoCool de "From Source" ou via Cargo.
+No Windoes, você pode instalar WereSoCool de "From Source" ou via Cargo.
 
 ### From Source:
 Você precisará de Cargo e Just.
