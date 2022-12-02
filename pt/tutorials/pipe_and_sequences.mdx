@@ -51,8 +51,10 @@ o que acontece quando você faz algo assim?:
 
 <WereSoCool language={
 `{ f: 220, l: 1, g: 1, p: 0 }\n
--- Precisamos de um som legal para explorar essa nova ideia. 
--- Esta é uma escala_pentatonica. É um subconjunto legal do escala_maior.
+-- Precisamos de um som legal para 
+-- explorar essa nova ideia. 
+-- Esta é uma escala_pentatonica. 
+-- É um subconjunto legal do escala_maior.
   escala_pentatonica = {
 	Seq [
       Fm 1, Fm 9/8, Fm 5/4,  
@@ -62,17 +64,22 @@ o que acontece quando você faz algo assim?:
   | Lm 1/8
 }\n
 main = { 
-  -- Agora vamos pipe a escala_pentatônica na Seq [Fm 1, Fm 9/8, Fm 5/4].
-  -- O resultado será a escala_pentatônica subindo nas 2ªs principais 
+  -- Agora vamos pipe a escala_pentatônica 
+  -- na Seq [Fm 1, Fm 9/8, Fm 5/4].
+  -- O resultado será a escala_pentatônica 
+  -- subindo nas 2ªs principais.
   escala_pentatonica
   | Seq [
       Fm 1, Fm 9/8, Fm 5/4,
-      -- ===== descomente a seguinte linha com cmd + / (ctl + / no linux/windows)======
+      -- ===== descomente a seguinte linha 
+      -- com cmd + / (ctl + / no linux/windows)======
       -- Fm 9/8 | Reverse
-      -- O reverso é super legal. É preciso o que você pipe para ele
+      -- O reverso é super legal. 
+      -- É preciso o que você pipe para ele
       -- e o reproduz ao contrário. Simples assim.
   ]
-      -- ===== e descomente a seguinte linha com cmd + / (ctl + / no linux/windows)
+      -- ===== e descomente a seguinte linha 
+      -- com cmd + / (ctl + / no linux/windows)
   -- | Repeat 4
 }`
 }/>
@@ -81,5 +88,5 @@ main = {
 Agora você sabe o suficiente para começar a fazer algumas coisas bem legais. Antes de continuar com o tutorial,
 Eu recomendo tentar fazer sua própria composição começando com esta. Um bom ponto de partida seria mudar o pentatonic_scale para ser
 outro conjunto de operação. Talvez, adicione um 'Fm' adicional ou
-pipe a composição existente em outra Sequência.
+pipe a composição existente em outra `Seq`.
 

@@ -17,7 +17,7 @@ A operação `Sine` aplica a seguinte fórmula para produzir a forma de onda. `S
   readOnly
   hideGutter
   language={`
-  -potência precisa ser um valor maior que 0.\n
+  --potência precisa ser um valor maior que 0.\n
   Sine <potência>`}
 />
 
@@ -77,8 +77,10 @@ main = {
 O `Square` pode ser pensado como uma operação de 'pulse width' de pulso. O valor em qualquer amostra é calculado com o
 Fórmula:
 
+```
 s = sin(fase);
 de a > pulse width { -1. } else { 1. };
+```
 
 O pulse_width padrão é 0,5
 
@@ -106,17 +108,10 @@ main = {
 
 Um gerador de ruído
 
-<WereSoCool
-  readOnly
-  hideGutter
-  language={`----Você pode mover o Noise com Fm Fm\n
-  Noise`}
-/>
-
-
 <WereSoCool language={
 `{ f: 161.6, l: 2, g: 1/2, p: 0 }\n
 main = {
+  -- você pode mover o noise com Fm
   Seq [Fm 1, Fm 0 | Lm 1/4]
   | Seq [
     Noise, 
