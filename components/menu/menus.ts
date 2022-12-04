@@ -74,9 +74,9 @@ export const tutorialMenu: MenuDatum[] = [
       },
       {
         trans: {
-          en: 'Fit Length',
-          pt: 'Ajuste ao Duração',
-          es: 'Ajustar a la Duración',
+          en: 'FitLength',
+          pt: 'FitLength',
+          es: 'FitLength',
         },
         link: 'fit_length',
       },
