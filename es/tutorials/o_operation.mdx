@@ -1,12 +1,12 @@
 ---
-title: O Operación
+title: Overtone Operación
 next: Ajustar a la Duración
 nextLink: fit_length
 ---
 
 Si te divertiste tanto haciendo acordes geniales como yo, te alegrará saber que hay una abreviatura para hacer precisamente eso.
 
-## `Operación: O[]` 
+## `Operación: Overtone` 
 <WereSoCool
   readOnly
   hideGutter
@@ -25,9 +25,9 @@ main = {
 -- la parte superior es una nota una octava por encima de la fundamental
 -- más 2hz en ganancia 1 panoramizado 1/2 a la izquierda.
 -- Generalmente organizo las notas con la nota más baja en la parte inferior.
-  O[
-    (2/1, 2, 1, 1/2),
-    (1/1, 0, 1, -1/2),
+  Overlay [
+    {2/1, 2, 1, 1/2},
+    {1/1, 0, 1, -1/2},
   ]
 }`
 }/>
@@ -41,11 +41,11 @@ o, como se usa en la siguiente canción, para agregar sobretonos a otras operaci
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 overtones = {
 -- O[(Fm, Fa, Gm, Pa), ...]
-  O[
-    (3/1, 1, 1/4, -1/4),
-    (3/1, 0, 1/4, 1/4),
-    (1/1, 2, 1, 1/2),
-    (1/1, 0, 1, -1/2),
+  Overlay [
+    {3/1, 1, 1/4, -1/4},
+    {3/1, 0, 1/4, 1/4},
+    {1/1, 2, 1, 1/2},
+    {1/1, 0, 1, -1/2},
   ]
 }\n
 -- Esta es una pequeña canción de dos partes:

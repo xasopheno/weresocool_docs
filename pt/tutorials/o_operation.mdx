@@ -1,5 +1,5 @@
 ---
-title: O[] Operação
+title: Overtone Operação
 next: Ajuste ao Duração
 nextLink: fit_length
 ---
@@ -7,7 +7,7 @@ nextLink: fit_length
 Se você se divertiu tanto fazendo acordes legais quanto eu, ficará feliz em saber que existe uma operação para fazer exatamente isso.
 
 
-## `Operação: O[]` 
+## `Operação: Overtone` 
 <WereSoCool
   readOnly
   hideGutter
@@ -26,9 +26,9 @@ main = {
 -- o topo é uma nota uma oitava acima do fundamental
 -- mais 2hz no ganho 1 pan 1/2 para a esquerda.
 -- Eu geralmente organizo as notas com a nota mais baixa no fundo.
-  O[
-    (2/1, 2, 1, 1/2),
-    (1/1, 0, 1, -1/2),
+  Overlay [
+    {2/1, 2, 1, 1/2},
+    {1/1, 0, 1, -1/2},
   ]
 }`
 }/>
@@ -40,12 +40,12 @@ ou - como é usado na música abaixo - para adicionar harmônicos a outras opera
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 overtones = {
--- O[(Fm, Fa, Gm, Pa), ...]
-  O[
-    (3/1, 1, 1/4, -1/4),
-    (3/1, 0, 1/4, 1/4),
-    (1/1, 2, 1, 1/2),
-    (1/1, 0, 1, -1/2),
+-- {Fm, Fa, Gm, Pa}, ...]
+  Overlay [
+    {3/1, 1, 1/4, -1/4},
+    {3/1, 0, 1/4, 1/4},
+    {1/1, 2, 1, 1/2},
+    {1/1, 0, 1, -1/2},
   ]
 }\n
 -- Esta é uma pequena música de duas partes:

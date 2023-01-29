@@ -1,5 +1,5 @@
 ---
-title: O[] Operation
+title: O Operation
 next: fit_length
 nextLink: fit_length
 ---
@@ -8,7 +8,7 @@ If you had as much fun making cool chords as I do, you'll be happy to know
 there's a short-hand for doing just that. 
 
 
-## `Operation: O[]` 
+## `Operation: {Fm, Fa, Gm, Pa}` 
 <WereSoCool
   readOnly
   hideGutter
@@ -16,20 +16,20 @@ there's a short-hand for doing just that.
 `-- Each set of four values describes 
 -- the frequency multiply, frequency add, 
 -- gain multiply, and pan add of a note. 
-O[(Fm, Fa, Gm, Pa), ...]`}
+{Fm, Fa, Gm, Pa}`}
 />
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 main = {
--- For example: This O[] describes two notes. 
+-- For example: This Overlay describes two notes. 
 -- The bottom is the fundamental - 1/1 
 -- at gain 1 panned 1/2 the right and 
 -- the top is a note an octave above the fundemental 
 -- plus 2hz at gain 1 panned 1/2 to the left. 
 -- I generally organize notes with the lowest note on the bottom.
-  O[
-    (2/1, 2, 1, 1/2),
-    (1/1, 0, 1, -1/2),
+  Overlay [
+    {2/1, 2, 1, 1/2},
+    {1/1, 0, 1, -1/2},
   ]
 }`
 }/>
@@ -43,11 +43,11 @@ or - as it's used in the song below - to add overtones to other operations.
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 overtones = {
 -- O[(Fm, Fa, Gm, Pa), ...]
-  O[
-    (3/1, 1, 1/4, -1/4),
-    (3/1, 0, 1/4, 1/4),
-    (1/1, 2, 1, 1/2),
-    (1/1, 0, 1, -1/2),
+  Overlay [
+    {3/1, 1, 1/4, -1/4},
+    {3/1, 0, 1/4, 1/4},
+    {1/1, 2, 1, 1/2},
+    {1/1, 0, 1, -1/2},
   ]
 }\n
 -- This is a little two part song:
