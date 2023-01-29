@@ -1,5 +1,8 @@
 import 'ace-builds/src-noconflict/mode-text';
 
+const num = '[0-9.\\-/]+'
+const space = '\\s*?'
+
 export class CustomHighlightRules extends window.ace.acequire(
   'ace/mode/text_highlight_rules'
 ).TextHighlightRules {
@@ -33,10 +36,14 @@ export class CustomHighlightRules extends window.ace.acequire(
           token: 'zero',
           regex: '[0]',
         },
-        //  {
-        //  token: 'danny',
-        //  regex: 'f:|l:|g:|p:',
-        //  },
+        {
+          token: [
+            'overtone',
+            'number',
+            'overtone'
+          ],
+          regex: `({)(${space}${num}${space},${space}${num}${space},${space}${num}${space},${space}${num}${space})(})`,
+        },
         {
           token: 'slash',
           regex: '/',

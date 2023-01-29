@@ -69,7 +69,11 @@ export const tutorialMenu: MenuDatum[] = [
         link: 'small_differences',
       },
       {
-        trans: { en: 'O Operation', pt: 'O Operação', es: 'O Operación' },
+        trans: {
+          en: 'Overtone Operation',
+          pt: 'Overtone Operação',
+          es: 'Sobretono Operación',
+        },
         link: 'o_operation',
       },
       {

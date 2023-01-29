@@ -78,6 +78,9 @@ color: #df7198\
 .ace-wsc-theme .ace_danny {\
 color: deeppink\
 }\
+.ace-wsc-theme .ace_overtone {\
+color: #C78AC7\
+}\
 .ace-wsc-theme .ace_group_operation {\
 color: steelblue\
 }\

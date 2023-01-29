@@ -1,5 +1,5 @@
 ---
-title: O Operation
+title: Overtone Operation
 next: fit_length
 nextLink: fit_length
 ---
@@ -8,7 +8,7 @@ If you had as much fun making cool chords as I do, you'll be happy to know
 there's a short-hand for doing just that. 
 
 
-## `Operation: {Fm, Fa, Gm, Pa}` 
+## `Operation: Overtone` 
 <WereSoCool
   readOnly
   hideGutter
@@ -42,12 +42,12 @@ or - as it's used in the song below - to add overtones to other operations.
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 overtones = {
--- O[(Fm, Fa, Gm, Pa), ...]
   Overlay [
-    {3/1, 1, 1/4, -1/4},
-    {3/1, 0, 1/4, 1/4},
-    {1/1, 2, 1, 1/2},
-    {1/1, 0, 1, -1/2},
+ -- { Fm,  Fa, Gm,  Pa   }
+    { 3/1, 1,  1/4, -1/4 },
+    { 3/1, 0,  1/4, 1/4  },
+    { 1/1, 2,  1,   1/2  },
+    { 1/1, 0,  1,   -1/2 },
   ]
 }\n
 -- This is a little two part song:
@@ -66,7 +66,7 @@ melody2 = {
 }\n
 main = {
 -- "overtones" contains 4 voices 
--- defined above with O[] syntax.
+-- defined above with overtone syntax.
 -- by Piping it into the Overlay 
 -- results in the same sound as
 -- if we wrote the following:
