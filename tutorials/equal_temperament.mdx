@@ -87,11 +87,11 @@ I recommend experimenting with compose melodies in all sorts of equal temperamen
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 overtones = {
-  O[
-    (1/1, 0, 1, 0),
-    (1/2, 3, 1, -1/2),
-    (1/2, 0, 1, 1/2),
-    (1/4, 2, 1/2, 1/2),
+  Overlay[
+    {1/1, 0, 1, 0},
+    {1/2, 3, 1, -1/2},
+    {1/2, 0, 1, 1/2},
+    {1/4, 2, 1/2, 1/2},
   ]
 }\n
 -- ET can be thought of as simply a special case of the list.
@@ -112,13 +112,13 @@ all_scales = {
   ]
 }\n
 weird_microtonal_melody = {
-   O[
-    (2, 3, 1, -1),
-    (2, 0, 1, 1),
-    (3/2, 3, 1, -1),
-    (3/2, 0, 1, 1),
-    (1/1, 0, 1, 0),
-    (1/2, 0, 1, 0),
+   Overlay[
+    {2, 3, 1, -1},
+    {2, 0, 1, 1},
+    {3/2, 3, 1, -1},
+    {3/2, 0, 1, 1},
+    {1/1, 0, 1, 0},
+    {1/2, 0, 1, 0},
   ]
   | ET(120) 
     @ [

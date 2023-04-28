@@ -1,5 +1,5 @@
 ---
-title: O[] Operação
+title: Overlay[] Operação
 next: Ajuste ao Duração
 nextLink: fit_length
 ---
@@ -7,7 +7,7 @@ nextLink: fit_length
 Se você se divertiu tanto fazendo acordes legais quanto eu, ficará feliz em saber que existe uma operação para fazer exatamente isso.
 
 
-## `Operação: O[]` 
+## `Operação: Overlay[]` 
 <WereSoCool
   readOnly
   hideGutter
@@ -15,37 +15,37 @@ Se você se divertiu tanto fazendo acordes legais quanto eu, ficará feliz em sa
 `-- Cada conjunto de quatro valores descreve
 -- multiplicação de frequência, adição de frequência,
 -- ganho multiplicado e pan de uma nota.
-O[(Fm, Fa, Gm, Pa), ...]`}
+Overlay[(Fm, Fa, Gm, Pa), ...]`}
 />
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 main = {
--- Por exemplo: Este O[] descreve duas notas.
+-- Por exemplo: Este Overlay[] descreve duas notas.
 -- O fundo é o fundamental - 1/1
 -- no ganho 1, panou 1/2 à direita e
 -- o topo é uma nota uma oitava acima do fundamental
 -- mais 2hz no ganho 1 pan 1/2 para a esquerda.
 -- Eu geralmente organizo as notas com a nota mais baixa no fundo.
-  O[
-    (2/1, 2, 1, 1/2),
-    (1/1, 0, 1, -1/2),
+  Overlay[
+    {2/1, 2, 1, 1/2},
+    {1/1, 0, 1, -1/2},
   ]
 }`
 }/>
 
-Dentro do O[], você pode colocar quantos (Fm, Fa, Gm, Pa) quiser.
+Dentro do Overlay[], você pode colocar quantos (Fm, Fa, Gm, Pa) quiser.
 Esta pode ser uma ótima maneira de compor acordes de várias vozes em uma série
 ou - como é usado na música abaixo - para adicionar harmônicos a outras operações.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 overtones = {
--- O[(Fm, Fa, Gm, Pa), ...]
-  O[
-    (3/1, 1, 1/4, -1/4),
-    (3/1, 0, 1/4, 1/4),
-    (1/1, 2, 1, 1/2),
-    (1/1, 0, 1, -1/2),
+-- Overlay[(Fm, Fa, Gm, Pa), ...]
+  Overlay[
+    {3/1, 1, 1/4, -1/4},
+    {3/1, 0, 1/4, 1/4},
+    {1/1, 2, 1, 1/2},
+    {1/1, 0, 1, -1/2},
   ]
 }\n
 -- Esta é uma pequena música de duas partes:
@@ -64,7 +64,7 @@ melody2 = {
 }\n
 main = {
 -- "overtones" contém 4 vozes
--- definido acima com a sintaxe O[].
+-- definido acima com a sintaxe Overlay[].
 -- pipe-o para a sobreposição
 -- resulta no mesmo som que
 -- se escrevemos o seguinte:
