@@ -14,12 +14,12 @@ Si te divertiste tanto haciendo acordes geniales como yo, te alegrará saber que
 `-- Cada conjunto de cuatro valores describe
 -- la frecuencia se multiplica, la frecuencia se suma,
 -- ganar multiplicar y pan agregar de una nota.
-O[(Fm, Fa, Gm, Pa), ...]`}
+Overlay[(Fm, Fa, Gm, Pa), ...]`}
 />
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 main = {
--- Por ejemplo: Esta O[] describe dos notas.
+-- Por ejemplo: Esta Overlay[] describe dos notas.
 -- El fondo es lo fundamental - 1/1
 -- en ganancia 1 panoramizó 1/2 de la derecha y
 -- la parte superior es una nota una octava por encima de la fundamental
@@ -33,14 +33,14 @@ main = {
 }/>
 
 
-Dentro de la O[], puedes poner tantos (Fm, Fa, Gm, Pa) como quieras.
+Dentro de la Overlay[], puedes poner tantos (Fm, Fa, Gm, Pa) como quieras.
 esta puede ser una excelente manera de componer acordes de varias voces en una serie
 o, como se usa en la siguiente canción, para agregar sobretonos a otras operaciones.
 
 <WereSoCool language={
 `{ f: 261.6, l: 1, g: 1, p: 0 }\n
 overtones = {
--- O[(Fm, Fa, Gm, Pa), ...]
+-- Overlay[(Fm, Fa, Gm, Pa), ...]
   Overlay [
     {3/1, 1, 1/4, -1/4},
     {3/1, 0, 1/4, 1/4},
@@ -64,7 +64,7 @@ melody2 = {
 }\n
 main = {
 -- "overtones" contiene 4 voces
--- definido arriba con la sintaxis O[].
+-- definido arriba con la sintaxis Overlay[].
 -- conectándolo a la superposición
 -- da como resultado el mismo sonido que
 -- si escribimos lo siguiente:

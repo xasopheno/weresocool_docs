@@ -5,9 +5,9 @@ import { WSCWithRatioChart } from '../components/WSC_with_RatioChart';
 const language = `{ f: 311.127, l: 1, g: 1, p: 0 }
 
 thing1 = {
-  O[
-    (1/1, 2, 1, 1),
-    (1/1, 0, 1, -1),
+  Overlay[
+    {1/1, 2, 1, 1},
+    {1/1, 0, 1, -1},
   ]
   | Seq [
     Fm 1, Fm 9/8, Fm 5/4
@@ -15,9 +15,9 @@ thing1 = {
 }
 
 thing2 = {
-  O[
-    (1/1, 2, 1, 1),
-    (1/1, 0, 1, -1),
+  Overlay[
+    {1/1, 2, 1, 1},
+    {1/1, 0, 1, -1},
   ]
   | Seq [
     Fm 3/4
