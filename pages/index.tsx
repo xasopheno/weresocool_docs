@@ -6,25 +6,27 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { SupportedLocale, supportedLocaleFromLocale } from '../utils/misc';
 
-const language = `{ f: 311.127, l: 1, g: 1, p: 0 }
+const language = `{ f: 311.127, l: 1, g: 1/2, p: 0 }
 
 thing1 = {
   Overlay [
-    {1, 1.4, 1, 1},
-    {1/3, 0, 1/3, -1},
+    {2, 2, 1/8, 0},
+    {1, 3, 1, 1/2},
+    {1, 0, 1, -1/2},
+    {1/2, 0, 1/3, 0},
   ]
   | Seq [
-    Fm 1, Fm 9/8, Fm 5/4
+    Fm 1, Fm 9/8, Fm 5/4 | Lm 2
   ]
 }
 
 thing2 = {
   Overlay [
-    {1/1, 2, 1, 1},
-    {1, 0, 1/3, -1},
+    {1, 2, 1, 1},
+    {1, 0, 1, -1},
   ]
   | Seq [
-    Fm 3/4
+    Fm 3/4 | Lm 3, Fm 1/4
   ]
   | FitLength thing1
 }

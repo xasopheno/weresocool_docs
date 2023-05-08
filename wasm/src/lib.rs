@@ -48,7 +48,7 @@ impl Manager {
         self.render_manager
             .lock()
             .unwrap()
-            .push_render(render_voices);
+            .push_render(render_voices, false);
         Ok(())
     }
 
@@ -102,7 +102,7 @@ fn write_data(output: &mut [f32], render_manager: &Arc<Mutex<RenderManager>>) {
 #[wasm_bindgen]
 pub fn beep() -> Manager {
     Manager {
-        render_manager: Arc::new(Mutex::new(RenderManager::init_silent())),
+        render_manager: Arc::new(Mutex::new(RenderManager::init_wasm(None))),
         stream: None,
     }
 }
