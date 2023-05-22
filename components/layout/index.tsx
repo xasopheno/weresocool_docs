@@ -54,7 +54,6 @@ export default function Layout({
         >
           <Box
             style={{
-              overflow: 'auto',
               height: 'calc(100vh - 60px)',
               marginTop: '50px',
             }}
